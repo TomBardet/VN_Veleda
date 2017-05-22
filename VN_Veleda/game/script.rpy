@@ -10,7 +10,7 @@ label start:
         ######################## - Defining Misc - ##############################################
         
         interlocuteur = "None" ## Ne pas oublier d'actualiser le nom de l'interlocuteur à chaque changement
-        lieu = "None"
+        lieu = "None" ## Ne pas oublier d'actualiser le nom du lieu à chaque changement
         CAactif = False ## Set à False après chaque actionChoice
         inventory = Inventory()
         
@@ -103,6 +103,10 @@ label PlaceDuVillageAllObjects:
             jump taverne_ConcoursPart1
 
 # -----------------------------------------#
+
+
+
+
 
 ###########################################################################################
 # OLD - Le proto technique avec les dialogues correspondant et les enchainements utilisés #
