@@ -2,8 +2,6 @@
 errors listed below, and try again.
 
 
-File "game/taverne.rpy", line 60: expected ':' not found.
-    label taverne_MarryingIngridPart1
-                                     ^
+File "game/screens.rpy", line 1457: indentation mismatch.
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

@@ -1402,7 +1402,56 @@ screen inventory_screen(obj = ""):
 transform sineV(y):
     ypos y
     parallel:
-        block:screen datingSim(char_name, x, y):
+        block:
+            linear 0.5 ypos y-0.002
+            pause 0.1
+            linear 0.5 ypos y+0.002
+            repeat
+    parallel:
+        block:
+            linear 1.8 rotate -1
+            pause 0.1
+            linear 1.8 rotate 1
+            repeat
+            
+screen action_choice_bar:
+    zorder 10
+    textbutton _("Parler à la chêvre"):
+        xpos 0.55
+        xanchor 0.5
+        ypos 0.35
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000 ")]
+        at sineV(0.35)
+        action Return("goat2")
+    textbutton _("Sortir de la Taverne"):
+        xpos 0.85
+        xanchor 0.5
+        ypos 0.68
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000 ")]
+        at sineV(0.68)
+        action Return("sortir")
+    textbutton _("Commander à boire"):
+        xpos 0.25
+        xanchor 0.5
+        ypos 0.58
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000 ")]
+        at sineV(0.58)
+        action Return("boire")
+
+
+###################################################################################################
+################ - Gestion des Jauges Dating Sim - ##################
+
+screen datingSim(char_name, x, y):
     zorder 7
     
     $ loveValue = char_name.love
@@ -1413,14 +1462,14 @@ transform sineV(y):
         ypos y
         yanchor 0.5
         if loveValue < (loveMax/5):
-            outlines[(2, "#390b0b")]
-            color "#f23f3f"
+            outlines[(2, "#390b0b ")]
+            color "#f23f3f "
         elif loveValue > (loveMax - loveMax/5):
-            outlines[(2, "#0d390b")]
-            color "#72f23f"
+            outlines[(2, "#0d390b ")]
+            color "#72f23f "
         else:
-            outlines[(2, "#39340b")]
-            color "#f2c63f"
+            outlines[(2, "#39340b ")]
+            color "#f2c63f "
         at apparitionJuicy
 transform animFeedbackPos(x,y):
     alpha 1.0 ypos y xpos x #xalign 0.5 yalign 0.5
