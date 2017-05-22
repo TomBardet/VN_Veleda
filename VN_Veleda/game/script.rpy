@@ -65,6 +65,9 @@ label intro:
 
 label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingrid
     "Entrée dans narration_ellipse01"
+    
+    
+    dig "Wesh weh"
     jump tourVeleda_ErnustEtVeleda
     
 # -----------------------------------------#    

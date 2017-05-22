@@ -68,6 +68,65 @@ init:
 
 init:
     
+    #Les images des Lieus
+    image bg_taverne = "images/decor/Lieu_taverne.png"
+    image bg_etables = "images/decor/Lieu_etables.png"
+    image bg_forge = "images/decor/Lieu_forge.png"
+    image bg_antichambre = "images/decor/Lieu_antichambre.png"
+    image bg_chambre = "images/decor/Lieu_antichambre.png"
+    image bg_romains = "images/decor/Lieu_romains.png"
+    image bg_place = "images/decor/Lieu_place.png"
+    
+    #------ Les images des Personnages -------
+    
+    #Véléda
+    image char_veleda normal = "images/char/Char_veleda_normal.png"
+    image char_veleda morte = "images/char/Char_veleda_morte.png"
+    image char_veleda marionnette = "images/char/Char_veleda_marionnette.png"
+    
+    #Ernust
+    image char_ernust normal = "images/char/Char_ernust_normal.png"
+    image char_ernust joyeux = "images/char/Char_ernust_joyeux.png"
+    image char_ernust love = "images/char/Char_ernust_love.png"
+    image char_ernust marionnette = "images/char/Char_ernust_marionnette.png"
+    
+    #Ingrid
+    image char_ingrid normal = "images/char/Char_ingrid_normal.png"
+    image char_ingrid degout = "images/char/Char_ingrid_degout.png"
+    image char_ingrid love = "images/char/Char_ingrid_love.png"
+    image char_ingrid choc = "images/char/Char_ingrid_choc.png"
+    
+    #Crossfit
+    image char_crossfit colere = "images/char/Char_crossfit_colere.png"
+    image char_crossfit serieux = "images/char/Char_crossfit_serieux.png"
+    image char_crossfit inquiet = "images/char/Char_crossfit_inquiet.png"
+    
+    #Brutalmund
+    image char_brutal normal = "images/char/Char_brutal_normal.png"
+    image char_brutal colere = "images/char/Char_brutal_colere.png"
+    image char_brutal heureux = "images/char/Char_brutal_heureux.png"
+    
+    #Beaudrik
+    image char_beaudrik mepris = "images/char/Char_beaudrik_mepris.png"
+    image char_beaudrik drague = "images/char/Char_beaudrik_drague.png"
+    image char_beaudrik insulte = "images/char/Char_beaudrik_insulte.png"
+    
+    #Numerimus
+    image char_numerimus normal = "images/char/Char_numerimus_normal.png"
+    image char_numerimus heureux = "images/char/Char_numerimus_heureux.png"
+    image char_numerimus rire = "images/char/Char_numerimus_rire.png"
+    
+    #Digitimus
+    image char_digitimus normal = "images/char/Char_digitimus_normal.png"
+    image char_digitimus heureux = "images/char/Char_digitimus_heureux.png"
+    image char_digitimus rire = "images/char/Char_digitimus_rire.png"
+    
+    #Chêvre-Josiane
+    image char_goat normal = "images/char/Char_goat_normal.png"
+    image char_goat love = "images/char/Char_goat_love.png"
+    image char_goat choc = "images/char/Char_goat_choc.png"
+    
+    ##PROTO ASSETS
     image bg_bar = "images/bg_bar.png"
     image bg_blackscreen = "images/bg_blackscreen.png"
     image goat = "images/goat_idle.png"
