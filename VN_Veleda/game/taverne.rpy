@@ -90,8 +90,9 @@ label taverne_PresentationDot:
 # -----------------------------------------#
 
 label taverne_AbusAlcoolPart1:
-    scene bg_taverne2
-    show char_goat normal
+    scene bg_taverne2:
+        zoom 0.35
+    show char_goat normal at notSpeakingAnim(0.5, 1.15, 1.12, 1.0)
     
     "WIP"
     
