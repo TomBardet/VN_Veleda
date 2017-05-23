@@ -10,7 +10,7 @@ label tourVeleda_ErnustEtVeleda :
     $ interlocuteur = "vel_char"
     show screen datingSim(vel_char, 0.75, 0.25)
     
-    play sound "sfx/Char_Veleda_Normal_01.ogg"
+    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
     
     v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
     
@@ -18,7 +18,7 @@ label tourVeleda_ErnustEtVeleda :
 
     y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
-    play sound "sfx/Char_Veleda_Rage_01.ogg"
+    play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
     
     v "Des chiffres ? De quoi parlez vous ?"
     
@@ -36,7 +36,7 @@ label tourVeleda_ErnustEtVeleda :
         "1. Il vient demander conseil, Ô Véléda ? ":
             y "Crossfitrtrch... Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
-            play sound "sfx/Char_Veleda_Normal_01.ogg"
+            play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
     
             v "Oh vous ne Nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
@@ -49,7 +49,7 @@ label tourVeleda_ErnustEtVeleda :
         "2. Il veut quoi lui ?":
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
             
-            play sound "sfx/Char_Veleda_Normal_01.ogg"
+            play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
             
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
             
@@ -73,7 +73,7 @@ label tourVeleda_ErnustEtVeleda :
     
     y "Euh.. ils devraient pas plutôt porter plainte ?"
     
-    play sound "sfx/Char_Veleda_Rage_01.ogg"
+    play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
     
     v "Vous doutez de la sagesse de Nos visions, Monsieur Gaufrid ?"
     
@@ -90,12 +90,13 @@ label tourVeleda_ErnustEtVeleda :
     show char_ernust normal right :
         zoom 0.9 xpos 0.15 ypos 0.1
     
-    play sound "sfx/Char_Ernust_Normal_01.ogg"
+    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
     
     $ interlocuteur = "ern_char"
     show screen datingSim(ern_char, 0.25, 0.10)
     
     e "Oh, Bonjour Gaufrid !"
+    $ loveGauge(ern_char, 1)
     
     menu :
         "1. Bonjour Ernust !" :
@@ -104,6 +105,14 @@ label tourVeleda_ErnustEtVeleda :
             hide char_ernust normal right
             show char_ernust joyeux right :
                 zoom 0.9 xpos 0.12 ypos 0.07
+                
+            play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            
+            e "Ça va bien !"
+            $ loveGauge(ern_char, 2)
+            e "C'est gentil de demander Gaufrid !"
+            $ loveGauge(ern_char, 2)
+            
         "2. Il est amoureux de moi ?" :
             y "90 de love ? Mais il est amoureux de moi ou quoi ?"
         "3. Ah, t'es là, toi ?" :
