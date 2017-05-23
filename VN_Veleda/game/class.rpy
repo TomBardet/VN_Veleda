@@ -51,7 +51,7 @@ init -1 python:
             if string == item_name:
                 value = 1
     
-    def loveGauge(char_name ,loveCount):
+    def loveGauge(char_name ,loveCount, x, y):
         char_name.love+=loveCount
         if char_name.love < 0:
             char_name.love=0
@@ -60,13 +60,13 @@ init -1 python:
         
         if(loveCount>0):
             if(char_name.love < (char_name.max_love/5)):
-                renpy.show("bad_img", at_list=[animFeedbackPos(0.64,0.38)])
+                renpy.show("bad_img", at_list=[animFeedbackPos(x,y)])
             elif(char_name.love > (char_name.max_love- char_name.max_love/5)):
-                renpy.show("love_img", at_list=[animFeedbackPos(0.64,0.38)])
+                renpy.show("love_img", at_list=[animFeedbackPos(x,y)])
             else:
-                renpy.show("neutral_img", at_list=[animFeedbackPos(0.64,0.38)])
+                renpy.show("neutral_img", at_list=[animFeedbackPos(x,y)])
         else:
-            renpy.show("sad_img", at_list=[animFeedbackNeg(0.64,0.45)])
+            renpy.show("sad_img", at_list=[animFeedbackNeg(x,y)])
             
     style.tooltip_bottom = Style(style.default)
     style.tooltip_bottom.xalign = 0.5
