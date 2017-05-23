@@ -1463,10 +1463,10 @@ screen datingSim(char_name, x, y):
         yanchor 0.5
         if loveValue < (loveMax/5):
             outlines[(2, "#390b0b")]
-            color "#f23f3f "
+            color "#f23f3f"
         elif loveValue > (loveMax - loveMax/5):
             outlines[(2, "#0d390b")]
-            color "#72f23f "
+            color "#72f23f"
         else:
             outlines[(2, "#39340b")]
             color "#f2c63f"

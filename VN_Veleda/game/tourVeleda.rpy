@@ -11,11 +11,17 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
     
+    $ loveGauge(vel_char, -3)
+
     y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
     v "Des chiffres ? De quoi parlez vous ?"
     
+    $ loveGauge(vel_char, -3)
+    
     v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne Nous intéressent pas."
+    
+    $ loveGauge(vel_char, -3)
     
     v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
     
@@ -26,15 +32,23 @@ label tourVeleda_ErnustEtVeleda :
             y "Crossfitrtrch... Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
     
             v "Oh vous ne Nous trompez pas avec vos minauderies Monsieur Gaufrid."
+            
+            $ loveGauge(vel_char, -3)
     
             v "La flatterie est le refuge des incompétents et des poissoniers."
+            
+            $ loveGauge(vel_char, -3)
             
         "2. Il veut quoi lui ? ?":
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
             
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
             
+            $ loveGauge(vel_char, -3)
+            
             v "Vous parlez comme une jarretière !"
+            
+            $ loveGauge(vel_char, -3)
             
     v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund !"
     
