@@ -62,6 +62,11 @@ label romains_Part3:
 label romains_Part4:
     "label romains_Part4"
     
+    hide char_numerimus choque
+    hide char_digitimus choque
+    show char_numerimus normal
+    show char_digitimus normal at right
+    
     menu :
         "1. Je vais y aller moi. ":
             y "M'en voulez pas hein..."
@@ -70,22 +75,24 @@ label romains_Part4:
             
         "2. Ca se passe les vacances ?":
             y "Alors les romains, ces vacances ?"
-            jump romains_Part5
+            jump romains_Part5bis
 
 # -----------------------------------------#
-label romains_Part5:
-    "label romains_Part5"
+#label romains_Part5:
+    #"label romains_Part5"
     
-    num "On s’ennuie..."
-    dig "On s’ennuie vraiment..."
-    num "Ouais… Je donnerais jusqu'a mon glaive pour un peu d’amusement."
-    jump romains_Part5bis
+    #num "On s’ennuie..."
+    #dig "On s’ennuie vraiment..."
+    #num "Ouais… Je donnerais jusqu'a mon glaive pour un peu d’amusement."
+    #jump romains_Part5bis
 
 # -----------------------------------------#
 
 label romains_Part5bis:
-    "label romains_Part6bis"
+    "label romains_Part5bis"
     
+    num "On s’ennuie."
+    dig "On s’ennuie vraiment le Germain..."
     menu :
         "1. Faites un tour du quartier. ":
             y "Il y a des belles choses dans le coin."
@@ -103,42 +110,108 @@ label romains_Part5bis:
             else:
                 dig "Ouais ouais c'est bien gentil mais on la connait."
                 jump romains_Part5bis
+        
+                
+        "3. C'est pas mon problème.":
+             y "Je peux pas vous aider les gars."
+             jump romains_Part4
  
 # -----------------------------------------#
                 #VISITE
 # -----------------------------------------#
 label romains_VisitePart1:
     "label romains_VisitePart1"
+     
+    num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
+    num "Mon génie porte-enseigne a oublié mes lunettes à Rome."
     
-    
-    if _testLunettes == 1:
-        "lunettes ok"
+    if _testLunettes == 0:
+        num "Vous avez de la chance j’en ai justement une paire sur moi."
+        num "On aura vu mieux comme scénar’"
+        num "Allez tenez. J’imagine que c’est à votre vue en plus du reste."
         jump romains_VisitePart2
+        
     else:
-        "pas de lunettes"
-        jump romains_Part1
+        menu :
+            "1. Vous en avez pas une autre paire ?":
+                y "Alors les romains, ces vacances ?"
+                num "non, aucune. Ca nous aiderait pas mal si vous en trouveriez une, Germain."
+                jump romains_Part5bis
+                
+            "2. Retournez-y. ":
+                y "Ca tombe bien, toutes les routes y mènent."
+                num "..."
+                jump romains_Part5bis
+                
         
 # -----------------------------------------#
 
-#label romains_VisitePart2:
-    #"label romains_VisitePart2"
+label romains_VisitePart2:
+    "label romains_VisitePart2"
     
-    #jump romains_VisiteVeleda
+    hide char_numerimus normal
+    show char_numerimus heureux
+    num "Mais c'est super germain ! Passe moi ça !"
+    
+    jump romains_VisitePart3
     
 # -----------------------------------------#
 
-#label romains_VisiteVeleda:
-    #"label romains_VisiteVeleda"
+label romains_VisitePart3:
+    "label romains_VisitePart3"
     
-    #$ inventory.add(glaive)
-    #$ _testGlaive = 1
+    hide char_numerimus heureux
+    show char_numerimus normal
+    num "Bon du coup..."
+    jump romains_VisitePart3bis
     
-    #"glaive récupéré"
+# -----------------------------------------#
+label romains_VisitePart3bis:
+    "label romains_VisitePart3bis"
     
-    #if _testGlaive == 1 & _testBouclier == 1:
-        #jump PlaceDuVillageAllObjects
-    #else:
-        #jump PlaceDuVillageDefault
+    menu :
+        num "Qu’est ce qu’il y a à voir dans le coin ?"
+        "1. L’air vivifiant du paysage Bructère !":
+            y "La Lippe, l'herbe fraiche, l'air vivifiant du paysage Bructère !"
+            dig "Mais encore... ?"
+            jump romains_VisitePart3bis
+        "2. Deux gros abrutis.":
+            y "Deux bons gros abrutis."
+            num "Ah vous en avez vous aussi."
+            y "Ici, les abrutis c'est presque culturel."
+            y "Parfois il viennent de loin."
+            jump romains_VisitePart3bis
+        "3. Véléda ?":
+            y "Il y a bien la prophetesse Véléda mais..."
+            num "Super idée l'Germain, on l'a toujours pas vu celle là."
+            y "non mais elle est pas forcément..."
+            num "Vendu ! On y va {b}tout de suite{/b} !"
+            nar "Dans quoi tu t'es encore fourré."
+            jump romains_VisitePart4
+    
+    
+# -----------------------------------------#
+
+label romains_VisitePart4:
+    "label romains_VisitePart4"
+    
+    scene bg_antichambre
+    jump romains_VisitePart3bis
+    
+# -----------------------------------------#
+
+label romains_FinDeLaVisite:
+    "label romains_VisiteVeleda"
+    
+    $ inventory.add(glaive)
+    $ _testGlaive = 1
+    
+    "glaive récupéré"
+    
+    if _testGlaive == 1 & _testBouclier == 1:
+        jump PlaceDuVillageAllObjects
+    else:
+        jump PlaceDuVillageDefault
     
 # -----------------------------------------#
                 #BLAGUE
@@ -174,5 +247,6 @@ label romains_Blague:
         show char_digitimus choque at right
         nar "C'était de loin la pire blague que j'ai jamais entendu"
         nar "Et je parle même pas du fait que t'as 12 siècles d'avance."
+        num "C'était horrible... La prochaine fois reviens avec une blague correcte."
         jump romains_Part4
          
