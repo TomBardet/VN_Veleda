@@ -2,19 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/taverne.rpy", line 40: invalid syntax
-    $ loveGauge(ingrid_char, -10, 0.65, 0.3)
-     ^
-    
-
-File "game/taverne.rpy", line 58: invalid syntax
-    $ loveGauge(ingrid_char, -5, 0.65, 0.3)
-     ^
-    
-
-File "game/taverne.rpy", line 60: invalid syntax
-    $ loveGauge(ingrid_char, -10, 0.65, 0.3)
-     ^
-    
+File "game/etables.rpy", line 107: expected statement.
+    etables_PeurDesBufflesPart1
+                               ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
