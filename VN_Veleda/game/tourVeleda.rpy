@@ -14,7 +14,7 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
     
-    $ loveGauge(vel_char, -3)
+    $ loveGauge(vel_char, -3, 0.5, 0.5)
 
     y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
@@ -22,11 +22,11 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Des chiffres ? De quoi parlez vous ?"
     
-    $ loveGauge(vel_char, -3)
+    $ loveGauge(vel_char, -3, 0.5, 0.5)
     
     v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne Nous intéressent pas."
     
-    $ loveGauge(vel_char, -3)
+    $ loveGauge(vel_char, -3, 0.5, 0.5)
     
     v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
     
@@ -40,11 +40,11 @@ label tourVeleda_ErnustEtVeleda :
     
             v "Oh vous ne Nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
-            $ loveGauge(vel_char, -3)
+            $ loveGauge(vel_char, -3, 0.5, 0.5)
     
             v "La flatterie est le refuge des incompétents et des poissoniers."
             
-            $ loveGauge(vel_char, -3)
+            $ loveGauge(vel_char, -3, 0.5, 0.5)
             
         "2. Il veut quoi lui ?":
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
@@ -53,11 +53,11 @@ label tourVeleda_ErnustEtVeleda :
             
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
             
-            $ loveGauge(vel_char, -3)
+            $ loveGauge(vel_char, -3, 0.5, 0.5)
             
             v "Qu'est ce que c'est que ce langage de jarretière ?"
             
-            $ loveGauge(vel_char, -3)
+            $ loveGauge(vel_char, -3, 0.5, 0.5)
             
     v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund !"
     
@@ -77,7 +77,7 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Vous doutez de la sagesse de Nos visions, Monsieur Gaufrid ?"
     
-    $ loveGauge(vel_char, -3)
+    $ loveGauge(vel_char, -3, 0.5, 0.5)
     
     v "Où se trouve votre cousin d'ailleurs ? Le simplet, Monsieur Ernust ?"
     

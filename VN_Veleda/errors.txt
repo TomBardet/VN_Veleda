@@ -2,8 +2,27 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+File "game/script.rpy", line 11: invalid syntax
+    $ _window_during_transitions = True
+     ^
+    
+=======
+<<<<<<< HEAD
+File "game/tourVeleda.rpy", line 55: end of line expected.
+    jump tourVeleda_HistoireBrevetPart1:
+                                       ^
+=======
+File "game/taverne.rpy", line 46: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    zoom 0.35
+    ^
+>>>>>>> 8ba8bb4e3be2a070e51a5d1292084393fccd67ac
+>>>>>>> e03156e38ed5ac7dc9fee5d40ee02e8a62f8f35e
+=======
 File "game/tourVeleda.rpy", line 108: choice menuitem expects a non-empty block.
     "2. Il est amoureux de moi ou quoi ?" :
                                            ^
+>>>>>>> ac0d98167c50fa9151a4c5f8647b1889c523b3ef
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
