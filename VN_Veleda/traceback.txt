@@ -1,20 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/screens.rpy", line 1496, in script
-    
-Exception: Sayer 'gr' is not defined.
+  File "game/romains.rpy", line 88, in script
+    jump VisitePart1
+ScriptError: could not find label 'VisitePart1'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/screens.rpy", line 1496, in script
-    
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 593, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 509, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'gr' is not defined.
+  File "game/romains.rpy", line 88, in script
+    jump VisitePart1
+  File "C:\Users\Antoine\Desktop\renpy-6.99.12.4-sdk\renpy\ast.py", line 1527, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\Antoine\Desktop\renpy-6.99.12.4-sdk\renpy\script.py", line 858, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'VisitePart1'.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
