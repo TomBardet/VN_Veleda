@@ -1,13 +1,21 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
+<<<<<<< HEAD
 While processing the color property of anonymous style:
   File "game/tourVeleda.rpy", line 12, in script
     v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
 Exception: Color string must be 3, 4, 6, or 8 hex digits long.
+=======
+While loading <'Image' u'images/decor/Lieu_taverne.jpg'>:
+  File "game/taverne.rpy", line 17, in script
+    i "Gaufrid ?!"
+IOError: Couldn't find file 'images/decor/Lieu_taverne.jpg'.
+>>>>>>> 8ba8bb4e3be2a070e51a5d1292084393fccd67ac
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
   File "game/tourVeleda.rpy", line 12, in script
     v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
@@ -21,6 +29,21 @@ Full traceback:
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 508, in display_say
     rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
+=======
+  File "game/taverne.rpy", line 17, in script
+    i "Gaufrid ?!"
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
+    who(what, interact=interact)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
+    **display_args)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\character.py", line 508, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
+>>>>>>> 8ba8bb4e3be2a070e51a5d1292084393fccd67ac
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
@@ -62,6 +85,7 @@ Full traceback:
     cpdef render(d, object widtho, object heighto, double st, double at):
   File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
     rv = d.render(widtho, heighto, st, at)
+<<<<<<< HEAD
   File "renpy/display/accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:2027)
     cr = render(child, widtho, heighto, st - self.child_st_base, at)
   File "renpy/display/render.pyx", line 158, in renpy.display.render.render (gen\renpy.display.render.c:2475)
@@ -77,6 +101,17 @@ Full traceback:
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\color.py", line 156, in __new__
     raise Exception("Color string must be 3, 4, 6, or 8 hex digits long.")
 Exception: Color string must be 3, 4, 6, or 8 hex digits long.
+=======
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\im.py", line 473, in render
+    im = cache.get(self)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\im.py", line 200, in get
+    surf = image.load()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\im.py", line 524, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'images/decor/Lieu_taverne.jpg'.
+>>>>>>> 8ba8bb4e3be2a070e51a5d1292084393fccd67ac
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
