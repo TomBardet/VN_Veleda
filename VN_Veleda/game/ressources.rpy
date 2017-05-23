@@ -75,7 +75,7 @@ init:
     image bg_taverne2 = "images/decor/Lieu_taverne2.png"
     image bg_etables = "images/decor/Lieu_etables.png"
     image bg_forge = "images/decor/Lieu_forge.png"
-    image bg_antichambre = "images/decor/Lieu_antichambre.jpg"
+    image bg_antichambre = "images/decor/Lieu_antichambre.png"
     image bg_chambre = "images/decor/Lieu_chambre.png"
     image bg_romains = "images/decor/Lieu_romains.png"
     image bg_place = "images/decor/Lieu_place.png"
@@ -105,6 +105,7 @@ init:
     
     #Crossfit
     image char_crossfit colere = "images/char/Char_crossfit_colere.png"
+    image char_crossfit colere right = im.Flip("images/char/Char_crossfit_colere.png", horizontal = True)
     image char_crossfit colere2 = "images/char/Char_crossfit_colere2.png"
     image char_crossfit serieux = "images/char/Char_crossfit_serieux.png"
     image char_crossfit inquiet = "images/char/Char_crossfit_inquiet.png"

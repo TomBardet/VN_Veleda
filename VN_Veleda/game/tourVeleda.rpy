@@ -241,6 +241,12 @@ label tourVeleda_ErnustEtVeleda :
 # -----------------------------------------#
 
 label tourVeleda_HistoireBrevetPart1:
+    
+    scene bg_antichambre
+    
+    show char_brutal normal at right
+    show char_crossfit colere right at left
+    
     "Entrée tourVeleda_HistoireBrevetPart1"
     
     jump tourVeleda_MortVeleda
