@@ -228,13 +228,19 @@ label tourVeleda_ErnustEtVeleda :
     e "Mais j'ai trouvé des champignons alors j'ai fait une soupe ! Une bonne soupe de champignons !"
     
     play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
-    v "Cela suffira ! Et vous, Gaufrid, allez accueillir Nos invités, je prophétise qu'ils vont frapper à la porte !"
+    v "Cela suffira ! Et vous, Gaufrid, allez accueillir Nos invités, Nous prophétisons qu'ils vont frapper à la porte !"
     
     play sound "sfx/SFX_Knock_01.ogg"
+    v "Haa, vous voyez ? Allez-y Monsieur Gaufrid."
     
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     y "Ok, ok j'y vais..."
     
     hide screen datingSim
+    
+    scene black with Dissolve(0.5)
+    play sound "sfx/SFX_Stairs_01.ogg"
+    outline "Travelling vers le bas"
     
     jump tourVeleda_HistoireBrevetPart1
         
@@ -244,17 +250,174 @@ label tourVeleda_HistoireBrevetPart1:
     
     scene bg_antichambre
     
-    show char_brutal normal at right
-    show char_crossfit colere right at left
+    show char_brutal normal :
+        zoom 0.35 xpos 0.48 ypos 0.09
+    show char_crossfit colere right :
+        zoom 0.32 xpos 0 ypos 0.13
     
-    "Entrée tourVeleda_HistoireBrevetPart1"
+    play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
+    cross "Nous voilà ! Je vais enfin trouver justice, Brutalmund !"
+    
+    play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
+    brut "J't'ai déjà dit que j't'ai rien volé du tout !"
+    
+    play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
+    cross "Toi, l'assistant, va chercher la prophétesse !"
+    
+    play sound "sfx/SFX_Char_Player_No_01.ogg"
+    y "Ah non, c'est pas comme ça que ça marche."
+    y "La prophétesse ne voit pas directement ses visiteurs."
+    
+    
+    play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
+    cross "Quoi ? Je ne peux pas voir la prophétesse ?"
+    
+    play sound "sfx/SFX_Char_Player_No_01.ogg"
+    y "Non, non. Vous m'expliquez le problème, je lui transmet et elle s'adresse aux dieux..."
+    y "Elle divague un peu et moi je vous interprète ses visions."
+    
+    play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
+    cross "Très bien, serviteur, mais si tu ne transmet pas nos messages exactement, je t'égorge."
+    
+    menu :
+        "1. Oui, Monseigneur" :
+            play sound "sfx/SFX_Char_Player_Ok_01.ogg"  
+            y "Bien sur Monsieur Crossftrichtrolvd, je ferai bien attention."
+            
+        "2. Je sais faire mon travail, hein" :
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"  
+            y "Eh oh je sais ce que je fais hein ? Pas la peine de me menacer."
+            
+    y "Bon, dites moi tout, quel est le problème ?"
+    
+    play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
+    brut "J'vais t'expliquer, Gaufrid, mon pote."
+    brut "Tu vois, l'autre jour, Crossfitrichernvald, il passe devant chez moi."
+    brut "T'sais j'ai une forge moi, j'suis forgeron."
+    brut "Et donc il voit un bouclier qui ressemble au sien."
+    
+    play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
+    brut "Et il gueule !"
+    
+    play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
+    brut "Mais en fait, je l'ai pas volé c'te bouclier !"
+    brut "C'est moi qui l'ai fait. De mes mains ! J'te jure mon p'tit Gaufrid !"
+    
+    play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
+    cross "Ah mais tu sais bien que c'est pas ça le problème, escroc !"
+    
+    play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
+    brut "Moi ? Un escroc ?"
+    
+    play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
+    cross "Oui, un escroc ! Ce bouclier est exactement le même que le mien." 
+    cross "Un magnifique bouclier-traîneau à 3 vitesses !"
+    cross "Je me souviens très bien, aux dernier jeux inter-germains, tu as fait un commentaire dessus !"
+    
+    menu :
+        "1. Il l'a volé ?" :
+        
+            play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+            y "Il l'aimait bien alors il l'a volé, c'est ça ?"
+            
+            play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
+            brut "Mon propre ami, Gaufrid, qui me traite de voleur !"
+            
+            play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
+            cross "Tu n'as rien compris, valet ! Ce qu'il a volé, c'est l'idée !" 
+            cross "C'est du vol de propriété intellectuelle !"
+            
+        "2. Il en a fait un pareil ?" :
+            
+            play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+            y "Donc il a fait une copie ? Quel est le problème ?"
+            
+            play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
+            cross "Le problème ? Mais c'est du vol de propriété intellectuelle !"
+            
+    play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
+    brut "Oh, toi, tout de suite avec les grands mots hein !"
+    
+    play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
+    cross "Le concept de propriété intellectuelle est fondamental à la société Germaine !"
+    cross "D'après la convention de Genava de l'an 2 avant Jésus-christ et d'après l'alinéa 51 des textes runiques de Wotan et Tyr..."
+    cross "Toute invention Germaine sera respectée comme la propriété propre, indétachable et sans exception de son inventeur."
+    
+    menu :
+        "1. C'est très grave !" :
+            
+            y "Si les textes le disent, c'est que c'est très grave !"
+            brut "Tu t'y mets toi aussi ! Mon Gaufrid, mon poteau !"
+            y "Bon, je vais voir ce qu'en dit notre divine prophétesse."
+        "2. On s'en fout, non ?" :
+            
+            y "Y'a pas de quoi en faire toute une chouquette, non ?"
+            
+            cross "Comment oses-tu, domestique ?"
+            cross "Nos lois sont clairs ! Va voir la prophétesse maintenant !"
+            
+            y "Ok ! Ok, j'y vais ! Faut pas s'énerver comme ça !"
+            
+    hide char_brutal normal
+    hide char_crossfit colere right
+
+    scene black with Dissolve(0.5)
+    play sound "sfx/SFX_Stairs_02.ogg"
+    outline "Travelling vers le haut"
     
     jump tourVeleda_MortVeleda
     
 # -----------------------------------------#
     
 label tourVeleda_MortVeleda:
-    "Entrée tourVeleda_MortVeleda"
+    
+    scene bg_chambre
+    show char_ernust normal right :
+        zoom 0.9 xpos 0.12 ypos 0.2
+    
+    e "Ah Gaufrid, ça c'est bien passé ?"
+    e "Véléda fait une petite sieste !"
+    
+    y "Comment ça une sieste ?"
+    y "On a besoin d'une prophétie là !"
+    
+    e "Bah oui, elle a mangé ma soupe aux champignons et après elle a fait des bruits bizarres."
+    e "Je pense qu'elle a vomi à un moment mais après elle s'est endormie tranquillement !"
+    
+    y "Quoi ? Mais c'était quoi comme champignons ?"
+    y "Va voir tout de suite si elle va bien !"
+    
+    outline "Ernust se faufile derrière le voile (on change son image"
+    
+    e "Elle va pas bien du tout Gaufrid !"
+    e "Je sens pas du tout son pouls !"
+    
+    y "Quoi ? Mais.. tu as tué Véléda, Ernust !"
+    y "La prophétesse la plus connue de toute l'histoire !"
+    y "Qu'est ce qu'on va faire ?"
+    
+    e "Oh je suis désolé Gaufrid !"
+    e "Tu peux peut être faire une prophétie toi ?"
+    
+    menu :
+        "1. C'est complètement idiot." :
+            y "Tu dis vraiment n'importe quoi Ernust !"
+            y "J'ai l'air d'être un prophête moi ?"
+            y "Mais attend... j'ai une idée !"
+            y "Je vais faire semblant ! Je vais inventer une prophétie !"
+            y "Ils verront jamais la différence !"
+            
+            e "Qu'est ce que t'es intelligent Gaufrid !"
+
+        "2. Bonne idée !" :
+            y "Bien vu Ernust ! Ça c'est vraiment une bonne idée !"
+            y "Je vais inventer une prophétie ! Ils verront jamais la différence !"
+            
+    y "J'y vais, bouge surtout pas d'ici !"
+    
+    scene black with Dissolve(0.5)
+    play sound "sfx/SFX_Stairs_01.ogg"
+    outline "Travelling vers le bas"
     
     jump tourVeleda_HistoireBrevetPart2
     
