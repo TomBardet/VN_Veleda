@@ -82,14 +82,18 @@ init:
     
     #------ Les images des Personnages -------
     
+    #Left ou Right correspond au sens dans lequel regarde le personnage#
+    
     #Véléda
     image char_veleda normal = "images/char/Char_veleda_normal.png"
     image char_veleda morte = "images/char/Char_veleda_morte.png"
     image char_veleda marionnette = "images/char/Char_veleda_marionnette.png"
     
     #Ernust
-    image char_ernust normal = "images/char/Char_ernust_normal.png"
-    image char_ernust joyeux = "images/char/Char_ernust_joyeux.png"
+    image char_ernust normal left = "images/char/Char_ernust_normal.png"
+    image char_ernust normal right = im.Flip("images/char/Char_ernust_normal.png", horizontal = True)
+    image char_ernust joyeux left = "images/char/Char_ernust_joyeux.png"
+    image char_ernust joyeux right = im.Flip("images/char/Char_ernust_joyeux.png", horizontal = True)
     image char_ernust love = "images/char/Char_ernust_love.png"
     image char_ernust marionnette = "images/char/Char_ernust_marionnette.png"
     

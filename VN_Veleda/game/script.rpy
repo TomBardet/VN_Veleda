@@ -17,6 +17,11 @@ label start:
         ######### - LES PERSONNAGES DATING SIM - ############
         
         goat_char = Chara("Goat", 20,100)
+        vel_char = Chara("Véléda", 25,100)
+        ern_char = Chara("Ernust", 90, 9999)
+        brut_char = Chara("Brutalmund", 35, 100)
+        cross_char = Chara("Crossfitrichernvald", 20, 100)
+
         
         ########## - LES ITEMS DE L'INVENTAIRE - ############
         
@@ -118,6 +123,7 @@ label OLD_start:
     python :
         ###Les personnages
         goat_char = Chara("Goat", 20,100)
+        vel_char = Chara("Véléda", 25,100)
         #### On crée nos items
         glaive = Item("glaive",player="ex", imageIdle="images/inv_swordIdle.png",imageHover="images/inv_swordHover.png")
         bouclier = Item("bouclier",player="ex", imageIdle="images/inv_shieldIdle.png",imageHover="images/inv_shieldHover.png")   
