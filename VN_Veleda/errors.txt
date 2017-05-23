@@ -2,8 +2,16 @@
 errors listed below, and try again.
 
 
-File "game/taverne.rpy", line 26: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Ca t'es jamais arrivé de voir des chiffres au dessus de la tête des gens ?"
-                                                                                ^
+File "game/ressources.rpy", line 76: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/ressources.rpy", line 81: expected statement.
+    =======
+          ^
+
+File "game/ressources.rpy", line 86: expected statement.
+    >>>>>>> d95ac09ba16298477daf949926892501e5b415e5
+                                                    ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
