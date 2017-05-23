@@ -3,10 +3,58 @@
 ##########################################################
 
 label tourVeleda_ErnustEtVeleda :
-    "Entrée tourVeleda_ErnustEtVeleda"
+    scene bg_chambre
+    show char_veleda normal at right
     
+    $ interlocuteur = "vel_char"
+    show screen datingSim(vel_char, 0.75, 0.25)
+    
+    v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
+    
+    y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
+    
+    v "Des chiffres ? De quoi parlez vous ?"
+    
+    v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne Nous intéressent pas."
+    
+    v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
+    
+    v "Crousfrishtrenvra... Monseigneur Crossfichtruc, le digne chef de nos voisins les Bataves."
+    
+    menu :
+        "1. Il vient demander conseil, Ô Véléda ? ":
+            y "Crossfitrtrch... Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
+    
+            v "Oh vous ne Nous trompez pas avec vos minauderies Monsieur Gaufrid."
+    
+            v "La flatterie est le refuge des incompétents et des poissoniers."
+            
+        "2. Il veut quoi lui ? ?":
+            y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
+            
+            v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
+            
+            v "Vous parlez comme une jarretière !"
+            
+    v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund !"
+    
+    v "Il l'accuse de lui avoir dérobé sa propriété !"
+    
+    v "Monsieur Brutomachin nie l'accusation ! Nous allons donc les départager avec..."
+    
+    #Ajouter ici un son dramatique"
+    
+    play sound "sfx/dundundun.mp3"
+    
+    v "Une prophétie !"
+    
+    y "Euh.. ils devraient pas plutôt porter plainte ?"
+    
+    v "Vous doutez de la sagesse de Nos visions, Monsieur Gaufrid ?"
+    
+    hide screen datingSim    
     jump tourVeleda_HistoireBrevetPart1
-
+        
 # -----------------------------------------#
 
 label tourVeleda_HistoireBrevetPart1:
