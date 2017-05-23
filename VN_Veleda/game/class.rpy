@@ -134,21 +134,21 @@ transform inv_button2:
         linear 0.2 zoom 0.85
 
 transform speakingAnim(x, y, yto, zm):
-    xalign 0.5 yalign 0.5
+    xalign 0.5 yalign 0.8
     xpos x ypos y zoom zm
     block:
         parallel:
-            linear 0.5 ypos yto
-            linear 0.5 ypos y
+            easein 0.23 ypos yto
+            easeout 0.23 ypos y
+            repeat
         parallel:
-            linear 0.3 rotate -10
-            linear 0.3 rotate 10
-        repeat
+            linear 0.3 rotate -1.5
+            linear 0.3 rotate 1.5
+            repeat
         
 transform notSpeakingAnim(x, y, yto, zm):
-    xalign 0.5 yalign 0.5
+    xalign 0.5 yalign 0.8
     xpos x ypos y zoom zm
-    
         
 transform inv_fadeIn:
     alpha 0.0

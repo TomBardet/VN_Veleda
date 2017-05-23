@@ -2,16 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/ressources.rpy", line 76: expected statement.
-    <<<<<<< HEAD
-                ^
-
-File "game/ressources.rpy", line 81: expected statement.
-    =======
-          ^
-
-File "game/ressources.rpy", line 86: expected statement.
-    >>>>>>> d95ac09ba16298477daf949926892501e5b415e5
-                                                    ^
+File "game/taverne.rpy", line 46: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    zoom 0.35
+    ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
