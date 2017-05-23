@@ -71,8 +71,8 @@ init:
     image temp2 = "images/goat_idle.png"
     
     #Les images des Lieux
-    image bg_taverne = "images/decor/Lieu_taverne.png"
-	image bg_taverne2 = "images/decor/Lieu_taverne2.png"
+    image bg_taverne = "images/decor/Lieu_taverne.jpg"
+    image bg_taverne2 = "images/decor/Lieu_taverne2.png"
     image bg_etables = "images/decor/Lieu_etables.png"
     image bg_forge = "images/decor/Lieu_forge.png"
     image bg_antichambre = "images/decor/Lieu_antichambre.png"
