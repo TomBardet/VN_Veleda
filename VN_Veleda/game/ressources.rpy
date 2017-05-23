@@ -70,12 +70,12 @@ init:
     image temp = "images/inv_sword.png"
     image temp2 = "images/goat_idle.png"
     
-    #Les images des Lieus
+    #Les images des Lieux
     image bg_taverne = "images/decor/Lieu_taverne.png"
     image bg_etables = "images/decor/Lieu_etables.png"
     image bg_forge = "images/decor/Lieu_forge.png"
     image bg_antichambre = "images/decor/Lieu_antichambre.png"
-    image bg_chambre = "images/decor/Lieu_antichambre.png"
+    image bg_chambre = "images/decor/Lieu_chambre.png"
     image bg_romains = "images/decor/Lieu_romains.png"
     image bg_place = "images/decor/Lieu_place.png"
     
@@ -116,12 +116,14 @@ init:
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
     image char_numerimus heureux = "images/char/Char_numerimus_heureux.png"
-    image char_numerimus rire = "images/char/Char_numerimus_rire.png"
+    image char_numerimus choque = "images/char/Char_numerimus_choque.png"
+    image char_numerimus dubitatif = "images/char/Char_numerimus_dubitatif.png"
     
     #Digitimus
     image char_digitimus normal = "images/char/Char_digitimus_normal.png"
-    image char_digitimus heureux = "images/char/Char_digitimus_heureux.png"
+    image char_digitimus choque = "images/char/Char_digitimus_choque.png"
     image char_digitimus rire = "images/char/Char_digitimus_rire.png"
+    image char_digitimus dubitatif = "images/char/Char_digitimus_dubitatif.png"
     
     #Chêvre-Josiane
     image char_goat normal = "images/char/Char_goat_normal.png"

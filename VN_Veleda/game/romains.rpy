@@ -95,6 +95,10 @@ label romains_Part5bis:
         "2. Je connais une blague.":
             y "Bougez pas, je vais vous faire rire avec une bonne blague de chez nous."
             if _testTrompette == 0:
+                hide char_numerimus normal
+                hide char_digitimus normal
+                show char_numerimus dubitatif
+                show char_digitimus dubitatif at right
                 jump romains_Blague
             else:
                 dig "Ouais ouais c'est bien gentil mais on la connait."
@@ -164,6 +168,10 @@ label romains_Blague:
         y "Comment... est-ce qu'on... appelle "
         y "Une salade césar en Asie ?"
         y "Une Gengis khan..."
+        hide char_numerimus dubitatif
+        hide char_digitimus dubitatif
+        show char_numerimus choque
+        show char_digitimus choque at right
         nar "C'était de loin la pire blague que j'ai jamais entendu"
         nar "Et je parle même pas du fait que t'as 12 siècles d'avance."
         jump romains_Part4
