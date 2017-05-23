@@ -46,7 +46,7 @@ label tourVeleda_ErnustEtVeleda :
             
             $ loveGauge(vel_char, -3)
             
-        "2. Il veut quoi lui ? ?":
+        "2. Il veut quoi lui ?":
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
             
             play sound "sfx/Char_Veleda_Normal_01.ogg"
@@ -87,12 +87,29 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Ah ! Cela doit être lui !"
     
-    show char_ernust joyeux right :
+    show char_ernust normal right :
         zoom 0.9 xpos 0.15 ypos 0.1
     
     play sound "sfx/Char_Ernust_Normal_01.ogg"
     
+    $ interlocuteur = "ern_char"
+    show screen datingSim(ern_char, 0.25, 0.10)
+    
     e "Oh, Bonjour Gaufrid !"
+    
+    menu :
+        "1. Bonjour Ernust !" :
+            y "Bonjour Ernust, comment ça va ?"
+            
+            hide char_ernust normal right
+            show char_ernust joyeux right :
+                zoom 0.9 xpos 0.12 ypos 0.07
+        "2. Il est amoureux de moi ?" :
+            y "90 de love ? Mais il est amoureux de moi ou quoi ?"
+        "3. Ah, t'es là, toi ?" :
+            y "Ah, t'es là toi ? Pfff..."
+            
+    v "End of sequence"
     
     hide screen datingSim
     
