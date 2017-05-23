@@ -4,6 +4,7 @@
 
 label tourVeleda_ErnustEtVeleda :
     scene bg_chambre
+    
     show char_veleda normal at right
     
     $ interlocuteur = "vel_char"
@@ -84,8 +85,10 @@ label tourVeleda_ErnustEtVeleda :
     
     play sound "sfx/SFX_Entrance_01.ogg"
     
-    show char_ernust joyeux:
-        zoom 0.3 xpos 0.1
+    v "Ah ! Cela doit être lui !"
+    
+    show char_ernust joyeux right :
+        zoom 0.9 xpos 0.15 ypos 0.1
     
     play sound "sfx/Char_Ernust_Normal_01.ogg"
     
