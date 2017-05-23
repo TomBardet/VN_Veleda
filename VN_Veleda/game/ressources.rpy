@@ -67,6 +67,8 @@ init:
 ######################## - Defining Images - ############################################
 
 init:
+    image temp = "images/inv_sword.png"
+    image temp2 = "images/goat_idle.png"
     
     #Les images des Lieus
     image bg_taverne = "images/decor/Lieu_taverne.png"

@@ -133,7 +133,23 @@ transform inv_button2:
     on hover:
         linear 0.2 zoom 0.85
 
-
+transform speakingAnim(x, y, yto, zm):
+    xalign 0.5 yalign 0.5
+    xpos x ypos y zoom zm
+    block:
+        parallel:
+            linear 0.5 ypos yto
+            linear 0.5 ypos y
+        parallel:
+            linear 0.3 rotate -10
+            linear 0.3 rotate 10
+        repeat
+        
+transform notSpeakingAnim(x, y, yto, zm):
+    xalign 0.5 yalign 0.5
+    xpos x ypos y zoom zm
+    
+        
 transform inv_fadeIn:
     alpha 0.0
     linear 0.5 alpha 1.0
@@ -147,6 +163,7 @@ transform apparitionJuicy:
             ease 0.1 rotate 20
             ease 0.4 rotate -20
             ease 0.2 rotate 0
+            
 #Tooltips-inventory: Très chiant de régler leur position, du à une restriction de Renpy qui pue un peu. Modifier à la main le 2e paramètres. WARNING : ça prend des plombes
 
 #image tooltip_inventory_swordIdle=LiveComposite((1.0, 1.0), (0.71, 0.88), Text("Un glaive solide et affuté. Il y a écrit sur le pommeau \"made in china\"", style = "tooltip_bottom"))
