@@ -1,23 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/tourVeleda.rpy", line 17, in script
-    $ loveGauge(vel_char, -3)
-  File "game/tourVeleda.rpy", line 17, in <module>
-    $ loveGauge(vel_char, -3)
+  File "game/tourVeleda.rpy", line 99, in script
+    $ loveGauge(ern_char, 1)
+  File "game/tourVeleda.rpy", line 99, in <module>
+    $ loveGauge(ern_char, 1)
 TypeError: loveGauge() takes exactly 4 arguments (2 given)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/tourVeleda.rpy", line 17, in script
-    $ loveGauge(vel_char, -3)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 814, in execute
+  File "game/tourVeleda.rpy", line 99, in script
+    $ loveGauge(ern_char, 1)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 814, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1719, in py_exec_bytecode
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\python.py", line 1719, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/tourVeleda.rpy", line 17, in <module>
-    $ loveGauge(vel_char, -3)
+  File "game/tourVeleda.rpy", line 99, in <module>
+    $ loveGauge(ern_char, 1)
 TypeError: loveGauge() takes exactly 4 arguments (2 given)
 
 Windows-8-6.2.9200
