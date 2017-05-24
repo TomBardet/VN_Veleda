@@ -44,7 +44,6 @@ label start:
         Acte1_Tour_CoupableJugement = "Brutalmund" # Coupable de l'Acte 1 -> "Brutalmund" ou "Crossfit"
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         
-    jump tourVeleda_MarryingIngridPart2
     jump intro
     
 # -----------------------------------------#
