@@ -227,8 +227,8 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le bas"
     
-    #jump tourVeleda_HistoireBrevetPart1
-    jump tourVeleda_MarryingIngridPart2
+    jump tourVeleda_HistoireBrevetPart1
+    #jump tourVeleda_MarryingIngridPart2
         
 # -----------------------------------------#
 
