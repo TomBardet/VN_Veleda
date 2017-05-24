@@ -8,10 +8,23 @@ label ending_ChevreTrahie:
     outline "Elle était chèvre et elle faisait du bon travail mais, accusée d’un crime qu’elle n’a pas commis, elle est exilée. "
     outline "Elle rode maintenant du côté du Dakota."
     outline "Hors la loi qui chasse les hors la loi, elle est une fugitive, une renégate."
+    scene endBadKey with Dissolve (2.0)
+    pause 1.5
     play music "music/MUSIC_FIN_BADASS_Chevre.ogg"
-    show endingTemp at scrollEnding(1.0,-0.5, 10) #Juste le temps de scroll à régler (la dernière valeur)
-    pause 10 #pause le temps du scroll
-    "d,fs"
+    scene black with Dissolve (1.0)
+    show endBad01 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    show endBad02 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    show endBad03 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    show endBad04 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    " "
     return
     
 label ending_ErnustTrahi:
@@ -20,8 +33,22 @@ label ending_ErnustTrahi:
     outline "Mais sur le chemin, il a abandonné sa plus belle amitié…"
     outline "Que va devenir le pauvre Ernust ?"
     play music "music/MUSIC_FIN_MELANCOLIQUE_Ernust.ogg"
-    show endingTemp at scrollEnding(1.0,-0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
-    pause 10 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    pause 0.5
+    show endSad01 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    show endSad02 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    show endSad03 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    show endSad04 at scrollEnding(1.0,-1.0, 10):
+        xpos 0
+    pause 7.5 #pause le temps du scroll
+    scene endSadKey with Dissolve (2.0)
+    " "
     return
 
 label ending_ExilAvecErnust:
@@ -53,6 +80,19 @@ label ending_ExilAvecChevre:
     outline "Unis par une force irresistible Gaufrid et Josiane s’exilent ensemble et partent en voyage."
     outline "Chaque jour qui passe ne fait que les rapprocher un peu plus…"
     play music "music/MUSIC_FIN_BROTRIP.ogg"
-    show endingTemp at scrollEnding(1.0,-0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
-    pause 10 #pause le temps du scroll
+    scene endGoat01 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endGoat02 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endGoat03 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endGoat04 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endGoatKey with Dissolve (2.5)
+    
+    outline " "
     return

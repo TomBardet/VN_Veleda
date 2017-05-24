@@ -94,11 +94,30 @@ init:
     
     #Ending
     image endingTemp = "images/ending.png"
+    
     image endBro01 = "images/endings/END_Brotrip_01.png"
     image endBro02 = "images/endings/END_Brotrip_02.png"
     image endBro03 = "images/endings/END_Brotrip_03.png"
     image endBro04 = "images/endings/END_Brotrip_04.png"
     image endBroKey = "images/endings/END_Brotrip_Key.png"
+    
+    image endBad01 = "images/endings/END_Badass_01.png"
+    image endBad02 = "images/endings/END_Badass_02.png"
+    image endBad03 = "images/endings/END_Badass_03.png"
+    image endBad04 = "images/endings/END_Badass_04.png"
+    image endBadKey = "images/endings/END_Badass_Key.png"
+    
+    image endGoat01 = "images/endings/END_Goatrip_01.png"
+    image endGoat02 = "images/endings/END_Goatrip_02.png"
+    image endGoat03 = "images/endings/END_Goatrip_03.png"
+    image endGoat04 = "images/endings/END_Goatrip_04.png"
+    image endGoatKey = "images/endings/END_Goatrip_Key.png"
+    
+    image endSad01 = "images/endings/END_Sad_01.png"
+    image endSad02 = "images/endings/END_Sad_02.png"
+    image endSad03 = "images/endings/END_Sad_03.png"
+    image endSad04 = "images/endings/END_Sad_04.png"
+    image endSadKey = "images/endings/END_Sad_Key.png"
     
     #------ Les images des Personnages -------
     

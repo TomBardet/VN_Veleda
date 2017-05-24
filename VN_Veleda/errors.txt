@@ -2,16 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/ending.rpy", line 37: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
-    xpos 0.0
-    ^
-
-File "game/ending.rpy", line 40: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
-    xpos 0.0
-    ^
-
-File "game/ending.rpy", line 43: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
-    xpos 0.0
-    ^
+File "game/ending.rpy", line 10: end of line expected.
+    scene endBadKey with Dissolve 1.0
+                                  ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
