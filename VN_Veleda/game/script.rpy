@@ -149,7 +149,7 @@ label PlaceDuVillageAllObjects:
     "Tous les objets réunis !"
     menu:
         "Aller à la Taverne":
-            jump taverne_ConcoursPart1
+            jump Act2_transition_alldone
 
 # -----------------------------------------#
 

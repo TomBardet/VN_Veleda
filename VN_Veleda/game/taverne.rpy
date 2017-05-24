@@ -337,10 +337,10 @@ label taverne_AbusAlcoolPart1:
 label Act2_transition_alldone:
 
     scene black with Dissolve(0.5)
-    outline "Le soir, plus tard..."
+    outline "Le meme soir, plus tard..."
     y "Ça y est ! J'ai la dot !"
     y "Ingrid, ma Choquette, j'arrive !"
-    jump placeDuVillage_Concours_Placeholder
+    jump taverne_ConcoursPart1
     
 #------------------------------------------#
 
@@ -838,7 +838,7 @@ label taverne_Concours_Part6_FadeToBlack:
     outline "Là tu vas devoir te débrouiller tout seul."
     outline "Allez, salut ma caille !"
     pause 2.0
-    outline "Le lendemain..."
+    outline "{i}Le lendemain matin...{/i}"
 
 label taverne_MarryingIngridPart1:
 
