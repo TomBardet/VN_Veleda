@@ -38,6 +38,11 @@ label start:
         _testGlaive = 0
         _testLunettes = 0
         _testTrompette = 0
+        
+        ########## - CHOIX ET BRANCHES - #################
+        
+        _Acte1_Tour_CoupableJugement = Brutalmund
+        _Acte2_Forge_FirstVisit = 0
 
     jump intro
     
