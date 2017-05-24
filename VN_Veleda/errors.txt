@@ -2,12 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/tourVeleda.rpy", line 562: expected ':' not found.
-    label ending_ChevrePart1
-                            ^
-
-File "game/tourVeleda.rpy", line 584: expected ':' not found.
-    label ending_ErnustPart1
-                            ^
+File "game/ending.rpy", line 7: could not parse statement.
+    play music "music/NARRATOR_Badass.ogg" loop = false
+                                                ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

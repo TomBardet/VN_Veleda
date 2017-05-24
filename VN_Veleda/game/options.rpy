@@ -115,7 +115,6 @@ define config.window_hide_transition = Dissolve(.2)
 
 default preferences.text_cps = 50
 
-
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
 ## to 30 being the valid range.
 

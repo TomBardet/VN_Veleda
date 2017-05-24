@@ -44,7 +44,7 @@ label start:
         Acte1_Tour_CoupableJugement = "Brutalmund" # Coupable de l'Acte 1 -> "Brutalmund" ou "Crossfit"
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         
-
+    jump tourVeleda_MarryingIngridPart2
     jump intro
     
 # -----------------------------------------#
@@ -113,14 +113,17 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
 # -----------------------------------------#    
     
 label narration_ellipse02:
-    "Entrée narration_ellipse02"
+    scene black with Dissolve (1.5)
+    outline "De retour à la Taverne..."
     
     jump taverne_PresentationDot
     
 # -----------------------------------------#
 
 label PlaceDuVillageDefault:
+    scene bg_place
     menu:
+        " "
         "Aller à la Taverne":
             jump taverne_AbusAlcoolPart1
         "Aller aux Etables":
@@ -133,7 +136,11 @@ label PlaceDuVillageDefault:
 # -----------------------------------------#
 
 label narration_ellipseCuite:
-    "narration_ellipseCuite"
+    scene black with Dissolve (1.5)
+    outline "Une durée indéterminée de temps plus tard..."
+    y "... Mal à la tête..."
+    y "Bon. Ingrid m'a demandé de lui ramener un {b}glaive{/b} et un {b}bouclier{/b}"
+    y "Je trouverais surement ça au village."
     
     jump PlaceDuVillageDefault
 

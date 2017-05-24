@@ -90,6 +90,9 @@ init:
     image introCrack = "images/Intro-04.png"
     image introPoint = "images/Intro-05.png"
     
+    #Ending
+    image endingTemp = "images/ending.png"
+    
     #------ Les images des Personnages -------
     
     #Left ou Right correspond au sens dans lequel regarde le personnage#

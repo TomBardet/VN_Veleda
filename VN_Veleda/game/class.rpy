@@ -154,6 +154,10 @@ transform inv_fadeIn:
     alpha 0.0
     linear 0.5 alpha 1.0
     
+transform scrollEnding(y, ymax, speed):
+    xpos 0.5 ypos y
+    linear speed ypos ymax
+    
 transform apparitionJuicy:
     zoom 2.5
     parallel:

@@ -129,7 +129,7 @@ label romains_VisitePart1:
     num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
     num "Mon génie porte-enseigne a oublié mes lunettes à Rome."
     
-    if _testLunettes == 0:
+    if _testLunettes == 1:
         play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
         y "Vous avez de la chance j’en ai justement une paire sur moi."
         y "On aura vu mieux comme scénar’"

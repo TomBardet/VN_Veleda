@@ -13,7 +13,7 @@ label etables_PeurDesBufflesPart1:
     scene bg_etables
     show char_crossfit colere at notSpeakingAnim(0.56, 0.80, 0.8, 0.27)
     "Choix d'action"
-    $ _testTrompette = 1
+    #$ _testTrompette = 1
     if _testTrompette == 1:
         menu:
             " "
