@@ -125,10 +125,10 @@ label romains_VisitePart1:
     num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
     num "Mon génie porte-enseigne a oublié mes lunettes à Rome."
     
-    if _testLunettes == 0:
-        num "Vous avez de la chance j’en ai justement une paire sur moi."
-        num "On aura vu mieux comme scénar’"
-        num "Allez tenez. J’imagine que c’est à votre vue en plus du reste."
+    if _testLunettes == 1:
+        y "Vous avez de la chance j’en ai justement une paire sur moi."
+        nar "On aura vu mieux comme scénar’"
+        y "Allez tenez. J’imagine que c’est à votre vue en plus du reste."
         jump romains_VisitePart2
         
     else:
@@ -295,7 +295,7 @@ label romains_VisitePart10:
     ve "Je vaiiiis vous faire une prophétie !!!"
     nar "Mais qu'est ce qu'il nous fait celui là..."
     
-    jump romains_VisitePart10
+    jump romains_FinDeLaVisite
 
 # -----------------------------------------#
 label romains_FinDeLaVisite:
