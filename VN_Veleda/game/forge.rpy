@@ -207,7 +207,7 @@ label forge_Brutalmund_04:
     menu:
         "Juste le bouclier, sans traineau":
             y "$$$"
-        "On peut faire un essai routier":
+        "On peut faire un essai routier ?":
             y "$$$"
         "Je ne peux pas payer...":
             y "$$$"
@@ -237,6 +237,7 @@ label forge_Brutalmund_06_Hub:
             y "$$$"
         "Je n’ai rien à vous donner":
             y "$$$"
+            
             jump PlaceDuVillageDefault
     
 #--------Backup Conditions et Variables-------------#
