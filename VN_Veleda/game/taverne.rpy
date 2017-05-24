@@ -3,6 +3,10 @@
 ######################################################
 
 label taverne_DatingIngrid:
+    
+    #DEBUG MARCO#
+    #jump taverne_ConcoursPart1
+    #DEBUG MARCO#
     scene bg_taverne
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
 
@@ -327,34 +331,524 @@ label taverne_AbusAlcoolPart1:
     y "... J'ai trop bu..."
     scene black with Dissolve (2.0)
     jump narration_ellipseCuite
+
+#######################################################
+#               CONCOURS BACHELORS, intro            ##
+#######################################################
+# ----------------------------------------- #
+
+label Act2_transition_alldone:
+
+    scene black with Dissolve(0.5)
+    outline "Le soir, plus tard..."
+    y "Ça y est ! J'ai la dot !"
+    y "Ingrid, ma Choquette, j'arrive !"
+    jump placeDuVillage_Concours_Placeholder
     
+#------------------------------------------#
+
+label placeDuVillage_Concours_Placeholder:
+
+    outline "Le joueur clique sur la taverne"
+       
 # -----------------------------------------#
 
 label taverne_ConcoursPart1:
     "label taverne_ConcoursPart1"
+    scene bg_taverne2
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    i "Gaufrid ! Enfin tu es là ! On t’attendait !"
     
-    jump taverne_ConcoursPart2
+    jump taverne_ConcoursPart1_choice
+
+# -----------------------------------------#
+
+label taverne_ConcoursPart1_choice:
+
+    menu:
+        "J'étais attendu ?":
+            y "Ah bon ? Vous m’attendiez ?"
+            i "Tout le village est là pour toi Gaufrid !"
+            y "Ah bah tiens ! Ça fait plaisir !"
+            y "On va pouvoir se marier !" 
+        "Toi et...?":
+            y "Vous m’attendiez ? Toi et qui d’autre ?"
+            i "Moi, Brutalmund, Beaudrik… "
+            i "Tout le village est là pour toi Gaufrid !"
+            y "Ah bah tiens ! Ça fait plaisir !"
+            y "On va pouvoir se marier !"
+        "J'ai la dot !":
+            y "Ingrid ! J’ai le bouclier et le glaive !"
+            y "On va pouvoir se marier !"
+        "Je suis là ma belle":
+            y "Je suis là pour toi, ma pupuce."
+            y "On peut enfin se marier !"
+            
+    i "Oh t’es mignon, Gaufrid ! Mais ce n’est pas si simple que ça."
+    i "Maintenant que tu es là, nous pouvons enfin commencer le concours !"
+    y "Oui bien sûr ! …attends, quoi ?"
+    i "Shh ! ça commence !"
+
+    jump taverne_Concours_Part2_0_Transition
     
 # -----------------------------------------#
 
     
-label taverne_ConcoursPart2:
-    "label taverne_ConcoursPart2"
-    
-    jump taverne_ConcoursPart3
-    
-# -----------------------------------------#
-    
-label taverne_ConcoursPart3:
-    "label taverne_ConcoursPart3"
-    
-    jump taverne_MarryingIngridPart1
+label taverne_Concours_Part2_0_Transition:
+    scene black with Dissolve(0.5)
+    outline "Il était une fois en Germanie… Beaudrik et Gaufrid, germains presque charmants."
+    jump taverne_Concours_Part2_1_Intro
     
 # -----------------------------------------#
+    
+label taverne_Concours_Part2_1_Intro:
+    
+    #NARRATEUR--------------> nar "{i}{color=#f2de5c}{/color}{/i}"
+    scene bg_taverne with Dissolve (0.5)
+    pause 1.0
+    outline "Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis à la taverne du village !"
+    #nar "{i}{color=#f2de5c}Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis !{/color}{/i}"
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3):
+        xpos 0.17 ypos 1.1
+    outline "Ingrid est une jeune femme célibataire à la recherche de l’amour."
+    outline "Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
+    show char_beaudrik normal left :
+        zoom 0.2 xpos 1.0 ypos 0.2
+        linear 0.4 xpos 0.6
+    outline "D'un coté, Beaudrik, \n parangon de virilité."
+    outline "De l'autre, Gaufrid, \n maigre et moche."
+    #nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/color}{/i}"
+    #nar "{i}{color=#f2de5c}Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
+    #nar "{i}{color=#f2de5c}D'un coté, Beaudrik, parangon de virilité.{/color}{/i}"
+    #nar "{i}{color=#f2de5c}De l'autre, Gaufrid, maigre et moche.{/color}{/i}"
+
+    jump taverne_Concours_Part2_1_Intro_choice
+    
+# -----------------------------------------#   
+
+label taverne_Concours_Part2_1_Intro_choice:
+    
+    menu:
+        "T’es moche toi-même":
+            y "Euh ! Comment oses-tu ?"
+            outline "Tais-toi quand je parle."
+            outline "Et n’oublie pas que je \n peux lire tes \n choix de dialogue."
+            outline "Je disais…"
+        "Qu’est-ce qu’il se passe ?":
+            y "Quelqu’un peut m’expliquer ce qu’il se passe ?"
+            i "Laisse le présentateur parler, Gaufrid !"
+            outline "Je disais…"
+        "Laissez-moi tranquil !":
+            y "Mais... Pourquoi toujours sur moi les trucs comme ça ?!"
+            i "Laisse le présentateur parler, Gaufrid !"
+            outline "Je disais…"
+
+    hide char_ingrid normal
+    hide char_beaudrik normal left
+
+    jump taverne_Concours_Part2_2_Manual
+
+# -----------------------------------------#
+
+label taverne_Concours_Part2_2_Manual:
+
+    outline "Il est maintenant l’heure de l’ultime épreuve qui départagera Beaudrik et Gaufrid !"
+    outline "« Le Procès de l’Amour ! »"
+    outline "Gaufrid, avez-vous lu le manuel, \n ou faut-il que je vous explique les règles ?"
+
+    menu:
+        "Quel manuel ?":
+            y "Euh ?"
+            outline "Celui à votre gauche, Gaufrid. \n Juste à côté de l’ordi."
+            pause 1.5
+            outline "..."
+            outline "C'est bon ou pas ?"
+            jump taverne_Concours_Part2_2_Manual_Extra
+        "Bien sûr que oui":
+            y "Je l’ai appris par cœur."
+            outline "Maigre, moche et menteur."
+            outline "Ça va surement bien se passer pour vous."
+            jump taverne_Concours_Part2_3_Rules
+        "J’ai oublié règles":
+            y "Euh… j’ai un trou de mémoire."
+            outline "Maigre, moche et amnésique."
+            outline "Ça va surement bien se passer pour vous."
+            jump taverne_Concours_Part2_3_Rules
+
+# -----------------------------------------#
+
+label taverne_Concours_Part2_2_Manual_Extra:
+    
+    menu:
+        "Toujours pas":
+            y "Je ne vois pas de manuels."
+            outline "Maigre, moche et aveugle."
+            outline "Ça va surement bien se passer pour vous."
+        "J’ai trouvé":
+            y "Euh… c’est bon !"
+            outline "Maigre, moche et menteur."
+            outline "Ça va surement bien se passer pour vous."
+        "Un manuel de jeu en 2017 ?":
+            y "Ça fait 10 ans que les jeux-vidéo n’ont plus de manuels."
+            outline "Ne faites pas le type moderne, Gaufrid."
+            outline "Vous êtes un germain du 1er siècle \n et vous jouez à une Visual Novel."
+            outline "Vous n’êtes pas vraiment avant-gardiste."
+    
+    jump taverne_Concours_Part2_3_Rules
+
+# -----------------------------------------#
+
+label taverne_Concours_Part2_3_Rules:
+    
+    outline "Bref, je vous explique les règles."
+    outline "Pour ce dernier test, {i}{b}{color=#f2de5c}Beaudrik{/color}{/b}{/i}, Champion en Titre, sera acclamé par les habitants du village pour ses nombreuses qualités."
+    outline "{i}{b}{color=#f2de5c}Gaufrid{/color}{/b}{/i}, Challengeur de cet épisode, devra faire preuve d’humilité et se taire, car de toute façon il ne vaut rien."
+    outline "Ceci dit, il pourra {i}{b}{color=#f2de5c}faire objection{/color}{/b}{/i} aux nombreux compliments faits à Beaudrik, s’il le souhaitera."
+    outline "Nous pouvons passer aux {i}{b}{color=#f2de5c}interviews{/color}{/b}{/i}, ou {i}{b}{color=#f2de5c}commencer le jeu{/color}{/b}{/i}."
+    outline "Que souhaitez-vous faire, Gaufrid ?"
+    
+    jump taverne_Concours_Part2_4_Hub
+
+# -----------------------------------------#
+
+label taverne_Concours_Part2_4_Hub:
+    
+    menu:
+        "{color=#FFFFFF}Interview de Ingrid{/color}":
+            y "Je voudrais voir l’interview de Ingrid."
+            outline "Excellent choix !"
+            show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3):
+                xpos 0.17 ypos 1.1
+            outline "Monsieur dames : Ingrid, 22 ans, belle du village et prix à gagner !"
+            i "Bonjour ! Merci, merci !"
+            outline "Ingrid, décrivez-nous votre homme idéal."
+            i "J’ai besoin d’un homme fort qui sait monter les meubles."
+            i "Je trouve que c’est vachement important un mec qui sait monter des meubles car… moi c’est pas du tout mon truc et…"
+            i "...voilà, s’il ne sait pas monter des meubles je ne sais pas comment on va faire."
+            i "Sinon j’aime bien les hommes courageux, honnêtes et sans anormalités physiques."
+            outline "Merci Ingrid ! A bientôt !"
+            hide char_ingrid normal
+            jump taverne_Concours_Part2_4_Hub
+            
+        "{color=#FFFFFF}Interview de Beaudrik{/color}":
+            y "Je voudrais voir l’interview de Beaudrik."
+            outline "Excellent choix !"
+            outline "Monsieur dames : Beaudrik, Champion en titre !"
+            show char_beaudrik normal left :
+                zoom 0.2 xpos 1.0 ypos 0.2
+                linear 0.4 xpos 0.6
+            bg "Merci les gars !"
+            outline "Beaudrik, vous sentez-vous prêt ?"
+            bg "Je suis à fond dans le truc. Moi, les compètes j’aime bien."
+            bg "Sinon je suis un peu nerveux car Josiane, mon ex, est parmi le public."
+            bg "J’espère que Ingrid ne découvre pas que ce n’est pas fini-fini entre Josiane et moi."
+            outline "Beaudrik, je vous rappelle que Gaufrid, votre adversaire, est juste devant vous."
+            bg "Ah ! Tiens, salut Gaufrid !"
+            outline "Au revoir Beaudrik !"
+            hide char_beaudrik normal left
+            jump taverne_Concours_Part2_4_Hub
+            
+        "{color=#FFFFFF}Mon interview{/color}":
+            y "Je voudrais m’interviewer moi-même."
+            outline "Gaufrid, déjà on ne vous donne pas favori."
+            outline "Ne vous tirez pas une balle dans le pied non plus."
+            jump taverne_Concours_Part2_4_Hub
+            
+        "On peut commencer !":
+            y "C’est bon, je suis prêt !"
+            jump taverne_Concours_Part3_Brutalmund
+
+# -----------------------------------------#
+label taverne_Concours_Part3_Brutalmund:
+    
+    outline "Très bien, nous appelons le premier témoin : le père de Beaudrik !"
+    show char_brutal normal :
+        zoom 0.4 xpos -0.5 ypos 0.05
+        linear 0.7 xpos 0.001
+    brut "Alors déjà, tu ne m’appelles pas comme ça. C’est un peu gratuit quand même."
+    outline "Excusez-moi, Monsieur Brutalmund."
+    brut "Deuxième chose, je ne voulais pas venir. On m’a obligé ! Obligé je vous dis !"
+    brut "Mais vous savez comment c’est. Je n’en peux plus de mon fils là, Beaudrik."
+    brut "Alors j’ai envie qu’il gagne, histoire qu’il se marie et qu’il se casse."
+    outline "Que pensez-vous de votre fils, Monsieur Brutalmund ?"
+    brut "C’est une vraie mauviett…"
+    brut "Euh, attendez, il faut que je dise des trucs bien pour qu’il gagne ?"
+    outline "C’est l’idée."
+    brut "Ah… euh… il est fort et courageux."
+    jump taverne_Concours_Part3_Brutalmund_Choice
+
+# -----------------------------------------#
+
+label taverne_Concours_Part3_Brutalmund_Choice:
+
+    menu:
+        "Objection !":
+            y "Objection !"
+            y "Beaudrik est un lâche !"
+            brut "Gaufrid, mon pote ! Ne me fais pas ça !"
+            show char_beaudrik normal left :
+                zoom 0.2 xpos 1.0 ypos 0.2
+                linear 0.4 xpos 0.6
+            bg "Ne t’inquiète pas pour moi, Papounet, en tout cas il ne peut pas le prouver !"
+            jump taverne_Concours_Part3_Brutalmund_Choice_Subchoice
+            
+        "C'est pas faux":
+            y "J’aimerais bien être comme lui."
+            hide char_brutal normal
+            outline "Mais c’est le cas, Gaufrid."
+            outline "Vous ne saviez pas que Beaudrik dort avec un nounours car il peur du noir ?"
+            jump taverne_Concours_Part3_Ingrid
+
+# -----------------------------------------#
+
+label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
+    
+    hide char_brutal normal
+    menu:
+        "Il a peur du noir":
+            y "Brutalmund est un menteur. Il sait très bien que son fils dort avec un nounours !"
+            bg "Papounet, pourquoi tu lui as dit ?!"
+            i "Tu dors avec un nounours ?!"
+
+        "Il a peur des buffles":
+            y "Les buffles, ils le terrifient !"
+            outline "Non, ça c'est l'autre"
+            bg "Mais comment tu peux dire ça ?!"
+            bg "Les buffles, c’est délicieux."
+            outline "Mauvaise réponse, Gaufrid ! La bonne réponse était qu’il a peur du noir."
+
+        "Il a peur de Ernust":
+            y "J’ai vu comment tu regardes Ernust."
+            y "Il te fait peur !"
+            bg "Écoute, on sait bien que ton pote ça craint. Mais en vrai je l’aime bien."
+            outline "Mauvaise réponse, Gaufrid ! La bonne réponse était qu’il a peur du noir."
+
+    jump taverne_Concours_Part3_Ingrid
+
+            
+# -----------------------------------------#
+
+label taverne_Concours_Part3_Ingrid:
+
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3):
+        xpos 0.17 ypos 1.1
+    hide char_beaudrik normal left
+
+    i "Tiens, moi aussi !"
+    i "Mais les hommes sensibles c’est pas trop mon truc."
+    outline "Silence ! J’appelle le \n dernier témoin, Ingrid elle-même !"
+    i "Faisons-ça vite, je ferme dans dix minutes !"
+    outline "Ingrid, que pensez-vous de Beaudrik ?"
+    i "Bon, ce n’est pas le plus intelligent, mais Gaufrid n’est pas un génie non plus !"
+    i "Au moins Beaudrik est beau gosse, c’est un bon parti."
+
+    jump taverne_Concours_Part3_Ingrid_Choice
+    
+# -----------------------------------------#   
+  
+label taverne_Concours_Part3_Ingrid_Choice:
+
+    menu:
+        "Objection ! Il est moche !":
+            y "Objection !"
+            y "Beaudrik est moche !"
+            i "Tu n’aurais pas bu un coup de trop, Gaufrid ?"
+            show char_beaudrik normal left :
+                zoom 0.2 xpos 1.0 ypos 0.2
+                linear 0.4 xpos 0.6
+            i "Comment ça il est moche ?"
+            jump taverne_Concours_Part3_Ingrid_Choice_Subchoice
+            
+        "En effet":
+            y "C’est un joli garçon, en effet."
+            show char_beaudrik normal left :
+                zoom 0.2 xpos 1.0 ypos 0.2
+                linear 0.4 xpos 0.6
+            bg "Oh c’est gentil !"
+            bg "J’ai beau être un homme mais j’aime bien prendre soin de moi."
+            outline "Même de votre troisième téton ?"
+            jump taverne_Concours_Part4_Final
+
+# -----------------------------------------#  
+
+label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
+    
+    menu:
+        "Il a un gros nez !":
+            y "Vous avez vu son nez ? C’est une caverne !"
+            i "Je sais pas, moi je trouve ça sécurisant."
+            outline "Ça va vous rassurer quand vous verrez son troisième téton."
+
+        "Il a 3 tétons !":
+            y "Toutes les jeunes femmes du village le savent ! Il a un troisième téton !"
+
+        "{color=#FFFFFF}Il est maigre et moche !{/color}":
+            y "Euh… il est maigre et moche !"
+            outline "Non Gaufrid, ça c’est vous."
+            y "Ah oui, c’est vrai. Désolé."
+            outline "Non, non, c’est moi. Excusez-moi."
+            outline "Je n’ai peut-être pas assez insisté là-dessus."
+            y "C’était pas super clair en effet."
+            outline "Alors écoutez-moi bien :"
+            outline "{b}VOUS ETES MAIGRE ET MOCHE.{/b}"
+            outline "C’est mieux comme ça ?"
+            y "Beaucoup mieux, merci."
+            outline "De rien. Hésitez pas s’il y a autre chose qui vous échappe."
+            y "Merci bien."
+            outline "Je vous remets dans la boucle."
+            y "C’est gentil."
+            jump taverne_Concours_Part3_Ingrid_Choice_Subchoice
+
+    jump taverne_Concours_Part4_Final
+
+# -----------------------------------------# 
+
+label taverne_Concours_Part4_Final:
+    
+    i "Un troisième téton ?! Mais c’est une imperfection physique complètement discrète et négligeable !"
+    i "C’est dégueulasse !"
+    i "Beaudrik, je suis très déçue."
+    bg "Ingrid ! Ne dis pas ça !"
+    i "Ce n’est pas le téton, hein. C’est le principe."
+    i "T’aurais dû me le dire. Je ne sais pas si je peux te faire confiance."
+    i "Tu m’avais promis que tu n’avais que deux tétons !"
+    outline "Bon. En parlant de confiance, Ingrid, pensez-vous que Beaudrik est un gars honnête ?"
+    i "Hors-mis le téton N°3 ?"
+    outline "Oui."
+    i "Il ne m’a jamais menti. Je pense qu’il serait un époux fidèle et loyal."
+
+    jump taverne_Concours_Part4_Final_Choice
+
+# -----------------------------------------#
+
+label taverne_Concours_Part4_Final_Choice:
+    
+    menu:
+        "Objection !":
+            y "Objection !"
+            y "Beaudrik a déjà une copine !"
+            i "Comment ça il a une copine ?!"
+            i "Comment elle s’appelle cette vache ?!"
+            jump taverne_Concours_Part4_Final_Choice_Subchoice
+            
+        "Elle a raison":
+            y "C’est vraiment un mec bien."
+            i "N’est-ce pas ?"
+            outline "Dommage qu’il soit déjà pris. Votre ami a déjà une fiancée."
+            outline "Elle s’appelle Josiane."
+            jump taverne_Concours_Part5_Ending
+            
+# -----------------------------------------#
+
+label taverne_Concours_Part4_Final_Choice_Subchoice:
+
+    menu:
+        "Johanne":
+            y "Euh… Johanne ?"
+            outline "Vous y étiez presque, Gaufrid."
+            outline "Elle s’appelle Josiane."
+            jump taverne_Concours_Part5_Ending
+
+        "Josiane":
+            y "Josiane ! Elle s’appelle Josiane !"
+            jump taverne_Concours_Part5_Ending
+
+        "Jovanne":
+            y "Euh… Jovanne ?"
+            outline "Vous y étiez presque, Gaufrid."
+            outline "Elle s’appelle Josiane."
+            jump taverne_Concours_Part5_Ending
+
+        "{color=#FFFFFF}Ernust{/color}":
+            y "Ernust !"
+            show char_ernust normal right :
+                zoom 0.9 xpos 0.4 ypos 0.2
+            e "Gaufrid ! Tu m’as appelé ?"
+            y "Oui, comment elle s’appelle la copine de Beaudrik déjà ?"
+            e "Ça commence avec un J, je crois."
+            y "Ça m’aide beaucoup."
+            e "On est vraiment un duo dynamique !"
+            y "Dégage ! Hop !"
+            hide char_ernust normal right
+            i "Alors ?! Comment elle s’appelle ?"
+            jump taverne_Concours_Part4_Final_Choice_Subchoice
+
+# -----------------------------------------#
+
+label taverne_Concours_Part5_Ending:
+
+    i "JOSIANE ?!"
+    i "LA CHEVRE !?!"
+    goat "Beeeh !"
+    i "MAIS QU’EST-CE QU’ELLE A DE PLUS QUE MOI ?!"
+    bg "C’est platonique, Ingrid, crois-moi !"
+    outline "Beaudrik, vous êtes disqualifié."
+    bg "Tu vas me la payer, Gaufrid !"
+    bg "Je le dirai à mon Papa."
+    hide char_beaudrik normal left
+    
+    jump taverne_Concours_Part5_Ending_BadEnding
+    
+# ------------BAD ENDING----------------#
+
+label taverne_Concours_Part5_Ending_BadEnding:
+    
+    pause 2.0
+    i "Euh…"
+    i "Bon Gaufrid, il ne reste plus que toi."
+    y "Ah ! Bien, bien !"
+    y "C’est bon ? Je te fais la demande ?"
+
+    jump taverne_Concours_Part6_Conclusion
+
+# ------------GOOD ENDING----------------#
+
+label taverne_Concours_Part5_Ending_GoodEnding:
+
+    i "Gaufrid ! Oh Gaufrid !"
+    y "Ingrid ! Oh Ingrid!"
+    i "Gaufrid !"
+    y "C’est bon ? je te fais la demande ?" 
+    
+    jump taverne_Concours_Part6_Conclusion
+    
+# -----------------------------------------#
+
+label taverne_Concours_Part6_Conclusion:
+
+    i "Oh, non merci, ça ira !"
+    i "On peut se marier directement, ça ira plus vite !"
+    i "Il nous reste plus qu’à demander la bénédiction de Véléda !"
+    y "Ah oui… c’est vrai qu’il y a cette tradition."
+    show char_ernust normal right :
+                zoom 0.9 xpos 0.4 ypos 0.2
+    e "Mince, dommage que Véléda soit morte !"
+    i "Euh ?"
+    y "MORTE… de rire pour les bêtises que tu racontes, mon cher Ernust !"
+    i "Bon ! C'est décidé ! Demain matin tu viendras me chercher et on ira se marier à la tour !"
+    i "Sois ponctuel !"
+    
+    jump taverne_Concours_Part6_FadeToBlack
+
+# -----------------------------------------#
+
+label taverne_Concours_Part6_FadeToBlack:
+
+    scene black with Dissolve(0.5)
+    y "On est mal. On est très mal."
+    y "Comment on va faire ?"
+    outline "Bon, moi j’ai fait ma part."
+    outline "Là tu vas devoir te débrouiller tout seul."
+    outline "Allez, salut ma caille !"
+    pause 2.0
+    outline "Le lendemain..."
 
 label taverne_MarryingIngridPart1:
+
+# -----------------------------------------#
+
     "label taverne_MarryingIngridPart1"
-    
+    jump taverne_MarryingIngridPart1
     jump tourVeleda_MarryingIngridPart2
     
 # -----------------------------------------#
