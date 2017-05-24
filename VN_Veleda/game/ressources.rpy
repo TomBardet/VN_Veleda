@@ -42,6 +42,10 @@ init:
     define dig = Character("Digitimus : ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
+ 
+    define ve = Character("Véléda(Ernust) : ",
+        what_suffix=" ",
+        ctc=anim.Blink("gui/ctc.png"))
 
     define nar = Character("Narrateur : ",
         what_xalign = 0.5,
@@ -88,6 +92,9 @@ init:
     image char_veleda normal = "images/char/Char_veleda_normal.png"
     image char_veleda morte = "images/char/Char_veleda_morte.png"
     image char_veleda marionnette = "images/char/Char_veleda_marionnette.png"
+    
+    #Véléda(Ernust)
+    image char_veledaernust normal = "images/char/Char_veledaernust_normal.png"
     
     #Ernust
     image char_ernust normal left = "images/char/Char_ernust_normal.png"
