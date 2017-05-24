@@ -126,6 +126,8 @@ init:
     image char_beaudrik mepris = "images/char/Char_beaudrik_mepris.png"
     image char_beaudrik drague = "images/char/Char_beaudrik_drague.png"
     image char_beaudrik insulte = "images/char/Char_beaudrik_insulte.png"
+    image char_beaudrik normal = "images/char/Char_beaudrik_normal.png"
+    image char_beaudrik choque = "images/char/Char_beaudrik_surpris.png"
     
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
