@@ -5,14 +5,15 @@
 label tourVeleda_ErnustEtVeleda :
     scene bg_chambre
     
-    show char_veleda normal at right
+    show char_veleda normal :
+        zoom 0.7 xpos 0.38 ypos 0.22
     
     $ interlocuteur = "vel_char"
     show screen datingSim(vel_char, 0.75, 0.25)
     
     play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
     
-    v "Vous voilà Gaufrid ! Dépèchez vous, Nous attendons des clients très importants."
+    v "Vous voilà Gaufrid ! Dépèchez vous, nous attendons des clients très importants."
     
     $ loveGauge(vel_char, -3, 0.80, 0.25)
 
@@ -25,7 +26,7 @@ label tourVeleda_ErnustEtVeleda :
     
     $ loveGauge(vel_char, -3, 0.85, 0.25)
     
-    v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne Nous intéressent pas."
+    v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne nous intéressent pas."
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
     
@@ -40,7 +41,7 @@ label tourVeleda_ErnustEtVeleda :
             
             play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
     
-            v "Oh vous ne Nous trompez pas avec vos minauderies Monsieur Gaufrid."
+            v "Oh vous ne nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
             $ loveGauge(vel_char, -3, 0.8, 0.25)
     
@@ -58,7 +59,7 @@ label tourVeleda_ErnustEtVeleda :
             
             $ loveGauge(vel_char, -3, 0.8, 0.25)
             
-            v "Qu'est ce que c'est que ce langage de jarretière ?"
+            v "Qu'est ce que c'est que ce langage de chocolatier ?"
             
             $ loveGauge(vel_char, -3, 0.8, 0.25)
             
@@ -80,13 +81,13 @@ label tourVeleda_ErnustEtVeleda :
     
     play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
     
-    v "Vous doutez de la sagesse de Nos visions, Monsieur Gaufrid ?"
+    v "Vous doutez de la sagesse de nos visions, Monsieur Gaufrid ?"
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
     
     v "Où se trouve votre cousin d'ailleurs ? Le simplet, Monsieur Ernust ?"
     
-    v "Cela fait un heure qu'il doit Nous apporter de quoi Nous sustenter !"
+    v "Cela fait un heure qu'il doit nous apporter de quoi nous sustenter !"
     
     play sound "sfx/SFX_Entrance_01.ogg"
     
@@ -145,7 +146,7 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right
             
     play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
-    v "Vous êtes adorables Messieurs mais amenez Nous Notre nourriture. Nous Nous tordons de douleur de faim."
+    v "Vous êtes adorables Messieurs mais amenez nous notre nourriture. Nous nous tordons de douleur de faim."
     
     play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
     e "Oh Oui, Votre Excellessence Madame Véléda !"
@@ -214,7 +215,7 @@ label tourVeleda_ErnustEtVeleda :
     e "Mais j'ai trouvé des champignons alors j'ai fait une soupe ! Une bonne soupe de champignons !"
     
     play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
-    v "Cela suffira ! Et vous, Gaufrid, allez accueillir Nos invités, Nous prophétisons qu'ils vont frapper à la porte !"
+    v "Cela suffira ! Et vous, Gaufrid, allez accueillir nos invités, nous prophétisons qu'ils vont frapper à la porte !"
     
     play sound "sfx/SFX_Knock_01.ogg"
     v "Haa, vous voyez ? Allez-y Monsieur Gaufrid."
@@ -228,7 +229,8 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le bas"
     
-    jump tourVeleda_HistoireBrevetPart1
+    #jump tourVeleda_HistoireBrevetPart1
+    jump tourVeleda_MarryingIngridPart2
         
 # -----------------------------------------#
 
@@ -498,11 +500,113 @@ label tourVeleda_MarryingIngridPart2:
     show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
     show char_veledaernust normal
     
+    ve "Ooooh mes enfants les dieux bénissent votre marriage !"
+    ve "Oh bah... elle arrête pas de gigoter !"
+    
+    i "...gigoter ? C'est bizarre comme prophétie !"
+    
+    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+    v "Ernust ! Qu'est ce que vous faites !"
+    play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
+    v "Lachez nous immédiatement !"
+    
+    show char_ingrid choc
+    i "Ernust ! Tu as fait semblant d'être Véléda ?"
+    i "Quelle horreur ! Tu as bafoué toutes nos traditions !"
+    
+    scene black
+    
+    outline "ici scène clé des personnages de la VN tous sous le choc"
+    
+    scene bg_chambre
+    
+    show char_ingrid choc at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
+    show char_veleda normal :
+        zoom 0.7 xpos 0.38 ypos 0.22
+    show char_ernust normal left :
+        zoom 0.75 xpos 0.75 ypos 0.27
+    
+    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
+    e "Euh... oh bah..."
+    i "Ma Gaufrette ! Qu'est ce qu'il se passe ici ?"
+    i "Tu étais au courant ?"
+
+    menu:
+        " "
+        "Tu m'as dit qu'elle était morte Ernust ?":
+            jump ending_AskErnust
+        "Ernust ! Comment as tu osé ?":
+            jump ending_ErnustPart1
+        "Ingrid, je dois t'avouer la vérité !":
+            jump ending_Admit
+        "C'est la faute de la chèvre !":
+            jump ending_ChevrePart1
+# -----------------------------------------#
+
+label ending_AskErnust:
+    y "Mais Ernust, tu m'as dit qu'elle était morte ?"
+    
+    e "Bah oui ! Je l'ai reniflée et j'ai pas senti son pouls."
+    e "C'est comme ça qu'on fait, non ?"
+    
+    i "Tu étais dans le coup mon Gaufridou !"
+    
+    menu :
+        " "
+        "Ingrid, je dois t'avouer la vérité !" :
+            jump ending_Admit
+        "Non, c'était la chèvre !" :
+            jump ending_ChevrePart1
+
+# -----------------------------------------#
+label ending_ChevrePart1 :
+
+    y "Non ma choupette je te jure !"
+    y "C'est Josiane la chèvre, j'en suis sur !"
+    show char_goat choc at center
+    goat "Bêêêêêê !"
+            
+    y "Elle est dans tous les sales coups !"
+
+jump ending_ChevreTrahie
+# -----------------------------------------#
+label ending_Admit :
+    y "Ingrid, je dois tout t'avouer..."
+    y "Je suis coupable avec Ernust !"
+    
+    i "Oh ! Mon tout nouveau fiancé !"
+    i "Comment as tu pu ? Quelle tristesse !"
+    i "Je me suis tellement attachée à toi depuis que tu m'as amené un {b}glaive{/b} et un {b}bouclier{/b} !"
+    
+    v "Monsieur Gaufrid ! Comment avez vous pu crachoter sur nos traditions de la sorte ?"
+    v "Votre punition sera..."
+    play sound "sfx/SFX_Drama_01.ogg"
+    v "L'exil !"
+    
+    
+jump ending_ExilPart1
+# -----------------------------------------#
+label ending_ErnustPart1 :
+
+
+jump ending_ErnustTrahi
+# -----------------------------------------#
+
+label ending_ExilPart1 :
+    y "L'exil ? Très bien !"
+    y "Je suis désolé ma Gridounette..."
+    y "Au moment de notre marriage, je te laisse seule !"
+    
+    i "Oh t'inquiète pas y'a Beaudrik !"
+    
+    y "Ah bon d'accord..."
+    y "Au moins je peux partir avec mon meilleur ami !"
+    
+    e "Oh bah alors Gaufrid..."
+    e "Tu parles de moi ?"
     
     menu:
-        "Accuser la chêvre":
-            jump ending_ChevreTrahie
-        "Accuser Ernust":
-            jump ending_ErnustTrahi
-        "S'accuser":
-            jump ending_ExilPart1
+        "Oui Ernust, on s'en va !":
+            jump ending_ExilAvecErnust
+        "Je pars avec la chèvre !":
+            jump ending_ExilAvecChevre

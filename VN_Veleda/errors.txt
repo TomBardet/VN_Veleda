@@ -2,8 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 69: expecting name after dot.
-    linear 1.5.0 xpos -.2
-               ^
+File "game/tourVeleda.rpy", line 562: expected ':' not found.
+    label ending_ChevrePart1
+                            ^
+
+File "game/tourVeleda.rpy", line 584: expected ':' not found.
+    label ending_ErnustPart1
+                            ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
