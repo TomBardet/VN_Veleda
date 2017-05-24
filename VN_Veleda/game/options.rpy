@@ -144,7 +144,9 @@ define config.save_directory = "V_Veleda-1493558796"
 ## The icon displayed on the taskbar or dock.
 
 define config.window_icon = "gui/window_icon.png"
-
+define config.mouse = {
+    "default" : [("gui/cursor.png", 0, 0.2)]
+    }
 
 ## Build configuration #########################################################
 ##

@@ -420,4 +420,20 @@ Texture testing:
 Total time until interface ready: 1.93799996376s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn a
+- Frame drawn at 0.072000 seconds.
+- Frame drawn at 0.074000 seconds.
+- Frame drawn at 0.079000 seconds.
+- Frame drawn at 0.087000 seconds.
+- 0.087000 seconds to render 5 frames.
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1920, 1080)
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1920, 1080)
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)

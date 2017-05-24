@@ -45,33 +45,63 @@ label start:
     
 label intro:
     window hide
-    show bg_map:
+    show introCarte:
         zoom 1.1,xanchor 0.0 yanchor 0.0
         xpos 0.0 ypos -0.10
-        linear 6.0 xpos -0.3 ypos 0.0 zoom 1.4
+        linear 3.0 xpos -0.2 ypos -0.5 zoom 1.4
         
     outline "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains"
-    show bg_champ with Dissolve(2.0):
-        zoom 1.1,xanchor 0.0 yanchor 0.0
-        xpos 0.0 xpos -0.10
-        linear 10.0 ypos -0.3 xpos 0.0 zoom 1.4
+    show introCarte:
+        xpos -0.2 ypos -0.5 zoom 1.4
+    pause 0.5
+    show introFlag with vpunch:
+        zoom 0.75,xanchor 0.5 yanchor 0.5
+        xpos 0.5 ypos -0.5
+        linear 0.2 ypos 0.35 zoom 0.65
+    pause 0.2
+    show introCrack with Dissolve(1.0):
+        zoom 0.75,xanchor 0.5 yanchor 0.5
+        xpos 0.5 ypos 0.35
+    pause 1.0
     outline "Bon, pas vraiment toute en faite..."
-    show bg_blacksmith with Dissolve(2.0):
-        zoom 1.1,xanchor 0.0 yanchor 0.0
-        xpos 0.0 ypos -0.10
-        linear 11.0 xpos -0.3 ypos 0.0 zoom 1.4
+    show introFlag:
+        parallel:
+            linear 1.5 xpos -.2
+        parallel:
+            easeout 1.0 rotate -720 #counterclockwise
+        parallel:
+            linear 2.0 alpha 0.0
+    show introCrack:
+        linear 1.3 alpha 0.0
+    pause 0.5
+    show introPoint with vpunch:
+        zoom 0.45,xanchor 0.5 yanchor 0.5
+        xpos 0.56 ypos 0.42 
     outline "En tout cas pas le village des Bructères, où habite la légendaire prophétesse Véléda."
-    outline "Mais toi, tu vas plutôt incarner Gaufrid, son assistant. Il doit sûrement être à la taverne"
-    outline "C'est un peu sa deuxième maison..."
+    show introCarte:
+        xpos -0.2 ypos -0.5 zoom 1.4
+    show bg_place with Dissolve (1.5):
+        zoom 1.0 xanchor 0.0 yanchor 0.0
+    outline "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
+    show bg_place:
+        zoom 1.0 xanchor 0.0 yanchor 0.0
+        linear 2.0 xpos -0.02 ypos 0.2 zoom 1.1
+    outline "Tu vas incarner Gaufrid, son assistant"
+    scene black with Dissolve(1.5)
+    outline "Il doit être à la Taverne..."
+    outline "C'est un peu sa deuxième maison"
     
     jump taverne_DatingIngrid
     
 # -----------------------------------------#
 
 label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingrid
-    "Entrée dans narration_ellipse01"
-    
-    dig "Wesh weh"
+    scene black with Dissolve (1.5)
+    outline "Le lendemain matin..."
+    y "Waw c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
+    y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
+    y "Boarf ! C'est pas important"
+    y "Il faut que j'aille travailler moi !"
     jump tourVeleda_ErnustEtVeleda
     
 # -----------------------------------------#    

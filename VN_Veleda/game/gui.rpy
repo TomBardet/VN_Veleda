@@ -213,8 +213,8 @@ define gui.choice_button_borders = Borders(50, 15, 10, 5)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size-5
 define gui.choice_button_text_xalign = 0.0
-define gui.choice_button_text_idle_color = "#cccccc"
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = "#c4ae33"
+define gui.choice_button_text_hover_color = "#c4ae33"
 define gui.choice_button_text_italic = True
 
 

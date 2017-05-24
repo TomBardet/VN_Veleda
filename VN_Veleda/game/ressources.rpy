@@ -84,6 +84,12 @@ init:
     image bg_romains = "images/decor/Lieu_romains.png"
     image bg_place = "images/decor/Lieu_place.png"
     
+    #Intro
+    image introCarte = "images/intro.png"
+    image introFlag = "images/Intro-03.png"
+    image introCrack = "images/Intro-04.png"
+    image introPoint = "images/Intro-05.png"
+    
     #------ Les images des Personnages -------
     
     #Left ou Right correspond au sens dans lequel regarde le personnage#
