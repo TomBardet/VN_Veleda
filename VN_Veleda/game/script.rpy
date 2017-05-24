@@ -8,7 +8,6 @@ label start:
         
         #########################################################################################
         ######################## - Defining Misc - ##############################################
-        
         interlocuteur = "None" ## Ne pas oublier d'actualiser le nom de l'interlocuteur à chaque changement
         lieu = "None" ## Ne pas oublier d'actualiser le nom du lieu à chaque changement
         CAactif = False ## Set à False après chaque actionChoice

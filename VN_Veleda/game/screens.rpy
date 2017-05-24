@@ -263,7 +263,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -733,12 +733,12 @@ screen preferences():
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+              #  vbox:
+              #      style_prefix "radio"
+               #     label _("Rollback Side")
+              #      textbutton _("Disable") action Preference("rollback side", "disable")
+               #     textbutton _("Left") action Preference("rollback side", "left")
+              #      textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
