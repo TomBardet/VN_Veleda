@@ -1,20 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 107, in script
-    return
-Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/tourVeleda.rpy', 1495566018, 8).
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/script.rpy", line 343, in script
+    narration "{w=1.5}Gaufrid sort une blague de son sac"
+Exception: Sayer 'narration' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 107, in script
-    return
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1376, in execute
-    next_node(renpy.game.context().lookup_return(pop=True))
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\execution.py", line 552, in lookup_return
-    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/tourVeleda.rpy', 1495566018, 8).
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/objectsInventory.rpy", line 27, in script call
+    call screen inventory_screen
+  File "game/script.rpy", line 343, in script
+    narration "{w=1.5}Gaufrid sort une blague de son sac"
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 593, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 509, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'narration' is not defined.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

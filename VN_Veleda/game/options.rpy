@@ -23,20 +23,20 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.5"
+define config.version = "0.6"
 
 
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("Prototype HUD InGame de la VN Véléda")
+define gui.about = _("Prototype Pré-Alpha de la VN Véléda")
 
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "V_Veleda"
+define build.name = "VN_Veleda"
 
 
 ## Sounds and music ############################################################
@@ -78,7 +78,7 @@ define config.exit_transition = dissolve
 ## A transition that is used after a game has been loaded.
 
 define config.after_load_transition = None
-
+define config.rollback_enabled = True
 
 ## Used when entering the main menu after the game has ended.
 

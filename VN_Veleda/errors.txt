@@ -2,8 +2,6 @@
 errors listed below, and try again.
 
 
-File "game/etables.rpy", line 107: expected statement.
-    etables_PeurDesBufflesPart1
-                               ^
+File "game/etables.rpy", line 8: indentation mismatch.
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
