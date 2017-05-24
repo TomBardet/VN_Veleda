@@ -456,8 +456,8 @@ label tourVeleda_HistoireBrevetPart2:
     y "Ben moi je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
     y "Je vais pouvoir voir Ingrid en plus !"
     
-    jump narration_ellipse02
-    #jump tourVeleda_MarryingIngridPart2
+    #jump narration_ellipse02
+    jump tourVeleda_MarryingIngridPart2
     
 # -----------------------------------------#
 
@@ -495,6 +495,8 @@ label tourVeleda_MarryingIngridPart2:
     
     scene bg_chambre
     
+    show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
+    show char_veledaernust normal
     
     
     menu:

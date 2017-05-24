@@ -151,6 +151,10 @@ init:
     image char_goat love = "images/char/Char_goat_love.png"
     image char_goat choc = "images/char/Char_goat_choc.png"
     
+    #foule
+    image char_foule normal = "images/char/Char_foule_normal.png"
+    image char_foule colere = "images/char/Char_foule_colere.png"
+    
     ##PROTO ASSETS
     image bg_bar = "images/bg_bar.png"
     image bg_blackscreen = "images/bg_blackscreen.png"
