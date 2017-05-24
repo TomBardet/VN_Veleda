@@ -457,6 +457,7 @@ label tourVeleda_HistoireBrevetPart2:
     y "Je vais pouvoir voir Ingrid en plus !"
     
     jump narration_ellipse02
+    #jump tourVeleda_MarryingIngridPart2
     
 # -----------------------------------------#
 
@@ -467,7 +468,8 @@ label tourVeleda_MarryingIngridPart2:
         zoom 0.9 xpos 0.4 ypos 0.2
     
     y "Passe devant et prépare la Vélédarionnette, Ernust."
-    e "J'ai pas trop envie Gaufrid, elle sent pas très bon Véléda."
+    e "J'ai pas trop envie Gaufrid..."
+    e "Véléda elle sent un peu la clope."
     
     menu :
         "S'il te plaît Ernust !" :
@@ -478,8 +480,24 @@ label tourVeleda_MarryingIngridPart2:
             y "C'était pas vraiment une question, Ernust."
             y "Allez hop !"
             e "Euh... d'accord Gaufrid."
+            
     e "T'as raison je suis égoïste..."
-            e "C'est important pour toi, j'y vais tout de suite !"
+    e "C'est important pour toi, j'y vais tout de suite !"
+    
+    hide char_ernust
+    
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    i "Oh ma Gaufrette, on va pouvoir se marier !"
+    i "Viens, on va vite voir Véléda pour sa bénédiction !"
+    
+    y "Allons-y ma pupuce !"
+    
+    scene bg_chambre
+    
+    show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
+    show char_veledaernust normal
+    
     
     menu:
         "Accuser la chêvre":

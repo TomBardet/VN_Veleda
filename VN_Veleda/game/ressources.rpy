@@ -84,6 +84,12 @@ init:
     image bg_romains = "images/decor/Lieu_romains.png"
     image bg_place = "images/decor/Lieu_place.png"
     
+    #Intro
+    image introCarte = "images/intro.png"
+    image introFlag = "images/Intro-03.png"
+    image introCrack = "images/Intro-04.png"
+    image introPoint = "images/Intro-05.png"
+    
     #------ Les images des Personnages -------
     
     #Left ou Right correspond au sens dans lequel regarde le personnage#
@@ -150,6 +156,10 @@ init:
     image char_goat normal = "images/char/Char_goat_normal.png"
     image char_goat love = "images/char/Char_goat_love.png"
     image char_goat choc = "images/char/Char_goat_choc.png"
+    
+    #foule
+    image char_foule normal = "images/char/Char_foule_normal.png"
+    image char_foule colere = "images/char/Char_foule_colere.png"
     
     ##PROTO ASSETS
     image bg_bar = "images/bg_bar.png"
