@@ -134,7 +134,7 @@ label romains_VisitePart1:
     num "Mon génie porte-enseigne a oublié mes lunettes à Rome."
     show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
     
-    if _testLunettes == 0:
+    if _testLunettes == 1:
         play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
         y "Vous avez de la chance j’en ai justement une paire sur moi."
         y "On aura vu mieux comme scénar’"
