@@ -3,7 +3,7 @@
 #######################################################
 
 label ending_ChevreTrahie:
-    scene black
+    scene black with Dissolve (1)
     
     outline "Elle était chèvre et elle faisait du bon travail mais, accusée d’un crime qu’elle n’a pas commis, elle est exilée. "
     outline "Elle rode maintenant du côté du Dakota."
@@ -12,7 +12,7 @@ label ending_ChevreTrahie:
     return
     
 label ending_ErnustTrahi:
-    scene black
+    scene black with Dissolve (1)
     
     outline "Gaufrid a atteint son objectif et se marie avec la belle Ingrid."
     outline "Mais sur le chemin, il a abandonné sa plus belle amitié…"
@@ -21,14 +21,16 @@ label ending_ErnustTrahi:
     return
 
 label ending_ExilAvecErnust:
-    scene black
+    scene black with Dissolve (1)
+
     outline "Traités en paria, Ernust et Gaufrid s’exilent ensemble."
     outline "Ils s'attendaient à découvrir le monde... mais ils ne s'attendaient pas à se découvrir... eux-mêmes."
     
     return
     
 label ending_ExilAvecChevre:
-    scene black
+    scene black with Dissolve (1)
+
     outline "Unis par une force irresistible Gaufrid et Josiane s’exilent ensemble et partent en voyage."
     outline "Chaque jour qui passe ne fait que les rapprocher un peu plus…"
     

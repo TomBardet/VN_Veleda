@@ -604,7 +604,28 @@ label ending_ExilPart1 :
     e "Tu parles de moi ?"
     
     menu:
+        " "
         "Oui Ernust, on s'en va !":
+            y "Oui Ernust, tu es mon meilleur ami !"
+            y "Des fois je suis un peu méchant avec toi..."
+            y "Mais tu es toujours là pour moi !"
+            
+            play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            e "Ohlala Gaufrid tu vas me faire rougir !"
+            
+            y "Viens, on part en voyage ensemble !"
+            
+            play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            e "Oh Bah Gaufrid... je suis tellement content !"
+            
             jump ending_ExilAvecErnust
+            
         "Je pars avec la chèvre !":
+            y "Viens Josiane, on va découvrir le monde ensemble !"
+            
+            goat "Bêêê ?"
+            goat "Bê !"
+            goat "..."
+            goat "Bêêêêê."
+            
             jump ending_ExilAvecChevre
