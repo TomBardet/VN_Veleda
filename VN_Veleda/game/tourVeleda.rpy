@@ -69,8 +69,6 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Monsieur Brutomachin nie l'accusation ! Nous allons donc les départager avec..."
     
-    #Ajouter ici un son dramatique"
-    
     play sound "sfx/SFX_Drama_01.ogg"
     
     v "Une prophétie !"
@@ -229,8 +227,8 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le bas"
     
-    #jump tourVeleda_HistoireBrevetPart1
-    jump tourVeleda_MarryingIngridPart2
+    jump tourVeleda_HistoireBrevetPart1
+    #jump tourVeleda_MarryingIngridPart2
         
 # -----------------------------------------#
 
