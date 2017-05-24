@@ -129,10 +129,10 @@ init:
     image char_beaudrik normal left = "images/char/Char_beaudrik_normal.png"
     image char_beaudrik choque right = "images/char/Char_beaudrik_surpris.png"
     image char_beaudrik mepris right = im.Flip("images/char/Char_beaudrik_mepris.png", horizontal = True)
-    image char_beaudrik drague right = im.Flip"images/char/Char_beaudrik_drague.png", horizontal = True)
-    image char_beaudrik insulte right = im.Flip"images/char/Char_beaudrik_insulte.png", horizontal = True)
-    image char_beaudrik normal right = im.Flip"images/char/Char_beaudrik_normal.png", horizontal = True)
-    image char_beaudrik choque left = im.Flip"images/char/Char_beaudrik_surpris.png", horizontal = True)
+    image char_beaudrik drague right = im.Flip("images/char/Char_beaudrik_drague.png", horizontal = True)
+    image char_beaudrik insulte right = im.Flip("images/char/Char_beaudrik_insulte.png", horizontal = True)
+    image char_beaudrik normal right = im.Flip("images/char/Char_beaudrik_normal.png", horizontal = True)
+    image char_beaudrik choque left = im.Flip("images/char/Char_beaudrik_surpris.png", horizontal = True)
     
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
