@@ -34,7 +34,7 @@ label tourVeleda_ErnustEtVeleda :
     v "Crousfrishtrenvra... Monseigneur Crossfichtruc, le digne chef de nos voisins les Bataves."
     
     menu :
-        "1. Il vient demander conseil, Ô Véléda ? ":
+        "Il vient demander conseil, Ô Véléda ? ":
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Crossfitrtrch... Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
@@ -48,7 +48,7 @@ label tourVeleda_ErnustEtVeleda :
             
             $ loveGauge(vel_char, -3, 0.8, 0.25)
             
-        "2. Il veut quoi lui ?":
+        "Il veut quoi lui ?":
             play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
             
@@ -104,7 +104,7 @@ label tourVeleda_ErnustEtVeleda :
     $ loveGauge(ern_char, 1, 0.3, 0.10)
     
     menu :
-        "1. Bonjour Ernust !" :
+        "Bonjour Ernust !" :
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Bonjour Ernust, comment ça va ?"
             hide char_ernust normal right
@@ -119,7 +119,7 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right :
                 zoom 0.9 xpos 0.12 ypos 0.2
             
-        "2. Il est amoureux de moi ?" :
+        "90 points d'affection ?" :
             play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "90 de love ? Mais il est amoureux de moi ou quoi ?"
             hide char_ernust normal right
@@ -134,7 +134,7 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right :
                 zoom 0.9 xpos 0.12 ypos 0.2
             
-        "3. Ah, t'es là, toi ?" :
+        "Ah, t'es là, toi ?" :
             play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Ah, t'es là toi ? Pfff..."
             hide char_ernust normal right
@@ -161,7 +161,7 @@ label tourVeleda_ErnustEtVeleda :
     e "Avec un peu de thym et des p'tites pommes sautées..."
     
     menu :
-        "1. Ça a l'air délicieux !" :
+        "Ça a l'air délicieux !" :
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Ça a l'air super bon Ernust, j'ai hâte de voir ça !"
             
@@ -185,7 +185,7 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right :
                 zoom 0.9 xpos 0.12 ypos 0.2
             
-        "2. Tu peux abréger ?" :
+        "Tu peux abréger ?" :
             play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Abrège Ernust, on attend des clients."
             
@@ -280,11 +280,11 @@ label tourVeleda_HistoireBrevetPart1:
     cross "Très bien, serviteur, mais si tu ne transmet pas nos messages exactement, je t'égorge."
     
     menu :
-        "1. Oui, Monseigneur" :
+        "Oui, Monseigneur" :
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"  
             y "Bien sur Monsieur Crossftrichtrolvd, je ferai bien attention."
             
-        "2. Je sais faire mon travail, hein" :
+        "Je sais faire mon travail, hein" :
             play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"  
             y "Eh oh je sais ce que je fais hein ? Pas la peine de me menacer."
             
@@ -315,7 +315,7 @@ label tourVeleda_HistoireBrevetPart1:
     cross "Je me souviens très bien, aux dernier jeux inter-germains, tu as fait un commentaire dessus !"
     
     menu :
-        "1. Il l'a volé ?" :
+        "Il l'a volé ?" :
         
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Il l'aimait bien alors il l'a volé, c'est ça ?"
@@ -327,7 +327,7 @@ label tourVeleda_HistoireBrevetPart1:
             cross "Tu n'as rien compris, valet ! Ce qu'il a volé, c'est l'idée !" 
             cross "C'est du vol de propriété intellectuelle !"
             
-        "2. Il en a fait un pareil ?" :
+        "Il en a fait un pareil ?" :
             
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Donc il a fait une copie ? Quel est le problème ?"
@@ -344,12 +344,12 @@ label tourVeleda_HistoireBrevetPart1:
     cross "Toute invention Germaine sera respectée comme la propriété propre, indétachable et sans exception de son inventeur."
     
     menu :
-        "1. C'est très grave !" :
+        "C'est très grave !" :
             
             y "Si les textes le disent, c'est que c'est très grave !"
             brut "Tu t'y mets toi aussi ! Mon Gaufrid, mon poteau !"
             y "Bon, je vais voir ce qu'en dit notre divine prophétesse."
-        "2. On s'en fout, non ?" :
+        "On s'en fout, non ?" :
             
             y "Y'a pas de quoi en faire toute une chouquette, non ?"
             
@@ -387,7 +387,7 @@ label tourVeleda_MortVeleda:
     y "Quoi ? Mais c'était quoi comme champignons ?"
     y "Va voir tout de suite si elle va bien !"
     
-    outline "Ernust se faufile derrière le voile (on change son image"
+    outline "Ernust se faufile derrière le voile (on change son image)"
     
     e "Elle va pas bien du tout Gaufrid !"
     e "Je sens pas du tout son pouls !"
@@ -400,7 +400,7 @@ label tourVeleda_MortVeleda:
     e "Tu peux peut être faire une prophétie toi ?"
     
     menu :
-        "1. C'est complètement idiot." :
+        "C'est complètement idiot." :
             y "Tu dis vraiment n'importe quoi Ernust !"
             y "J'ai l'air d'être un prophête moi ?"
             y "Mais attend... j'ai une idée !"
@@ -409,7 +409,7 @@ label tourVeleda_MortVeleda:
             
             e "Qu'est ce que t'es intelligent Gaufrid !"
 
-        "2. Bonne idée !" :
+        "Bonne idée !" :
             y "Bien vu Ernust ! Ça c'est vraiment une bonne idée !"
             y "Je vais inventer une prophétie ! Ils verront jamais la différence !"
             
@@ -424,10 +424,56 @@ label tourVeleda_MortVeleda:
 # -----------------------------------------#
     
 label tourVeleda_HistoireBrevetPart2:
-    "Entrée tourVeleda_HistoireBrevetPart2"
+
+    scene bg_antichambre
+    
+    show char_brutal normal :
+        zoom 0.35 xpos 0.48 ypos 0.09
+    show char_crossfit colere right :
+        zoom 0.32 xpos 0 ypos 0.13
+    
+    y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
+    
+    cross "Ah, enfin ! Parle, larbin."
+    
+    y "Les dieux ordonnent de suivre les lois anciennes !"
+    
+    y "Brutalmund va devoir payer réparations !"
+       
+    cross "Aha !"
+    
+    brut "Eh non !"
+    
+    y "Brutlamund va devoir donner 10 buffles à Crosrihtc... Crossfritrichtrvald !"
+    
+    brut "10 buffles ? Ça va pas la tête ?"
+    
+    cross "Des... des buffles ?"
+    
+    y "La prophétesse a parlé messieurs !"
+    
+    y "Je vous prie de dégager de là vite fait, merci."
+    
+    play sound "sfx/SFX_Walk_02.ogg"
+    
+    hide char_brutal normal with Dissolve(0.2)
+    hide char_crossfit colere right with Dissolve(0.2)
+    
+    y "Allez hop hop hop"
+    
+    show char_ernust normal right with Dissolve (0.5) :
+        zoom 0.9 xpos 0.4 ypos 0.2
+    
+    e "Ils t'ont cru Gaufrid ! T'es vraiment trop fort !"
+    e "Qu'est ce qu'on va faire maintenant ?"
+    
+    y "Ben moi je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
+    y "Je vais pouvoir voir Ingrid en plus !"
     
     jump narration_ellipse02
     
+# -----------------------------------------#
+
 label tourVeleda_MarryingIngridPart2:
     "label tourVeleda_MarryingIngridPart2"
     
