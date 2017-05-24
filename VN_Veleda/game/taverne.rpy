@@ -4,9 +4,6 @@
 
 label taverne_DatingIngrid:
     
-    #DEBUG MARCO#
-    #jump taverne_ConcoursPart1
-    #DEBUG MARCO#
     scene bg_taverne
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
 
@@ -848,7 +845,6 @@ label taverne_MarryingIngridPart1:
 # -----------------------------------------#
 
     "label taverne_MarryingIngridPart1"
-    jump taverne_MarryingIngridPart1
     jump tourVeleda_MarryingIngridPart2
     
 # -----------------------------------------#

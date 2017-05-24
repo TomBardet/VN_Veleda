@@ -35,8 +35,8 @@ label forge_Intro:
 # -----------------------------------------#
 
 label forge_Beaudrik_01:
-
-    "label forge_Beaudrik_01"
+    
+    $ Acte2_Forge_FirstVisit = 1
     show char_beaudrik normal left :
         zoom 0.2 xpos 1.0 ypos 0.09
         linear 0.4 xpos 0.6
@@ -260,7 +260,7 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
             brut "Je vais lui dire ses quatre verités."
             brut "Attends-moi ici, je reviens dans une minute."
             brut "Et ne touche à rien !"
-            hide char_char_brutal normal
+            hide char_brutal
             pause 1.5
             jump forge_Brutalmund_07_Bouclier
             
@@ -297,7 +297,7 @@ label forge_Brutalmund_06_Hub:
             brut "Mais tu le fais exprès alors ! Ahh !"
             brut "Attends ici, je vais les chercher !"
             brut "Et touche à rien ! T’auras pas de bouclier tant que je ne les aurai pas trouvés !"
-            hide char_char_brutal normal
+            hide char_brutal
             pause 1.5
             jump forge_Brutalmund_07_Bouclier
             
@@ -321,6 +321,7 @@ label forge_Brutalmund_06_Hub:
 
 label forge_Brutalmund_07_Bouclier:
 
+    hide  char_brutal
     y "Bon, c’était pas très dur."
     y "Vaut mieux choper un bouclier et se casser, vite !"
     $ _testBouclier = 1
