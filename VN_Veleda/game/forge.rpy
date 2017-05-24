@@ -13,8 +13,13 @@ label forge_BrutalmundEtBeaudrik:
 
 label forge_Brutalmund_Tampon_HUB:
 
-    show char_brutal normal
-    brut "Gaufrid ! Alors, ça te tente un {b}Bouclier-Traineau à trois vitesses™{/b} tout neuf ?"
+    scene bg_forge
+    pause 0.5
+    show char_brutal normal :
+        zoom 0.4 xpos -0.5 ypos 0.05
+        linear 0.7 xpos 0.2
+    brut "Gaufrid !"
+    brut "Alors, ça te tente un {b}Bouclier-Traineau à trois vitesses™{/b} tout neuf ?"
     jump forge_Brutalmund_06_Hub
 
 # -----------------------------------------#
@@ -215,13 +220,18 @@ label forge_Brutalmund_04:
     brut "Genre tu l’as vu ? Il fait deux mètres cet abrouti !"
     brut "Enfin bref."
     brut "J’imagine que tu n’as pas besoin d’un {b}Bouclier-Traineau à trois vitesses™{/b}, hein ?"
+    jump forge_Brutalmund_04_choice
+    
+#-------------------------------------------#
+
+label forge_Brutalmund_04_choice:
 
     menu:
         "{color=#FFFFFF}Juste le bouclier, sans traineau{/color}":
             y "C’est possible sans traineau ? Je fais des économies."
             brut "Gaufrid, tu m’as pris pour qui, le Burger King ?"
             brut "Mes {b}Boucliers-Traineaux à trois vitesses™{/b}, je les vends comme ça, prendre ou laisser."
-            jump forge_Brutalmund_04
+            jump forge_Brutalmund_04_choice
         "On peut faire un essai routier ?":
             y "Ça m’intéresse, mais comment on sait s’il roule bien ? Il me faudrait au moins un essai routier."
             brut "Ah bah là tu me brise le cœur, mon p’tit Gaufrid !"
@@ -237,8 +247,25 @@ label forge_Brutalmund_04:
 
 label forge_Brutalmund_04_01_Branche_EssaiRoutier:
 
-    "placeholder"
-    jump forge_Brutalmund_04
+    menu:
+        "Ça sent l'arnaque...":
+            y "Non mais c’est bon, là vous abusez. On peut au moins les voir, ces boucliers ?"
+            brut "Mais pourquoi perdre ton temps à les regarder, mon p’tit Gaufrid, quand tu peux directement les acheter !"
+            brut "Acheter je te dis !"
+            jump forge_Brutalmund_05_CannotPay
+        "Crossfit en vends aussi, vous savez...":
+            y "Oui mais, le fait est que je suis indécis entre les vôtres et ceux de Crossfitrichentruc."
+            brut "Ah bon !? Déjà il m'insulte, et là il me fait concurrence aussi ?!"
+            brut "Ha ! Là j’en peux plus mon p’tit Gaufrid, j’en peux plus je te dis !"
+            brut "Je vais lui dire ses quatre verités."
+            brut "Attends-moi ici, je reviens dans une minute."
+            brut "Et ne touche à rien !"
+            hide char_char_brutal normal
+            pause 1.5
+            jump forge_Brutalmund_07_Bouclier
+            
+        "En tout cas je ne peux pas payer…":
+            jump forge_Brutalmund_04
         
 
 #------------------------------------------#
