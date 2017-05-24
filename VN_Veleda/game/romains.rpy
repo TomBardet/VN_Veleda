@@ -10,7 +10,6 @@ label romains_PremiereRencontre:
 # -----------------------------------------#
 
 label romains_Part1:
-    "label romains_Part1"
     
     scene bg_romains
     menu:
@@ -23,7 +22,6 @@ label romains_Part1:
 # -----------------------------------------#
 
 label romains_ApparitionRomain:
-    "label romains_ApparitionRomain"
     
     show char_numerimus normal
     show char_digitimus normal at right 
@@ -32,17 +30,18 @@ label romains_ApparitionRomain:
 # -----------------------------------------#
 
 label romains_Part2:
-    "label romains_Part2"
     
     menu :
         num "Avé sauvage !"
         
-        "1. Heu...Avé ? ":
+        "Heu...Avé ? ":
+            play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Avé à vous... j'imagine ?"
             y "Et sinon vous êtes qui ?"
             jump romains_Part3
             
-        "2. Jolies chaussettes":
+        "Jolies chaussettes":
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Jolies chaussettes centurion."
             y "A part ça qui êtes vous, et qu'est ce que vous venez faire dans le coin ?"
             jump romains_Part3
@@ -50,7 +49,6 @@ label romains_Part2:
 # -----------------------------------------#
 
 label romains_Part3:
-    "label romains_Part3"
     
     num "T’as l’air d’un marrant, germain. Moi c’est Numerimus et lui là c’est Digitimus, c’est mon cousin, germain."
     dig "avé…"
@@ -60,7 +58,6 @@ label romains_Part3:
 # -----------------------------------------#
 
 label romains_Part4:
-    "label romains_Part4"
     
     hide char_numerimus choque
     hide char_digitimus choque
@@ -68,38 +65,32 @@ label romains_Part4:
     show char_digitimus normal at right
     
     menu :
-        "1. Je vais y aller moi. ":
+        "Je vais y aller moi. ":
+            play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "M'en voulez pas hein..."
             y "Mais je vais me rentrer moi."
             jump romains_Part4
             
-        "2. Ca se passe les vacances ?":
+        "Ca se passe les vacances ?":
+            play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Alors les romains, ces vacances ?"
             jump romains_Part5bis
 
 # -----------------------------------------#
-#label romains_Part5:
-    #"label romains_Part5"
-    
-    #num "On s’ennuie..."
-    #dig "On s’ennuie vraiment..."
-    #num "Ouais… Je donnerais jusqu'a mon glaive pour un peu d’amusement."
-    #jump romains_Part5bis
-
-# -----------------------------------------#
 
 label romains_Part5bis:
-    "label romains_Part5bis"
     
     num "On s’ennuie."
     dig "On s’ennuie vraiment le Germain..."
     menu :
-        "1. Faites un tour du quartier. ":
+        "Faites un tour du quartier. ":
+            play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Il y a des belles choses dans le coin."
             y "Visitez les alentours ça devrait vous occuper."
             jump romains_VisitePart1
             
-        "2. Je connais une blague.":
+        "Je connais une blague.":
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Bougez pas, je vais vous faire rire avec une bonne blague de chez nous."
             if _testTrompette == 0:
                 hide char_numerimus normal
@@ -112,7 +103,8 @@ label romains_Part5bis:
                 jump romains_Part5bis
         
                 
-        "3. C'est pas mon problème.":
+        "C'est pas mon problème.":
+             play sound "sfx/SFX_Char_Player_No_01.ogg"
              y "Je peux pas vous aider les gars."
              jump romains_Part4
  
@@ -120,25 +112,27 @@ label romains_Part5bis:
                 #VISITE
 # -----------------------------------------#
 label romains_VisitePart1:
-    "label romains_VisitePart1"
      
     num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
     num "Mon génie porte-enseigne a oublié mes lunettes à Rome."
     
-    if _testLunettes == 1:
+    if _testLunettes == 0:
+        play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
         y "Vous avez de la chance j’en ai justement une paire sur moi."
-        nar "On aura vu mieux comme scénar’"
+        y "On aura vu mieux comme scénar’"
         y "Allez tenez. J’imagine que c’est à votre vue en plus du reste."
         jump romains_VisitePart2
         
     else:
         menu :
-            "1. Vous en avez pas une autre paire ?":
+            "Vous en avez pas une autre paire ?":
+                play sound "sfx/SFX_Char_Player_Question_01.ogg"
                 y "Alors les romains, ces vacances ?"
                 num "non, aucune. Ca nous aiderait pas mal si vous en trouveriez une, Germain."
                 jump romains_Part5bis
                 
-            "2. Retournez-y. ":
+            "Retournez-y. ":
+                play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
                 y "Ca tombe bien, toutes les routes y mènent."
                 num "..."
                 jump romains_Part5bis
@@ -147,7 +141,6 @@ label romains_VisitePart1:
 # -----------------------------------------#
 
 label romains_VisitePart2:
-    "label romains_VisitePart2"
     
     hide char_numerimus normal
     show char_numerimus heureux
@@ -158,7 +151,6 @@ label romains_VisitePart2:
 # -----------------------------------------#
 
 label romains_VisitePart3:
-    "label romains_VisitePart3"
     
     hide char_numerimus heureux
     show char_numerimus normal
@@ -167,25 +159,39 @@ label romains_VisitePart3:
     
 # -----------------------------------------#
 label romains_VisitePart3bis:
-    "label romains_VisitePart3bis"
     
     menu :
         num "Qu’est ce qu’il y a à voir dans le coin ?"
-        "1. L’air vivifiant du paysage Bructère !":
+        "L’air vivifiant du paysage Bructère !":
+            
+            play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "La Lippe, l'herbe fraiche, l'air vivifiant du paysage Bructère !"
+            
             dig "Mais encore... ?"
             jump romains_VisitePart3bis
-        "2. Deux gros abrutis.":
+            
+        "Deux gros abrutis.":
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Deux bons gros abrutis."
+            
             num "Ah vous en avez vous aussi."
+            
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Ici, les abrutis c'est presque culturel."
             y "Parfois il viennent de loin."
             jump romains_VisitePart3bis
-        "3. Véléda ?":
+            
+        "Véléda ?":
+            play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Il y a bien la prophetesse Véléda mais..."
+            
             num "Super idée l'Germain, on l'a toujours pas vu celle là."
+            
+            play sound "sfx/SFX_Char_Player_No_01.ogg"
             y "non mais elle est pas forcément..."
+            
             num "Vendu ! On y va {b}tout de suite{/b} !"
+            
             scene black with Dissolve (1.0)
             nar "Dans quoi tu t'es encore fourré...?"
             jump romains_VisitePart4
@@ -194,79 +200,93 @@ label romains_VisitePart3bis:
 # -----------------------------------------#
 
 label romains_VisitePart4:
-    "label romains_VisitePart4"
     
     scene bg_antichambre with Dissolve (1.0)
-    show char_ernust normal
+    show char_ernust normal right :
+        zoom 0.7 xpos 0.4 ypos 0.2
     jump romains_VisitePart5
     
 # -----------------------------------------#
 
 label romains_VisitePart5:
-    "label romains_VisitePart5"
     
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     y "Ernust. J'ai fait une connerie."
+    
+    play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
     e "Mais non voyons ça ne t'arrive jamais à toi !"
+    
+    play sound "sfx/SFX_Char_Player_No_01.ogg"
     y "Si, là clairement ça m'est arrivé."
     y "Ya deux romains qui arrivent d'une minute à l'autre pour voir Véléda..."
+    
+    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"                                                                              
     e "Hoo, dommage qu'elle soit morte."
-    num "Héo ! Le Germain, t'es là ? On rentre nous !"
+    
+    play sound "sfx/SFX_Knock_01.ogg"
+    num "Héo ! Le Germain, t'es là ? Je rentre moi !"
+    
+    play sound "sfx/SFX_Char_Player_Question_01.ogg"
     y "Ahhhhh !! Les voilà !"
+    
+    play sound "sfx/SFX_Char_Ernust_Love_01.ogg"
     e "T'en fais pas Gaufrid j'ai une idée géniale, fais moi confiance !"
     menu :
-        "1. Je ne te fais absolument pas confiance.":
+        "Je ne te fais absolument pas confiance.":
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Non Ernust c'est mort !"
             y "Je te fais absolument pas confiance..."
             y "Mais j'ai pas vraiment le choix là tout de suite..."
-            jump romains_VisitePart6
+            jump romains_VisitePart7
             
-        "2. Je valide, je te fais clairement pas confiance! ":
+        "Je valide, je te fais clairement pas confiance! ":
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Tu vas encore faire une connerie !"
             y "Tu serais capable de la re-tuer"
             y "Mais le temps presse, j'ai pas vraiment le choix... je compte sur toi."
-            jump romains_VisitePart6
+            jump romains_VisitePart7
             
 # -----------------------------------------#
-
-label romains_VisitePart6:
-    "label romains_VisitePart6"
-    
-    hide char_ernust normal with Dissolve (1.0)
-    jump romains_VisitePart7
-    
-# -----------------------------------------#
 label romains_VisitePart7:
-    "label romains_VisitePart7"
     
+    hide char_ernust normal right with Dissolve (1.0)
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    y "Entrez !"
+    play sound "sfx/SFX_Entrance_01.ogg"
     show char_numerimus normal with Dissolve (1.0)
     num "Ah bah t'es là le Germain."
     num "Bon on va la voir la tarée ?"
     menu :
-        "1. Un peu de respect !":
+        "Un peu de respect !":
+            play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Un peu de respect je vous prie !"
             num "Boooh l'autre hé, fais pas le mijoré le Germain on le sait tous qu'elle a un pet au casque."
             y "Vous croyez pas si bien dire..."
             jump romains_VisitePart8
             
-        "2. euuh attendez...":
+        "euuh attendez...":
+            play sound "sfx/SFX_Char_Player_No_01.ogg"
             y "Je ne suis pas sûr qu'elle soit...prète."
             num "Qu'elle se prépare alors !"
             num "Je vais pas faire attendre mon imbécile de porte enseigne trop longtemps."
             jump romains_VisitePart8
            
             
-        "3. Il est ou l'autre ?":
+        "Il est ou l'autre ?":
+            play sound "sfx/SFX_Char_Player_Question_01.ogg"
+            y "Vous êtes venu seul, et votre porte-enseigne ?"
             num "Je l'ai laissé derrière, il s'en fiche lui de tout ça."
             num "Et puis entre nous... c'est pas que je l'aime pas mais bon..."
-            y "Je vois... on a tous un 'Ernust' j'imagine..."
+            play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+            y "Je vois...faut croire qu'on a tous un 'Ernust'..."
             jump romains_VisitePart8
 
             
 # -----------------------------------------#
 
 label romains_VisitePart8:
-    "label romains_VisitePart8"
     
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     y "Ca devrait être bon... j'imagine..."
     y "Suivez-moi."
     jump romains_VisitePart9
@@ -274,9 +294,9 @@ label romains_VisitePart8:
 # -----------------------------------------#
 
 label romains_VisitePart9:
-    "label romains_VisitePart9"
     
     scene black with Dissolve (1.0)
+    play sound "sfx/SFX_Char_Player_Question_01.ogg"
     y "Ernust, on... on arrive nous."
     y "On monte hein..."
     y "Là on... monte les marches."
@@ -285,7 +305,6 @@ label romains_VisitePart9:
 
 # -----------------------------------------#
 label romains_VisitePart10:
-    "label romains_VisitePart10"
     
     show char_numerimus normal at left
     show char_veledaernust normal
@@ -293,9 +312,74 @@ label romains_VisitePart10:
     num " Bonjour m'dam."
     ve "Bonnnnnnnjouuuuur etranger !"
     ve "Je vaiiiis vous faire une prophétie !!!"
-    nar "Mais qu'est ce qu'il nous fait celui là..."
+    ve "Souuus le soleil de la pierre couleur cailloux !!!!!!"
+    num "Mais qu’est-ce qu’elle raconte celle là ?"
     
-    jump romains_FinDeLaVisite
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    y "Euuh là elle dit... qu’a votre retour les... gens à Rome.. Seront… très… content de vous voir."
+    num "humm... c'est une maline."
+    
+    jump romains_VisiteProphetie
+    
+# -----------------------------------------#
+label romains_VisiteProphetie:
+    
+    #Proph 01#
+    ve  " La rosée du matinnnnnnnn, c’est ce qui nourrit les arbres !" 
+    
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    menu :
+        y "Là elle dit que..."
+        "Il pleuvra" :
+            y "La pluie tombera demain."
+        "Elle annonce une menace !" :
+            y "La fuite inexorable du temps rendra vos adversaires plus forts !"
+        "Vos olives pousseront." :
+            y "Sur vos oliviers pousseront bientôt les meilleurs olives de Rome"
+    num "humm..."
+    
+    #Proph 02#
+    ve  " Les oiseauuuuuuux chantent on dirait des corbeaux  !" 
+    
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    menu :
+        y "Et là elle vous raconte que..."
+        "La mort est proche." :
+            y "Un présage de mort plane sur vous..."
+        "Il y a... des corbeaux ?" :
+            y "Les oiseaux sont surement des corbeaux."
+        "On chantera votre gloire." :
+            y "Les chants de victoires retentiront bientôt, votre gloire sera chantée."
+    
+    #Proph 03#
+    ve  " Eau chauuuuuude….. et eau froide ne font pas bon ménage  !" 
+    
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    menu :
+        y "Ô Véléda, grande prophetesse, je transmet votre message..."
+        "Un taître !" :
+            y "Il y a un traître dans vos rangs !"
+        "Vous allez sortir du lot." :
+            y "Vous vous démarquerez en tant que grand centurion."
+        "L'eau tiède c'est agréable" :
+            y "Qu'un peu d'eau chaude, avec un peu d'eau froide,  ça fait de l'eau tiède ben agréable quand on y pense." 
+    
+    #Proph 04#
+    ve  " Ah.... Je commence à avoir mal au bras..."
+    num "hein ?"
+    
+    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    menu :
+        y "Heuuu là... elle dit que..."
+        "Vous vous faites vieu." :
+            y "La vieillesse vous guette… et de près"
+        "Votre bras agile." :
+            y "Votre bras droit est plus agile que le gauche. "
+        "Le poid de la réussite !" :
+            y "Le poids de votre réussite se fera sentir sur tout l’empire."
+            
+    jump romains_VisitePart10
+
 
 # -----------------------------------------#
 label romains_FinDeLaVisite:
