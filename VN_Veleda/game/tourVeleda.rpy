@@ -227,8 +227,8 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le bas"
     
-    jump tourVeleda_HistoireBrevetPart1
-    #jump tourVeleda_MarryingIngridPart2
+    #jump tourVeleda_HistoireBrevetPart1
+    jump tourVeleda_MarryingIngridPart2
         
 # -----------------------------------------#
 
@@ -562,13 +562,35 @@ label ending_ChevrePart1 :
     y "Non ma choupette je te jure !"
     y "C'est Josiane la chèvre, j'en suis sur !"
     show char_goat choc at center
-    goat "Bêêêêêê !"
+    goat "Bêêê !"
             
     y "Elle est dans tous les sales coups !"
+    
+    v "Josiane comment avez vous pu nous faire cela ?"
+    
+    goat "Bêê bêêêê, bêê !"
+    
+    i "Josiane ? J'arrive pas à y croire !"
+    
+    v "Après tout ce que nous avons vécu ensemble, Josiane !"
+    v "Après cet été langoureux de nos 20 ans..."
+    
+    goat "Bêê... bêêê..."
+    
+    v "Josiane, je suis bouleversée !"
+    v "Mais je vais devoir vous condamener à..."
+    play sound "sfx/SFX_Drama_01.ogg"
+    v "L'exil !"
+    
+    goat "Bêêêêê !"
+    
+    v "Adieu Josiane..."
+    v "Mon amie..."
 
 jump ending_ChevreTrahie
 # -----------------------------------------#
 label ending_Admit :
+    
     y "Ingrid, je dois tout t'avouer..."
     y "Je suis coupable avec Ernust !"
     
@@ -581,10 +603,39 @@ label ending_Admit :
     play sound "sfx/SFX_Drama_01.ogg"
     v "L'exil !"
     
-    
 jump ending_ExilPart1
 # -----------------------------------------#
 label ending_ErnustPart1 :
+    y "Ernust ? Comment tu as pu faire une chose pareil !"
+    
+    e "Oh bah mais... Gaufrid !"
+    
+    y "Silence ! Je peux pas écouter un tel criminel !"
+    
+    i "Ernust... il semblait si gentil !"
+    
+    v "Monsieur Ernust, votre bétise nous a toujours dégoûté !"
+    v "Nous avions prévenu vos parents..."
+    v "Après qu'il vous ai cogné contre le pourtour d'un chaudron !"
+    
+    e "Mais... mais euh..."
+    
+    v "C'est avec grand plaisir que nous vous condamnons à..."
+    play sound "sfx/SFX_Drama_01.ogg"
+    v "L'exil !"
+    
+    e "Oh non ! Mais où je vais aller ?"
+    
+    i "Le pauvre Ernust !"
+    
+    y "Laisse tomber ma belle Ingridounette, c'est un criminel !"
+    y "Viens on va vivre heureux et faire beaucoup d'enfants !"
+    
+    i "Ohlalala quel coquin !"
+    
+    hide char_ingrid
+    
+    e "Je suis... tout seul"
 
 
 jump ending_ErnustTrahi
@@ -627,5 +678,7 @@ label ending_ExilPart1 :
             goat "Bê !"
             goat "..."
             goat "Bêêêêê."
+            
+            e "Au... au revoir Gaufrid !"
             
             jump ending_ExilAvecChevre

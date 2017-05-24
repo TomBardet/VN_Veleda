@@ -2,12 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/tourVeleda.rpy", line 562: expected ':' not found.
-    label ending_ChevrePart1
-                            ^
-
-File "game/tourVeleda.rpy", line 584: expected ':' not found.
-    label ending_ErnustPart1
-                            ^
+File "game/tourVeleda.rpy", line 585: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        goat "Bêêêêê !
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
