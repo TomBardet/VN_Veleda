@@ -3,15 +3,31 @@
 ####################################################
 
 label forge_BrutalmundEtBeaudrik:
-    
-    jump forge_Intro
+
+    if Acte2_Forge_FirstVisit == 0:
+        jump forge_Intro
+    if Acte2_Forge_FirstVisit == 1:
+        jump forge_Brutalmund_Tampon_HUB
+        
+# ----------------------------------------- #
+
+label forge_Brutalmund_Tampon_HUB:
+
+    scene bg_forge
+    pause 0.5
+    show char_brutal normal :
+        zoom 0.4 xpos -0.5 ypos 0.05
+        linear 0.7 xpos 0.2
+    brut "Gaufrid !"
+    brut "Alors, ça te tente un {b}Bouclier-Traineau à trois vitesses™{/b} tout neuf ?"
+    jump forge_Brutalmund_06_Hub
 
 # -----------------------------------------#
 
 label forge_Intro:
     
     scene bg_forge
-    "label forge_Intro"
+    pause 1.0
     y "Euh... il y a quelqu'un ?"
     
     jump forge_Beaudrik_01
@@ -150,19 +166,17 @@ label forge_Brutalmund_02:
                 brut "$$$ Brutalmund explique que Beaudrik devait aller chercher les buffles aux étables"
                 brut "$$$ et qu'il ne peut pas laisser son magasin car il y a des voleurs de boucliers"
             if Acte1_Tour_CoupableJugement == "Brutalmund":
-                "condition : Brutalmund coupable"
                 brut "Car grâce à toi, mon p’tit interprète, on n’a plus de quoi bouffer !"
                 brut "Et tous ces boucliers ne vont pas se vendre tous seuls !"
-
             y "Bon, il faudra que vous alliez chercher votre fils alors, non ?"
             brut "Et te laisser là tout seul avec mes précieux boucliers ? Hors question !"
         "Il est à la taverne" :
             y "Il allait à la taverne, vous faites encore à temps pour l’attraper."
             brut "Et te laisser là tout seul avec mes précieux boucliers ? Hors question !"
-            "condition : Crossfit coupable"
-            brut "$$$ Les voleurs de boucliers, ça existe vraiment"
-            "condition : Brutalmund coupable"
-            brut "Tu m’as déjà dévalisé une fois avec cette histoire de buffles, tu ne m’auras pas une deuxième fois ! Ha !"
+            if Acte1_Tour_CoupableJugement == "Crossfit":
+                brut "$$$ Les voleurs de boucliers, ça existe vraiment"
+            if Acte1_Tour_CoupableJugement == "Brutalmund":
+                brut "Tu m’as déjà dévalisé une fois avec cette histoire de buffles, tu ne m’auras pas une deuxième fois ! Ha !"
 
 jump forge_Brutalmund_03
 
@@ -206,16 +220,53 @@ label forge_Brutalmund_04:
     brut "Genre tu l’as vu ? Il fait deux mètres cet abrouti !"
     brut "Enfin bref."
     brut "J’imagine que tu n’as pas besoin d’un {b}Bouclier-Traineau à trois vitesses™{/b}, hein ?"
+    jump forge_Brutalmund_04_choice
+    
+#-------------------------------------------#
+
+label forge_Brutalmund_04_choice:
 
     menu:
-        "Juste le bouclier, sans traineau":
-            y "$$$"
+        "{color=#FFFFFF}Juste le bouclier, sans traineau{/color}":
+            y "C’est possible sans traineau ? Je fais des économies."
+            brut "Gaufrid, tu m’as pris pour qui, le Burger King ?"
+            brut "Mes {b}Boucliers-Traineaux à trois vitesses™{/b}, je les vends comme ça, prendre ou laisser."
+            jump forge_Brutalmund_04_choice
         "On peut faire un essai routier ?":
-            y "$$$"
+            y "Ça m’intéresse, mais comment on sait s’il roule bien ? Il me faudrait au moins un essai routier."
+            brut "Ah bah là tu me brise le cœur, mon p’tit Gaufrid !"
+            brut "Mes {b}Boucliers-Traineaux à trois vitesses™{/b}, c’est de la balle !"
+            brut "Je te promets ! Pas besoin d’essayer !"
+            jump forge_Brutalmund_04_01_Branche_EssaiRoutier
         "Je ne peux pas payer...":
-            y "$$$"
+            jump forge_Brutalmund_05_CannotPay
             
     jump forge_Brutalmund_05_CannotPay
+
+#-----------------------------------------#
+
+label forge_Brutalmund_04_01_Branche_EssaiRoutier:
+
+    menu:
+        "Ça sent l'arnaque...":
+            y "Non mais c’est bon, là vous abusez. On peut au moins les voir, ces boucliers ?"
+            brut "Mais pourquoi perdre ton temps à les regarder, mon p’tit Gaufrid, quand tu peux directement les acheter !"
+            brut "Acheter je te dis !"
+            jump forge_Brutalmund_05_CannotPay
+        "Crossfit en vends aussi, vous savez...":
+            y "Oui mais, le fait est que je suis indécis entre les vôtres et ceux de Crossfitrichentruc."
+            brut "Ah bon !? Déjà il m'insulte, et là il me fait concurrence aussi ?!"
+            brut "Ha ! Là j’en peux plus mon p’tit Gaufrid, j’en peux plus je te dis !"
+            brut "Je vais lui dire ses quatre verités."
+            brut "Attends-moi ici, je reviens dans une minute."
+            brut "Et ne touche à rien !"
+            hide char_char_brutal normal
+            pause 1.5
+            jump forge_Brutalmund_07_Bouclier
+            
+        "En tout cas je ne peux pas payer…":
+            jump forge_Brutalmund_04
+        
 
 #------------------------------------------#
 
@@ -226,6 +277,8 @@ label forge_Brutalmund_05_CannotPay:
     brut "Là on parle de mes {b}Boucliers-Traineaux à trois vitesses™{/b}, hein !"
     y "Un ongle mâchouillé, ça vous tente ?"
     brut "Ne plaisante pas, tu sais que j’ai arrêté !"
+    brut "$$$ Il me faut quelque chose de valeur si tu veux un bouclier"
+    $ Acte2_Forge_FirstVisit = 1
 
 jump forge_Brutalmund_06_Hub
 
@@ -233,16 +286,45 @@ jump forge_Brutalmund_06_Hub
 
 label forge_Brutalmund_06_Hub:
 
-    brut "$$$ Il me faut quelque chose de valeur si tu veux un bouclier"
     menu:
-        "Vos buffles sont en liberté...":
+        "Vos buffles sont en liberté..." if _testLunettes == 1:
             y "Si ça vous intéresse, j’ai récupéré vos buffles."
-        "Vous voulez quoi en échange ?":
-            y "$$$"
-        "Je n’ai rien à vous donner":
-            y "$$$"
+            brut "Oh ! Ha ha ! Je le savais mon p’tit Gaufrid !"
+            brut "Tu sers enfin à quelque chose !"
+            y "Enfin, presque…"
+            brut "Euh ? Comment ça ?"
+            y "Bon, je les ai libérés des étables, maintenant il faut aller les chercher."
+            brut "Mais tu le fais exprès alors ! Ahh !"
+            brut "Attends ici, je vais les chercher !"
+            brut "Et touche à rien ! T’auras pas de bouclier tant que je ne les aurai pas trouvés !"
+            hide char_char_brutal normal
+            pause 1.5
+            jump forge_Brutalmund_07_Bouclier
             
+        "{color=#FFFFFF}Vous voulez quoi en échange ?{/color}":
+            y "Bon, d’accord, admettons que je puisse vous payer. Vous voulez quoi en échange ?"
+            brut "Si tu trouves un moyen de me fournir un ou deux buffles… Tu sais,  j’ai perdu les miens…"
+            y "Vous pensez que je vous aurais imploré de me donner un bouclier si j’avais des buffles en rame ?"
+            brut "J’ai pas dit qu’il faut que ça soit tes buffles à toi, hein !"
+            brut "Allez, mon p’tit Gaufrid ! T’es peut-être un peu un boulet, mais on sait tous les deux que t’es un débrouilleur."
+            brut "Un petit litige, une prophétie… j’suis sûr que tu vas trouver une solution."
+            brut "Trouve-moi des buffles et t’auras ton {b}Bouclier-Traineau à trois vitesses™{/b} !"
+            jump forge_Brutalmund_06_Hub
+            
+        "Je n’ai rien à vous donner":
+            y "Au moins que vous vouliez vous acheter un Ernust, je n’ai rien à vous donner pour le moment."
+            brut "Bon, alors dégage bonhomme ! J’ai du travail." 
+            brut "Reviens quand t’auras de quoi payer mon {b}Bouclier-Traineau à trois vitesses™{/b} !"
             jump PlaceDuVillageDefault
+
+#---------------------------------------------------#
+
+label forge_Brutalmund_07_Bouclier:
+
+    y "Bon, c’était pas très dur."
+    y "Vaut mieux choper un bouclier et se casser, vite !"
+    $ _testBouclier = 1
+    jump PlaceDuVillageDefault
     
 #--------Backup Conditions et Variables-------------#
 

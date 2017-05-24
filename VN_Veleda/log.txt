@@ -1,4 +1,4 @@
-Wed May 24 16:47:27 2017
+Wed May 24 19:05:40 2017
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
  
@@ -7,14 +7,13 @@ Bootstrap to the start of init.init took 0.06s
 Early init took 0.01s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.21s
+Loading script took 0.09s
 Loading persistent took 0.02s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Running init code took 0.08s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\dalle\\AppData\\Roaming/RenPy/backups\\VN_Veleda':
 Dump and make backups. took 0.04s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -23,15 +22,15 @@ Creating interface object took 0.03s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.05s
+Load screen analysis took 0.01s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
 Prepare screens took 0.04s
-Save pyanalysis. took 0.10s
-Save bytecode. took 0.03s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.00s
+Interface start took 0.01s
 
 primary display bounds: (0, 0, 1920, 1080)
 Windowed mode.
@@ -417,23 +416,11 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 1.93799996376s
+Total time until interface ready: 1.57099986076s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.072000 seconds.
-- Frame drawn at 0.074000 seconds.
-- Frame drawn at 0.079000 seconds.
-- Frame drawn at 0.087000 seconds.
-- 0.087000 seconds to render 5 frames.
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
-The window was minimized.
-The window was restored.
-
-primary display bounds: (0, 0, 1920, 1080)
-Windowed mode.
-Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
+- Frame drawn at 0.054000 seconds.
+- Frame drawn at 0.056000 seconds.
+- Frame drawn at 0.060000 seconds.
+- Frame drawn at 0.069000 seconds.
+- 0.069000 seconds to render 5 frames.
