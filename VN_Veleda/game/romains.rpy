@@ -285,7 +285,7 @@ label romains_VisitePart9:
 
 # -----------------------------------------#
 label romains_VisitePart10:
-    "label romains_VisitePart9"
+    "label romains_VisitePart10"
     
     show char_numerimus normal at left
     show char_veledaernust normal
@@ -295,16 +295,7 @@ label romains_VisitePart10:
     ve "Je vaiiiis vous faire une prophétie !!!"
     nar "Mais qu'est ce qu'il nous fait celui là..."
     
-    jump romains_VisitePart11
-
-# -----------------------------------------#
-label romains_VisitePart10:
-    "label romains_VisitePart9"
-    
-    show char_numerimus normal at left
-    show char_veledaernust normal
-    
-    jump romains_VisitePart11
+    jump romains_VisitePart10
 
 # -----------------------------------------#
 label romains_FinDeLaVisite:
