@@ -94,6 +94,11 @@ init:
     
     #Ending
     image endingTemp = "images/ending.png"
+    image endBro01 = "images/endings/END_Brotrip_01.png"
+    image endBro02 = "images/endings/END_Brotrip_02.png"
+    image endBro03 = "images/endings/END_Brotrip_03.png"
+    image endBro04 = "images/endings/END_Brotrip_04.png"
+    image endBroKey = "images/endings/END_Brotrip_Key.png"
     
     #------ Les images des Personnages -------
     

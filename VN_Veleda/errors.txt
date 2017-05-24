@@ -2,8 +2,16 @@
 errors listed below, and try again.
 
 
-File "game/tourVeleda.rpy", line 469: end of line expected.
-    show char_ernust normal right with Dissolve (0.5) at speakingAnim(0.6,0.92,0.9,0.8)
-                                                      ^
+File "game/ending.rpy", line 37: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xpos 0.0
+    ^
+
+File "game/ending.rpy", line 40: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xpos 0.0
+    ^
+
+File "game/ending.rpy", line 43: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xpos 0.0
+    ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/tourVeleda.rpy", line 8, in script
-    show char_veleda normal at speakingAnimation(0.38,0.22,0.20,0.7)
-  File "game/tourVeleda.rpy", line 8, in <module>
-    show char_veleda normal at speakingAnimation(0.38,0.22,0.20,0.7)
-NameError: name 'speakingAnimation' is not defined
+  File "game/ending.rpy", line 33, in script
+    show endBro01 at scrollEnding(1.0,-1.5, -0.5, -0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
+  File "game/ending.rpy", line 33, in <module>
+    show endBro01 at scrollEnding(1.0,-1.5, -0.5, -0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
+Exception: Too many arguments passed to ATL transform.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/tourVeleda.rpy", line 8, in script
-    show char_veleda normal at speakingAnimation(0.38,0.22,0.20,0.7)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1075, in execute
+  File "game/ending.rpy", line 33, in script
+    show endBro01 at scrollEnding(1.0,-1.5, -0.5, -0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1075, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1036, in show_imspec
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1036, in show_imspec
     at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1749, in py_eval
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\python.py", line 1749, in py_eval
     return py_eval_bytecode(code, globals, locals)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1743, in py_eval_bytecode
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\python.py", line 1743, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/tourVeleda.rpy", line 8, in <module>
-    show char_veleda normal at speakingAnimation(0.38,0.22,0.20,0.7)
-NameError: name 'speakingAnimation' is not defined
+  File "game/ending.rpy", line 33, in <module>
+    show endBro01 at scrollEnding(1.0,-1.5, -0.5, -0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\atl.py", line 400, in __call__
+    raise Exception("Too many arguments passed to ATL transform.")
+Exception: Too many arguments passed to ATL transform.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

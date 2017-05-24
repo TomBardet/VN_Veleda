@@ -9,7 +9,7 @@ label ending_ChevreTrahie:
     outline "Elle rode maintenant du côté du Dakota."
     outline "Hors la loi qui chasse les hors la loi, elle est une fugitive, une renégate."
     play music "music/MUSIC_FIN_BADASS_Chevre.ogg"
-    show endingTemp at scrollEnding(1.0,-0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
+    show endingTemp at scrollEnding(1.0,-0.5, 10) #Juste le temps de scroll à régler (la dernière valeur)
     pause 10 #pause le temps du scroll
     "d,fs"
     return
@@ -30,8 +30,22 @@ label ending_ExilAvecErnust:
     outline "Ils s'attendaient à découvrir le monde..."
     outline "mais ils ne s'attendaient pas à se découvrir... eux-mêmes."
     play music "music/MUSIC_FIN_BROTRIP.ogg"  
-    show endingTemp at scrollEnding(1.0,-0.5, 10)#Juste le temps de scroll à régler (la dernière valeur)
-    pause 10 #pause le temps du scroll
+    scene endBro01 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endBro02 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endBro03 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endBro04 with Dissolve (2.0)
+    pause 2.5 #pause le temps du scroll
+    scene black with Dissolve (1.0)
+    scene endBroKey with Dissolve (2.5)
+    
+    outline " "
+    
     return
     
 label ending_ExilAvecChevre:
