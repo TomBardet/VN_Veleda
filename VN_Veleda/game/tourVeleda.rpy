@@ -107,47 +107,42 @@ label tourVeleda_ErnustEtVeleda :
         "Bonjour Ernust !" :
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Bonjour Ernust, comment ça va ?"
-            hide char_ernust normal right
-            show char_ernust joyeux right :
-                zoom 0.9 xpos 0.13 ypos 0.13
+            
+            show char_ernust joyeux right
             play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)            
             e "Ça va bien !"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
             e "C'est gentil de demander Gaufrid !"
-            hide char_ernust joyeux right
-            show char_ernust normal right :
-                zoom 0.9 xpos 0.12 ypos 0.2
+            show char_ernust normal right
             
         "90 points d'affection ?" :
             play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "90 de love ? Mais il est amoureux de moi ou quoi ?"
-            hide char_ernust normal right
-            show char_ernust love :
-                zoom 0.9 xpos 0.12 ypos 0.2
+
+            show char_ernust love
             play sound "sfx/SFX_Char_Ernust_Love_01.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)            
             e "T'es mon meilleur ami Gaufrid !"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
             e "J'taime bien !"
-            hide char_ernust love
-            show char_ernust normal right :
-                zoom 0.9 xpos 0.12 ypos 0.2
+
+            show char_ernust normal right
+
             
         "Ah, t'es là, toi ?" :
             play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Ah, t'es là toi ? Pfff..."
-            hide char_ernust normal right
-            show char_ernust joyeux right :
-                zoom 0.9 xpos 0.13 ypos 0.13
+
+            show char_ernust joyeux right
+
             play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)            
             e "Oui je suis là !"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
             e "Moi aussi ça me fait plaisir de te voir Gaufrid !"
-            hide char_ernust joyeux right
-            show char_ernust normal right :
-                zoom 0.9 xpos 0.12 ypos 0.2
+
+            show char_ernust normal right
             
     play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
     v "Vous êtes adorables Messieurs mais amenez Nous Notre nourriture. Nous Nous tordons de douleur de faim."
@@ -165,9 +160,7 @@ label tourVeleda_ErnustEtVeleda :
             play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Ça a l'air super bon Ernust, j'ai hâte de voir ça !"
             
-            hide char_ernust normal right
-            show char_ernust joyeux right :
-                zoom 0.9 xpos 0.13 ypos 0.13
+            show char_ernust joyeux right
             
             play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
@@ -181,9 +174,7 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 5, 0.3, 0.10)
             e "Mais moi je trouve que t'es vraiment spécial Gaufrid."
             
-            hide char_ernust joyeux right
-            show char_ernust normal right :
-                zoom 0.9 xpos 0.12 ypos 0.2
+            show char_ernust normal right
             
         "Tu peux abréger ?" :
             play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
@@ -193,9 +184,7 @@ label tourVeleda_ErnustEtVeleda :
             
             e "T'as raison Gaufrid, je parle trop encore."
             
-            hide char_ernust normal right
-            show char_ernust joyeux right :
-                zoom 0.9 xpos 0.13 ypos 0.13
+            show char_ernust joyeux right
                 
             play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
             
@@ -209,9 +198,7 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 2, 0.3, 0.10)
             e "Tu sais le grand beau gosse là, que Ingrid regarde tout le temps."
             
-            hide char_ernust joyeux right
-            show char_ernust normal right :
-                zoom 0.9 xpos 0.12 ypos 0.2
+            show char_ernust normal right
                 
     play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
     v "Cela suffit ! Servez Nous Notre sanglier !"
@@ -221,9 +208,8 @@ label tourVeleda_ErnustEtVeleda :
     e "J'en ai vu un dans la forêt mais bon j'ai eu peur en fait."
     e "En plus j'ai pas d'arme, ça se chasse pas à mains nues hein, le sanglier."
     
-    hide char_ernust normal right
-    show char_ernust joyeux right :
-        zoom 0.9 xpos 0.13 ypos 0.13
+    show char_ernust joyeux right
+    
     play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
     e "Mais j'ai trouvé des champignons alors j'ai fait une soupe ! Une bonne soupe de champignons !"
     
@@ -475,7 +461,25 @@ label tourVeleda_HistoireBrevetPart2:
 # -----------------------------------------#
 
 label tourVeleda_MarryingIngridPart2:
-    "label tourVeleda_MarryingIngridPart2"
+    scene bg_place
+    
+    show char_ernust normal right with Dissolve (0.5) :
+        zoom 0.9 xpos 0.4 ypos 0.2
+    
+    y "Passe devant et prépare la Vélédarionnette, Ernust."
+    e "J'ai pas trop envie Gaufrid, elle sent pas très bon Véléda."
+    
+    menu :
+        "S'il te plaît Ernust !" :
+            y "Ernust, s'il te plaît !"
+            y "T'es mon meilleur ami !"
+            e "Oh Gaufrid !"
+        "Fais ce que je te dis !" :
+            y "C'était pas vraiment une question, Ernust."
+            y "Allez hop !"
+            e "Euh... d'accord Gaufrid."
+    e "T'as raison je suis égoïste..."
+            e "C'est important pour toi, j'y vais tout de suite !"
     
     menu:
         "Accuser la chêvre":
