@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/tourVeleda.rpy", line 585: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        goat "Bêêêêê !
+File "game/tourVeleda.rpy", line 469: end of line expected.
+    show char_ernust normal right with Dissolve (0.5) at speakingAnim(0.6,0.92,0.9,0.8)
+                                                      ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
