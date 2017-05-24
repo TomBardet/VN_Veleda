@@ -324,8 +324,15 @@ label forge_Brutalmund_07_Bouclier:
     hide  char_brutal
     y "Bon, c’était pas très dur."
     y "Vaut mieux choper un bouclier et se casser, vite !"
+    $ inventory.add(bouclier)
     $ _testBouclier = 1
-    jump PlaceDuVillageDefault
+    
+    "Bouclier récupéré"
+
+    if _testGlaive == 1 & _testBouclier == 1:
+        jump PlaceDuVillageAllObjects
+    else:
+        jump PlaceDuVillageDefault
     
 #--------Backup Conditions et Variables-------------#
 
