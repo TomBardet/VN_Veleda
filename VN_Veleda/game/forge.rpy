@@ -145,12 +145,104 @@ label forge_Brutalmund_02:
     menu:
         "Pas vraiment, non" :
             y "Je l’ai pas vu, non. Pourquoi ?"
-            brut "$$$ Brutalmund explique que Beaudrik devait aller chercher les buffles aux étables"
-            brut "$$$ et qu'il ne peut pas laisser son magasin car il y a des voleurs de boucliers"
-            brut "Car grâce à toi, mon p’tit interprète, on n’a plus de quoi bouffer !"
-            brut "Et tous ces boucliers ne vont pas se vendre tous seuls !"
+            # Condition : Crossfit coupable
+            if Acte1_Tour_CoupableJugement == "Crossfit":
+                brut "$$$ Brutalmund explique que Beaudrik devait aller chercher les buffles aux étables"
+                brut "$$$ et qu'il ne peut pas laisser son magasin car il y a des voleurs de boucliers"
+            if Acte1_Tour_CoupableJugement == "Brutalmund":
+                "condition : Brutalmund coupable"
+                brut "Car grâce à toi, mon p’tit interprète, on n’a plus de quoi bouffer !"
+                brut "Et tous ces boucliers ne vont pas se vendre tous seuls !"
+
+            y "Bon, il faudra que vous alliez chercher votre fils alors, non ?"
+            brut "Et te laisser là tout seul avec mes précieux boucliers ? Hors question !"
         "Il est à la taverne" :
+            y "Il allait à la taverne, vous faites encore à temps pour l’attraper."
+            brut "Et te laisser là tout seul avec mes précieux boucliers ? Hors question !"
+            "condition : Crossfit coupable"
+            brut "$$$ Les voleurs de boucliers, ça existe vraiment"
+            "condition : Brutalmund coupable"
+            brut "Tu m’as déjà dévalisé une fois avec cette histoire de buffles, tu ne m’auras pas une deuxième fois ! Ha !"
+
+jump forge_Brutalmund_03
+
+#------------------------------------------#
+
+label forge_Brutalmund_03:
+    
+    brut "Et de toute façon ça sert à rien, Beaudrik c’est vraiment une cause perdue."
+    brut "Je le savais que j’aurais dû le jeter d’une falaise quand il est né !"
+    brut "Le troisième téton, c’était pas bon signe."
+    
+    menu:
+        "Trois tétons, c'est pas si grave" :
+            y "Bon, c’est pas sa faute non plus s’il est né comme ça."
+            y "Je pense que les enfants comme lui, ils ont besoin d’encore plus d’amour que les gens normaux."
+            brut "C’est ce que sa mère disait aussi ! Et ça l’a ruiné ! Ruiné je te dis !"
+        "En quoi c’est mauvais signe ?" :
+            y "Ah bon ? Trois tétons c’est mauvais signe ?"
+            brut "Mais enfin, Veléda ne t’a rien appris ?"
+            y "Euh, nous on fait plutôt des prophéties. Les tétons en rame c’est pas trop notre truc."
+            brut "Et alors je t’explique..."
+            brut "Le troisième téton, c’est signe de faiblesse !"
+        "Les gens comme lui, c’est des monstres" :
+            y "C’est des punitions divines, les êtres comme lui."
+            y "C’est peut-être pas trop tard, je vous accompagne à la falaise la plus proche ?"
+            brut "Non mais là c’est mort, il fallait le faire avant."
+            brut "J’ai essayé de le lâcher de l’autre côté de la Lippe, mais il revient toujours."
+        "D'autres secrets bizarres sur lui ?":
+            y "Ah ! Ça, ça m’intéresse."
+            y "Vous savez si votre fils a d’autres secrets gênants comme celui-là ?"
+            brut "Ha ! Tu veux connaitre son secret ?"
+            
+    jump forge_Brutalmund_04
+
+#------------------------------------------#
+
+label forge_Brutalmund_04:
+    
+    brut "On l’a gâté, ce petit enfoiré !"
+    brut "Tu sais qu’il dort avec un nounours car il a peur du noir ?"
+    brut "Genre tu l’as vu ? Il fait deux mètres cet abrouti !"
+    brut "Enfin bref."
+    brut "J’imagine que tu n’as pas besoin d’un {b}Bouclier-Traineau à trois vitesses™{/b}, hein ?"
+
+    menu:
+        "Juste le bouclier, sans traineau":
             y "$$$"
+        "On peut faire un essai routier ?":
+            y "$$$"
+        "Je ne peux pas payer...":
+            y "$$$"
+            
+    jump forge_Brutalmund_05_CannotPay
+
+#------------------------------------------#
+
+label forge_Brutalmund_05_CannotPay:
+
+    y "Euh, je veux bien, mais en tout cas je n’ai pas de quoi le troquer avec."
+    brut "Rien du tout ? Allez mon p’tit Gaufrid, ça fait deux mois que je ne vends rien, fais un effort !"
+    brut "Là on parle de mes {b}Boucliers-Traineaux à trois vitesses™{/b}, hein !"
+    y "Un ongle mâchouillé, ça vous tente ?"
+    brut "Ne plaisante pas, tu sais que j’ai arrêté !"
+
+jump forge_Brutalmund_06_Hub
+
+#------------------------------------------#
+
+label forge_Brutalmund_06_Hub:
+
+    brut "$$$ Il me faut quelque chose de valeur si tu veux un bouclier"
+    menu:
+        "Vos buffles sont en liberté...":
+            y "Si ça vous intéresse, j’ai récupéré vos buffles."
+        "Vous voulez quoi en échange ?":
+            y "$$$"
+        "Je n’ai rien à vous donner":
+            y "$$$"
+            
+            jump PlaceDuVillageDefault
     
 #--------Backup Conditions et Variables-------------#
 
