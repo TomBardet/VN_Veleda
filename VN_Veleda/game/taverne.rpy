@@ -68,7 +68,7 @@ label taverne_DatingIngrid:
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
     i "..."
     i "Ecoute... je vais y aller je pense. Bisous hein !"
-    hide datingSim
+    hide screen datingSim
     show char_ingrid normal:
         xalign 0.5 yalign 0.8
         xpos 0.5 ypos 1.15 zoom 0.3
@@ -305,6 +305,7 @@ label taverne_AbusAlcoolPart1:
     goat "Elle fera rire tous tes interlocuteurs, et marquera ton ascension dans la société"
     goat "Je dois y aller maintenant"
     goat "Au revoir Gaufrid"
+    hide screen datingSim
     show char_goat normal:
         xalign 0.5 yalign 0.8
         zoom 1.0 xpos 0.45 ypos 0.7
