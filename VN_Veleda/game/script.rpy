@@ -39,10 +39,11 @@ label start:
         _testLunettes = 0
         _testTrompette = 0
         
-        ########## - CHOIX ET BRANCHES - #################
+        ########## - TAGs (CHOIX ET BRANCHES) - #################
         
-        _Acte1_Tour_CoupableJugement = Brutalmund
-        _Acte2_Forge_FirstVisit = 0
+        Acte1_Tour_CoupableJugement = "Brutalmund" # Coupable de l'Acte 1 -> "Brutalmund" ou "Crossfit"
+        Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
+        
 
     jump intro
     

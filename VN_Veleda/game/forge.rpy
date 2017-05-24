@@ -145,12 +145,15 @@ label forge_Brutalmund_02:
     menu:
         "Pas vraiment, non" :
             y "Je l’ai pas vu, non. Pourquoi ?"
-            "condition : Crossfit coupable"
-            brut "$$$ Brutalmund explique que Beaudrik devait aller chercher les buffles aux étables"
-            brut "$$$ et qu'il ne peut pas laisser son magasin car il y a des voleurs de boucliers"
-            "condition : Brutalmund coupable"
-            brut "Car grâce à toi, mon p’tit interprète, on n’a plus de quoi bouffer !"
-            brut "Et tous ces boucliers ne vont pas se vendre tous seuls !"
+            # Condition : Crossfit coupable
+            if Acte1_Tour_CoupableJugement == "Crossfit":
+                brut "$$$ Brutalmund explique que Beaudrik devait aller chercher les buffles aux étables"
+                brut "$$$ et qu'il ne peut pas laisser son magasin car il y a des voleurs de boucliers"
+            if Acte1_Tour_CoupableJugement == "Brutalmund":
+                "condition : Brutalmund coupable"
+                brut "Car grâce à toi, mon p’tit interprète, on n’a plus de quoi bouffer !"
+                brut "Et tous ces boucliers ne vont pas se vendre tous seuls !"
+
             y "Bon, il faudra que vous alliez chercher votre fils alors, non ?"
             brut "Et te laisser là tout seul avec mes précieux boucliers ? Hors question !"
         "Il est à la taverne" :
@@ -230,9 +233,10 @@ jump forge_Brutalmund_06_Hub
 
 label forge_Brutalmund_06_Hub:
 
+    brut "$$$ Il me faut quelque chose de valeur si tu veux un bouclier"
     menu:
         "Vos buffles sont en liberté...":
-            y "$$$"
+            y "Si ça vous intéresse, j’ai récupéré vos buffles."
         "Vous voulez quoi en échange ?":
             y "$$$"
         "Je n’ai rien à vous donner":
