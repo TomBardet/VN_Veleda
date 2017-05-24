@@ -29,7 +29,9 @@ init:
     
     define cross = Character("Crossfitrichernvald : ",
         what_suffix=" ",
-        ctc=anim.Blink("gui/ctc.png"))
+        ctc=anim.Blink("gui/ctc.png"),
+        who_size=22,
+        who_ypos=0.8)
     
     define bg = Character("Beaudrik : ",
         what_suffix=" ",
