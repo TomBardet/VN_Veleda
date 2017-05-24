@@ -186,7 +186,8 @@ label romains_VisitePart3bis:
             num "Super idée l'Germain, on l'a toujours pas vu celle là."
             y "non mais elle est pas forcément..."
             num "Vendu ! On y va {b}tout de suite{/b} !"
-            nar "Dans quoi tu t'es encore fourré."
+            scene black with Dissolve (1.0)
+            nar "Dans quoi tu t'es encore fourré...?"
             jump romains_VisitePart4
     
     
@@ -195,11 +196,108 @@ label romains_VisitePart3bis:
 label romains_VisitePart4:
     "label romains_VisitePart4"
     
-    scene bg_antichambre
-    jump romains_VisitePart3bis
+    scene bg_antichambre with Dissolve (1.0)
+    show char_ernust normal
+    jump romains_VisitePart5
     
 # -----------------------------------------#
 
+label romains_VisitePart5:
+    "label romains_VisitePart5"
+    
+    y "Ernust. J'ai fait une connerie."
+    e "Mais non voyons ça ne t'arrive jamais à toi !"
+    y "Si, là clairement ça m'est arrivé."
+    y "Ya deux romains qui arrivent d'une minute à l'autre pour voir Véléda..."
+    e "Hoo, dommage qu'elle soit morte."
+    num "Héo ! Le Germain, t'es là ? On rentre nous !"
+    y "Ahhhhh !! Les voilà !"
+    e "T'en fais pas Gaufrid j'ai une idée géniale, fais moi confiance !"
+    menu :
+        "1. Je ne te fais absolument pas confiance.":
+            y "Non Ernust c'est mort !"
+            y "Je te fais absolument pas confiance..."
+            y "Mais j'ai pas vraiment le choix là tout de suite..."
+            jump romains_VisitePart6
+            
+        "2. Je valide, je te fais clairement pas confiance! ":
+            y "Tu vas encore faire une connerie !"
+            y "Tu serais capable de la re-tuer"
+            y "Mais le temps presse, j'ai pas vraiment le choix... je compte sur toi."
+            jump romains_VisitePart6
+            
+# -----------------------------------------#
+
+label romains_VisitePart6:
+    "label romains_VisitePart6"
+    
+    hide char_ernust normal with Dissolve (1.0)
+    jump romains_VisitePart7
+    
+# -----------------------------------------#
+label romains_VisitePart7:
+    "label romains_VisitePart7"
+    
+    show char_numerimus normal with Dissolve (1.0)
+    num "Ah bah t'es là le Germain."
+    num "Bon on va la voir la tarée ?"
+    menu :
+        "1. Un peu de respect !":
+            y "Un peu de respect je vous prie !"
+            num "Boooh l'autre hé, fais pas le mijoré le Germain on le sait tous qu'elle a un pet au casque."
+            y "Vous croyez pas si bien dire..."
+            jump romains_VisitePart8
+            
+        "2. euuh attendez...":
+            y "Je ne suis pas sûr qu'elle soit...prète."
+            num "Qu'elle se prépare alors !"
+            num "Je vais pas faire attendre mon imbécile de porte enseigne trop longtemps."
+            jump romains_VisitePart8
+           
+            
+        "3. Il est ou l'autre ?":
+            num "Je l'ai laissé derrière, il s'en fiche lui de tout ça."
+            num "Et puis entre nous... c'est pas que je l'aime pas mais bon..."
+            y "Je vois... on a tous un 'Ernust' j'imagine..."
+            jump romains_VisitePart8
+
+            
+# -----------------------------------------#
+
+label romains_VisitePart8:
+    "label romains_VisitePart8"
+    
+    y "Ca devrait être bon... j'imagine..."
+    y "Suivez-moi."
+    jump romains_VisitePart9
+
+# -----------------------------------------#
+
+label romains_VisitePart9:
+    "label romains_VisitePart9"
+    
+    scene black with Dissolve (1.0)
+    y "Ernust, on... on arrive nous."
+    y "On monte hein..."
+    y "Là on... monte les marches."
+    scene bg_chambre with Dissolve (1.0)
+    jump romains_VisitePart10
+
+# -----------------------------------------#
+label romains_VisitePart10:
+    "label romains_VisitePart10"
+    
+    show char_numerimus normal at left
+    show char_veledaernust normal
+    
+    num " Bonjour m'dam."
+    ve "Bonnnnnnnjouuuuur etranger !"
+    ve "Je vaiiiis vous faire une prophétie !!!"
+    nar "Mais qu'est ce qu'il nous fait celui là..."
+    
+    jump romains_VisitePart10
+
+# -----------------------------------------#
 label romains_FinDeLaVisite:
     "label romains_VisiteVeleda"
     

@@ -42,6 +42,10 @@ init:
     define dig = Character("Digitimus : ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
+ 
+    define ve = Character("Véléda(Ernust) : ",
+        what_suffix=" ",
+        ctc=anim.Blink("gui/ctc.png"))
 
     define nar = Character("Narrateur : ",
         what_xalign = 0.5,
@@ -89,6 +93,9 @@ init:
     image char_veleda morte = "images/char/Char_veleda_morte.png"
     image char_veleda marionnette = "images/char/Char_veleda_marionnette.png"
     
+    #Véléda(Ernust)
+    image char_veledaernust normal = "images/char/Char_veledaernust_normal.png"
+    
     #Ernust
     image char_ernust normal left = "images/char/Char_ernust_normal.png"
     image char_ernust normal right = im.Flip("images/char/Char_ernust_normal.png", horizontal = True)
@@ -116,9 +123,16 @@ init:
     image char_brutal heureux = "images/char/Char_brutal_heureux.png"
     
     #Beaudrik
-    image char_beaudrik mepris = "images/char/Char_beaudrik_mepris.png"
-    image char_beaudrik drague = "images/char/Char_beaudrik_drague.png"
-    image char_beaudrik insulte = "images/char/Char_beaudrik_insulte.png"
+    image char_beaudrik mepris left = "images/char/Char_beaudrik_mepris.png"
+    image char_beaudrik drague left = "images/char/Char_beaudrik_drague.png"
+    image char_beaudrik insulte left = "images/char/Char_beaudrik_insulte.png"
+    image char_beaudrik normal left = "images/char/Char_beaudrik_normal.png"
+    image char_beaudrik choque right = "images/char/Char_beaudrik_surpris.png"
+    image char_beaudrik mepris right = im.Flip("images/char/Char_beaudrik_mepris.png", horizontal = True)
+    image char_beaudrik drague right = im.Flip("images/char/Char_beaudrik_drague.png", horizontal = True)
+    image char_beaudrik insulte right = im.Flip("images/char/Char_beaudrik_insulte.png", horizontal = True)
+    image char_beaudrik normal right = im.Flip("images/char/Char_beaudrik_normal.png", horizontal = True)
+    image char_beaudrik choque left = im.Flip("images/char/Char_beaudrik_surpris.png", horizontal = True)
     
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
