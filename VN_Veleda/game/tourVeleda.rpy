@@ -456,8 +456,8 @@ label tourVeleda_HistoireBrevetPart2:
     y "Ben moi je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
     y "Je vais pouvoir voir Ingrid en plus !"
     
-    #jump narration_ellipse02
-    jump tourVeleda_MarryingIngridPart2
+    jump narration_ellipse02
+    #jump tourVeleda_MarryingIngridPart2
     
 # -----------------------------------------#
 
