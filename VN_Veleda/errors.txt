@@ -2,8 +2,108 @@
 errors listed below, and try again.
 
 
-File "game/ending.rpy", line 10: end of line expected.
-    scene endBadKey with Dissolve 1.0
-                                  ^
+File "game/script.rpy", line 96: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+(Perhaps you left out a " at the end of the first line.)
+    linear 2.0 xpos -0.015 ypos -0." zoom 1.1
+        outline "C'est un peu sa deuxième maison."
+                   ^
+        
+        jump taverne_DatingIngrid
+        
+    # -----------------------------------------#
+    
+    label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingrid
+        scene black with Dissolve (1.5)
+        outline "Le lendemain matin..."
+        y "Waw c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
+        y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
+        y "Boarf ! C'est pas important"
+        y "Il faut que j'aille travailler moi !"
+        jump tourVeleda_ErnustEtVeleda
+        
+    # -----------------------------------------#    
+        
+    label narration_ellipse02:
+        scene black with Dissolve (1.5)
+        outline "De retour à la Taverne..."
+        
+        jump taverne_PresentationDot
+        
+    # -----------------------------------------#
+    
+    label PlaceDuVillageDefault:
+        scene bg_place
+        menu:
+            " "
+            "Aller à la Taverne":
+                jump taverne_AbusAlcoolPart1
+            "Aller aux Etables":
+                jump etables_PeurDesBufflesPart1
+            "Aller à la Forge":
+                jump forge_BrutalmundEtBeaudrik
+            "Aller à la Tente Romaine":
+                jump romains_PremiereRencontre
+    
+    # -----------------------------------------#
+    
+    label narration_ellipseCuite:
+        scene black with Dissolve (1.5)
+        outline "Une durée indéterminée de temps plus tard..."
+        y "... Mal à la tête..."
+        y "Bon. Ingrid m'a demandé de lui ramener un {b}glaive{/b} et un {b}bouclier{/b}"
+        y "Je trouverais surement ça au village."
+        
+        jump PlaceDuVillageDefault
+    
+    # -----------------------------------------#
+    
+    label PlaceDuVillageAllObjects:
+        "Tous les objets réunis !"
+        menu:
+            "Aller à la Taverne":
+                jump Act2_transition_alldone
+    
+    # -----------------------------------------#
+    
+    
+    
+    
+    
+    ###########################################################################################
+    # OLD - Le proto technique avec les dialogues correspondant et les enchainements utilisés #
+    ###########################################################################################
+    
+    label OLD_start:
+        python :
+            ###Les personnages
+            goat_char = Chara("Goat", 20,100)
+            vel_char = Chara("Véléda", 25,100)
+            #### On crée nos items
+            glaive = Item("glaive",player="ex", imageIdle="images/inv_swordIdle.png",imageHover="images/inv_swordHover.png")
+            bouclier = Item("bouclier",player="ex", imageIdle="images/inv_shieldIdle.png",imageHover="images/inv_shieldHover.png")   
+            blague = Item("blague",player="goat_char", imageIdle="images/inv_jokeIdle.png",imageHover="images/inv_jokeHover.png") 
+            lunettes = Item("lunettes",player="ex", imageIdle="images/inv_glassesIdle.png",imageHover="images/inv_glassesHover.png") 
+                
+            inventory = Inventory()
+            inventory.add(glaive)
+            inventory.add(bouclier)
+            inventory.add(blague)
+            inventory.add(lunettes)  
+            
+            interlocuteur = "None" ## Ne pas oublier d'actualiser le nom de l'interlocuteur à chaque changement
+            lieu = "None"
+            CAactif = False ## Set à False après chaqu actionChoice
+    
+    label startBar:
+        
+        scene bg_bar with Dissolve (2.0)
+        window show
+        show goat with Dissolve(1.5)
+        hide screen inventory_button
+    
+        $ lieu = "bar"
+        
+        $ CAactif = True
+        $ actionChoice = "action_choice_"+ str(lieu) ##Copier ces lignes à chaque fois qu'on change de lieu, en actualisant le nom
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
