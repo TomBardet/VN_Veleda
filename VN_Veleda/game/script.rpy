@@ -96,6 +96,8 @@ label intro:
     outline "Il doit être à la Taverne..."
     outline "C'est un peu sa deuxième maison."
     
+    scene black with Dissolve (0.5)
+    
     jump taverne_DatingIngrid
     
 # -----------------------------------------#
