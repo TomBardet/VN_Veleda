@@ -202,5 +202,7 @@ init:
 #########################################################################################
 ######################## - Defining Sounds & Musics - ###################################
 
-# Il n'y a pas encore de Sons et Musiques dans le jeu
+    # MUSIC
+    music etable01 = "game/muisc/MUSIC_Etable_Normale.wav"
+    
 
