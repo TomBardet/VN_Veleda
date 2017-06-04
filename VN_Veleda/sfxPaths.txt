@@ -12,21 +12,21 @@
 "music/MUSIC_Tour_Antichambre.wav"
 "music/MUSIC_Tour_Chambre_Jour.wav"
 "music/MUSIC_Tour_Chambre_Nuit.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\music\MUSIC_Tour_Full.wav"
+"music\MUSIC_Tour_Full.wav"
 
 
 //AMBIANCES///
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Tour_Chambre_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Tour_Chambre_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Antichambre_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_CarteVillage_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Etable_Normal_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Etable_Panic_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Etable_Panic_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Forge_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Taverne_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\ambiances\AMB_Lieu_Taverne_02.wav"
+"ambiances\AMB_Lieu_Tour_Chambre_01.wav"
+"ambiances\AMB_Lieu_Tour_Chambre_02.wav"
+"ambiances\AMB_Lieu_Antichambre_01.wav"
+"ambiances\AMB_Lieu_CarteVillage_01.wav"
+"ambiances\AMB_Lieu_Etable_Normal_01.wav"
+"ambiances\AMB_Lieu_Etable_Panic_01.wav"
+"ambiances\AMB_Lieu_Etable_Panic_02.wav"
+"ambiances\AMB_Lieu_Forge_01.wav"
+"ambiances\AMB_Lieu_Taverne_01.wav"
+"ambiances\AMB_Lieu_Taverne_02.wav"
 
 ///SFX///
 
@@ -37,7 +37,7 @@
 "sfx/SFX_Stairs_02.wav"
 "sfx/SFX_Trumpet_01.wav"
 "sfx/SFX_Walk_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\SFX_Stairs_01.wav"
+"sfx\SFX_Stairs_01.wav"
 
 ///SFX UI///
 
@@ -52,18 +52,18 @@
 
 
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_FIN_MELANCOLIQUE_Ernust.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_FIN_BROTRIP_Ernust.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_FIN_BROTRIP_Chevre.wav"
+"sfx\Voices\Narrateur\Narrateur_FIN_MELANCOLIQUE_Ernust.wav"
+"sfx\Voices\Narrateur\Narrateur_FIN_BROTRIP_Ernust.wav"
+"sfx\Voices\Narrateur\Narrateur_FIN_BROTRIP_Chevre.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_FIN_BADASS_Chevre.wav"
+"sfx\Voices\Narrateur\Narrateur_FIN_BADASS_Chevre.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_Intro_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_Intro_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_Intro_04.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_Intro_05.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_Intro_07.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Narrateur\Narrateur_Intro_08.wav"
+"sfx\Voices\Narrateur\Narrateur_Intro_01.wav"
+"sfx\Voices\Narrateur\Narrateur_Intro_02.wav"
+"sfx\Voices\Narrateur\Narrateur_Intro_04.wav"
+"sfx\Voices\Narrateur\Narrateur_Intro_05.wav"
+"sfx\Voices\Narrateur\Narrateur_Intro_07.wav"
+"sfx\Voices\Narrateur\Narrateur_Intro_08.wav"
 
 ///BEAUDRIK///
 
@@ -157,125 +157,125 @@
 
 ///CROSSFIT///
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Colere_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Colere_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Colere_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Colere_04.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Colere_01.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Colere_02.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Colere_03.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Colere_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Inquiet_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Inquiet_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Inquiet_03.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Inquiet_01.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Inquiet_02.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Inquiet_03.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Pleurs_01.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Pleurs_01.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Serieux_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Serieux_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Serieux_03.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Serieux_01.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Serieux_02.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Serieux_03.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Crossfit\Char_Crossfit_Choc_01.wav"
+"sfx\Voices\Crossfit\Char_Crossfit_Choc_01.wav"
 
 
 ///VELEDA///
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Veleda\Char_Veleda_rage_01.wav"
+"sfx\Voices\Veleda\Char_Veleda_rage_01.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Veleda\Char_Veleda_Normal_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Veleda\Char_Veleda_Normal_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Veleda\Char_Veleda_Normal_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Veleda\Char_Veleda_Normal_04.wav"
+"sfx\Voices\Veleda\Char_Veleda_Normal_01.wav"
+"sfx\Voices\Veleda\Char_Veleda_Normal_02.wav"
+"sfx\Voices\Veleda\Char_Veleda_Normal_03.wav"
+"sfx\Voices\Veleda\Char_Veleda_Normal_04.wav"
 
 
 ///INGRID///
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Normal_03.wav""
-D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Normal_04.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Normal_03.wav""
+sfx\Voices\Ingrid\Char_Ingrid_Normal_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Love_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Love_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Love_03.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Love_01.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Love_02.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Love_03.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Degout_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Degout_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Degout_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Degout_04.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Degout_01.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Degout_02.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Degout_03.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Degout_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ingrid\Char_Ingrid_Choc_01.wav"
+"sfx\Voices\Ingrid\Char_Ingrid_Choc_01.wav"
 
 ///ERNUST///
 
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Marionnette_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Marionnette_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Marionnette_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Marionnette_04.wav"
+"sfx\Voices\Ernust\Char_Ernust_Marionnette_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Marionnette_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Marionnette_03.wav"
+"sfx\Voices\Ernust\Char_Ernust_Marionnette_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Love_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Love_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Love_03.wav"
+"sfx\Voices\Ernust\Char_Ernust_Love_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Love_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Love_03.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Inspect_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Inspect_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Inspect_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Inspect_02.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Inquiet_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Inquiet_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Inquiet_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Inquiet_04.wav"
+"sfx\Voices\Ernust\Char_Ernust_Inquiet_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Inquiet_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Inquiet_03.wav"
+"sfx\Voices\Ernust\Char_Ernust_Inquiet_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Joyeux_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Joyeux_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Joyeux_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Joyeux_04.wav"
+"sfx\Voices\Ernust\Char_Ernust_Joyeux_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Joyeux_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Joyeux_03.wav"
+"sfx\Voices\Ernust\Char_Ernust_Joyeux_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Trahi_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Trahi_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Trahi_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Trahi_02.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_04.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_05.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_06.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_07.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Ernust\Char_Ernust_Normal_08.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_01.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_02.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_03.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_04.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_05.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_06.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_07.wav"
+"sfx\Voices\Ernust\Char_Ernust_Normal_08.wav"
 
 
 
 ///NUM///
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Normal_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Normal_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Normal_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Normal_04.wav"
+"sfx\Voices\Num\Char_Num_Normal_01.wav"
+"sfx\Voices\Num\Char_Num_Normal_02.wav"
+"sfx\Voices\Num\Char_Num_Normal_03.wav"
+"sfx\Voices\Num\Char_Num_Normal_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Heureux_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Heureux_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Heureux_03.wav"
+"sfx\Voices\Num\Char_Num_Heureux_01.wav"
+"sfx\Voices\Num\Char_Num_Heureux_02.wav"
+"sfx\Voices\Num\Char_Num_Heureux_03.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Doute_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Doute_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Doute_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num\Char_Num_Doute_04.wav"
+"sfx\Voices\Num\Char_Num_Doute_01.wav"
+"sfx\Voices\Num\Char_Num_Doute_02.wav"
+"sfx\Voices\Num\Char_Num_Doute_03.wav"
+"sfx\Voices\Num\Char_Num_Doute_04.wav"
 
 
 ///NUM&DIG///
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Rire_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Rire_02.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Rire_01.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Rire_02.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Normal_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Normal_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Normal_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Normal_04.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Normal_01.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Normal_02.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Normal_03.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Normal_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_04.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_01.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_02.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_03.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Heureux_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Doute_01.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Doute_02.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Doute_03.wav"
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Doute_04.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Doute_01.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Doute_02.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Doute_03.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Doute_04.wav"
 
-"D:\Projects\VN\GIt\Veleda_Git\VN_Veleda\game\sfx\Voices\Num et Dig\Char_Num_Dig_Choc_01.wav"
+"sfx\Voices\Num et Dig\Char_Num_Dig_Choc_01.wav"
 
