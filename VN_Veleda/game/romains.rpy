@@ -10,13 +10,16 @@ label romains_PremiereRencontre:
 # -----------------------------------------#
 
 label romains_Part1:
-    
     scene bg_romains
-    menu:
-        "Rentrer au village":
-            jump PlaceDuVillageDefault
-        "S'approcher de la tente":
-            jump romains_Part2
+    if Acte2_Romains_FirstVisit == 1:
+        jump romains_Part5
+    else :
+        menu:
+            "S'approcher de la tente":
+                jump romains_Part2
+            "Rentrer au village":
+                jump PlaceDuVillageDefault
+
             
                      
 # -----------------------------------------#
@@ -90,6 +93,9 @@ label romains_Part4:
 # -----------------------------------------#
 
 label romains_Part5:
+    $ Acte2_Romains_FirstVisit = 1
+    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+    show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
     
     menu :
         num "On s'ennuie..."
@@ -529,7 +535,7 @@ label romains_Blague:
         $ inventory.add(trompette)
         $ _testTrompette = 1
         "trompette récupérée"
-        jump romains_Part4
+        jump romains_Part5
         
     else:
         y "Alors, c'est l'histoire de..."
@@ -543,5 +549,5 @@ label romains_Blague:
         nar "C'était de loin la pire blague que j'ai jamais entendu"
         nar "Et je parle même pas du fait que t'as 12 siècles d'avance."
         num "C'était horrible... La prochaine fois reviens avec une blague correcte."
-        jump romains_Part4
+        jump romains_Part5
          

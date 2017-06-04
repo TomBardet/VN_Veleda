@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/ending.rpy", line 10: end of line expected.
-    scene endBadKey with Dissolve 1.0
-                                  ^
+File "game/ressources.rpy", line 206: expected statement.
+    music etable01 = "game/muisc/MUSIC_Etable_Normale.wav"
+                   ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

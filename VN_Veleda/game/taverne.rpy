@@ -4,16 +4,17 @@
 
 label taverne_DatingIngrid:
     
-    scene bg_taverne
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+
+    scene bg_taverne with Dissolve (0.5)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (0.25)
 
     $ _window_during_transitions = True
     
     $ lieu = "Taverne"
     $ interlocuteur = "ingrid_char"
     
-    nar "On dirait qu'il essaie de draguer Ingrid encore."
-    nar "Réveille toi, ça va être ton tour."
+    outline "On dirait qu'il essaie de draguer Ingrid encore."
+    outline "Réveille toi, ça va être ton tour."
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
     i "Hihi Gaufrid t'es mignon !"
@@ -22,23 +23,24 @@ label taverne_DatingIngrid:
     menu:
         i "{cps=0}Hihi Gaufrid t'es mignon !{/cps}"
         
-        "Viens avec moi, on va... regarder les étoiles...":
-            y "Ingrid, suis moi"
-            y "Allons observer les étoiles illuminer le clair de lune de leur beauté"
-        "On me dit souvent que je suis assez beau garçon oui...":
+        "Viens regarder les étoiles avec moi Ingrid !":
+            y "Ingrid, suis moi !"
+            y "Allons observer les étoiles illuminer le clair de lune de ta beauté !"
+        "C'est vrai que je suis beau.":
             y "On me dit souvent que je suis assez beau garçon oui..."
-            y "Je prends soin de moi, c'est pour ça"
+            y "Je prends soin de moi, c'est pour ça."
         "Ingrid épouse moi !":
-            y "Ingrid épouse moi !"
-            y "Je t'aime à la folie depuis 8 jours"
+            y "Épouse moi Ingrid !"
+            y "Je t'aime à la folie depuis 8 jours."
             y "Je pense à toi tout le temps !"
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
-    i "Euh... je veux dire, t'es plus comme un ptit frère pour moi"
+    i "Euh... je veux dire... t'es plus comme un ptit frère pour moi."
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     y "* Un petit frère... Héhé je savais que j'avais une chance ! *"
-    nar "Comment ça une chance ?!"
-    nar "Tu vas vraiment avoir besoin d'un coup de main..."
+    outline "Quoi ?"
+    outline "Comment ça une chance ?!"
+    outline "Tu vas vraiment avoir besoin d'un coup de main..."
     
     show screen datingSim(ingrid_char, 0.56, 0.30)
     pause 1.5
@@ -337,10 +339,10 @@ label taverne_AbusAlcoolPart1:
 label Act2_transition_alldone:
 
     scene black with Dissolve(0.5)
-    outline "Le soir, plus tard..."
+    outline "Le meme soir, plus tard..."
     y "Ça y est ! J'ai la dot !"
     y "Ingrid, ma Choquette, j'arrive !"
-    jump placeDuVillage_Concours_Placeholder
+    jump taverne_ConcoursPart1
     
 #------------------------------------------#
 
@@ -838,7 +840,7 @@ label taverne_Concours_Part6_FadeToBlack:
     outline "Là tu vas devoir te débrouiller tout seul."
     outline "Allez, salut ma caille !"
     pause 2.0
-    outline "Le lendemain..."
+    outline "{i}Le lendemain matin...{/i}"
 
 label taverne_MarryingIngridPart1:
 
