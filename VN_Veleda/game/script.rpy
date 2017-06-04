@@ -50,7 +50,11 @@ label start:
 # -----------------------------------------#
     
 label intro:
+    
     window hide
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.wav"
+    
     show introCarte:
         zoom 1.1,xanchor 0.0 yanchor 0.0
         xpos 0.0 ypos -0.10
@@ -67,8 +71,13 @@ label intro:
     show introCrack with Dissolve(1.0):
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos 0.35
-    pause 1.0
+    
+    pause 14.0
+    
     outline "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains"
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.wav"
+    
     show introFlag:
         parallel:
             linear 1.5 xpos -.2
@@ -78,22 +87,36 @@ label intro:
             linear 2.0 alpha 0.0
     show introCrack:
         linear 1.3 alpha 0.0
+        
     outline "Bon, pas vraiment toute en fait..."
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.wav"
+    
     pause 0.5
     show introPoint with vpunch:
         zoom 0.45,xanchor 0.5 yanchor 0.5
         xpos 0.56 ypos 0.42 
     outline "En tout cas pas le village des Bructères, où habite la légendaire prophétesse Véléda."
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.wav"
     show bg_place with Dissolve (0.5):
         zoom 1.0 xanchor 0.0 yanchor 0.0
         linear 2.0 xpos -0.02 ypos 0.2 zoom 1.1
     outline "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.wav"
+    
     outline "Tu vas incarner Gaufrid, son assistant."
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_06.wav"
+    
     #scene black with Dissolve(1.5)
     show bg_place :
         zoom 1.0 xanchor 0.0 yanchor 0.0
         linear 0.5 xpos -0.15 ypos -0.3 zoom 1.1
+    
     outline "Il doit être à la Taverne..."
+    
     outline "C'est un peu sa deuxième maison."
     
     scene black with Dissolve (0.5)
@@ -103,12 +126,23 @@ label intro:
 # -----------------------------------------#
 
 label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingrid
+    
     scene black with Dissolve (1.5)
+    
+    play sound "sfx/SFX_Sleep_01.wav"
+    
+    pause 3.0
+    
     outline "Le lendemain matin..."
     y "Waw c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
     y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
-    y "Boarf ! C'est pas important"
+    y "Boarf ! C'est pas important..."
     y "Il faut que j'aille travailler moi !"
+    
+    play sound "sfx/SFX_Walk_01.wav"
+    
+    pause 2.0
+    
     jump tourVeleda_ErnustEtVeleda
     
 # -----------------------------------------#    

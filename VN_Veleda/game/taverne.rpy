@@ -13,10 +13,18 @@ label taverne_DatingIngrid:
     $ lieu = "Taverne"
     $ interlocuteur = "ingrid_char"
     
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.wav"
+    
     outline "On dirait qu'il essaie de draguer Ingrid encore."
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.wav"
+    
     outline "Réveille toi, ça va être ton tour."
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.wav"
+    
     i "Hihi Gaufrid t'es mignon !"
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
@@ -34,9 +42,14 @@ label taverne_DatingIngrid:
             y "Je t'aime à la folie depuis 8 jours."
             y "Je pense à toi tout le temps !"
     
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.wav"
+    
     i "Euh... je veux dire... t'es plus comme un ptit frère pour moi."
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    
     y "* Un petit frère... Héhé je savais que j'avais une chance ! *"
     outline "Quoi ?"
     outline "Comment ça une chance ?!"
@@ -50,37 +63,54 @@ label taverne_DatingIngrid:
         " "
         
         "Hein ? Mais c'est quoi ces chiffres ?!":
+            
             y "Hein ? Mais c'est quoi ces chiffres ?!"
-            nar "Ces chiffres représentent l'affection de ton interlocuteur"
-            nar "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies"
-            nar "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
+            outline "Ces chiffres représentent l'affection de ton interlocuteur"
+            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies"
+            outline "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
             y "Les dating quoi ?"
+            
         "Hé ! Mais pourquoi j'ai perdu 10 points ?!":
+            
             y "Hé ! Mais pourquoi j'ai perdu 10 points ?!"
-            nar "Ces chiffres représentent l'affection de ton interlocuteur"
-            nar "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies"
-            nar "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
+            outline "Ces chiffres représentent l'affection de ton interlocuteur"
+            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies"
+            outline "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
+            
             y "Les dating quoi ?"
     
     $ loveGauge(ingrid_char, -5, 0.65, 0.3)
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_04.wav"
+    
     i "... Gaufrid ? A qui tu parles ? Tu m'inquiètes..."
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    
     y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête"
     $ loveGauge(ingrid_char, -10, 0.65, 0.3)
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.wav"
+    
     i "..."
     i "Ecoute... je vais y aller je pense. Bisous hein !"
+    
     hide screen datingSim
-    show char_ingrid normal:
+    show char_ingrid degout:
         xalign 0.5 yalign 0.8
         xpos 0.5 ypos 1.15 zoom 0.3
         parallel:
             linear 2.0 xpos 1.5
         parallel:
             linear 0.1 rotate 10
+        
     y "..."
     y "Héhé, ce rencard s'est passé à merveille !"
+    y "Bon je vais me coucher."
+    y "Si je suis en retard Véléda va encore m'engueuler."
             
     jump narration_ellipse01
  

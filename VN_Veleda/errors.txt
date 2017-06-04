@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/ressources.rpy", line 206: expected statement.
-    music etable01 = "game/music/MUSIC_Etable_Normale.wav"
-                   ^
+File "game/tourVeleda.rpy", line 6: end of line expected.
+    scene bg_chambre with Dissolve 2.0
+                                   ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

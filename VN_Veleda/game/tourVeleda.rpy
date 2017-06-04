@@ -3,14 +3,14 @@
 ##########################################################
 
 label tourVeleda_ErnustEtVeleda :
-    scene bg_chambre
+    scene bg_chambre with Dissolve (2.0)
     
     show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
     $ interlocuteur = "vel_char"
     show screen datingSim(vel_char, 0.4, 0.28)
     
-  #  play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.wav"
     
     v "Vous voilà Gaufrid ! Dépèchez vous, nous attendons des clients très importants."
     show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
@@ -19,7 +19,7 @@ label tourVeleda_ErnustEtVeleda :
  #   play sound "sfx/SFX_Char_Player_Question_01.ogg"
     y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
- #   play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
+    play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.wav"
     show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     v "Des chiffres ? De quoi parlez vous ?"
     
@@ -28,6 +28,8 @@ label tourVeleda_ErnustEtVeleda :
     v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne nous intéressent pas."
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
+
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.wav"
     
     v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
     
@@ -38,7 +40,7 @@ label tourVeleda_ErnustEtVeleda :
     #        play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Crossfitrtrch... Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
-   #         play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+            play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.wav"
             show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
             v "Oh vous ne nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
@@ -52,7 +54,7 @@ label tourVeleda_ErnustEtVeleda :
     #        play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
             
-     #       play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+            play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.wav"
             show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
             
@@ -64,11 +66,13 @@ label tourVeleda_ErnustEtVeleda :
             
     v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund !"
     
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.wav"
+    
     v "Il l'accuse de lui avoir dérobé sa propriété !"
     
     v "Monsieur Brutomachin nie l'accusation ! Nous allons donc les départager avec..."
     
-#    play sound "sfx/SFX_Drama_01.ogg"
+    play sound "sfx/SFX_Drama_01.wav"
     
     v "Une prophétie !"
     show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
