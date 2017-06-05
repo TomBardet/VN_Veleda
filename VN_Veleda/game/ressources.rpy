@@ -119,6 +119,14 @@ init:
     image endSad04 = "images/endings/END_Sad_04.png"
     image endSadKey = "images/endings/END_Sad_Key.png"
     
+    #Items
+    image img_bag = "images/backpack.png"
+    image img_glaive = "images/inv_swordIdle.png"
+    image img_bouclier = "images/inv_shieldIdle.png" 
+    image img_blague = "images/inv_jokeIdle.png"
+    image img_lunettes = "images/inv_glassesIdle.png"
+    image img_trompette = "images/inv_trumpetidle.png"
+    
     #------ Les images des Personnages -------
     
     #Left ou Right correspond au sens dans lequel regarde le personnage#

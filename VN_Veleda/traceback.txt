@@ -1,42 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/tourVeleda.rpy", line 45, in script
-    $ loveGauge(vel_char, -3, 0.8, 0.25)
-IOError: Couldn't find file 'sfx/SFX_Char_Veleda_Normal_03.ogg'.
+Compiling ATL code at game/taverne.rpy:346
+  File "game/taverne.rpy", line 344, in script
+    show img_bag:
+Exception: Expression u'0.92' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/tourVeleda.rpy", line 45, in script
-    $ loveGauge(vel_char, -3, 0.8, 0.25)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
-    renpy.exports.say(who, what, interact=self.interact)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
-    who(what, interact=interact)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
-    **display_args)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 508, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2825, in interact_core
-    renpy.audio.audio.interact()
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 930, in interact
-    periodic()
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 864, in periodic
-    c.periodic()
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 403, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 67, in load
-    rv = renpy.loader.load(fn)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'sfx/SFX_Char_Veleda_Normal_03.ogg'.
+  File "game/taverne.rpy", line 344, in script
+    show img_bag:
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1075, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1047, in show_imspec
+    atl=atl)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\exports.py", line 659, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 1000, in add
+    thing._show()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\transform.py", line 998, in _show
+    super(ATLTransform, self)._show()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\transform.py", line 981, in _show
+    self.update_state()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\transform.py", line 813, in update_state
+    fr = self.function(self, self.st, self.at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\atl.py", line 495, in execute
+    block = self.compile()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\atl.py", line 464, in compile
+    block = self.atl.compile(self.context)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\atl.py", line 642, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\atl.py", line 902, in compile
+    raise Exception("Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr)
+Exception: Expression u'0.92' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

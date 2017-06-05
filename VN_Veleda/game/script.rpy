@@ -29,7 +29,7 @@ label start:
         bouclier = Item("bouclier",player="ex", imageIdle="images/inv_shieldIdle.png",imageHover="images/inv_shieldHover.png")   
         blague = Item("blague",player="goat_char", imageIdle="images/inv_jokeIdle.png",imageHover="images/inv_jokeHover.png") 
         lunettes = Item("lunettes",player="ex", imageIdle="images/inv_glassesIdle.png",imageHover="images/inv_glassesHover.png")
-        trompette = Item("trompette",player="ex", imageIdle="images/inv_glassesIdle.png",imageHover="images/inv_glassesHover.png")
+        trompette = Item("trompette",player="ex", imageIdle="images/inv_trumpetidle.png",imageHover="images/inv_glassesHover.png")
             
         ########## - LES ITEMS DE L'INVENTAIRE - ############
         
@@ -159,8 +159,8 @@ label PlaceDuVillageDefault:
     scene bg_place
     menu:
         " "
-        "Aller à la Taverne":
-            jump taverne_AbusAlcoolPart1
+       # "Aller à la Taverne":
+        #    jump taverne_AbusAlcoolPart1
         "Aller aux Etables":
             jump etables_PeurDesBufflesPart1
         "Aller à la Forge":

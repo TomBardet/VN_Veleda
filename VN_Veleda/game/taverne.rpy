@@ -304,23 +304,23 @@ label taverne_AbusAlcoolPart1:
         goat "{cps=0}Bêêêêêêêêêêêêêêêh{/cps}"
         "Tu sais que t'as de beaux yeux ?":
             y "... Dis... Tu sais que t'as de beaux yeux ?"
-            $ loveGauge(goat_char, 16, 0.55, 0.45)
+            $ loveGauge(goat_char, 21, 0.55, 0.45)
             y "Je suis sérieux. Quand tu me regarde comme ça j'ai..."
             y "... j'ai l'impression que tu scrutes jusqu'au plus profond de mon âme"
-            $ loveGauge(goat_char, 12, 0.55, 0.45)
+            $ loveGauge(goat_char, 19, 0.55, 0.45)
             y "Tu crois aux âmes soeurs toi ?"
         "Waaaah t'as le pelage super doux !":
             y "Waaaaah ! T'as vraiment le pelage super doux !"
-            $ loveGauge(goat_char, 10, 0.55, 0.45)
+            $ loveGauge(goat_char, 15, 0.55, 0.45)
             y "Un poil si soyeux... Faut que tu me donnes ta marque de shampooing !"
-            $ loveGauge(goat_char, 9, 0.55, 0.45)
+            $ loveGauge(goat_char, 10, 0.55, 0.45)
             y "J'ai toujours accordé une immense importance à l'hygiène corporelle"
             y "Toi aussi apparemment..."
-            $ loveGauge(goat_char, 9, 0.55, 0.45)
+            $ loveGauge(goat_char, 13, 0.55, 0.45)
             y "Tu crois aux âmes soeurs ?"
         "Bêêêêêêêêêêêêêêêêêêêêêêêêêêêh": 
             y "Bêêêêêêêêêêêêêêêêêêêêêêêh"  
-            $ loveGauge(goat_char, 9, 0.55, 0.45)
+            $ loveGauge(goat_char, 20, 0.55, 0.45)
     show char_goat normal at speakingAnim(0.45, 0.7, 0.68, 1.0)
     goat "Bêêêêêêêêêêêêêêêh" 
     goat "Bêêêêhêêêhêê- *tousse*"
@@ -332,9 +332,27 @@ label taverne_AbusAlcoolPart1:
     goat "Tu as rompu le malèfice en me parlant avec amour"
     goat "Tu es une personne extraordinaire Gaufrid. Vraiment."
     goat "En gage de ma gratitude, je te donne cette {b}blague{/b}."
-    "Mise en scène de la blague qui arrive dans l'inventaire"
     $ inventory.add(blague)
-    $ _testBlague = 1    
+    $ _testBlague = 1
+    show img_blague at center:
+        xalign 0.7 yalign 0.9 zoom 0.3
+        linear 0.5 yalign 0.7 zoom 0.4
+        easein 0.5 zoom 0.45
+        easeout 0.5 zoom 0.4
+        pause 0.5
+        parallel :
+            linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
+        parallel :
+            linear 0.9 alpha 0
+    show img_bag:
+        xpos 1.0 yalign 0.05 zoom 1.0
+        linear 0.5 xpos 0.87 yalign 0.05
+        pause 2.3
+        easein 0.3 zoom 1.1
+        easeout 0.3 zoom 1.0 
+        pause 0.5
+        linear 0.3 xpos 1.0
+    pause 3.0
     goat "Elle fera rire tous tes interlocuteurs, et marquera ton ascension dans la société"
     goat "Je dois y aller maintenant"
     goat "Au revoir Gaufrid"

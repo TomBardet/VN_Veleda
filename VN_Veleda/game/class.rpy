@@ -59,9 +59,9 @@ init -1 python:
             char_name.love=char_name.max_love
         
         if(loveCount>0):
-            if(char_name.love < (char_name.max_love/5)):
+            if(char_name.love < 20):
                 renpy.show("bad_img", at_list=[animFeedbackPos(x,y)])
-            elif(char_name.love > (char_name.max_love- char_name.max_love/5)):
+            elif(char_name.love > 80):
                 renpy.show("love_img", at_list=[animFeedbackPos(x,y)])
             else:
                 renpy.show("neutral_img", at_list=[animFeedbackPos(x,y)])
