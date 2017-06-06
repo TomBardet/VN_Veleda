@@ -211,6 +211,6 @@ init:
 ######################## - Defining Sounds & Musics - ###################################
 
     # MUSIC
-   # music etable01 = "game/music/MUSIC_Etable_Normale.wav"
+   # music etable01 = "game/music/MUSIC_Etable_Normale.ogg"
     
 
