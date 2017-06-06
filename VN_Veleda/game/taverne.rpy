@@ -5,7 +5,10 @@
 label taverne_DatingIngrid:
     
 
-    scene bg_taverne with Dissolve (0.5)
+    scene bg_taverne with Dissolve (1.5)
+    
+    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
+    
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (0.25)
 
     $ _window_during_transitions = True
@@ -15,29 +18,33 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.ogg"
     
-    outline "Tiens ? On dirait qu'il essaie de draguer Ingrid !"
+    outlineTop "Tiens ? On dirait qu'il essaie de draguer Ingrid !"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.ogg"
     
-    outline "Réveille toi, ça va être ton tour."
+    outlineTop "Réveille toi, ça va être ton tour."
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
     
     i "Hihi Gaufrid t'es mignon !"
+
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
     menu:
         i "{cps=0}Hihi Gaufrid t'es mignon !{/cps}"
         
         "Viens regarder les étoiles avec moi Ingrid !":
+            play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
             y "Ingrid, suis moi !"
             y "Allons observer les étoiles illuminer le clair de lune de ta beauté !"
         "C'est vrai que je suis beau.":
+            play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
             y "On me dit souvent que je suis assez beau garçon oui..."
             y "Je prends soin de moi, c'est pour ça."
         "Ingrid épouse moi !":
+            play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
             y "Épouse moi Ingrid !"
             y "Je t'aime à la folie depuis 8 jours."
             y "Je pense à toi tout le temps !"
@@ -51,9 +58,9 @@ label taverne_DatingIngrid:
     show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
     y "* Un petit frère... Héhé je savais que j'avais une chance ! *"
-    outline "Quoi ?"
-    outline "Comment ça une chance ?!"
-    outline "Tu vas vraiment avoir besoin d'un coup de main..."
+    outlineTop "Quoi ?"
+    outlineTop "Comment ça une chance ?!"
+    outlineTop "Tu vas vraiment avoir besoin d'un coup de main..."
     
     show screen datingSim(ingrid_char, 0.56, 0.30)
     pause 1.5
@@ -66,21 +73,15 @@ label taverne_DatingIngrid:
             
             y "Hein ? Mais c'est quoi ces chiffres ?!"
             
-            outline "Ces chiffres représentent l'affection de ton interlocuteur."
-            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
-            outline "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
-            
-            y "Les dating quoi ?"
-            
         "Hé ! Mais pourquoi j'ai perdu 10 points ?!":
             
             y "Hé ! Mais pourquoi j'ai perdu 10 points ?!"
-            outline "Ces chiffres représentent l'affection de ton interlocuteur."
-            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
-            outline "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
+
+    outlineTop "Ces chiffres représentent l'affection de ton interlocuteur."
+    outlineTop "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
+    outlineTop "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
             
-            y "Les dating quoi ?"
-    
+    y "Les dating quoi ?"
     $ loveGauge(ingrid_char, -5, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
@@ -91,7 +92,7 @@ label taverne_DatingIngrid:
     show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
     
-    y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête"
+    y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête."
     $ loveGauge(ingrid_char, -10, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
     

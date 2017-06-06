@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/ending.rpy", line 8, in script
-    outline "Elle était chèvre et elle faisait du bon travail mais, accusée d’un crime qu’elle n’a pas commis, elle est exilée. "
-IOError: Couldn't find file 'music/NARRATOR_Badass.ogg'.
+  File "game/taverne.rpy", line 44, in script
+    y "On me dit souvent que je suis assez beau garçon oui..."
+IOError: Couldn't find file 'sfx/Voices/Ingrid/Char_Player_Normal_04.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/ending.rpy", line 8, in script
-    outline "Elle était chèvre et elle faisait du bon travail mais, accusée d’un crime qu’elle n’a pas commis, elle est exilée. "
+  File "game/taverne.rpy", line 44, in script
+    y "On me dit souvent que je suis assez beau garçon oui..."
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
     renpy.exports.say(who, what, interact=self.interact)
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
@@ -36,7 +36,7 @@ Full traceback:
     rv = renpy.loader.load(fn)
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'music/NARRATOR_Badass.ogg'.
+IOError: Couldn't find file 'sfx/Voices/Ingrid/Char_Player_Normal_04.ogg'.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

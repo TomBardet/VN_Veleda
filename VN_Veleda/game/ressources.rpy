@@ -68,6 +68,33 @@ init:
         window_xfill=True,
         window_xalign=0.5,
         window_yalign=0.5)
+    
+    $ outlineTop = Character(None,
+        what_size=32,
+        what_color = "#ffffff",
+        what_outlines=[(3, "#000000", 0, 0)],
+        what_layout="subtitle",
+        what_xalign=0.5,
+        what_text_align=0.5,
+        window_background=None,
+        window_yminimum=0,
+        window_xfill=True,
+        window_xalign=0.5,
+        window_yalign=0.1)
+    
+    $ outlineBot = Character(None,
+        what_size=32,
+        what_color = "#ffffff",
+        what_outlines=[(3, "#000000", 0, 0)],
+        what_layout="subtitle",
+        what_xalign=0.5,
+        what_text_align=0.5,
+        window_background=None,
+        window_yminimum=0,
+        window_xfill=True,
+        window_xalign=0.5,
+        window_yalign=0.8,
+        window_width=3100)
 
 #########################################################################################
 ######################## - Defining Images - ############################################
@@ -212,5 +239,10 @@ init:
 
     # MUSIC
    # music etable01 = "game/music/MUSIC_Etable_Normale.ogg"
+   
+    #CHANNELS
+    $renpy.music.register_channel("music1", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
+    $renpy.music.register_channel("music2", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
+    $renpy.music.register_channel("ambiance", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
     
 

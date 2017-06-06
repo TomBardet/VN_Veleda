@@ -53,8 +53,9 @@ label start:
 label intro:
     
     window hide
+    # $ renpy.music.set_volume(0.85, delay=0, channel='music1')
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 2)
     
-    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", loop = True)
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
     
@@ -76,7 +77,7 @@ label intro:
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos 0.35
     
-    outline "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains"
+    outlineBot "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains"
     
     pause 14.0
     
@@ -92,7 +93,7 @@ label intro:
     show introCrack:
         linear 1.3 alpha 0.0
         
-    outline "Bon, pas vraiment toute en fait..."
+    outlineBot "Bon, pas vraiment toute en fait..."
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
     
@@ -100,28 +101,33 @@ label intro:
     show introPoint with vpunch:
         zoom 0.45,xanchor 0.5 yanchor 0.5
         xpos 0.56 ypos 0.42 
-    outline "En tout cas pas le village des Bructères, où habite la légendaire prophétesse Véléda."
+        
+    outlineBot "En tout cas pas le village des Bructères, où habite la légendaire prophétesse Véléda."
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):
-        zoom 1.0 xanchor 0.0 yanchor 0.0
-        linear 2.0 xpos -0.02 ypos 0.2 zoom 1.1
-    outline "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
+        zoom 0.35 xanchor 0.0 yanchor 0.0
+    pause 2
+    show bg_place :
+        zoom 0.35 xanchor 0.0 yanchor 0.0
+        linear 2.5 xpos -1000 ypos 0 zoom 0.6
+
+    outlineBot "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.ogg"
     
-    outline "Tu vas incarner Gaufrid, son assistant."
+    outlineBot "Tu vas incarner Gaufrid, son assistant."
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_06.ogg"
     
     #scene black with Dissolve(1.5)
     show bg_place :
-        zoom 1.0 xanchor 0.0 yanchor 0.0
-        linear 0.5 xpos -0.15 ypos -0.3 zoom 1.1
+        zoom 0.6 xanchor 0.0 yanchor 0.0
+        linear 0.9 xpos -400 ypos -500 zoom 0.6
     
-    outline "Il doit être à la Taverne... c'est un peu sa deuxième maison."
+    outlineBot "Il doit être à la Taverne... c'est un peu sa deuxième maison."
     
-    scene black with Dissolve (0.5)
+    scene black with Dissolve (1.5)
     
     jump taverne_DatingIngrid
     
