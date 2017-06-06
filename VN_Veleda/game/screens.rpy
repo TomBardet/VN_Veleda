@@ -1535,6 +1535,52 @@ screen action_choice_Etable:
         text_outlines [(2,"#000000")]
         at sineV(0.58)
         action Return("sortir")
+        
+screen action_choice_Tente:
+    zorder 10
+    textbutton _("S'approcher de la Tente"):
+        xpos 0.85
+        xanchor 0.5
+        ypos 0.68
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.68)
+        action Return("tente")
+    textbutton _("Retourner au village"):
+        xpos 0.25
+        xanchor 0.5
+        ypos 0.6
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.58)
+        action Return("sortir")
+
+screen action_choice_Tente1:
+    zorder 10
+    textbutton _("Parler aux romains"):
+        xpos 0.85
+        xanchor 0.5
+        ypos 0.68
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.68)
+        action Return("tente")
+    textbutton _("Retourner au village"):
+        xpos 0.25
+        xanchor 0.5
+        ypos 0.6
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.58)
+        action Return("sortir")
 
 ###################################################################################################
 ################ - Gestion des Jauges Dating Sim - ##################

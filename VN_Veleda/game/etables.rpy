@@ -6,7 +6,7 @@ init:
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     $  _testCrossfitTalk = 0
-    $  _testBrutalmundTalk = 0
+    $  _testEtable = 0
     $  _testRomainsTalk = 0
     
 label etables_PeurDesBufflesPart1:
@@ -14,6 +14,10 @@ label etables_PeurDesBufflesPart1:
     show char_crossfit colere at notSpeakingAnim(0.56, 0.80, 0.8, 0.27)
     #$ _testTrompette = 1
     if _testTrompette == 1:
+        if _testCrossfitTalk == 1:
+            $ _testEtable = 1
+            
+    if _testEtable == 1:
         $ _return = renpy.call_screen("action_choice_EtableTrumpet")
         if _return == "trompette":
             jump etables_PeurDesBufflesPart2
