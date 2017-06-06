@@ -52,25 +52,26 @@ label ending_ErnustTrahi:
     return
 
 label ending_ExilAvecErnust:
-    scene black with Dissolve (1)
+    scene black with Dissolve (2)
+    window hide
     outline "Traités en paria, Ernust et Gaufrid s’exilent ensemble."
     outline "Ils s'attendaient à découvrir le monde..."
     outline "mais ils ne s'attendaient pas à se découvrir... eux-mêmes."
-    play music "music/MUSIC_FIN_BROTRIP.ogg"  
-    scene endBro01 with Dissolve (2.0)
-    pause 2.5 #pause le temps du scroll
-    scene black with Dissolve (1.0)
-    scene endBro02 with Dissolve (2.0)
-    pause 2.5 #pause le temps du scroll
-    scene black with Dissolve (1.0)
-    scene endBro03 with Dissolve (2.0)
-    pause 2.5 #pause le temps du scroll
-    scene black with Dissolve (1.0)
-    scene endBro04 with Dissolve (2.0)
-    pause 2.5 #pause le temps du scroll
-    scene black with Dissolve (1.0)
-    scene endBroKey with Dissolve (2.5)
-    
+    $ renpy.music.play("music/MUSIC_FIN_BROTRIP.ogg", loop = False)  
+    scene endBro01 with Dissolve (3.5)
+    pause 3.90 #pause le temps du scroll
+    scene black with Dissolve (2.6)
+    scene endBro02 with Dissolve (2.6)
+    pause 3.90 #pause le temps du scroll
+    scene black with Dissolve (1.6)
+    scene endBro03 with Dissolve (2.6)
+    pause 3.90#pause le temps du scroll
+    scene black with Dissolve (1.6)
+    scene endBro04 with Dissolve (2.6)
+    pause 3.90 #pause le temps du scroll
+    scene black with Dissolve (2.6)
+    window hide
+    show endBroKey with Dissolve (4.6)
     outline " "
     
     return
