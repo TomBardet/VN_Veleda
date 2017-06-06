@@ -1447,6 +1447,94 @@ screen action_choice_placeVillage:
         at sineV(0.58)
         action Return("tente")
 
+screen action_choice_placeVillageFinal:
+    zorder 10
+    textbutton _("Taverne"):
+        xpos 0.55
+        xanchor 0.5
+        ypos 0.35
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.35)
+        action Return("taverne")
+
+screen action_choice_EtableTrumpet:
+    zorder 10
+    textbutton _("Jouer de la trompette"):
+        xpos 0.55
+        xanchor 0.5
+        ypos 0.35
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.35)
+        action Return("trompette")
+    textbutton _("Parler aux Buffles"):
+        xpos 0.85
+        xanchor 0.5
+        ypos 0.68
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.68)
+        action Return("buffles")
+    textbutton _("Parler à Crossfitrichernvald"):
+        xpos 0.25
+        xanchor 0.5
+        ypos 0.6
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.58)
+        action Return("crossfit")
+    textbutton _("Sortir de l'étable"):
+        xpos 0.6
+        xanchor 0.5
+        ypos 0.2
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.58)
+        action Return("sortir")
+
+screen action_choice_Etable:
+    zorder 10
+    textbutton _("Parler aux Buffles"):
+        xpos 0.85
+        xanchor 0.5
+        ypos 0.68
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.68)
+        action Return("buffles")
+    textbutton _("Parler à Crossfitrichernvald"):
+        xpos 0.25
+        xanchor 0.5
+        ypos 0.6
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.58)
+        action Return("crossfit")
+    textbutton _("Sortir de l'étable"):
+        xpos 0.6
+        xanchor 0.5
+        ypos 0.2
+        yanchor 0.5
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color gui.actionButton_colorHover
+        text_outlines [(2,"#000000")]
+        at sineV(0.58)
+        action Return("sortir")
 
 ###################################################################################################
 ################ - Gestion des Jauges Dating Sim - ##################
