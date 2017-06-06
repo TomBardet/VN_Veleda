@@ -2,6 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/ressources.rpy", line 244: indentation mismatch.
+File "game/class.rpy", line 56: invalid syntax
+        if char_name = vel_char:
+                      ^
+    
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

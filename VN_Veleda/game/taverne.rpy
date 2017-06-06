@@ -5,11 +5,14 @@
 label taverne_DatingIngrid:
     
 
-    scene bg_taverne with Dissolve (1.5)
+    scene bg_taverne with Dissolve (2.5) :
+        xpos -20 ypos -20 zoom 1.2
+        linear 1 xpos 0 ypos 0 zoom 1
     
+    $ renpy.music.set_volume(0.5, delay=0, channel='music1')
     $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
     
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (0.25)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (1.5)
 
     $ _window_during_transitions = True
     
@@ -36,15 +39,15 @@ label taverne_DatingIngrid:
         i "{cps=0}Hihi Gaufrid t'es mignon !{/cps}"
         
         "Viens regarder les étoiles avec moi Ingrid !":
-            play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
+            play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             y "Ingrid, suis moi !"
             y "Allons observer les étoiles illuminer le clair de lune de ta beauté !"
         "C'est vrai que je suis beau.":
-            play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
+            play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             y "On me dit souvent que je suis assez beau garçon oui..."
             y "Je prends soin de moi, c'est pour ça."
         "Ingrid épouse moi !":
-            play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
+            play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             y "Épouse moi Ingrid !"
             y "Je t'aime à la folie depuis 8 jours."
             y "Je pense à toi tout le temps !"
@@ -57,6 +60,7 @@ label taverne_DatingIngrid:
     
     show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
+    play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "* Un petit frère... Héhé je savais que j'avais une chance ! *"
     outlineTop "Quoi ?"
     outlineTop "Comment ça une chance ?!"
@@ -70,17 +74,18 @@ label taverne_DatingIngrid:
         " "
         
         "Hein ? Mais c'est quoi ces chiffres ?!":
-            
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Hein ? Mais c'est quoi ces chiffres ?!"
             
         "Hé ! Mais pourquoi j'ai perdu 10 points ?!":
-            
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Hé ! Mais pourquoi j'ai perdu 10 points ?!"
 
     outlineTop "Ces chiffres représentent l'affection de ton interlocuteur."
     outlineTop "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
     outlineTop "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
-            
+    
+    play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"        
     y "Les dating quoi ?"
     $ loveGauge(ingrid_char, -5, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
@@ -91,7 +96,7 @@ label taverne_DatingIngrid:
     
     show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
-    
+    play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête."
     $ loveGauge(ingrid_char, -10, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
@@ -109,11 +114,14 @@ label taverne_DatingIngrid:
             linear 2.0 xpos 1.5
         parallel:
             linear 0.1 rotate 10
-        
+            
+    play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"    
     y "..."
     y "Héhé, ce rencard s'est passé à merveille !"
     y "Bon je vais me coucher."
     y "Si je suis en retard Véléda va encore m'engueuler."
+    
+    stop music1 fadeout 1.0
             
     jump narration_ellipse01
  

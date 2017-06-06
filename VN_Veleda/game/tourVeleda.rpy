@@ -5,64 +5,66 @@
 label tourVeleda_ErnustEtVeleda :
     scene bg_chambre with Dissolve (2.0)
     
-    show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    show vel_normal with Dissolve (2.5)
+    
+    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
     $ interlocuteur = "vel_char"
-    show screen datingSim(vel_char, 0.4, 0.28)
+    show screen datingSim(vel_char, 0.65, 0.4)
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     
     v "Vous voilà Gaufrid ! Dépèchez vous, nous attendons des clients très importants."
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
-    $ loveGauge(vel_char, -3, 0.80, 0.25)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    $ loveGauge(vel_char, -3, 0.75, 0.4)
     
  #   play sound "sfx/SFX_Char_Player_Question_01.ogg"
     y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
-    show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     v "Des chiffres ? De quoi parlez vous ?"
     
-    $ loveGauge(vel_char, -3, 0.85, 0.25)
+    $ loveGauge(vel_char, -3, 0.75, 0.4)
 
     v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne nous intéressent pas."
     
-    $ loveGauge(vel_char, -3, 0.8, 0.25)
+    $ loveGauge(vel_char, -3, 0.75, 0.4)
 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     
     v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
     
     v "Crousfrishtrenvra... Monseigneur Crossfichtruc, le digne chef de nos voisins les Bataves."
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     menu :
         "Il vient demander conseil, Ô Véléda ? ":
     #        play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "Crossfitrtrch... Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
-            show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+            #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
             v "Oh vous ne nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
-            $ loveGauge(vel_char, -3, 0.8, 0.25)
+            $ loveGauge(vel_char, -3, 0.75, 0.4)
     
             v "La flatterie est le refuge des incompétents et des poissoniers."
             
-            $ loveGauge(vel_char, -3, 0.8, 0.25)
+            $ loveGauge(vel_char, -3, 0.5, 0.25)
             
         "Il veut quoi lui ?":
     #        play sound "sfx/SFX_Char_Player_Question_01.ogg"
             y "Crossfitrtrch... Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
-            show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+            #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
             
-            $ loveGauge(vel_char, -3, 0.8, 0.25)
+            $ loveGauge(vel_char, -3, 0.5, 0.25)
             
             v "Qu'est ce que c'est que ce langage de chocolatier ?"
             
-            $ loveGauge(vel_char, -3, 0.8, 0.25)
+            $ loveGauge(vel_char, -3, 0.5, 0.25)
             
     v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund !"
     
@@ -75,13 +77,13 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/SFX_Drama_01.ogg"
     
     v "Une prophétie !"
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
  #   play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
     
     y "Euh.. ils devraient pas plutôt porter plainte ?"
     
   #  play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
-    show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     v "Vous doutez de la sagesse de nos visions, Monsieur Gaufrid ?"
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
@@ -93,7 +95,7 @@ label tourVeleda_ErnustEtVeleda :
 #    play sound "sfx/SFX_Entrance_01.ogg"
     
     v "Ah ! Cela doit être lui !"
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
    
     
@@ -148,9 +150,9 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
             
 #    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
-    show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     v "Vous êtes adorables Messieurs mais amenez nous notre nourriture. Nous nous tordons de douleur de faim."
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
 #    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
     e "Oh Oui, Votre Excellessence Madame Véléda !"
@@ -206,9 +208,9 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
                 
 #    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
-    show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     v "Cela suffit ! Servez Nous Notre sanglier !"
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
 #    play sound "sfx/SFX_Char_Ernust_Inquiet_01.ogg"
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
     e "Ah bah non y'a pas de sanglier."
@@ -220,13 +222,13 @@ label tourVeleda_ErnustEtVeleda :
  #   play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
     e "Mais j'ai trouvé des champignons alors j'ai fait une soupe ! Une bonne soupe de champignons !"
     show char_ernust joyeux right at notSpeakingAnim(0.20,0.92,0.9,0.8)
-    show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
 #    play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
     v "Cela suffira ! Et vous, Gaufrid, allez accueillir nos invités, nous prophétisons qu'ils vont frapper à la porte !"
     
   #  play sound "sfx/SFX_Knock_01.ogg"
     v "Haa, vous voyez ? Allez-y Monsieur Gaufrid."
-    show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
 #    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     y "Ok, ok j'y vais..."
     

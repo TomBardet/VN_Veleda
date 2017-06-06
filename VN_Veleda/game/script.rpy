@@ -53,7 +53,7 @@ label start:
 label intro:
     
     window hide
-    # $ renpy.music.set_volume(0.85, delay=0, channel='music1')
+    $ renpy.music.set_volume(0.85, delay=0, channel='music1')
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 2)
     
     
@@ -77,7 +77,7 @@ label intro:
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos 0.35
     
-    outlineBot "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains"
+    outlineBot "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains."
     
     pause 14.0
     
@@ -106,11 +106,11 @@ label intro:
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):
-        zoom 0.35 xanchor 0.0 yanchor 0.0
+        zoom 1 xanchor 0.0 yanchor 0.0
     pause 2
     show bg_place :
-        zoom 0.35 xanchor 0.0 yanchor 0.0
-        linear 2.5 xpos -1000 ypos 0 zoom 0.6
+        zoom 1 xanchor 0.0 yanchor 0.0
+        linear 2.5 xpos -1000 ypos 0 zoom 1.8
 
     outlineBot "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
     
@@ -122,11 +122,14 @@ label intro:
     
     #scene black with Dissolve(1.5)
     show bg_place :
-        zoom 0.6 xanchor 0.0 yanchor 0.0
-        linear 0.9 xpos -400 ypos -500 zoom 0.6
+        zoom 1.8 xanchor 0.0 yanchor 0.0
+        linear 0.9 xpos -400 ypos -500 zoom 1.8
     
     outlineBot "Il doit être à la Taverne... c'est un peu sa deuxième maison."
-    
+
+    stop music1 fadeout 1.5
+    show bg_place :
+        linear 1 xpos -600 ypos -650 zoom 2.1
     scene black with Dissolve (1.5)
     
     jump taverne_DatingIngrid
@@ -143,6 +146,7 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     
     outline "Le lendemain matin..."
     y "Waw c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
+    play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg" 
     y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
     y "Boarf ! C'est pas important..."
     y "Il faut que j'aille travailler moi !"
