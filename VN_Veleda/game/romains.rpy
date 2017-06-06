@@ -1,133 +1,158 @@
 ################################################################################
 # Ici figurent les scènes se déroulant à l'aurée du village, chez les romains. #
 ################################################################################
-
+init python:
+    _testA = 0
+    _testB = 0
 label romains_PremiereRencontre:
-    "label romains_PremiereRencontre"
     
     jump romains_Part1
 
 # -----------------------------------------#
 
 label romains_Part1:
-    scene bg_romains
+    
+    window hide
     if Acte2_Romains_FirstVisit == 1:
+        scene bg_romains:
+            zoom 1.15 xpos -0.15
+        $ _return = renpy.call_screen("action_choice_Tente1")
+        
+        if _return == "tente":
+
+            pause 0.6
+            window show
+            jump romains_Part5
+        elif _return == "sortir":
+            jump PlaceDuVillageDefault
         jump romains_Part5
     else :
-        menu:
-            "S'approcher de la tente":
-                jump romains_Part2
-            "Rentrer au village":
-                jump PlaceDuVillageDefault
-
+        scene bg_romains
+        $ _return = renpy.call_screen("action_choice_Tente")
+        
+        if _return == "tente":
+            scene bg_romains:
+                linear 0.4 zoom 1.15 xpos -0.15
+            pause 0.6
+            window show
+            y "On dirait qu'il y a personne..."
+            jump romains_Part2
+        elif _return == "sortir":
+            jump PlaceDuVillageDefault
             
                      
 # -----------------------------------------#
 
 label romains_Part2:
     
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-    show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
+    show char_numerimus normal:
+        xalign 0.5 yalign 0.8
+        xpos 1.3 ypos 0.82
+        linear 0.7 xpos 0.45
+   # pause 0.3
+    show char_digitimus normal:
+        xalign 0.5 yalign 0.8 zoom 1.25
+        xpos 1.5 ypos 0.78
+        linear 1.2 xpos 0.7
+    pause 1.2
+    
+    show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
     
     #play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    num "Avé sauvage !"
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-    menu :
-        
-        "Heu...Avé ? ":
-            #play sound "sfx/SFX_Char_Player_Question_01.ogg"
-            y "Avé à vous... j'imagine ?"
-            y "Et sinon vous êtes qui ?"
-            jump romains_Part3
-            
-        "Jolies chaussettes":
-           # play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Jolies chaussettes centurion."
-            y "A part ça qui êtes vous, et qu'est ce que vous venez faire dans le coin ?"
-            jump romains_Part3
+    num "{i}Ave{/i}, sauvage !"
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+    #play sound "sfx/SFX_Char_Player_Question_01.ogg"
+    y "Euh...{i}Ave{/i} à vous... j'imagine ?"
+    y "On se connait ?"
+    jump romains_Part3
+
         
 # -----------------------------------------#
 
 label romains_Part3:
     
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
+    show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
    # play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
-    num "T’as l’air d’un marrant, germain. Moi c’est Numerimus et lui là c’est Digitimus, c’est mon cousin, germain."
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+    num "Haha ! T’as l’air d’un marrant, germain. Moi c’est Numerimus et lui là c’est Digitimus, c’est mon cousin, germain."
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     
   #  play sound "sfx/SFX_Char_Digitimus_Normal_01.ogg"
-    show char_digitimus normal at speakingAnim(0.8, 0.82, 0.8, 1.25)
-    dig "avé…"
-    show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
+    show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+    dig "{i}Ave{/i}..."
+    show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
      
  #  play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
     
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-    num "On est là en touriste, histoire de s’amuser de vos coutumes étranges"
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+    show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    num "On est en permission, alors on visite un peu les alentours."
+    num "Et on s'est dit, \"Tiens, pourquoi pas s'amuser de vous coutumes locales !\""
+    num "Du coup on est là."
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     jump romains_Part4
 
 # -----------------------------------------#
 
 label romains_Part4:
-    
-    hide char_numerimus choque at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-    hide char_digitimus choque at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-    show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-    
-  #  play sound "sfx/SFX_Char_Player_Question_01.ogg"
-    y "Alors les romains, ces vacances ?"
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-   # play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    num "On s’ennuie."
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-    
-   # play sound "sfx/SFX_Char_Digitimus_Enerve_01.ogg"
-    show char_digitimus normal at speakingAnim(0.8, 0.82, 0.8, 1.25)
-    dig "On s’ennuie vraiment le Germain..."
-    show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-    
-    jump romains_Part5
+    $ Acte2_Romains_FirstVisit = 1
+
+    show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+    dig "On s'ennuie un peu..."
+    show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+    show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    num "Yup. On s'ennuie..."
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+    menu :
+        num "{cps=0}Yup. On s'ennuie...{/cps}"
+        "Je vous fais visiter ?" if _testGlaive == 0:
+     #       play sound "sfx/SFX_Char_Player_Question_01.ogg"
+            y "Il y a des belles choses à voir dans le coin."
+            y "Venez avec moi, j'vais vous faire visiter."
+            jump romains_VisitePart1
+            
+        "J'ai une bonne blague pour vous !" if _testTrompette == 0:
+      #      play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
+            y "Tenez vous bien, on m'a donné une excellente blague !"
+            hide char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            hide char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            show char_numerimus dubitatif at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_digitimus dubitatif at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            jump romains_Blague
 
 # -----------------------------------------#
 
 label romains_Part5:
     $ Acte2_Romains_FirstVisit = 1
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-    show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-    
+    show char_numerimus normal:
+        xalign 0.5 yalign 0.8
+        xpos 1.3 ypos 0.82
+        linear 0.7 xpos 0.45
+   # pause 0.3
+    show char_digitimus normal:
+        xalign 0.5 yalign 0.8 zoom 1.25
+        xpos 1.5 ypos 0.78
+        linear 1.2 xpos 0.7
+    pause 1.2
+    show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+    num "On s'ennuie..."
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     menu :
-        num "On s'ennuie..."
-        "Faites un tour du quartier. ":
+        num "{cps=0}On s'ennuie...{/cps}"
+        "Je vous fais visiter ?" if _testGlaive == 0:
      #       play sound "sfx/SFX_Char_Player_Question_01.ogg"
-            y "Il y a des belles choses dans le coin."
-            y "Visitez les alentours ça devrait vous occuper."
+            y "Il y a des belles choses à voir dans le coin."
+            y "Venez avec moi, j'vais vous faire visiter."
             jump romains_VisitePart1
             
-        "Je connais une blague.":
+        "J'ai une bonne blague pour vous !" if _testTrompette == 0:
       #      play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Bougez pas, je vais vous faire rire avec une bonne blague de chez nous."
-            if _testTrompette == 0:
-                hide char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-                hide char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-                show char_numerimus dubitatif at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-                show char_digitimus dubitatif at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-                jump romains_Blague
-                
-            else:
-                show char_digitimus normal at speakingAnim(0.8, 0.82, 0.8, 1.25)
-                dig "Ouais ouais c'est bien gentil mais on la connait."
-                show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-                jump romains_Part5
-                
-        
-                
-        "C'est pas mon problème, j'ai autre chose à faire.":
-      #       play sound "sfx/SFX_Char_Player_No_01.ogg"
-             y "Je peux pas vous aider les gars."
-             y "J'ai d'autres affaires à regler, je vous laisse."
-             jump PlaceDuVillageDefault
+            y "Ca tombe bien, on m'a donné une excellente blague hier soir !"
+            hide char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            hide char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            show char_numerimus dubitatif at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_digitimus dubitatif at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            jump romains_Blague
              
 # -----------------------------------------#
                 #VISITE
@@ -135,110 +160,161 @@ label romains_Part5:
 label romains_VisitePart1:
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
+    show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
     num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
-    num "Mon génie porte-enseigne a oublié mes lunettes à Rome."
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+    num "Le génie qui me sert de porte-enseigne a oublié mes lunettes à Rome."
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     
     if _testLunettes == 1:
    #     play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
         y "Vous avez de la chance j’en ai justement une paire sur moi."
-        y "On aura vu mieux comme scénar’"
-        y "Allez tenez. J’imagine que c’est à votre vue en plus du reste."
+        y "Si ça c'est pas un coup de bol !"
         show screen inventory_screen(obj = "lunettes")
         jump romains_VisitePart2
         
     else:
         menu :
-            "Vous en avez pas une autre paire ?":
+            num "{cps=0}Le génie qui me sert de porte-enseigne a oublié mes lunettes à Rome.{/cps}"
+            "Vous avez pas une paire de rechange ?":
         #        play sound "sfx/SFX_Char_Player_Question_01.ogg"
-                y "Alors les romains, ces vacances ?"
+                y "Vous avez pas une paire de rechange ?"
                 
-                show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-                num "non, aucune. Ca nous aiderait pas mal si vous en trouveriez une, Germain."
-                show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-                jump romains_Part5
+                show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+                num "... Non."
+                num "Ca nous aiderait pas mal si vous en trouviez une, Germain."
                 
-            "Retournez-y. ":
+            "Retournez les chercher à Rome.":
          #       play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
+                y "Vous n'avez qu'à retournez les chercher à Rome."
                 y "Ca tombe bien, toutes les routes y mènent."
-                show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-                num "..."
-                show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-                jump romains_Part5
-                
-        
+        show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+        num "Bon on va y aller hein..."
+        show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+        show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+        dig "Reviens nous voir si tu trouves des {b}lunettes{/b} !"
+        show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+     #   scene bg_romains:
+      #      linear 0.4 zoom 1.0 xpos 0
+        show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0):
+            linear 1.0 xpos 1.3
+        show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25):
+            linear 1.0 xpos 1.5
+        pause 0.8
+        jump romains_Part1
 # -----------------------------------------#
 
 label romains_VisitePart2:
     
-    hide char_numerimus normal
-    show char_numerimus heureux
   #  play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-    num "Mais c'est super germain ! Passe moi ça !"
+    show char_numerimus heureux at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    num "Mais c'est extra ! Donnez moi ça !"
     hide screen inventory_screen
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+    show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     
     jump romains_VisitePart3
 
 # -----------------------------------------#
-label romains_VisitePart3:
-    
-    hide char_numerimus heureux
-    show char_numerimus normal
+label romains_VisitePart3bis:
     
   #  play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-    num "Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?"
-    show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+    show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+    dig "Mais encore... ?"
+    show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             
     menu :
-        num "Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?"
-        "L’air vivifiant du paysage Bructère !":
-            
+        dig "{cps=0}Mais encore... ?{/cps}"
+        "L’air vivifiant du paysage Bructère !" if _testA == 0:
+            $ _testA = 1
    #         play sound "sfx/SFX_Char_Player_Ok_01.ogg"
             y "La Lippe, l'herbe fraiche, l'air vivifiant du paysage Bructère !"
             
    #         play sound "sfx/SFX_Char_Digitimus_Ok_01.ogg"
-            show char_digitimus normal at speakingAnim(0.8, 0.82, 0.8, 1.25)
+            show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
             dig "Mais encore... ?"
-            show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-            jump romains_VisitePart3
+            show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            jump romains_VisitePart3bis
             
-        "Deux gros abrutis.":
+        "Deux gros abrutis."if _testB == 0:
     #        play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
             y "Deux bons gros abrutis."
-            
+            $ _testB = 1
     #        play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
-            show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-            num "Ah vous en avez vous aussi."
-            show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            num "Oh, vous savez, pour nous vous vous ressemblez tous"
+            num "Mais encore... ?"
+            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            jump romains_VisitePart3bis
             
+        "Véléda ?":
+    #        play sound "sfx/SFX_Char_Player_Question_01.ogg"
+            y "Il y a bien la prophétesse Véléda mais..."
+            
+     #       play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
+            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            num "Mais c'est bien sur ! On a toujours voulu la rencontrer !"
+            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            
+    #        play sound "sfx/SFX_Char_Player_No_01.ogg"
+            y "non mais là elle est pas..."
+            
+       #     play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
+            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            num "Vendu ! On y va tout de suite !"
+            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            
+            scene black with Dissolve (1.0)
+            y "Dans quoi je me suis encore fourré...?"
+            jump romains_VisitePart4
+# -----------------------------------------#
+label romains_VisitePart3:
+        
+  #  play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
+    show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+    dig "Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?"
+    show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            
+    menu :
+        dig "{cps=0}Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?{/cps}"
+        "L’air vivifiant du paysage Bructère !" if _testA == 0:
+            $ _testA = 1
+   #         play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+            y "La Lippe, l'herbe fraiche, l'air vivifiant du paysage Bructère !"
+            
+   #         play sound "sfx/SFX_Char_Digitimus_Ok_01.ogg"
+            show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+            dig "Mais encore... ?"
+            show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            jump romains_VisitePart3
+            
+        "Deux gros abrutis."if _testB == 0:
     #        play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Ici, les abrutis c'est presque culturel."
-            y "Parfois il viennent de loin."
+            y "Deux bons gros abrutis."
+            $ _testB = 1
+    #        play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
+            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            num "Oh, vous savez, pour nous vous vous ressemblez tous"
+            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             jump romains_VisitePart3
             
         "Véléda ?":
     #        play sound "sfx/SFX_Char_Player_Question_01.ogg"
-            y "Il y a bien la prophetesse Véléda mais..."
+            y "Il y a bien la prophétesse Véléda mais..."
             
      #       play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
-            show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-            num "Super idée l'Germain, on l'a toujours pas vu celle là."
-            show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            num "Mais c'est bien sur ! On a toujours voulu la rencontrer !"
+            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             
     #        play sound "sfx/SFX_Char_Player_No_01.ogg"
-            y "non mais elle est pas forcément..."
+            y "non mais là elle est pas..."
             
        #     play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-            show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-            num "Vendu ! On y va {b}tout de suite{/b} !"
-            show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
+            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            num "Vendu ! On y va tout de suite !"
+            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             
             scene black with Dissolve (1.0)
-            nar "Dans quoi tu t'es encore fourré...?"
+            y "Dans quoi je me suis encore fourré...?"
             jump romains_VisitePart4
     
 # -----------------------------------------#
@@ -250,7 +326,7 @@ label romains_VisitePart3:
 label romains_VisitePart4:
     
     scene bg_antichambre with Dissolve (1.0)
-    show char_ernust normal right at notSpeakingAnim(0.40, 0.92, 0.9, 0.7)
+    show char_ernust normal right at notSpeakingAnim(0.40, 0.92, 0.9, 0.7) with Dissolve(1.5)
     jump romains_VisitePart5
     
 # -----------------------------------------#
@@ -258,98 +334,74 @@ label romains_VisitePart4:
 label romains_VisitePart5:
     
   #  play sound "sfx/SFX_Char_Player_Ok_01.ogg"
-    y "Ernust. J'ai fait une connerie."
-    
-   # play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
-    show char_ernust normal right at speakingAnim(0.40, 0.92, 0.9, 0.7)
-    e "Mais non voyons ça ne t'arrive jamais à toi !"
-    show char_ernust normal right at notSpeakingAnim(0.40, 0.92, 0.9, 0.7)
-    
-   # play sound "sfx/SFX_Char_Player_No_01.ogg"
-    y "Si, là clairement ça m'est arrivé."
-    y "Ya deux romains qui arrivent d'une minute à l'autre pour voir Véléda..."
+    y "Ernust. On a un problème."
+    y "On a deux romains qui veulent voir Véléda."
     
     #play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
     show char_ernust normal right at speakingAnim(0.40, 0.92, 0.9, 0.7)
-    e "Hoo, dommage qu'elle soit morte."
+    e "Oh, dommage qu'elle soit morte."
     show char_ernust normal right at notSpeakingAnim(0.40, 0.92, 0.9, 0.7)
     
    # play sound "sfx/SFX_Knock_01.ogg"
-    num "Héo ! Le Germain, t'es là ? Je rentre moi !"
+    num "Dites donc, on peut rentrer là ? Il fait froid dehors !"
     
     #play sound "sfx/SFX_Char_Player_Question_01.ogg"
-    y "Ahhhhh !! Les voilà !"
+    y "Ahhhhh ! Les voilà !"
     
    # play sound "sfx/SFX_Char_Ernust_Love_01.ogg"
     show char_ernust normal right at speakingAnim(0.40, 0.92, 0.9, 0.7)
     e "T'en fais pas Gaufrid j'ai une idée géniale, fais moi confiance !"
     show char_ernust normal right at notSpeakingAnim(0.40, 0.92, 0.9, 0.7)
     menu :
-        "Je ne te fais absolument pas confiance.":
+        e "{cps=0}T'en fais pas Gaufrid j'ai une idée géniale, fais moi confiance !{/cps}"
+        "J'ai pas confiance":
     #        play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Non Ernust c'est mort !"
             y "Je te fais absolument pas confiance..."
+            y "Tu serais capable de la re-tuer"
+            y "Mais j'ai pas vraiment le choix là tout de suite..."
+            jump romains_VisitePart7           
+        "J'ai pas du tout confiance":
+     #       play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
+            y "Je te fais absolument pas confiance..."
+            y "Tu serais capable de la re-tuer"
             y "Mais j'ai pas vraiment le choix là tout de suite..."
             jump romains_VisitePart7
-            
-        "Je valide, je te fais clairement pas confiance! ":
-     #       play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Tu vas encore faire une connerie !"
+        "J'ai vraiment pas du tout confiance":
+            y "Je te fais absolument pas confiance..."
             y "Tu serais capable de la re-tuer"
-            y "Mais le temps presse, j'ai pas vraiment le choix... je compte sur toi."
+            y "Mais j'ai pas vraiment le choix là tout de suite..."
             jump romains_VisitePart7
             
 # -----------------------------------------#
 label romains_VisitePart7:
-    
-    hide char_ernust normal right with Dissolve (1.0)
+   
+    show char_ernust normal right at speakingAnim(0.40, 0.92, 0.9, 0.7)
+    e"Je te décevrais pas Gaufrid !"
+    show char_ernust normal right at notSpeakingAnim(0.40, 0.92, 0.9, 0.7)
+    show char_ernust normal right:
+        linear 1.5 xpos -0.5 rotate 10
+    pause 0.5
    # play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     y "Entrez !"
   #  play sound "sfx/SFX_Entrance_01.ogg"
-    
+    show char_numerimus normal:
+        xalign 0.5 yalign 0.8 zoom 1.25
+        xpos 1.3 ypos 0.90
+        linear 1.0 xpos 0.5
+    pause 1.0
     show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    num "Ah bah t'es là le Germain."
-    num "Bon on va la voir la tarée ?"
+    num "C'est pas trop tôt !"
     show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
-    menu :
-        "Un peu de respect !":
-      #      play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Un peu de respect je vous prie !"
-            
-       #     play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-            show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
-            num "Boooh l'autre hé, fais pas le mijoré le Germain on le sait tous qu'elle a un pet au casque."
-            show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
-            
-            y "Vous croyez pas si bien dire..."
-            jump romains_VisitePart8
-            
-        "euuh attendez...":
-        #    play sound "sfx/SFX_Char_Player_No_01.ogg"
-            y "Je ne suis pas sûr qu'elle soit...prète."
-            
-        #    play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-            show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
-            num "Qu'elle se prépare alors !"
-            num "Je vais pas faire attendre mon imbécile de porte enseigne trop longtemps."
-            show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
-            jump romains_VisitePart8
-           
-            
-        "Il est ou l'autre ?":
-       #     play sound "sfx/SFX_Char_Player_Question_01.ogg"
-            y "Vous êtes venu seul, et votre porte-enseigne ?"
-            
-       #     play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-            show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
-            num "Je l'ai laissé derrière, il s'en fiche lui de tout ça."
-            num "Et puis entre nous... c'est pas que je l'aime pas mais bon..."
-            show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
-            
-       #     play sound "sfx/SFX_Char_Player_Ok_01.ogg"
-            y "Je vois...faut croire qu'on a tous un 'Ernust'..."
-            jump romains_VisitePart8
+    y "Mais... Il est où votre porte-enseigne ?"
+    show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
+ #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
+    num "Il est puni de visite."
+    num "Il a fait une remarque déplacée sur mes sandales."
+    num "Bon, elle est où Véléda ?"
+    show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
+    
+    jump romains_VisitePart8
 
             
 # -----------------------------------------#
@@ -357,6 +409,7 @@ label romains_VisitePart7:
 label romains_VisitePart8:
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    y "A l'étage. Elle se prépare..."
     y "Ca devrait être bon... j'imagine..."
     y "Suivez-moi."
     jump romains_VisitePart9
@@ -365,11 +418,6 @@ label romains_VisitePart8:
 
 label romains_VisitePart9:
     
-    scene black with Dissolve (1.0)
-  #  play sound "sfx/SFX_Char_Player_Question_01.ogg"
-    y "Ernust, on... on arrive nous."
-    y "On monte hein..."
-    y "Là on... monte les marches."
     scene bg_chambre with Dissolve (1.0)
     jump romains_VisitePart10
 
@@ -380,7 +428,7 @@ label romains_VisitePart10:
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
     
   #  play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    num " Bonjour m'dam."
+    num "Wow. Voici donc la vénérable Véléda..."
     show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
     
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
@@ -391,7 +439,7 @@ label romains_VisitePart10:
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
     show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
-    num "Mais qu’est-ce qu’elle raconte celle là ?"
+    num "Fascinant... Qu'est-ce qu'elle veut dire ?"
     show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
@@ -399,7 +447,7 @@ label romains_VisitePart10:
     
  #   play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
     show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
-    num "humm... c'est une maline."
+    num "Ahah ! C'est bien vrai !"
     show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
     
     jump romains_VisiteProphetie
@@ -407,34 +455,18 @@ label romains_VisitePart10:
 # -----------------------------------------#
 label romains_VisiteProphetie:
     
-    #Proph 01#
-    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
-    ve  " La rosée du matinnnnnnnn, c’est ce qui nourrit les arbres !" 
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
-    
-#    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
-    menu :
-        y "Là elle dit que..."
-        "Il pleuvra" :
-            y "La pluie tombera demain."
-        "Elle annonce une menace !" :
-            y "La fuite inexorable du temps rendra vos adversaires plus forts !"
-        "Vos olives pousseront." :
-            y "Sur vos oliviers pousseront bientôt les meilleurs olives de Rome"
-    
-#    play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
-    num "humm..."
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
-    
     #Proph 02#
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
     ve  " Les oiseauuuuuuux chantent on dirait des corbeaux  !" 
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    num "... Une traduction s'il vous plaît ?"
+    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    y "Là elle dit que..."
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
-        y "Et là elle vous raconte que..."
+        y "{cps=0}Là elle dit que{/cps}"
         "La mort est proche." :
             y "Un présage de mort plane sur vous..."
         "Il y a... des corbeaux ?" :
@@ -442,21 +474,26 @@ label romains_VisiteProphetie:
         "On chantera votre gloire." :
             y "Les chants de victoires retentiront bientôt, votre gloire sera chantée."
     
+    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    num "Humm..."
+    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
     #Proph 03#
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
     ve  " Eau chauuuuuude….. et eau froide ne font pas bon ménage  !" 
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
-    
+    y "Et là elle dit que..."
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
-        y "Ô Véléda, grande prophetesse, je transmet votre message..."
-        "Un taître !" :
+        y "{cps=0}Et là elle dit que...{/cps}"
+        "Il y a un traître dans vos rangs !" :
             y "Il y a un traître dans vos rangs !"
         "Vous allez sortir du lot." :
             y "Vous vous démarquerez en tant que grand centurion."
-        "L'eau tiède c'est agréable" :
-            y "Qu'un peu d'eau chaude, avec un peu d'eau froide,  ça fait de l'eau tiède ben agréable quand on y pense." 
-    
+        "L'eau tiède c'est désagréable" :
+            y "Mélanger l'eau chaude et l'eau froide, c'est mal. " 
+    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    num "J'en étais sur !"
+    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)    
     #Proph 04#
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
     ve  " Ah.... Je commence à avoir mal au bras..."
@@ -464,19 +501,19 @@ label romains_VisiteProphetie:
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
     show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
-    num "hein ?"
+    num "Hein ?"
     show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
-    
+    y "Heuuu là... elle dit que..."
 #    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
-        y "Heuuu là... elle dit que..."
-        "Vous vous faites vieu." :
+        y "{cps=0}Heuuu là... elle dit que...{/cps}"
+        "Vous vous faites vieux." :
             y "La vieillesse vous guette… et de près"
             jump romains_FinDeLaVisite80
-        "Votre bras agile." :
-            y "Votre bras droit est plus agile que le gauche. "
+        "Votre bras est très musclé." :
+            y "Votre bras droit est plus musclé que le gauche. "
             jump romains_FinDeLaVisite80
-        "Le poid de la réussite !" :
+        "Le poids de votre réussite sera remarquable !" :
             y "Le poids de votre réussite se fera sentir sur tout l’empire."
             jump romains_FinDeLaVisite80
     
@@ -493,9 +530,22 @@ label romains_FinDeLaVisite80:
     
  #   play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
     show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
-    num "C'était vraiment sympa votre petite coutume là les germains !"
-    num "Allez, tiens attrape machin, tu l'a bien mérité."
+    num "C'est extraordinaire !"
     show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    ve  "... C'est fini."
+    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    num "De quoi ?"
+    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    y "Le spectacle est terminé ! Hop hop hop, on retourne à l'entrée !"
+    scene bg_antichambre with Dissolve (1.0)
+    show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
+ #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
+    num "Les propos de cette prophétesse m'ont vraiment inspiré."
+    num "Je vais quitter l'armée. On ne peut rester indifférent à telles paroles"
+    num "Je n'aurais plus besoin de ça, tenez :"
+    show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
     $ inventory.add(glaive)
     $ _testGlaive = 1
     show img_glaive at center:
@@ -516,9 +566,9 @@ label romains_FinDeLaVisite80:
         easeout 0.3 zoom 1.0 
         pause 0.5
         linear 0.3 xpos 1.0
-    hide char_numerimus normal with Dissolve(1.0)
+    hide char_numerimus normal with Dissolve(1.5)
     pause 3.0
-    y "... Merci ?"
+    y "Eh, mais c'est un {b}glaive{/b} ! Merci !"
     
     if _testGlaive == 1 & _testBouclier == 1:
         jump PlaceDuVillageAllObjects
@@ -530,30 +580,28 @@ label romains_FinDeLaVisite80:
 # -----------------------------------------#
 
 label romains_Blague:
-    "label romains_Blague"
     
-    if _testBlague == 1:
- #       play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-        y "J'ai une amie qui m'a fillé la meilleur des boutades."
+    if _testBlague == 0:
         y "Tenez lisez ça..."
         show screen inventory_screen(obj = "blague")
-        nar "C'est là où j'explique que tu tend le bras pour leur donner la blague ? Non ?"
+        pause 1.0
         hide screen inventory_screen
   #      play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
         
         show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
-        num "Ahahaha"
+        num "... Ahahaha !"
         show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
         
   #      play sound "sfx/SFX_Char_Digitimus_Ok_01.ogg"
         show char_digitimus normal at speakingAnim(0.8, 0.82, 0.8, 1.25)
-        dig "ahahahahaha... ahahaha!"
-        dig "ahaha... ahahaha!"
-        dig "aha..."
-        dig "T'es vraiment un marrant toi."
-        dig "Tiens on t'avait dit qu'on te donnerait un truc si tu nous divertissais. Attrape Germain !"
+        dig "Ahahahahaha... Ahahaha!"
+        dig "Ahaha... Ahahaha!"
+        dig "Aha..."
+        dig "C'est la meilleure blague que j'ai entendu de ma vie !"
+        dig "Je sais pas comment je peux te remercier pour ce moment."
+        dig "Oh attend, si je sais ! Tiens attrape !"
         show char_digitimus normal at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-        nar "Le romain te lance donc une... trompette."
+        outline "Et Digitimus lança donc une... trompette (?)"
         $ inventory.add(trompette)
         $ _testTrompette = 1
         show img_trompette at center:
@@ -576,19 +624,17 @@ label romains_Blague:
             linear 0.3 xpos 1.0
         pause 3.0
         y "... Mais je vais faire quoi d'une trompette moi ?"
-        jump romains_Part5
-        
-    else:
-        y "Alors, c'est l'histoire de..."
-        y "Comment... est-ce qu'on... appelle "
-        y "Une salade césar en Asie ?"
-        y "Une Gengis khan..."
-        hide char_numerimus dubitatif at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-        hide char_digitimus dubitatif at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-        show char_numerimus choque at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
-        show char_digitimus choque at notSpeakingAnim(0.8, 0.82, 0.8, 1.25)
-        nar "C'était de loin la pire blague que j'ai jamais entendu"
-        nar "Et je parle même pas du fait que t'as 12 siècles d'avance."
-        num "C'était horrible... La prochaine fois reviens avec une blague correcte."
-        jump romains_Part5
+        show char_ernust normal right:
+            xalign 0.5 yalign 0.8
+            xpos -0.5 ypos 1.5 zoom 0.8 rotate 30
+            linear 1.0 xpos 0.05 ypos 1.15
+        pause 1.5
+        e "On peut s'en servir pour faire peur aux animaux !"
+        y "... Mais de quoi tu parles ?"
+        show char_ernust normal right:
+            xalign 0.5 yalign 0.8
+            xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
+            linear 1.0 xpos -0.5 ypos 1.5
+        pause 1.0
+        jump romains_Part1
          
