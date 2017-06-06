@@ -15,7 +15,7 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.wav"
     
-    outline "On dirait qu'il essaie de draguer Ingrid encore."
+    outline "Tiens ? On dirait qu'il essaie de draguer Ingrid !"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.wav"
     
@@ -65,16 +65,18 @@ label taverne_DatingIngrid:
         "Hein ? Mais c'est quoi ces chiffres ?!":
             
             y "Hein ? Mais c'est quoi ces chiffres ?!"
-            outline "Ces chiffres représentent l'affection de ton interlocuteur"
-            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies"
+            
+            outline "Ces chiffres représentent l'affection de ton interlocuteur."
+            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
             outline "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
+            
             y "Les dating quoi ?"
             
         "Hé ! Mais pourquoi j'ai perdu 10 points ?!":
             
             y "Hé ! Mais pourquoi j'ai perdu 10 points ?!"
-            outline "Ces chiffres représentent l'affection de ton interlocuteur"
-            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies"
+            outline "Ces chiffres représentent l'affection de ton interlocuteur."
+            outline "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
             outline "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
             
             y "Les dating quoi ?"

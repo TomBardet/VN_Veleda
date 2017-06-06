@@ -59,7 +59,7 @@ init:
     $ outline = Character(None,
         what_size=32,
         what_color = "#ffffff",
-        what_outlines=[(2, "#000000", 0, 0)],
+        what_outlines=[(3, "#000000", 0, 0)],
         what_layout="subtitle",
         what_xalign=0.5,
         what_text_align=0.5,

@@ -115,9 +115,7 @@ label intro:
         zoom 1.0 xanchor 0.0 yanchor 0.0
         linear 0.5 xpos -0.15 ypos -0.3 zoom 1.1
     
-    outline "Il doit être à la Taverne..."
-    
-    outline "C'est un peu sa deuxième maison."
+    outline "Il doit être à la Taverne... c'est un peu sa deuxième maison."
     
     scene black with Dissolve (0.5)
     
