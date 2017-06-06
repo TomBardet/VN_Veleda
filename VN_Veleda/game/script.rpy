@@ -45,7 +45,7 @@ label start:
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         Acte2_Romains_FirstVisit = 0 #
     
-    jump taverne_AbusAlcoolPart1
+    #jump taverne_AbusAlcoolPart1
     jump intro
     
 # -----------------------------------------#
@@ -53,6 +53,8 @@ label start:
 label intro:
     
     window hide
+    
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", loop = True)
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.wav"
     
