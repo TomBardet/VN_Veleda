@@ -581,7 +581,7 @@ label romains_FinDeLaVisite80:
 
 label romains_Blague:
     
-    if _testBlague == 0:
+    if _testBlague == 1:
         y "Tenez lisez ça..."
         show screen inventory_screen(obj = "blague")
         pause 1.0
