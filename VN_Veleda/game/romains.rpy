@@ -145,6 +145,7 @@ label romains_VisitePart1:
         y "Vous avez de la chance j’en ai justement une paire sur moi."
         y "On aura vu mieux comme scénar’"
         y "Allez tenez. J’imagine que c’est à votre vue en plus du reste."
+        show screen inventory_screen(obj = "lunettes")
         jump romains_VisitePart2
         
     else:
@@ -496,8 +497,27 @@ label romains_FinDeLaVisite80:
     show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
     $ inventory.add(glaive)
     $ _testGlaive = 1
-    
-    "glaive récupéré"
+    show img_glaive at center:
+        xalign 0.7 yalign 0.9 zoom 0.3
+        linear 0.5 yalign 0.7 zoom 0.4
+        easein 0.5 zoom 0.45
+        easeout 0.5 zoom 0.4
+        pause 0.5
+        parallel :
+            linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
+        parallel :
+            linear 0.9 alpha 0
+    show img_bag:
+        xpos 1.0 yalign 0.05 zoom 1.0
+        linear 0.5 xpos 0.87 yalign 0.05
+        pause 2.3
+        easein 0.3 zoom 1.1
+        easeout 0.3 zoom 1.0 
+        pause 0.5
+        linear 0.3 xpos 1.0
+    hide char_numerimus normal with Dissolve(1.0)
+    pause 3.0
+    y "... Merci ?"
     
     if _testGlaive == 1 & _testBouclier == 1:
         jump PlaceDuVillageAllObjects
@@ -515,6 +535,7 @@ label romains_Blague:
  #       play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
         y "J'ai une amie qui m'a fillé la meilleur des boutades."
         y "Tenez lisez ça..."
+        show screen inventory_screen(obj = "blague")
         nar "C'est là où j'explique que tu tend le bras pour leur donner la blague ? Non ?"
         
   #      play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
@@ -534,7 +555,26 @@ label romains_Blague:
         nar "Le romain te lance donc une... trompette."
         $ inventory.add(trompette)
         $ _testTrompette = 1
-        "trompette récupérée"
+        show img_trompette at center:
+            xalign 0.7 yalign 0.9 zoom 0.3
+            linear 0.5 yalign 0.7 zoom 0.4
+            easein 0.5 zoom 0.45
+            easeout 0.5 zoom 0.4
+            pause 0.5
+            parallel :
+                linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
+            parallel :
+                linear 0.9 alpha 0
+        show img_bag:
+            xpos 1.0 yalign 0.05 zoom 1.0
+            linear 0.5 xpos 0.87 yalign 0.05
+            pause 2.3
+            easein 0.3 zoom 1.1
+            easeout 0.3 zoom 1.0 
+            pause 0.5
+            linear 0.3 xpos 1.0
+        pause 3.0
+        y "... Mais je vais faire quoi d'une trompette moi ?"
         jump romains_Part5
         
     else:

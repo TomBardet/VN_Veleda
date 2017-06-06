@@ -44,7 +44,8 @@ label start:
         Acte1_Tour_CoupableJugement = "Brutalmund" # Coupable de l'Acte 1 -> "Brutalmund" ou "Crossfit"
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         Acte2_Romains_FirstVisit = 0 #
-        
+    
+    jump taverne_AbusAlcoolPart1
     jump intro
     
 # -----------------------------------------#
@@ -155,16 +156,18 @@ label narration_ellipse02:
 
 label PlaceDuVillageDefault:
     scene bg_place
-    menu:
-        " "
-       # "Aller à la Taverne":
-        #    jump taverne_AbusAlcoolPart1
-        "Aller aux Etables":
-            jump etables_PeurDesBufflesPart1
-        "Aller à la Forge":
-            jump forge_BrutalmundEtBeaudrik
-        "Aller à la Tente Romaine":
-            jump romains_PremiereRencontre
+    
+    $ _return = renpy.call_screen("action_choice_placeVillage")
+    
+    if _return == "etables":
+        y "C'est parti pour les étables !"
+        jump etables_PeurDesBufflesPart1
+    elif _return == "forge":
+        y "Direction : la Forge !"
+        jump forge_BrutalmundEtBeaudrik
+    elif _return == "tente":
+        y "Allons faire un coucou aux Romains !"
+        jump romains_PremiereRencontre
 
 # -----------------------------------------#
 
@@ -180,7 +183,14 @@ label narration_ellipseCuite:
 # -----------------------------------------#
 
 label PlaceDuVillageAllObjects:
-    "Tous les objets réunis !"
+    y "Attends... J'ai un glaive..."
+    show screen inventory_screen(obj = "glaive")
+    pause 1.0
+    y "... Et j'ai un bouclier..."
+    show screen inventory_screen(obj = "bouclier")
+    pause 1.0
+    y "... J'AI LA DOT POUR INGRID !"
+    y "Youpi !"
     menu:
         "Aller à la Taverne":
             jump Act2_transition_alldone

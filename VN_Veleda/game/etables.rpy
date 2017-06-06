@@ -179,6 +179,7 @@ label etables_PeurDesBufflesPart2:
     y "Il faut bien utiliser cette trompette quelque part non ?"
     nar "J'aurais jamais cru dire ça mais je suis de l'avis d'Ernust sur le coup..."
     y "Trop tard."
+    show screen inventory_screen(obj = "trompette")
     "*PFIOUUUUUUU* Bruit de trompette"
     "Scène Clé"
     show char_crossfit colere:
@@ -205,14 +206,31 @@ label etables_PeurDesBufflesPart2:
     scene bg_etables with Dissolve(1.0)
     show char_ernust normal right at speakingAnim(0.15, 0.94, 0.92, 0.75)
     e "Ah ben tiens, il a fait tomber ses lunettes en courant."
-    e "On devrais ptêtre les lui rendre ?"
+    
     show char_ernust normal right at notSpeakingAnim(0.15, 0.94, 0.92, 0.75)
     
     $ inventory.add(lunettes)
     $ _testLunettes = 1
-    
-    "Lunettes récupérées + anim lunettes qui vont vers l'inventaire"
-    
+    show img_lunettes at center:
+        xalign 0.7 yalign 0.9 zoom 0.3
+        linear 0.5 yalign 0.7 zoom 0.4
+        easein 0.5 zoom 0.45
+        easeout 0.5 zoom 0.4
+        pause 0.5
+        parallel :
+            linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
+        parallel :
+            linear 0.9 alpha 0
+    show img_bag:
+        xpos 1.0 yalign 0.05 zoom 1.0
+        linear 0.5 xpos 0.87 yalign 0.05
+        pause 2.3
+        easein 0.3 zoom 1.1
+        easeout 0.3 zoom 1.0 
+        pause 0.5
+        linear 0.3 xpos 1.0
+    pause 3.0
+    e "On devrais ptêtre les lui rendre ?"
     jump PlaceDuVillageDefault
     
 # -----------------------------------------#

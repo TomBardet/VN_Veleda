@@ -377,8 +377,26 @@ label forge_Brutalmund_07_Bouclier:
     y "Vaut mieux choper un bouclier et se casser, vite !"
     $ inventory.add(bouclier)
     $ _testBouclier = 1
-    
-    "Bouclier récupéré"
+    show img_bouclier at center:
+        xalign 0.7 yalign 0.9 zoom 0.3
+        linear 0.5 yalign 0.7 zoom 0.4
+        easein 0.5 zoom 0.45
+        easeout 0.5 zoom 0.4
+        pause 0.5
+        parallel :
+            linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
+        parallel :
+            linear 0.9 alpha 0
+    show img_bag:
+        xpos 1.0 yalign 0.05 zoom 1.0
+        linear 0.5 xpos 0.87 yalign 0.05
+        pause 2.3
+        easein 0.3 zoom 1.1
+        easeout 0.3 zoom 1.0 
+        pause 0.5
+        linear 0.3 xpos 1.0
+    pause 3.0
+    y "Bon... Ben c'était pas si dur"
 
     if _testGlaive == 1 & _testBouclier == 1:
         jump PlaceDuVillageAllObjects

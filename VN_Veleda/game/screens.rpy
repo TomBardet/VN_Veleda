@@ -1414,38 +1414,38 @@ transform sineV(y):
             linear 1.8 rotate 1
             repeat
             
-screen action_choice_bar:
+screen action_choice_placeVillage:
     zorder 10
-    textbutton _("Parler à la chêvre"):
+    textbutton _("Etables"):
         xpos 0.55
         xanchor 0.5
         ypos 0.35
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000 ")]
+        text_outlines [(2,"#000000")]
         at sineV(0.35)
-        action Return("goat2")
-    textbutton _("Sortir de la Taverne"):
+        action Return("etables")
+    textbutton _("Forge"):
         xpos 0.85
         xanchor 0.5
         ypos 0.68
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000 ")]
+        text_outlines [(2,"#000000")]
         at sineV(0.68)
-        action Return("sortir")
-    textbutton _("Commander à boire"):
+        action Return("forge")
+    textbutton _("Tente Romaine"):
         xpos 0.25
         xanchor 0.5
         ypos 0.58
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000 ")]
+        text_outlines [(2,"#000000")]
         at sineV(0.58)
-        action Return("boire")
+        action Return("tente")
 
 
 ###################################################################################################

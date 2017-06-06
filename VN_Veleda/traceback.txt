@@ -1,20 +1,94 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00start.rpy", line 107, in script
-    return
-Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/taverne.rpy', 1496245049, 0).
+While processing the outlines property of anonymous style:
+  File "game/script.rpy", line 161, in script
+    
+  File "renpy/common/000statements.rpy", line 471, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+Exception: Color string must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 107, in script
-    return
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1376, in execute
-    next_node(renpy.game.context().lookup_return(pop=True))
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\execution.py", line 552, in lookup_return
-    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/taverne.rpy', 1496245049, 0).
+  File "game/script.rpy", line 161, in script
+    
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1706, in execute
+    self.call("execute")
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1724, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\statements.py", line 145, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 471, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\exports.py", line 2526, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2883, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 1955, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 427, in renpy.display.render.render_screen (gen\renpy.display.render.c:6806)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\screen.py", line 623, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "renpy/display/accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:2027)
+    cr = render(child, widtho, heighto, st - self.child_st_base, at)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\behavior.py", line 707, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 1081, in render
+    st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 158, in renpy.display.render.render (gen\renpy.display.render.c:2475)
+    xmaximum = style.xmaximum
+  File "module/gen/styleclass.pxi", line 397, in renpy.styledata.styleclass.Style.xmaximum.__get__ (gen\renpy.styledata.styleclass.c:10981)
+  File "renpy/style.pyx", line 481, in renpy.style.StyleCore._get (gen\renpy.style.c:7566)
+    build_style(self)
+  File "renpy/style.pyx", line 695, in renpy.style.build_style (gen\renpy.style.c:10841)
+    raise
+  File "renpy/style.pyx", line 692, in renpy.style.build_style (gen\renpy.style.c:10723)
+    pfw.function(s.cache, cache_priorities, priority, v)
+  File "gen/style_functions.pyx", line 230, in style_functions.outlines_property (gen\renpy.styledata.style_functions.c:3422)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\styledata\styleutil.py", line 52, in expand_outlines
+    rv.append((i[0], renpy.easy.color(i[1]), 0, 0))
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\color.py", line 156, in __new__
+    raise Exception("Color string must be 3, 4, 6, or 8 hex digits long.")
+Exception: Color string must be 3, 4, 6, or 8 hex digits long.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
