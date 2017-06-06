@@ -13,17 +13,17 @@ label taverne_DatingIngrid:
     $ lieu = "Taverne"
     $ interlocuteur = "ingrid_char"
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.wav"
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.ogg"
     
     outline "Tiens ? On dirait qu'il essaie de draguer Ingrid !"
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.wav"
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.ogg"
     
     outline "Réveille toi, ça va être ton tour."
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.wav"
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
     
     i "Hihi Gaufrid t'es mignon !"
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
@@ -44,7 +44,7 @@ label taverne_DatingIngrid:
     
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.wav"
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
     
     i "Euh... je veux dire... t'es plus comme un ptit frère pour moi."
     
@@ -84,7 +84,7 @@ label taverne_DatingIngrid:
     $ loveGauge(ingrid_char, -5, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_04.wav"
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_04.ogg"
     
     i "... Gaufrid ? A qui tu parles ? Tu m'inquiètes..."
     
@@ -95,7 +95,7 @@ label taverne_DatingIngrid:
     $ loveGauge(ingrid_char, -10, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.wav"
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.ogg"
     
     i "..."
     i "Ecoute... je vais y aller je pense. Bisous hein !"

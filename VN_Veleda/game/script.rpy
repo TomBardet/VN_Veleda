@@ -45,7 +45,7 @@ label start:
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         Acte2_Romains_FirstVisit = 0 #
     
-    jump PlaceDuVillageDefault
+    #jump taverne_AbusAlcoolPart1
     jump intro
     
 # -----------------------------------------#
@@ -54,7 +54,9 @@ label intro:
     
     window hide
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.wav"
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", loop = True)
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
     
     show introCarte:
         zoom 1.1,xanchor 0.0 yanchor 0.0
@@ -64,6 +66,7 @@ label intro:
     show introCarte:
         xpos -0.2 ypos -0.5 zoom 1.4
     pause 0.5
+    
     show introFlag with vpunch:
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos -0.5
@@ -73,11 +76,11 @@ label intro:
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos 0.35
     
-    pause 14.0
-    
     outline "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains"
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.wav"
+    pause 14.0
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
     
     show introFlag:
         parallel:
@@ -91,7 +94,7 @@ label intro:
         
     outline "Bon, pas vraiment toute en fait..."
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.wav"
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
     
     pause 0.5
     show introPoint with vpunch:
@@ -99,17 +102,17 @@ label intro:
         xpos 0.56 ypos 0.42 
     outline "En tout cas pas le village des Bructères, où habite la légendaire prophétesse Véléda."
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.wav"
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):
         zoom 1.0 xanchor 0.0 yanchor 0.0
         linear 2.0 xpos -0.02 ypos 0.2 zoom 1.1
     outline "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.wav"
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.ogg"
     
     outline "Tu vas incarner Gaufrid, son assistant."
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_06.wav"
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_06.ogg"
     
     #scene black with Dissolve(1.5)
     show bg_place :
@@ -128,7 +131,7 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     
     scene black with Dissolve (1.5)
     
-    play sound "sfx/SFX_Sleep_01.wav"
+    play sound "sfx/SFX_Sleep_01.ogg"
     
     pause 3.0
     
@@ -138,7 +141,7 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     y "Boarf ! C'est pas important..."
     y "Il faut que j'aille travailler moi !"
     
-    play sound "sfx/SFX_Walk_01.wav"
+    play sound "sfx/SFX_Walk_01.ogg"
     
     pause 2.0
     
