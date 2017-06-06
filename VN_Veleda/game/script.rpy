@@ -79,8 +79,6 @@ label intro:
     
     outlineBot "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains."
     
-    pause 14.0
-    
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
     
     show introFlag:
