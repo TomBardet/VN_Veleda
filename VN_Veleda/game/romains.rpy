@@ -177,6 +177,7 @@ label romains_VisitePart2:
   #  play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
     show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)
     num "Mais c'est super germain ! Passe moi ça !"
+    hide screen inventory_screen
     show char_numerimus normal at notSpeakingAnim(0.50, 0.82, 0.8, 1.0)
     
     jump romains_VisitePart3
@@ -537,7 +538,7 @@ label romains_Blague:
         y "Tenez lisez ça..."
         show screen inventory_screen(obj = "blague")
         nar "C'est là où j'explique que tu tend le bras pour leur donner la blague ? Non ?"
-        
+        hide screen inventory_screen
   #      play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
         
         show char_numerimus normal at speakingAnim(0.50, 0.82, 0.8, 1.0)

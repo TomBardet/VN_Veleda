@@ -186,13 +186,17 @@ label PlaceDuVillageAllObjects:
     y "Attends... J'ai un glaive..."
     show screen inventory_screen(obj = "glaive")
     pause 1.0
+    hide screen inventory_screen
     y "... Et j'ai un bouclier..."
     show screen inventory_screen(obj = "bouclier")
     pause 1.0
+    hide screen inventory_screen
     y "... J'AI LA DOT POUR INGRID !"
     y "Youpi !"
-    menu:
-        "Aller à la Taverne":
+    
+    $ _return = renpy.call_screen("action_choice_placeVillageFinal")
+    
+    if _return == "taverne":
             jump Act2_transition_alldone
 
 # -----------------------------------------#

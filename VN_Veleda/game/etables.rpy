@@ -12,37 +12,38 @@ init:
 label etables_PeurDesBufflesPart1:
     scene bg_etables
     show char_crossfit colere at notSpeakingAnim(0.56, 0.80, 0.8, 0.27)
-    "Choix d'action"
     #$ _testTrompette = 1
     if _testTrompette == 1:
-        menu:
-            " "
-            "Jouer de la trompette":
-                jump etables_PeurDesBufflesPart2
-            "Parler aux Buffles":
-                buf "Meuuuuuuuh !"
-                y "A vos souhaits"
-                jump etables_PeurDesBufflesPart1
-            "Parler à Crossfitrichernvald":
+        $ _return = renpy.call_screen("action_choice_EtableTrumpet")
+        if _return == "trompette":
+            jump etables_PeurDesBufflesPart2
+        elif _return == "buffles":
+            buf "Meuuuuuuuh !"
+            y "A vos souhaits"
+            jump etables_PeurDesBufflesPart1
+        elif _return == "crossfit":
+            if _testCrossfitTalk == 0:
                 jump etables_PeurDesBufflesPart1bis
-            "Sortir de l'étable":
-                "Gaufrid sort de l'étable"
-                jump PlaceDuVillageDefault
+            else:
+                jump etables_PeurDesBufflesPart1boucle
+        elif _return == "sortir":
+            y "Retournons au village..."
+            jump PlaceDuVillageDefault
+
     else:
-        menu:
-            " "
-            "Parler aux Buffles":
-                buf "Meuuuuuuuh !"
-                y "A vos souhaits"
-                jump etables_PeurDesBufflesPart1
-            "Parler à Crossfitrichernvald":
-                if _testCrossfitTalk == 0:
-                    jump etables_PeurDesBufflesPart1bis
-                else:
-                    jump etables_PeurDesBufflesPart1boucle
-            "Sortir de l'étable":
-                "Gaufrid sort de l'étable"
-                jump PlaceDuVillageDefault
+        $ _return = renpy.call_screen("action_choice_Etable")
+        if _return == "buffles":
+            buf "Meuuuuuuuh !"
+            y "A vos souhaits"
+            jump etables_PeurDesBufflesPart1
+        elif _return == "crossfit":
+            if _testCrossfitTalk == 0:
+                jump etables_PeurDesBufflesPart1bis
+            else:
+                jump etables_PeurDesBufflesPart1boucle
+        elif _return == "sortir":
+            y "Retournons au village..."
+            jump PlaceDuVillageDefault
 
 # -----------------------------------------#
 
@@ -181,6 +182,7 @@ label etables_PeurDesBufflesPart2:
     y "Trop tard."
     show screen inventory_screen(obj = "trompette")
     "*PFIOUUUUUUU* Bruit de trompette"
+    hide screen inventory_screen
     "Scène Clé"
     show char_crossfit colere:
         xalign 0.5 yalign 0.8

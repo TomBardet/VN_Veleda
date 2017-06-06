@@ -2,8 +2,6 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 164: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    $ CAactif = False
-    ^
+File "game/etables.rpy", line 27: indentation mismatch.
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
