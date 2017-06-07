@@ -35,7 +35,7 @@ label tourVeleda_ErnustEtVeleda :
     
     $ loveGauge(vel_char, -3, 0.75, 0.4)
     
-    v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne nous intéressent pas."
+    v "Allez préparer la salle, Monsieur Gaufrid. Vos anneries ne nous intéressent pas."
     
 
 
@@ -256,11 +256,11 @@ label tourVeleda_ErnustEtVeleda :
         linear 2.0 xpos 0.25 ypos -0.52
     show char_crossfit colere right :
         xalign 0.5 yalign 0.8
-        xpos 0.26 ypos 3.0 zoom 0.32
+        xpos 0.20 ypos 3.0 zoom 0.32
         linear 2.0 xpos 0.26 ypos 0.84
     show char_brutal normal:
         xalign 0.5 yalign 0.8
-        xpos 0.75 ypos 3.0 zoom 0.32
+        xpos 0.81 ypos 3.0 zoom 0.32
         linear 2.0 xpos 0.75 ypos 0.92
         
     play sound "sfx/SFX_Stairs_01.ogg"   
@@ -286,7 +286,7 @@ label tourVeleda_HistoireBrevetPart1:
     cross "Nous voilà ! Je vais enfin trouver justice, Brutalmund !"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-    show char_brutal normal at speakingAnim(0.75, 0.82,0.80,0.32)
+    show char_brutal colere at speakingAnim(0.75, 0.82,0.80,0.32)
     #  play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
     brut "J't'ai déjà dit que j't'ai rien volé du tout !"
     
@@ -295,7 +295,7 @@ label tourVeleda_HistoireBrevetPart1:
     #   play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
     cross "Toi, l'assistant, va chercher la prophétesse !"
     
-    show char_crossfit serieux at notSpeakingAnim(0.26,0.94,0.92,0.32)
+    show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
  #   play sound "sfx/SFX_Char_Player_No_01.ogg"
     y "Ah non ! La prophétesse ne voit pas directement ses visiteurs."
     y "Vous m'expliquez le problème, je lui transmet, et elle s'adresse aux dieux..."
@@ -316,7 +316,7 @@ label tourVeleda_HistoireBrevetPart1:
   #          play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"  
             y "Eh oh je sais ce que je fais hein ? Pas la peine de me menacer."
             
-    y "Bon, dites moi tout, quel est le problème ?"
+    y "Dites moi tout, quel est le problème ?"
     
  #   play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
     show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
@@ -338,7 +338,8 @@ label tourVeleda_HistoireBrevetPart1:
     show char_brutal normal at notSpeakingAnim(0.68,0.94,0.92,0.35)
 #    play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Oui, un escroc ! Ce bouclier est exactement le même que le mien. C'est du vol de propriété intellectuelle !"
+    cross "Oui, un escroc ! Ce bouclier est exactement le même que le mien. Tu l'as copié !"
+    cross "C'est du vol de propriété intellectuelle !"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)        
  #   play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
     show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
@@ -346,13 +347,13 @@ label tourVeleda_HistoireBrevetPart1:
     show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
  #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Le concept de propriété intellectuelle est fondamental à la société Germaine !"
+    cross "Le concept de propriété intellectuelle est fondamental à la société Germaine du premier siècle !"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     menu :
-        cross "{cps=0}Le concept de propriété intellectuelle est fondamental à la société Germaine !{/cps}"
+        cross "{cps=0}Le concept de propriété intellectuelle est fondamental à la société Germaine du premier siècle !{/cps}"
         "C'est très grave !" :
             
-            y "Si les textes le disent, c'est que c'est très grave !"
+            y "C'est vrai que c'est très grave !"
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Tu t'y mets, toi aussi ! Mon Gaufrid, mon poteau !"
             show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
@@ -362,19 +363,36 @@ label tourVeleda_HistoireBrevetPart1:
             y "Y'a pas de quoi en faire tout un plat, non ?"
             show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
             cross "Comment oses-tu, domestique ?"
-            cross "Nos loies sont clairs ! Va voir la prophétesse maintenant !"
+            cross "Nos lois sont claires ! Va voir la prophétesse maintenant !"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-            y "Ok ! Ok, j'y vais ! Faut pas s'énerver comme ça !"
+            y "Ok ! Ok ! J'y vais ! Faut pas s'énerver comme ça !"
             
-    hide char_brutal normal
-    hide char_crossfit colere right
-
+    window hide 
+    
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
-    scene black with Dissolve(0.5)
-    play sound "sfx/SFX_Stairs_01.ogg"
-    outline "Travelling vers le haut"
+    scene bg_tour :
+        xpos 0 ypos -960
+        linear 2.0 xpos 0 ypos 0
+    show vel_morte :
+        xpos 0 ypos -960
+        linear 2.0 xpos 0 ypos 0
+    show char_ernust normal right :
+        xalign 0.5 yalign 0.8
+        xpos 0.25 ypos -0.52 zoom 0.8
+        linear 2.0 xpos 0.20 ypos 0.92
+    show char_crossfit colere right :
+        xalign 0.5 yalign 0.8
+        xpos 0.26 ypos 0.84 zoom 0.32
+        linear 2.0 xpos 0.20 ypos 3.0
+    show char_brutal normal:
+        xalign 0.5 yalign 0.8
+        xpos 0.75 ypos 0.92 zoom 0.32
+        linear 2.0 xpos 0.81 ypos 3.0
+        
+    play sound "sfx/SFX_Stairs_01.ogg"   
+    $ renpy.pause(2.5, hard = True)
     
     jump tourVeleda_MortVeleda
     
@@ -385,7 +403,6 @@ label tourVeleda_MortVeleda:
     $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
-    scene bg_chambre
     show char_ernust normal right  at speakingAnim(0.20,0.92,0.9,0.8)
     
     e "Ah Gaufrid, ça c'est bien passé ?"
@@ -453,7 +470,7 @@ label tourVeleda_HistoireBrevetPart2:
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Ah, enfin ! Parle, larbin."
     
-    show char_crossfit colere right at notSpeakingAnim(0.26,0.8,0.92,0.32)
+    show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
     
     menu :
@@ -476,7 +493,7 @@ label tourVeleda_HistoireBrevetPart2:
             
         "Les dieux se fichent de la propriété intellectuelle !":
             $ Acte1_Tour_CoupableJugement = "Crossfit"
-            y "Les dieux sont insultés par la frivolité de cette acusation !"
+            y "Les dieux sont insultés par la frivolité de cette accusation !"
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Hehe ! J'le savais !"
             show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)

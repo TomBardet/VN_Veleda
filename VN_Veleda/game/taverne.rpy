@@ -8,7 +8,7 @@ label taverne_DatingIngrid:
     scene bg_taverne with Dissolve (2.5) :
         xpos 20 ypos 70 zoom 0.95
         linear 1 xpos -100 ypos -50 zoom 1.1
-    $ renpy.pause(1.5, hard = True)
+    $ renpy.pause(0.25, hard = True)
     
     $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
     $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 4)
@@ -40,7 +40,7 @@ label taverne_DatingIngrid:
     show char_ingrid normal at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
     
     menu:
-        i "{cps=0}Hihi Gaufrid t'es mignon !{/cps}"
+        i "{cps=0}Hihi ! Gaufrid, t'es mignon !{/cps}"
         
         "Viens regarder les étoiles avec moi Ingrid !":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
@@ -62,7 +62,7 @@ label taverne_DatingIngrid:
     
     i "Euh... je veux dire... t'es plus comme un ptit frère pour moi."
     
-    show char_ingrid degout at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Un petit frère... Héhé je savais que j'avais une chance !"
@@ -71,11 +71,11 @@ label taverne_DatingIngrid:
     nar "Tu vas vraiment avoir besoin d'un coup de main..."
     
     show screen datingSim(ingrid_char, 0.60, 0.35)
-    pause 1.5
-    $ loveGauge(ingrid_char, -10, 0.72, 0.35)
     pause 1.0
+    $ loveGauge(ingrid_char, -10, 0.72, 0.35)
+
     menu:
-        " "
+        nar "{cps=0}Tu vas vraiment avoir besoin d'un coup de main...{/cps}"
         
         "Hein ? Mais c'est quoi ces chiffres ?!":
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
