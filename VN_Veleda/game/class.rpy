@@ -184,6 +184,7 @@ transform apparitionJuicy:
             ease 0.1 rotate 20
             ease 0.4 rotate -20
             ease 0.2 rotate 0
+
             
 #Tooltips-inventory: Très chiant de régler leur position, du à une restriction de Renpy qui pue un peu. Modifier à la main le 2e paramètres. WARNING : ça prend des plombes
 

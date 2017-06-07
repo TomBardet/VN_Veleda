@@ -2,7 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/ressources.rpy", line 114: is not terminated with a newline. (Check strings and parenthesis.)
-        image bg_romains = ("images/decor/Lieu_romains.png"
+File "game/tourVeleda.rpy", line 262: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xalign 0.5 yalign 0.8
+    ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

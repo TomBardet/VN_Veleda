@@ -52,7 +52,6 @@ label start:
     jump intro
     
 # -----------------------------------------#
-    
 label intro:
     
     window hide
@@ -78,6 +77,7 @@ label intro:
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.651 ypos 0.37
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
+      
     outlineBot "{cps=1} {/cps}{cps=18}En l'an 70 après Jissé,{cps=2} {/cps}{cps=18}toute la Germanie est occupée par les Romains.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
@@ -89,9 +89,10 @@ label intro:
             easeout 1.0 rotate -720 #counterclockwise
         parallel:
             linear 2.0 alpha 0.0
+    
     show introCrack:
         linear 1.3 alpha 0.0
-        
+       
     outlineBot "{cps=1} {/cps}{cps=20}Bon,{cps=1} {/cps}{cps=18}pas vraiment toute en fait...{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
@@ -165,7 +166,11 @@ label narration_ellipse02:
 # -----------------------------------------#
 
 label PlaceDuVillageDefault:
+
     scene bg_place
+    
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     $ _return = renpy.call_screen("action_choice_placeVillage")
     
