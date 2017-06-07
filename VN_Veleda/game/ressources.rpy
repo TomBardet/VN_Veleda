@@ -114,6 +114,8 @@ init:
     image bg_romains = "images/decor/Lieu_romains.png"
     image bg_place = im.FactorScale("images/decor/Lieu_place.png", 0.33)
     
+    image bg_tour = im.FactorScale"images/decor/Lieu_tour.png", 0.33)
+    
     #iamges de veleda
     image vel_normal = im.FactorScale("images/decor/Lieu_chambre_veleda.png", 0.33)
     image vel_morte = im.FactorScale("images/decor/Lieu_chambre_veledaMorte.png", 0.33)
@@ -190,16 +192,16 @@ init:
     image char_ingrid choc = "images/char/Char_ingrid_choc.png"
     
     #Crossfit
-    image char_crossfit colere = "images/char/Char_Crossfit_Colere_01.png"
-    image char_crossfit colereG = "images/char/Char_Crossfit_Colere_02.png"
-    image char_crossfit serieux = "images/char/Char_Crossfit_Serieux_01.png"
-    image char_crossfit serieuxG = "images/char/Char_Crossfit_Serieux_02.png"
-    image char_crossfit inquiet = "images/char/Char_Crossfit_Inquiet_01.png"
-    image char_crossfit inquietG = "images/char/Char_Crossfit_Inquiet_02.png"
-    image char_crossfit pleurs = "images/char/Char_Crossfit_Pleurs_01.png"
-    image char_crossfit pleursG = "images/char/Char_Crossfit_Pleurs_02.png"
-    image char_crossfit pleurs = "images/char/Char_Crossfit_Choc_01.png"
-    image char_crossfit pleursG = "images/char/Char_Crossfit_Choc_02.png"
+    image char_crossfit colere = "images/char/Char_Crossfit_Colere_02.png"
+    image char_crossfit colereG = "images/char/Char_Crossfit_Colere_01.png"
+    image char_crossfit serieux = "images/char/Char_Crossfit_Serieux_02.png"
+    image char_crossfit serieuxG = "images/char/Char_Crossfit_Serieux_01.png"
+    image char_crossfit inquiet = "images/char/Char_Crossfit_Inquiet_02.png"
+    image char_crossfit inquietG = "images/char/Char_Crossfit_Inquiet_01.png"
+    image char_crossfit pleurs = "images/char/Char_Crossfit_Pleurs_02.png"
+    image char_crossfit pleursG = "images/char/Char_Crossfit_Pleurs_01.png"
+    image char_crossfit pleurs = "images/char/Char_Crossfit_Choc_02.png"
+    image char_crossfit pleursG = "images/char/Char_Crossfit_Choc_01.png"
     
     image char_crossfit colere right = im.Flip("images/char/Char_Crossfit_Colere_01.png", horizontal = True)
     image char_crossfit colereG right = im.Flip("images/char/Char_Crossfit_Colere_02.png", horizontal = True)

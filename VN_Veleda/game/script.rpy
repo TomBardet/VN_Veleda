@@ -21,6 +21,9 @@ label start:
         ern_char = Chara("Ernust", 90, 9999)
         brut_char = Chara("Brutalmund", 35, 100)
         cross_char = Chara("Crossfitrichernvald", 20, 100)
+        beau_char = Chara("Beaudrik", 80, 100)
+        num_char = Chara ("Numerimus", 0, 100)
+        dig_char = Chara("Digitimus", 0, 100)
 
         
         ########## - LES ITEMS DE L'INVENTAIRE - ############
@@ -55,7 +58,7 @@ label intro:
     window hide
     $ renpy.music.set_volume(1, delay=0, channel='music1')
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 0.5)
-    $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 0.5)
+    $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     show introCarte :
         zoom 1,xanchor 0.0 yanchor 0.0
@@ -122,6 +125,7 @@ label intro:
     outlineBot "{cps=2} {/cps}{cps=20}Il doit être à la Taverne{/cps}{cps=10}...{/cps}{cps=20} c'est un peu sa deuxième maison.{/cps}"
 
     stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
     show bg_place :
         linear 1 xpos -600 ypos -650 zoom 2.1
     scene black with Dissolve (1.5)
@@ -141,7 +145,7 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     outline "Le lendemain matin..."
     y "Woua c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
     y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
-    y "Boarf ! C'est pas important..."
+    y "Arf ! C'est pas important..."
     y "Il faut que j'aille travailler moi !"
     
     play sound "sfx/SFX_Walk_01.ogg"

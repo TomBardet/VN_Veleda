@@ -9,9 +9,8 @@ label taverne_DatingIngrid:
         xpos 20 ypos 70 zoom 0.9
         linear 1 xpos -100 ypos -50 zoom 1.1
     
-    $ renpy.music.set_volume(0.5, delay=0, channel='music1')
-    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
-    
+    $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
+    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 4)
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (1.5)
 
     $ _window_during_transitions = True
@@ -61,7 +60,7 @@ label taverne_DatingIngrid:
     show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-    y "* Un petit frère... Héhé je savais que j'avais une chance ! *"
+    y "Un petit frère... Héhé je savais que j'avais une chance !"
     nar "Quoi ?"
     nar "Comment ça une chance ?!"
     nar "Tu vas vraiment avoir besoin d'un coup de main..."
@@ -119,9 +118,10 @@ label taverne_DatingIngrid:
     y "..."
     y "Héhé, ce rencard s'est passé à merveille !"
     y "Bon je vais me coucher."
-    y "Si je suis en retard Véléda va encore m'engueuler."
+    y "Si je suis en retard demain, Véléda va encore m'engueuler."
     
-    stop music1 fadeout 1.0
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
             
     jump narration_ellipse01
  
