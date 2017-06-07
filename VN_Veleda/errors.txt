@@ -2,8 +2,6 @@
 errors listed below, and try again.
 
 
-File "game/etables.rpy", line 133: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    replace char_crossfit colereG right
-                          ^
+File "game/screens.rpy", line 348: non-keyword arg after keyword arg
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
