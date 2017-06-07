@@ -19,7 +19,7 @@ label forge_Brutalmund_Tampon_HUB:
         zoom 0.4 xpos -0.5 ypos 0.05
         linear 0.7 xpos 0.2
     brut "Gaufrid !"
-    brut "Alors, ça te tente un {b}Bouclier-Traineau à trois vitesses™{/b} tout neuf ?"
+    brut "Alors, ça te tente un {b}Bouclier Original de Capitaine Germanie™{/b} tout neuf ?"
     jump forge_Brutalmund_06_Hub
 
 # -----------------------------------------#
@@ -98,14 +98,14 @@ label forge_Beaudrik_03_EpouserIngrid:
 
 label forge_Beaudrik_04:
 
-    bg "Tu sais, c’est moi qui vais marier la gonzesse. J’ai une dote et tout."
+    bg "Tu sais, c’est moi qui vais marier la gonzesse. J’ai une dot et tout."
     bg "J’aime beaucoup les femmes mais là j’ai envie de me poser."
     bg "T’sais, d’avoir quelqu’un qui me fasse des câlins et la vaisselle."
     show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
     brut "Euh feignasse ! Beaudrik ! Viens ici !"
     show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     bg "Tsk, papa m’appelle encore."
-    bg "Bon, moi je dois aller régler un truc avec Josiane, l’autre copine."
+    bg "Bon, moi je dois aller régler un truc avec Josiane, l’autre fiancée."
 
 jump forge_Beaudrik_05_Josiane
 
@@ -116,7 +116,7 @@ label forge_Beaudrik_05_Josiane:
     show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
     menu:
         bg "Bon, moi je dois aller régler un truc avec Josiane, l’autre copine."
-        "Deux copines ? C’est abusé" :
+        "Deux fiancées ? C’est abusé" :
             y "Non mais attends, moi je me trimballe Ernust et toi tu pécho des meufs à droite et à gauche ?"
             y "C'est abusé."
             show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
@@ -139,7 +139,7 @@ jump forge_Beaudrik_06_leaving
 label forge_Beaudrik_06_leaving:
     
     bg "Heureusement que toi tu n’as pas ce genre de problèmes, Gaufrid ! Je t’envie mon pote."
-    bg "Bon, je me casse, avant que Papa arrive. Josiane m’attends à la taverne."
+    bg "Bon, je me casse, avant que Papa arrive. Josiane m’attend à la taverne."
     show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.22)
         #zoom 0.23 xpos 0.4 ypos 0.09
     bg "À plus !"
@@ -157,12 +157,12 @@ label forge_Beaudrik_06_leaving:
 
 label forge_Brutalmund_01:
     
-    show char_brutal colere :
+    show char_brutal normal :
         xalign 0.5 yalign 0.8
         zoom 0.4 xpos -0.5 ypos 0.77
         linear 0.7 xpos 0.52
     pause 0.9
-    show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.4)
+    show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
     brut "..."
     show char_brutal normal
     brut "Ah ! Je cherche un couillon, j’en trouve un autre !"
@@ -183,13 +183,12 @@ label forge_Brutalmund_02:
         "Pas vraiment, non" :
             y "Je l’ai pas vu, non. Pourquoi ?"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
-            # Condition : Crossfit coupable
             if Acte1_Tour_CoupableJugement == "Crossfit":
-                brut "$$$ Brutalmund explique que Beaudrik devait aller chercher les buffles aux étables"
-                brut "$$$ et qu'il ne peut pas laisser son magasin car il y a des voleurs de boucliers"
+                brut "Il était censé surveiller les {b}boucliers{/b} pendant que j'allais checher les buffles !"
+                brut "Je vais le tuer !"
             if Acte1_Tour_CoupableJugement == "Brutalmund":
                 brut "Car grâce à toi, mon p’tit interprète, on n’a plus de quoi bouffer !"
-                brut "Et tous ces boucliers ne vont pas se vendre tous seuls !"
+                brut "Et tous ces {b}boucliers{/b} ne vont pas se vendre tous seuls !"
             show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.4)
             y "Bon, il faudra que vous alliez chercher votre fils alors, non ?"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
@@ -197,9 +196,9 @@ label forge_Brutalmund_02:
         "Il est à la taverne" :
             y "Il allait à la taverne, vous faites encore à temps pour l’attraper."
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
-            brut "Et te laisser là tout seul avec mes précieux boucliers ? Hors question !"
+            brut "Et te laisser là tout seul avec mes précieux {b}boucliers{/b} ? Hors question !"
             if Acte1_Tour_CoupableJugement == "Crossfit":
-                brut "$$$ Les voleurs de boucliers, ça existe vraiment"
+                jump forge_Brutalmund_03
             if Acte1_Tour_CoupableJugement == "Brutalmund":
                 brut "Tu m’as déjà dévalisé une fois avec cette histoire de buffles, tu ne m’auras pas une deuxième fois ! Ha !"
 
@@ -270,7 +269,7 @@ label forge_Brutalmund_04_choice:
             y "Ça m’intéresse, mais comment on sait s’il roule bien ? Il me faudrait au moins un essai routier."
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
             brut "Ah bah là tu me brise le cœur, mon p’tit Gaufrid !"
-            brut "Mes {b}Boucliers-Traineaux à trois vitesses™{/b}, c’est de la balle !"
+            brut "Mes {b}Boucliers Originaux de Capitaine Germanie™{/b}, c’est de la balle !"
             brut "Je te promets ! Pas besoin d’essayer !"
             jump forge_Brutalmund_04_01_Branche_EssaiRoutier
         "Je ne peux pas payer...":
@@ -291,7 +290,7 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
             brut "Mais pourquoi perdre ton temps à les regarder, mon p’tit Gaufrid, quand tu peux directement les acheter !"
             brut "Acheter je te dis !"
             jump forge_Brutalmund_05_CannotPay
-        "Crossfit en vends aussi, vous savez...":
+        "J'irai voir votre concurrent":
             y "Oui mais, le fait est que je suis indécis entre les vôtres et ceux de Crossfitrichentruc."
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
             brut "Ah bon !? Déjà il m'insulte, et là il me fait concurrence aussi ?!"
