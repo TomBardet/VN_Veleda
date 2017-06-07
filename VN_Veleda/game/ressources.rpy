@@ -123,10 +123,10 @@ init:
     image vel_mario_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette_nuit.png", 0.33)
     
     #Intro
-    image introCarte = "images/intro.png"
-    image introFlag = "images/Intro-03.png"
-    image introCrack = "images/Intro-04.png"
-    image introPoint = "images/Intro-05.png"
+    image introCarte = im.FactorScale("images/intro/intro_map.png", 0.35)
+    image introFlag = im.FactorScale("images/intro/intro_flag.png", 0.55)
+    image introCrack = im.FactorScale("images/intro/intro_crack.png", 0.45)
+    image introPoint = im.FactorScale("images/intro/intro_cross.png", 0.35)
     
     #Ending
     image endingTemp = "images/ending.png"

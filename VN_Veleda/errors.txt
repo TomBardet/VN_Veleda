@@ -2,8 +2,12 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 348: expected a keyword argument, colon, or end of line.
-    image bg_Menu = Movie("gui/Splashscreen.mov")
-                  ^
+File "game/script.rpy", line 71: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    xpos 0.5 ypos -0.5 zpos 1
+                             ^
+
+File "game/script.rpy", line 76: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    xpos 0.5 ypos 0.35 zpos 2
+                             ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

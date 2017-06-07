@@ -57,23 +57,23 @@ label intro:
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 2)
     
     
-    show introCarte:
-        zoom 1.1,xanchor 0.0 yanchor 0.0
-        xpos 0.0 ypos -0.10
-        linear 3.0 xpos -0.2 ypos -0.5 zoom 1.4
+    show introCarte :
+        zoom 1,xanchor 0.0 yanchor 0.0
+        xpos 0 ypos 0
+        linear 2.0 xpos -0.05 ypos 0.0025 zoom 1.05
         
-    show introCarte:
-        xpos -0.2 ypos -0.5 zoom 1.4
-    pause 0.5
+   # show introCarte:
+   #     xpos 0.01 ypos 0.01 zoom 1.1
+    pause 1
     
     show introFlag with vpunch:
-        zoom 0.75,xanchor 0.5 yanchor 0.5
-        xpos 0.5 ypos -0.5
+        zoom 1 ,xanchor 0.5 yanchor 0.5
+        xpos 0.65 ypos 0.25
         linear 0.2 ypos 0.35 zoom 0.65
     pause 0.2
     show introCrack with Dissolve(1.0):
         zoom 0.75,xanchor 0.5 yanchor 0.5
-        xpos 0.5 ypos 0.35
+        xpos 0.65 ypos 0.35
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
     outlineBot "{cps=1} {/cps}{cps=18}En l'an 70 après Jissé,{cps=2} {/cps}{cps=18}toute la Germanie est occupée par les Romains.{/cps}"
     
@@ -106,7 +106,7 @@ label intro:
         zoom 1 xanchor 0.0 yanchor 0.0
         linear 2.5 xpos -1000 ypos 0 zoom 1.8
 
-    outlineBot "{cps=2} {/cps}{cps=20}Elle habite dans la tour{/cps}{cps=2} {/cps}{cps=10}là,{/cps}{cps=20} adulée par tous{/cps}{cps=2}...{/cps} {cps=45}sauf par ses proches parceque c'est quand même une vieille peau.{/cps}"
+    outlineBot "{cps=2} {/cps}{cps=20}Elle habite dans la tour{/cps}{cps=2} {/cps}{cps=10}là,{/cps}{cps=20} adulée par tous{/cps}{cps=3}...{/cps} {cps=45}sauf par ses proches parceque c'est quand même une vieille peau.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.ogg"
     
