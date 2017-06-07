@@ -284,8 +284,36 @@
 
 //PLAYER///
 
-"sfx\Voices\Player\Char_Player_Normal_01.ogg"
-"sfx\Voices\Player\Char_Player_Normal_02.ogg"
-"sfx\Voices\Player\Char_Player_Normal_03.ogg"
-"sfx\Voices\Player\Char_Player_Normal_04.ogg"
+"sfx/Voices/Player/Char_Player_Normal_01.ogg"
+"sfx/Voices/Player/Char_Player_Normal_02.ogg"
+"sfx/Voices/Player/Char_Player_Normal_03.ogg"
+"sfx/Voices/Player/Char_Player_Normal_04.ogg"
+
+"sfx/Voices/Player/Char_Player_Non_01.ogg"
+"sfx/Voices/Player/Char_Player_Non_02.ogg"
+"sfx/Voices/Player/Char_Player_Non_03.ogg"
+"sfx/Voices/Player/Char_Player_Non_04.ogg"
+"sfx/Voices/Player/Char_Player_Non_05.ogg"
+
+"sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
+"sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
+"sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
+"sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
+
+"sfx/Voices/Player/Char_Player_Heureux_01.ogg"
+"sfx/Voices/Player/Char_Player_Heureux_02.ogg"
+"sfx/Voices/Player/Char_Player_Heureux_03.ogg"
+"sfx/Voices/Player/Char_Player_Heureux_04.ogg"
+
+"sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
+"sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
+"sfx/Voices/Player/Char_Player_Hesitation_03.ogg"
+"sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
+
+"sfx/Voices/Player/Char_Player_Drink_01.ogg"
+"sfx/Voices/Player/Char_Player_Drink_02.ogg"
+"sfx/Voices/Player/Char_Player_Drink_03.ogg"
+
+"sfx/Voices/Player/Char_Player_Baille_01.ogg"
+"sfx/Voices/Player/Char_Player_Baille_02.ogg"
 
