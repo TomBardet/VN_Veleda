@@ -148,7 +148,21 @@ transform speakingAnim(x, y, yto, zm):
             linear 0.3 rotate -1.5
             linear 0.3 rotate 1.5
             repeat
-        
+            
+#transform speakingAnim(name):
+ #   if name == Brutalmund
+  #      block:
+   #         xalign 0.5 yalign 0.8
+    #        xpos 0.75 ypos 0.92 zoom 0.32
+     #       parallel:
+      #          easein 0.23 ypos 0.92
+       #         easeout 0.23 ypos 0.92
+        #        repeat
+         #   parallel:
+          #      linear 0.3 rotate -1.5
+           #     linear 0.3 rotate 1.5
+            #    repeat
+
 transform notSpeakingAnim(x, y, yto, zm):
     xalign 0.5 yalign 0.8
     xpos x ypos y zoom zm

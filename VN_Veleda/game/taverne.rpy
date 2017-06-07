@@ -6,8 +6,8 @@ label taverne_DatingIngrid:
     
 
     scene bg_taverne with Dissolve (2.5) :
-        xpos -20 ypos -20 zoom 1.2
-        linear 1 xpos 0 ypos 0 zoom 1
+        xpos 20 ypos 70 zoom 0.9
+        linear 1 xpos -100 ypos -50 zoom 1.1
     
     $ renpy.music.set_volume(0.5, delay=0, channel='music1')
     $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
@@ -21,11 +21,11 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.ogg"
     
-    outlineTop "Tiens ? On dirait qu'il essaie de draguer Ingrid !"
+    outlineTop "{cps=2} {/cps}{cps=40}Tiens ?{cps=2} {/cps}{cps=20}On dirait qu'il essaie de draguer Ingrid !{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.ogg"
     
-    outlineTop "Réveille toi, ça va être ton tour."
+    outlineTop "{cps=2} {/cps}Eh,{cps=4} {/cps}{cps=28}réveille toi maintenant !{/cps}{cps=2} {/cps}{cps=25}Ça va être à ton tour.{/cps}"
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
     

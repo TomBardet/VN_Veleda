@@ -338,6 +338,7 @@ style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
 
 
+
 ## Main Menu screen ############################################################
 ##
 ## Used to display the main menu when Ren'Py starts.
@@ -345,10 +346,12 @@ style navigation_button_text:
 ## http://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
+    add Movie(size=(1280, 720))
+    on "show" action Play("movie", "gui/Splashscreen.mov")
+    on "hide" action Stop("movie")
+    on "replaced" action Stop("movie")
     ## This ensures that any other menu screen is replaced.
     tag menu
-
     style_prefix "main_menu"
 
     add gui.main_menu_background
@@ -381,7 +384,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/overlay/game_menu.png"
 
 style main_menu_vbox:
     xalign 1.0

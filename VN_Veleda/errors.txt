@@ -2,6 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/etables.rpy", line 20: indentation mismatch.
+File "game/screens.rpy", line 348: expected a keyword argument, colon, or end of line.
+    image bg_Menu = Movie("gui/Splashscreen.mov")
+                  ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

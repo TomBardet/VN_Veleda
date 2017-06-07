@@ -57,8 +57,6 @@ label intro:
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 2)
     
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
-    
     show introCarte:
         zoom 1.1,xanchor 0.0 yanchor 0.0
         xpos 0.0 ypos -0.10
@@ -76,10 +74,8 @@ label intro:
     show introCrack with Dissolve(1.0):
         zoom 0.75,xanchor 0.5 yanchor 0.5
         xpos 0.5 ypos 0.35
-    
-    outlineBot "En l'an 70 après Jissé, toute la Germanie est occupée par les Romains."
-    
-    pause 14.0
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
+    outlineBot "{cps=1} {/cps}{cps=18}En l'an 70 après Jissé,{cps=2} {/cps}{cps=18}toute la Germanie est occupée par les Romains.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
     
@@ -93,30 +89,28 @@ label intro:
     show introCrack:
         linear 1.3 alpha 0.0
         
-    outlineBot "Bon, pas vraiment toute en fait..."
+    outlineBot "{cps=1} {/cps}{cps=20}Bon,{cps=1} {/cps}{cps=18}pas vraiment toute en fait...{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
-    
-    pause 0.5
+
     show introPoint with vpunch:
         zoom 0.45,xanchor 0.5 yanchor 0.5
         xpos 0.56 ypos 0.42 
-        
-    outlineBot "En tout cas pas le village des Bructères, où habite la légendaire prophétesse Véléda."
+    pause 1.2
+    outlineBot "{cps=4} {/cps}{cps=20}En tout cas,{cps=2} {/cps}pas le village des Bructères,{cps=2} {/cps}{cps=20}où habite la légendaire prophétesse Véléda.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):
         zoom 1 xanchor 0.0 yanchor 0.0
-    pause 2
     show bg_place :
         zoom 1 xanchor 0.0 yanchor 0.0
         linear 2.5 xpos -1000 ypos 0 zoom 1.8
 
-    outlineBot "Elle habite dans la tour là, adulée par tous... sauf par ses proches parceque c'est quand même une vieille peau."
+    outlineBot "{cps=2} {/cps}{cps=20}Elle habite dans la tour{/cps}{cps=2} {/cps}{cps=10}là,{/cps}{cps=20} adulée par tous{/cps}{cps=2}...{/cps} {cps=45}sauf par ses proches parceque c'est quand même une vieille peau.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.ogg"
     
-    outlineBot "Tu vas incarner Gaufrid, son assistant."
+    outlineBot "{cps=2} {/cps}{cps=20}Tu vas incarner Gaufrid{/cps},{cps=2} {/cps}{cps=20}son assistant.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_06.ogg"
     
@@ -125,7 +119,7 @@ label intro:
         zoom 1.8 xanchor 0.0 yanchor 0.0
         linear 0.9 xpos -400 ypos -500 zoom 1.8
     
-    outlineBot "Il doit être à la Taverne... c'est un peu sa deuxième maison."
+    outlineBot "{cps=2} {/cps}{cps=20}Il doit être à la Taverne{/cps}{cps=10}...{/cps}{cps=20} c'est un peu sa deuxième maison.{/cps}"
 
     stop music1 fadeout 1.5
     show bg_place :
@@ -146,7 +140,6 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     
     outline "Le lendemain matin..."
     y "Waw c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
-    play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg" 
     y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
     y "Boarf ! C'est pas important..."
     y "Il faut que j'aille travailler moi !"
