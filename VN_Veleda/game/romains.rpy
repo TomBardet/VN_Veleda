@@ -636,5 +636,5 @@ label romains_Blague:
             xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
             linear 1.0 xpos -0.5 ypos 1.5
         pause 1.0
-        jump romains_Part5
+        jump romains_Part1
          

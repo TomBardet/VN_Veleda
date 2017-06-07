@@ -30,8 +30,6 @@ init -1 python:
             self.image = imageIdle # image file to use for this item
             self.imageHover = imageHover
             
-        def use(self): #here we define what should happen when we use the item
-            renpy.call("Obj_use", self.name, self.player)
 
     class Inventory(store.object):
         def __init__(self):
@@ -41,9 +39,6 @@ init -1 python:
         def drop(self, item):
             self.items.remove(item)
 
-    def item_use():
-        item.use()
-        
     def checkInventory(string, value):
         value = 0
         for i in range(0, len(inventory.items)):

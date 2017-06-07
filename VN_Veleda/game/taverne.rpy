@@ -9,8 +9,9 @@ label taverne_DatingIngrid:
         xpos 20 ypos 70 zoom 0.9
         linear 1 xpos -100 ypos -50 zoom 1.1
     
-    $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
-    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 4)
+    $ renpy.music.set_volume(0.5, delay=0, channel='music1')
+    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
+    
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (1.5)
 
     $ _window_during_transitions = True
@@ -20,11 +21,11 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_07.ogg"
     
-    nar "{cps=2} {/cps}{cps=40}Tiens ?{cps=2} {/cps}{cps=20}On dirait qu'il essaie de draguer Ingrid !{/cps}"
+    outlineTop "{cps=2} {/cps}{cps=40}Tiens ?{cps=2} {/cps}{cps=20}On dirait qu'il essaie de draguer Ingrid !{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.ogg"
     
-    nar "{cps=2} {/cps}Eh,{cps=4} {/cps}{cps=28}réveille toi maintenant !{/cps}{cps=2} {/cps}{cps=25}Ça va être à ton tour.{/cps}"
+    outlineTop "{cps=2} {/cps}Eh,{cps=4} {/cps}{cps=28}réveille toi maintenant !{/cps}{cps=2} {/cps}{cps=25}Ça va être à ton tour.{/cps}"
     
     show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
@@ -60,10 +61,10 @@ label taverne_DatingIngrid:
     show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-    y "Un petit frère... Héhé je savais que j'avais une chance !"
-    nar "Quoi ?"
-    nar "Comment ça une chance ?!"
-    nar "Tu vas vraiment avoir besoin d'un coup de main..."
+    y "* Un petit frère... Héhé je savais que j'avais une chance ! *"
+    outlineTop "Quoi ?"
+    outlineTop "Comment ça une chance ?!"
+    outlineTop "Tu vas vraiment avoir besoin d'un coup de main..."
     
     show screen datingSim(ingrid_char, 0.56, 0.30)
     pause 1.5
@@ -80,9 +81,9 @@ label taverne_DatingIngrid:
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Hé ! Mais pourquoi j'ai perdu 10 points ?!"
 
-    nar "Ces chiffres représentent l'affection de ton interlocuteur."
-    nar "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
-    nar "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
+    outlineTop "Ces chiffres représentent l'affection de ton interlocuteur."
+    outlineTop "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
+    outlineTop "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"        
     y "Les dating quoi ?"
@@ -118,10 +119,9 @@ label taverne_DatingIngrid:
     y "..."
     y "Héhé, ce rencard s'est passé à merveille !"
     y "Bon je vais me coucher."
-    y "Si je suis en retard demain, Véléda va encore m'engueuler."
+    y "Si je suis en retard Véléda va encore m'engueuler."
     
-    stop music1 fadeout 1.5
-    stop ambiance fadeout 0.5
+    stop music1 fadeout 1.0
             
     jump narration_ellipse01
  
@@ -133,15 +133,13 @@ label taverne_PresentationDot:
     
     $ _window_during_transitions = True
     
-    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
-    
     $ lieu = "Taverne"
     $ interlocuteur = "ingrid_char"
     show screen datingSim(ingrid_char, 0.56, 0.30)
     
     i "Gaufrid ?!"
-    i "Euh... écoute, je suis désolée d'être partie en courant la dernière fois."
-    i "C'est juste que tu disais des trucs vraiment bizarre  !"
+    i "Euh... écoute, je suis désolé d'être partie en courant la dernière fois"
+    i "C'est juste que tu disais des trucs vraiment bizarre"
     
     show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
     menu:

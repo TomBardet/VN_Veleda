@@ -3,6 +3,7 @@
 ##########################################################
 
 label tourVeleda_ErnustEtVeleda :
+<<<<<<< HEAD
     scene bg_tour with Dissolve (2.5) :
         xpos 0 ypos 0
     
@@ -12,6 +13,11 @@ label tourVeleda_ErnustEtVeleda :
     show vel_normal with Dissolve (2.5) :
         xpos 0 ypos 0
 
+=======
+    scene bg_chambre with Dissolve (2.0)
+    
+    show vel_normal with Dissolve (2.5)
+>>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
     
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
@@ -230,6 +236,7 @@ label tourVeleda_ErnustEtVeleda :
     
     window hide 
     
+<<<<<<< HEAD
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
@@ -255,6 +262,11 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/SFX_Stairs_01.ogg"        
     pause 3.5
 
+=======
+    scene black with Dissolve(0.5)
+ #   play sound "sfx/SFX_Stairs_01.ogg"
+    outline "Travelling vers le bas"
+>>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
     
     jump tourVeleda_HistoireBrevetPart1
     #jump tourVeleda_MarryingIngridPart2
@@ -262,6 +274,7 @@ label tourVeleda_ErnustEtVeleda :
 # -----------------------------------------#
 
 label tourVeleda_HistoireBrevetPart1:
+<<<<<<< HEAD
 
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
@@ -269,9 +282,14 @@ label tourVeleda_HistoireBrevetPart1:
 
     #show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32) with Dissolve(1)
 
+=======
     
- #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
+    scene bg_antichambre
+>>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+    
+    show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+ #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
     cross "Nous voilà ! Je vais enfin trouver justice, Brutalmund !"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
@@ -392,11 +410,8 @@ label tourVeleda_HistoireBrevetPart1:
     hide char_brutal normal
     hide char_crossfit colere right
 
-    stop music1 fadeout 1.5
-    stop ambiance fadeout 0.5
-    
     scene black with Dissolve(0.5)
-    play sound "sfx/SFX_Stairs_01.ogg"
+#    play sound "sfx/SFX_Stairs_02.ogg"
     outline "Travelling vers le haut"
     
     jump tourVeleda_MortVeleda
@@ -404,9 +419,6 @@ label tourVeleda_HistoireBrevetPart1:
 # -----------------------------------------#
     
 label tourVeleda_MortVeleda:
-    
-    $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 1)
-    $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     scene bg_chambre
     show char_ernust normal right  at speakingAnim(0.20,0.92,0.9,0.8)
@@ -451,13 +463,8 @@ label tourVeleda_MortVeleda:
             
     y "J'y vais, bouge surtout pas d'ici !"
     
-    scene bg_tour
-    
-    stop music1 fadeout 1.5
-    stop ambiance fadeout 0.5
-    
-    play sound "sfx/SFX_Stairs_02.ogg"
-    
+    scene black with Dissolve(0.5)
+ #   play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le bas"
     
     jump tourVeleda_HistoireBrevetPart2
@@ -467,23 +474,18 @@ label tourVeleda_MortVeleda:
 label tourVeleda_HistoireBrevetPart2:
 
     scene bg_antichambre
-
-    $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
-    $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-
+    show char_crossfit colere right at notSpeakingAnim(0.26,0.8,0.92,0.32)
     
+    y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Ah, enfin ! Parle, larbin."
-    
-    show char_crossfit colere right at notSpeakingAnim(0.26,0.8,0.92,0.32)
-    y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
+    show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     
     menu :
-        y "{cps=0}Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !{/cps}"
+        cross "{cps=0}Ah, enfin ! Parle, larbin.{/cps}"
         "Crossfitrichernvald a raison !" :
-            $ Acte1_Tour_CoupableJugement = "Brutalmund"
             y "Brutalmund va devoir payer réparations !"
             show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)   
             cross "Aha !"
@@ -499,7 +501,6 @@ label tourVeleda_HistoireBrevetPart2:
             cross "Des... des buffles ?"
             
         "Crossfitrichernvald a tort !":
-            $ Acte1_Tour_CoupableJugement = "Crossfit"
             y "Les dieux sont insultés par la frivolité de cette acusation !"
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Hehe ! J'le savais !"
@@ -533,9 +534,6 @@ label tourVeleda_HistoireBrevetPart2:
     show char_ernust normal right at notSpeakingAnim(0.6,0.95,0.93,0.8)
     y "Ben moi je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
     y "Je vais pouvoir voir Ingrid en plus !"
-    
-    stop music1 fadeout 1.5
-    stop ambiance fadeout 0.5
     
     jump narration_ellipse02
     #jump tourVeleda_MarryingIngridPart2

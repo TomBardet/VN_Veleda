@@ -2,8 +2,12 @@
 errors listed below, and try again.
 
 
+<<<<<<< HEAD
 File "game/tourVeleda.rpy", line 262: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
     xalign 0.5 yalign 0.8
     ^
+=======
+File "game/screens.rpy", line 348: non-keyword arg after keyword arg
+>>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
