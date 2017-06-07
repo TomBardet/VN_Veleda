@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Image' u'images/char/Char_brutal_normal.png'>:
-  File "game/tourVeleda.rpy", line 471, in script
-    y "Je vous prie de dégager de là vite fait, merci."
-IOError: Couldn't find file 'images/char/Char_brutal_normal.png'.
+While loading <'Image' u'images/char/Char_brutal_colere.png'>:
+  File "game/forge.rpy", line 166, in script
+    brut "..."
+IOError: Couldn't find file 'images/char/Char_brutal_colere.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/tourVeleda.rpy", line 471, in script
-    y "Je vous prie de dégager de là vite fait, merci."
+  File "game/forge.rpy", line 166, in script
+    brut "..."
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
     renpy.exports.say(who, what, interact=self.interact)
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
@@ -70,7 +70,7 @@ Full traceback:
     surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
   File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'images/char/Char_brutal_normal.png'.
+IOError: Couldn't find file 'images/char/Char_brutal_colere.png'.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
