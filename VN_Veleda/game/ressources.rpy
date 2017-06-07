@@ -238,6 +238,11 @@ init:
     image char_numerimus heureux = "images/char/Char_numerimus_heureux.png"
     image char_numerimus choque = "images/char/Char_numerimus_choque.png"
     image char_numerimus dubitatif = "images/char/Char_numerimus_dubitatif.png"
+    #---
+    image char_numerimus normal = "images/char/Char_numerimus_normal_lunette.png"
+    image char_numerimus heureux = "images/char/Char_numerimus_heureux_lunette.png"
+    image char_numerimus choque = "images/char/Char_numerimus_choque_lunette.png"
+    image char_numerimus dubitatif = "images/char/Char_numerimus_dubitatif_lunette.png"
     
     #Digitimus
     image char_digitimus normal = "images/char/Char_digitimus_normal.png"
