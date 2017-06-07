@@ -5,7 +5,7 @@ init python:
     _testA = 0
     _testB = 0
 label romains_PremiereRencontre:
-    $ _window_during_transitions = False
+    
     jump romains_Part1
 
 # -----------------------------------------#
@@ -166,6 +166,8 @@ label romains_Part5:
         "J'ai une bonne blague pour vous !" if _testTrompette == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
             y "Ca tombe bien, on m'a donné une excellente blague hier soir !"
+            hide char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            hide char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             show char_numerimus dubitatif at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             show char_digitimus dubitatif at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             jump romains_Blague
@@ -235,6 +237,11 @@ label romains_VisitePart2:
     $ loveGauge(num_char, +35, 0.62, 0.28)
     hide screen inventory_screen
     show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+    hide char_numerimus normal
+    
+    show char_numerimus heureux lunette at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    num "Regarde moi ça Germain, la grande classe."
+    show char_numerimus heureux lunette at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     
     jump romains_VisitePart3
 
@@ -242,9 +249,9 @@ label romains_VisitePart2:
 label romains_VisitePart3:
         
     play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
-    show char_numerimus heureux at speakingAnim(0.45, 0.82, 0.8, 1.0)
-    num "Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?"
-    show char_numerimus heureux at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+    show char_numerimus normal lunette at speakingAnim(0.45, 0.82, 0.8, 1.0)
+    num "Qu’est ce qu’il y a à voir dans le coin ?"
+    show char_numerimus normal lunette at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             
     menu :
         dig "{cps=0}Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?{/cps}"
@@ -255,11 +262,11 @@ label romains_VisitePart3:
             
             play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Doute_04.ogg"
             show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
-            show char_numerimus heureux at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus normal lunette lunette at speakingAnim(0.45, 0.82, 0.8, 1.0)
             dig "Ouais..."
             show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             num "Mais encore ?"
-            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus normal lunette at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             jump romains_VisitePart3
             
         "Deux gros abrutis."if _testB == 0:
@@ -267,9 +274,9 @@ label romains_VisitePart3:
             y "Deux bons gros abrutis."
             $ _testB = 1
             play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
-            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus normal lunette at speakingAnim(0.45, 0.82, 0.8, 1.0)
             num "Oh, vous savez, pour nous vous vous ressemblez tous"
-            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus normal lunette at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             jump romains_VisitePart3
             
         "Véléda ?":
@@ -277,21 +284,21 @@ label romains_VisitePart3:
             y "Il y a bien la prophétesse Véléda mais..."
             
             play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Heureux_03.ogg"
-            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
-            show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
+            show char_numerimus heureux lunette at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_digitimus rire at speakingAnim(0.7, 0.78, 0.76, 1.25)
             dig "Mais c'est bien sur ! On a toujours voulu la rencontrer !"
-            show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
+            show char_digitimus rire at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             num "Ouais ! Super idée l'Germain."
-            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus heureux lunette at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             
             
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
             y "non mais là elle est pas..."
             
             play sound "sfx/Voices/Num/Char_Num_Heureux_01.ogg"
-            show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus heureux lunette at speakingAnim(0.45, 0.82, 0.8, 1.0)
             num "Vendu ! On y va tout de suite !"
-            show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
+            show char_numerimus heureux lunette at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             
             hide screen datingSim
             scene black with Dissolve (1.0)
@@ -373,23 +380,24 @@ label romains_VisitePart7:
     play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
     y "Entrez !"
     play sound "sfx/SFX_Entrance_01.ogg"
-    show char_numerimus normal:
+    show char_numerimus normal lunette:
         xalign 0.5 yalign 0.8 zoom 1.25
         xpos 1.3 ypos 0.90
         linear 1.0 xpos 0.5
     pause 1.0
-    show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
+    show char_numerimus normal lunette at speakingAnim(0.5, 0.92, 0.9, 1.25)
     play sound "sfx/Voices/Num/Char_Num_Doute_03.ogg"
     num "C'est pas trop tôt !"
-    show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
+    show screen datingSim(num_char, 0.55, 0.35)
+    show char_numerimus normal lunette at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
     play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
     y "Mais... Il est où votre porte-enseigne ?"
-    show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
+    show char_numerimus normal lunette at speakingAnim(0.5, 0.92, 0.9, 1.25)
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
     num "Il est puni de visite."
     num "Il a fait une remarque déplacée sur mes sandales."
     num "Bon, elle est où Véléda ?"
-    show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
+    show char_numerimus normal lunette at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
     
     jump romains_VisitePart8
 
@@ -411,7 +419,7 @@ label romains_VisitePart8:
 label romains_VisitePart9:
     
     stop music1 fadeout 1.0
-    
+    hide screen datingSim
     scene black with Dissolve (1.0)
     play sound "sfx/SFX_Stairs_01.ogg"
     scene bg_chambre with Dissolve (3.0)
@@ -420,13 +428,15 @@ label romains_VisitePart9:
 # -----------------------------------------#
 label romains_VisitePart10:
     
+    
     $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 2)
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    show screen datingSim(num_char, 0.25, 0.35)
     
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
     num "Wow. Voici donc la vénérable Véléda..."
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_02.ogg"
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
@@ -436,17 +446,20 @@ label romains_VisitePart10:
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
     num "Fascinant... Qu'est-ce qu'elle veut dire ?"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
     y "Euuh là elle dit... qu’a votre retour les... gens à Rome.. Seront… très… content de vous voir."
     
- #   play sound "sfx/SFX_Char_Numerimus_Heureux_01.ogg"
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+ #   play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"    show char_numerimus normal at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
+    $ loveGauge(num_char, +15, 0.34, 0.28)
     num "Ahah ! C'est bien vrai !"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
     
     jump romains_VisiteProphetie
     
@@ -454,12 +467,16 @@ label romains_VisitePart10:
 label romains_VisiteProphetie:
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_01.ogg"
-    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    show char_veledaernust normal lunette at speakingAnim(0.55, 0.65, 0.67, 1)
     ve  " Les oiseauuuuuuux chantent on dirait des corbeaux  !" 
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_veledaernust normal lunette at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
     num "... Une traduction s'il vous plaît ?"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
+    
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Là elle dit que..."
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
@@ -469,18 +486,22 @@ label romains_VisiteProphetie:
             y "Un présage de mort plane sur vous..."
         "Il y a... des corbeaux ?" :
             y "Les oiseaux sont surement des corbeaux."
-        "On chantera votre gloire." :
-            y "Les chants de victoires retentiront bientôt, votre gloire sera chantée."
+        "Les oiseaux profiterons bientôt du printemps." :
+            y "Les oiseaux profiterons bientôt du printemps qui arrive."
     
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
+    $ loveGauge(num_char, -15, 0.34, 0.28)
     num "Humm..."
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
     #Proph 03#
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_03.ogg"
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
     ve  " Eau chauuuuuude….. et eau froide ne font pas bon ménage  !" 
+    
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
     y "Et là elle dit que..."
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
@@ -491,9 +512,11 @@ label romains_VisiteProphetie:
             y "Vous vous démarquerez en tant que grand centurion."
         "L'eau tiède c'est désagréable" :
             y "Mélanger l'eau chaude et l'eau froide, c'est mal. " 
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Heureux_03.ogg"
+    $ loveGauge(num_char, +20, 0.34, 0.28)
     num "J'en étais sur !"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)    
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)    
     #Proph 04#
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
@@ -502,9 +525,11 @@ label romains_VisiteProphetie:
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
     num "Hein ?"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
     y "Heuuu là... elle dit que..."
 #    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
@@ -531,23 +556,33 @@ label romains_VisiteProphetie:
 label romains_FinDeLaVisite80:
     
  #   play sound "sfx/SFX_Char_Numerimus_Rire_01.ogg"
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Heureux_01.ogg"
+    $ loveGauge(num_char, +25, 0.34, 0.28)
     num "C'est extraordinaire !"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
     show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_01.ogg"
     ve  "... C'est fini."
     show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
-    show char_numerimus normal at speakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
     num "De quoi ?"
-    show char_numerimus normal at notSpeakingAnim(0.1, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1.25)
+    play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Le spectacle est terminé ! Hop hop hop, on retourne à l'entrée !"
+    hide screen datingSim
     scene bg_antichambre with Dissolve (1.0)
-    show char_numerimus normal at speakingAnim(0.5, 0.92, 0.9, 1.25)
+    show char_numerimus normal lunette at speakingAnim(0.5, 0.92, 0.9, 1.25)
+    show screen datingSim(num_char, 0.55, 0.35)
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
+ 
+    
+    play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
     num "Les propos de cette prophétesse m'ont vraiment inspiré."
-    num "Je vais quitter l'armée. On ne peut rester indifférent à telles paroles"
+    num "Je vais quitter l'armée et rejoindre la Rome insoumise. On ne peut rester indifférent à de telles paroles"
     num "Je n'aurais plus besoin de ça, tenez :"
-    show char_numerimus normal at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
+    show char_numerimus normal lunette at notSpeakingAnim(0.5, 0.92, 0.9, 1.25)
     $ inventory.add(glaive)
     $ _testGlaive = 1
     show img_glaive at center:
@@ -568,7 +603,8 @@ label romains_FinDeLaVisite80:
         easeout 0.3 zoom 1.0 
         pause 0.5
         linear 0.3 xpos 1.0
-    hide char_numerimus normal with Dissolve(1.5)
+    hide char_numerimus normal lunette with Dissolve(1.5)
+    hide screen datingSim
     pause 3.0
     y "Eh, mais c'est un {b}glaive{/b} ! Merci !"
     
