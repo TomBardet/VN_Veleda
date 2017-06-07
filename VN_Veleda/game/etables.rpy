@@ -15,7 +15,7 @@ label etables_PeurDesBufflesPart1:
     scene bg_etables:
         zoom 0.70
     show char_crossfit inquiet right at notSpeakingAnim(0.7, 0.77, 0.8, 0.27)
-    $ _testTrompette = 1
+    #$ _testTrompette = 1
     if _testTrompette == 1:
         if _testCrossfitTalk == 1:
             $ _testEtable = 1

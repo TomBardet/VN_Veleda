@@ -30,7 +30,7 @@ label start:
         
         glaive = Item("glaive",player="ex", imageIdle="images/inv_swordIdle.png",imageHover="images/inv_swordHover.png")
         bouclier = Item("bouclier",player="ex", imageIdle="images/inv_shieldIdle.png",imageHover="images/inv_shieldHover.png")   
-        blague = Item("blague",player="goat_char", imageIdle="images/inv_jokeIdle.png",imageHover="images/inv_jokeHover.png") 
+        blague = Item("blague",player="ex", imageIdle="images/inv_jokeIdle.png",imageHover="images/inv_jokeHover.png") 
         lunettes = Item("lunettes",player="ex", imageIdle="images/inv_glassesIdle.png",imageHover="images/inv_glassesHover.png")
         trompette = Item("trompette",player="ex", imageIdle="images/inv_trumpetidle.png",imageHover="images/inv_glassesHover.png")
             

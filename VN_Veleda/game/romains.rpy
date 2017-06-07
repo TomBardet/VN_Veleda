@@ -5,7 +5,7 @@ init python:
     _testA = 0
     _testB = 0
 label romains_PremiereRencontre:
-    
+    $ _window_during_transitions = False
     jump romains_Part1
 
 # -----------------------------------------#
@@ -166,8 +166,6 @@ label romains_Part5:
         "J'ai une bonne blague pour vous !" if _testTrompette == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
             y "Ca tombe bien, on m'a donné une excellente blague hier soir !"
-            hide char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
-            hide char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             show char_numerimus dubitatif at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             show char_digitimus dubitatif at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             jump romains_Blague
@@ -245,7 +243,7 @@ label romains_VisitePart3:
         
     play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
     show char_numerimus heureux at speakingAnim(0.45, 0.82, 0.8, 1.0)
-    num "Qu’est ce qu’il y a à voir dans le coin ?"
+    num "Bon du coup...Qu’est ce qu’il y a à voir dans le coin ?"
     show char_numerimus heureux at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
             
     menu :
@@ -262,7 +260,7 @@ label romains_VisitePart3:
             show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
             num "Mais encore ?"
             show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
-            jump romains_VisitePart3bis
+            jump romains_VisitePart3
             
         "Deux gros abrutis."if _testB == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
