@@ -16,7 +16,7 @@ label tourVeleda_ErnustEtVeleda :
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
     $ interlocuteur = "vel_char"
-    show screen datingSim(vel_char, 0.65, 0.4)
+    show screen datingSim(vel_char, 0.7, 0.4)
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     
@@ -25,11 +25,11 @@ label tourVeleda_ErnustEtVeleda :
     $ loveGauge(vel_char, -3, 0.75, 0.4)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-    y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
+    y "Mais... c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
-    v "Des chiffres ? De quoi parlez vous ?"
+    v "Des chiffres ? De quoi parlez vous, enfin ?"
     
     $ loveGauge(vel_char, -3, 0.75, 0.4)
 
@@ -46,7 +46,8 @@ label tourVeleda_ErnustEtVeleda :
     menu :
         "Il vient demander conseil, Ô Véléda ? ":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-            y "Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
+            y "Vous voulez dire Crossfitrichernvald ?" 
+            y "Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
@@ -60,7 +61,8 @@ label tourVeleda_ErnustEtVeleda :
             
         "Il veut quoi lui ?":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-            y "Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
+            y "Vous voulez dire Crossfitrichernvald ?" 
+            y "Qu'est ce qu'il veut, celui-là ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
@@ -72,7 +74,7 @@ label tourVeleda_ErnustEtVeleda :
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
             
-    v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
+    v "Monseigneur Crossfriture accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
     
@@ -83,6 +85,7 @@ label tourVeleda_ErnustEtVeleda :
     v "Une prophétie !"
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
  #   play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
+ 
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
     y "Euh.. ils devraient pas plutôt porter plainte ?"
     

@@ -49,7 +49,7 @@ init -1 python:
     def loveGauge(char_name ,loveCount, x, y):
         char_name.love+=loveCount
         if char_name == vel_char:
-            x = 0.75
+            x = 0.8
             y = 0.4
         if char_name.love < 0:
             char_name.love=0
