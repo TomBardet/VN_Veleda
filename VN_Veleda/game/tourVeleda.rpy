@@ -16,7 +16,7 @@ label tourVeleda_ErnustEtVeleda :
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
     $ interlocuteur = "vel_char"
-    show screen datingSim(vel_char, 0.65, 0.4)
+    show screen datingSim(vel_char, 0.7, 0.4)
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     
@@ -25,11 +25,11 @@ label tourVeleda_ErnustEtVeleda :
     $ loveGauge(vel_char, -3, 0.75, 0.4)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-    y "Mais c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
+    y "Mais... c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
-    v "Des chiffres ? De quoi parlez vous ?"
+    v "Des chiffres ? De quoi parlez vous, enfin ?"
     
     $ loveGauge(vel_char, -3, 0.75, 0.4)
 
@@ -46,7 +46,8 @@ label tourVeleda_ErnustEtVeleda :
     menu :
         "Il vient demander conseil, Ô Véléda ? ":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-            y "Crossfitrichernvald ? Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
+            y "Vous voulez dire Crossfitrichernvald ?" 
+            y "Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
@@ -60,7 +61,9 @@ label tourVeleda_ErnustEtVeleda :
             
         "Il veut quoi lui ?":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-            y "Crossfitrichernvald ? Qu'est ce qu'il veut lui ?"
+            y "Vous voulez dire Crossfitrichernvald ?" 
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
+            y "Qu'est ce qu'il veut, celui-là ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
@@ -72,9 +75,9 @@ label tourVeleda_ErnustEtVeleda :
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
             
-    v "Monseigneur Crossfritruc accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
-    
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
+    
+    v "Monseigneur Crossfriture accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
     
     v "Monsieur Brutalmund nie l'accusation ! Nous allons donc les départager avec..."
     
@@ -83,7 +86,8 @@ label tourVeleda_ErnustEtVeleda :
     v "Une prophétie !"
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
  #   play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-    play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
+ 
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Euh.. ils devraient pas plutôt porter plainte ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Rage_01.ogg"
@@ -94,6 +98,7 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Où se trouve votre cousin d'ailleurs ? Le simplet, Monsieur Ernust ?"
     
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     v "Cela fait une heure qu'il doit nous apporter de quoi nous sustenter !"
     
     play sound "sfx/SFX_Entrance_01.ogg"
@@ -108,17 +113,18 @@ label tourVeleda_ErnustEtVeleda :
     $ interlocuteur = "ern_char"
     show screen datingSim(ern_char, 0.25, 0.10)
     
+    play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
     e "Oh, Bonjour Gaufrid !"
     $ loveGauge(ern_char, 1, 0.3, 0.10)
     show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
     menu :
-        e "{cps=0}Oh, Bonjour Gaufrid !{/cps}"
+        e "{cps=0}Oh, bonjour Gaufrid !{/cps}"
         "Bonjour Ernust !" :
-  #          play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bonjour Ernust, comment ça va ?"
             
             show char_ernust joyeux right at speakingAnim(0.20,0.92,0.9,0.8)
-  #          play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)            
             e "Ça va bien !"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
@@ -126,11 +132,11 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
             
         "90 points d'affection ?" :
-  #          play sound "sfx/SFX_Char_Player_Question_01.ogg"
-            y "90 de love ? Il est amoureux de moi en fait ?"
+            play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
+            y "90 de love ? Il est amoureux de moi ?"
 
             show char_ernust love at speakingAnim(0.20,0.92,0.9,0.8)
-   #         play sound "sfx/SFX_Char_Ernust_Love_01.ogg"
+            play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)            
             e "T'es mon meilleur ami Gaufrid !"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
@@ -139,13 +145,13 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
 
             
-        "Ah, t'es là, toi ?" :
-   #         play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
-            y "Ah, t'es là toi ? Pfff..."
+        "Ah... t'es là, toi ?" :
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
+            y "Ah... t'es là toi ? Pfff..."
 
             show char_ernust joyeux right at speakingAnim(0.20,0.92,0.9,0.8)
 
-     #       play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)            
             e "Oui je suis là !"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
@@ -153,31 +159,32 @@ label tourVeleda_ErnustEtVeleda :
 
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
             
-#    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
-    v "Vous êtes adorables Messieurs mais amenez nous notre nourriture. Nous nous tordons de douleur de faim."
+    v "Vous êtes adorables Messieurs mais amenez nous notre nourriture. Nous mourrons de faim."
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
-#    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
+    play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
     e "Oh oui, Votre Excellessence Madame Véléda !"
     e "J'suis allé dans la forêt chasser un sanglier."
- #   play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+    play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
     e "Vous savez j'me suis dit un bon sanglier rôti, ça tient le corps et c'est vraiment bon !"
     e "Avec un peu de thym et des p'tites pommes sautées..."
     show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
     menu :
         "Ça a l'air délicieux !" :
-#            play sound "sfx/SFX_Char_Player_Ok_01.ogg"
+            play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
             y "Ça a l'air super bon Ernust, j'ai hâte de voir ça !"
             
             show char_ernust joyeux right at speakingAnim(0.20,0.92,0.9,0.8)
             
-  #          play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_01.ogg"
             $ loveGauge(ern_char, 3, 0.3, 0.10)
             e "T'es gentil Gaufrid !"
             $ loveGauge(ern_char, 2, 0.3, 0.10)
             e "Je pensais à toi en plus, je me suis dit, Gaufrid il doit être triste !"
             $ loveGauge(ern_char, 2, 0.3, 0.10)
+            play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_02.ogg"
             e "Ingrid elle est pas gentille avec toi !"
             $ loveGauge(ern_char, 5, 0.3, 0.10)
             e "Mais moi je trouve que t'es vraiment spécial Gaufrid."
@@ -185,10 +192,10 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
             
         "Tu peux abréger ?" :
- #           play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
+            play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             y "Abrège Ernust, on attend des clients."
             
-  #          play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
+            play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_02.ogg"
             show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
             e "T'as raison Gaufrid, je parle trop encore."
             
@@ -203,7 +210,7 @@ label tourVeleda_ErnustEtVeleda :
             
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
                 
-#    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     v "Cela suffit ! Servez nous notre sanglier !"
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)

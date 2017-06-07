@@ -144,10 +144,12 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     pause 3.0
     
     outline "Le lendemain matin..."
-    y "Woua c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
-    y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
-    y "Arf ! C'est pas important..."
-    y "Il faut que j'aille travailler moi !"
+    
+    play sound "sfx/Voices/Player/Char_Player_Baille_02.ogg"
+    y "Ooooaaaaah !"
+    y "C'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
+    y "Et puis le narrateur arrêtait pas de parler..."
+    y "Allez, faut que j'aille au boulot moi !"
     
     play sound "sfx/SFX_Walk_01.ogg"
     
