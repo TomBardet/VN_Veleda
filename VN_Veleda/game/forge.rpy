@@ -106,8 +106,20 @@ label forge_Beaudrik_04:
     bg "J’aime beaucoup les femmes mais là j’ai envie de me poser."
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     bg "T’sais, d’avoir quelqu’un qui me fasse des câlins et la vaisselle."
+    show char_beaudrik mepris left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_brutal colere:
+        xalign 0.5 yalign 0.8
+        xpos -0.55 ypos 1.5 zoom 0.2 rotate 45
+        linear 0.7 xpos 0.05 ypos 0.7
+    pause 0.5
+    brut "{i}Hey feignasse ! Beaudrik ! Viens ici !{/i}"
     show char_beaudrik choque left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
-    brut "Euh feignasse ! Beaudrik ! Viens ici !"
+    show char_brutal colere:
+        xalign 0.5 yalign 0.8
+        xpos 0.1 ypos 0.6 zoom 0.2 rotate 45
+        linear 2.5 xpos -1.0 ypos 1.5
+    pause 1.0
+    hide char_brutal
     show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     bg "Oh non, papa m’appelle encore."
     show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
@@ -337,10 +349,19 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
             show char_brutal normal :
                 zoom 0.35 xpos 0.5 ypos 0.9
                 linear 3.0 xpos -1.5
-            pause 1.0
+            pause 0.7
+            show char_brutal colere:
+                xalign 0.5 yalign 0.8
+                xpos -0.5 ypos 2.0 zoom 0.35 rotate 30
+                linear 0.7 xpos 0.1 ypos 1.1
+            pause 0.5
             brut "Et ne touche à rien !"
-            hide char_brutal
+            show char_brutal colere:
+                xalign 0.5 yalign 0.8
+                xpos 0.1 ypos 1.1 zoom 0.35 rotate 30
+                linear 1.0 xpos -1.0 ypos 2.0
             pause 1.5
+            hide char_brutal
             jump forge_Brutalmund_07_Bouclier
             
         "En tout cas je ne peux pas payer…":
@@ -351,6 +372,7 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
 
 label forge_Brutalmund_05_CannotPay:
 
+    show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     y "Euh, je veux bien, mais en tout cas je n’ai pas de quoi le troquer avec."
     show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
     brut "Rien du tout ? Allez mon p’tit Gaufrid, ça fait deux mois que je ne vends rien, fais un effort !"
@@ -367,6 +389,7 @@ jump forge_Brutalmund_06_Hub
 label forge_Brutalmund_06_Hub:
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     menu:
+        brut "..."
         "Vos buffles sont en liberté..." if _testLunettes == 1:
             y "Si ça vous intéresse, j’ai récupéré vos buffles."
             show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
@@ -441,7 +464,6 @@ label forge_Brutalmund_07_Bouclier:
         pause 0.5
         linear 0.3 xpos 1.0
     pause 3.0
-    y "Bon... Ben c'était pas si dur"
 
     if _testGlaive == 1 & _testBouclier == 1:
         jump PlaceDuVillageAllObjects
