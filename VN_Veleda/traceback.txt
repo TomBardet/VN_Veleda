@@ -1,80 +1,76 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-<<<<<<< HEAD
-  File "renpy/common/00start.rpy", line 107, in script
-    return
-Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/script.rpy', 1496842587, 10).
-=======
-  File "game/screens.rpy", line 350, in execute
-    screen main_menu:
-  File "game/screens.rpy", line 350, in execute
-    screen main_menu:
-  File "game/screens.rpy", line 353, in execute
-    $ renpy.movie_cutscene("gui/Splashscreen.mp4")
-  File "game/screens.rpy", line 353, in <module>
-    $ renpy.movie_cutscene("gui/Splashscreen.mp4")
-Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
-Stack was <Layer: 'transient'>
-<Many: <Fixed at 382e690>>
->>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+While loading <'Image' u'images/decor/Lieu_etables.jpg'>:
+  File "game/etables.rpy", line 21, in script
+    $ _return = renpy.call_screen("action_choice_EtableTrumpet")
+  File "game/etables.rpy", line 21, in <module>
+    $ _return = renpy.call_screen("action_choice_EtableTrumpet")
+IOError: Couldn't find file 'images/decor/Lieu_etables.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-<<<<<<< HEAD
-  File "renpy/common/00start.rpy", line 107, in script
-    return
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1376, in execute
-    next_node(renpy.game.context().lookup_return(pop=True))
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\execution.py", line 552, in lookup_return
-    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
-Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/script.rpy', 1496842587, 10).
-=======
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
+  File "game/etables.rpy", line 21, in script
+    $ _return = renpy.call_screen("action_choice_EtableTrumpet")
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 814, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1719, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "renpy/common/_layout/screen_main_menu.rpym", line 30, in <module>
-    ui.interact()
+  File "game/etables.rpy", line 21, in <module>
+    $ _return = renpy.call_screen("action_choice_EtableTrumpet")
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\exports.py", line 2526, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2793, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 495, in visit_all
-    d.visit_all(callback)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 495, in visit_all
-    d.visit_all(callback)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 495, in visit_all
-    d.visit_all(callback)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\screen.py", line 399, in visit_all
-    callback(self)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2793, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\screen.py", line 409, in per_interact
-    self.update()
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\screen.py", line 578, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 350, in execute
-    screen main_menu:
-  File "game/screens.rpy", line 350, in execute
-    screen main_menu:
-  File "game/screens.rpy", line 353, in execute
-    $ renpy.movie_cutscene("gui/Splashscreen.mp4")
-  File "game/screens.rpy", line 353, in <module>
-    $ renpy.movie_cutscene("gui/Splashscreen.mp4")
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1337, in movie_cutscene
-    roll_forward=roll_forward)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ui.py", line 279, in interact
-    raise Exception("ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?\nStack was "+('\n'.join([str(item) for item in stack])))
-Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
-Stack was <Layer: 'transient'>
-<Many: <Fixed at 382e690>>
->>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2883, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 1955, in draw_screen
+    renpy.config.screen_height,
+  File "renpy/display/render.pyx", line 427, in renpy.display.render.render_screen (gen\renpy.display.render.c:6806)
+    rv = render(root, width, height, 0, 0)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\layout.py", line 693, in render
+    surf = render(child, width, height, cst, cat)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "renpy/display/accelerator.pyx", line 108, in renpy.display.accelerator.transform_render (gen\renpy.display.accelerator.c:2027)
+    cr = render(child, widtho, heighto, st - self.child_st_base, at)
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\image.py", line 387, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\image.py", line 208, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "renpy/display/render.pyx", line 110, in renpy.display.render.render (gen\renpy.display.render.c:3440)
+    cpdef render(d, object widtho, object heighto, double st, double at):
+  File "renpy/display/render.pyx", line 196, in renpy.display.render.render (gen\renpy.display.render.c:2978)
+    rv = d.render(widtho, heighto, st, at)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\im.py", line 473, in render
+    im = cache.get(self)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\im.py", line 200, in get
+    surf = image.load()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\im.py", line 524, in load
+    surf = renpy.display.pgrender.load_image(renpy.loader.load(self.filename), self.filename)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'images/decor/Lieu_etables.jpg'.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
