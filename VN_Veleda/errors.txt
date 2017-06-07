@@ -2,6 +2,52 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 348: non-keyword arg after keyword arg
+File "game/ressources.rpy", line 116: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/ressources.rpy", line 118: expected statement.
+    =======
+          ^
+
+File "game/ressources.rpy", line 119: expected statement.
+    >>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+                                                    ^
+
+File "game/tourVeleda.rpy", line 6: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/tourVeleda.rpy", line 16: expected statement.
+    =======
+          ^
+
+File "game/tourVeleda.rpy", line 20: expected statement.
+    >>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+                                                    ^
+
+File "game/tourVeleda.rpy", line 239: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/tourVeleda.rpy", line 265: expected statement.
+    =======
+          ^
+
+File "game/tourVeleda.rpy", line 269: expected statement.
+    >>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+                                                    ^
+
+File "game/tourVeleda.rpy", line 277: expected statement.
+    <<<<<<< HEAD
+                ^
+
+File "game/tourVeleda.rpy", line 285: expected statement.
+    =======
+          ^
+
+File "game/tourVeleda.rpy", line 288: expected statement.
+    >>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
+                                                    ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

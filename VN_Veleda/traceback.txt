@@ -1,6 +1,11 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
+  File "renpy/common/00start.rpy", line 107, in script
+    return
+Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/script.rpy', 1496842587, 10).
+=======
   File "game/screens.rpy", line 350, in execute
     screen main_menu:
   File "game/screens.rpy", line 350, in execute
@@ -12,10 +17,20 @@ While running game code:
 Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
 Stack was <Layer: 'transient'>
 <Many: <Fixed at 382e690>>
+>>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
+  File "renpy/common/00start.rpy", line 107, in script
+    return
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1376, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\execution.py", line 552, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label (u'D:\\Projects\\VN\\GIt\\Veleda_Git\\VN_Veleda/game/script.rpy', 1496842587, 10).
+=======
   File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
     python hide:
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 814, in execute
@@ -59,6 +74,7 @@ Full traceback:
 Exception: ui.interact called with non-empty widget/layer stack. Did you forget a ui.close() somewhere?
 Stack was <Layer: 'transient'>
 <Many: <Fixed at 382e690>>
+>>>>>>> b565f9348ced9fbf36ee4f3c0bbcc849b67beb93
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

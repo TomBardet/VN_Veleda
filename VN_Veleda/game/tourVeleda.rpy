@@ -3,9 +3,15 @@
 ##########################################################
 
 label tourVeleda_ErnustEtVeleda :
-    scene bg_chambre with Dissolve (2.0)
+    scene bg_tour with Dissolve (2.5) :
+        xpos 0 ypos 0
     
-    show vel_normal with Dissolve (2.5)
+    $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
+    
+    show vel_normal with Dissolve (2.5) :
+        xpos 0 ypos 0
+
     
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
@@ -62,7 +68,7 @@ label tourVeleda_ErnustEtVeleda :
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
             
-            v "Qu'est ce que c'est que ce langage de chocolatier ?"
+            v "Qu'est ce que c'est que ce langage de sauvage ?"
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
             
@@ -153,7 +159,7 @@ label tourVeleda_ErnustEtVeleda :
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
 #    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
-    e "Oh Oui, Votre Excellessence Madame Véléda !"
+    e "Oh oui, Votre Excellessence Madame Véléda !"
     e "J'suis allé dans la forêt chasser un sanglier."
  #   play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
     e "Vous savez j'me suis dit un bon sanglier rôti, ça tient le corps et c'est vraiment bon !"
@@ -222,11 +228,33 @@ label tourVeleda_ErnustEtVeleda :
 #    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     y "Ok, ok j'y vais..."
     
-    hide screen datingSim
+    window hide 
     
-    scene black with Dissolve(0.5)
- #   play sound "sfx/SFX_Stairs_01.ogg"
-    outline "Travelling vers le bas"
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+    
+    scene bg_tour :
+        xpos 0 ypos 0
+        linear 2.0 xpos 0 ypos -960
+    show vel_normal :
+        xpos 0 ypos 0
+        linear 2.0 xpos 0 ypos -960
+    show char_ernust normal right :
+        xalign 0.5 yalign 0.8
+        xpos 0.20 ypos 0.92 zoom 0.8
+        linear 2.0 ypos -0.45
+    show char_crossfit colere right :
+        xalign 0.5 yalign 0.8
+        xpos 0.26 ypos 3.0 zoom 0.32
+        linear 2.0 xpos 0.26 ypos 0.84
+    show char_brutal normal:
+        xalign 0.5 yalign 0.8
+        xpos 0.75 ypos 3.0 zoom 0.32
+        linear 2.0 xpos 0.75 ypos 0.92
+        
+    play sound "sfx/SFX_Stairs_01.ogg"        
+    pause 3.5
+
     
     jump tourVeleda_HistoireBrevetPart1
     #jump tourVeleda_MarryingIngridPart2
@@ -234,16 +262,20 @@ label tourVeleda_ErnustEtVeleda :
 # -----------------------------------------#
 
 label tourVeleda_HistoireBrevetPart1:
+
+    $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
-    scene bg_antichambre
+
+    #show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32) with Dissolve(1)
+
     
-    show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-    show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
  #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
+    show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Nous voilà ! Je vais enfin trouver justice, Brutalmund !"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-    show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal normal at speakingAnim(0.75, 0.82,0.80,0.32)
     #  play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
     brut "J't'ai déjà dit que j't'ai rien volé du tout !"
     
@@ -360,8 +392,11 @@ label tourVeleda_HistoireBrevetPart1:
     hide char_brutal normal
     hide char_crossfit colere right
 
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+    
     scene black with Dissolve(0.5)
-#    play sound "sfx/SFX_Stairs_02.ogg"
+    play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le haut"
     
     jump tourVeleda_MortVeleda
@@ -369,6 +404,9 @@ label tourVeleda_HistoireBrevetPart1:
 # -----------------------------------------#
     
 label tourVeleda_MortVeleda:
+    
+    $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     scene bg_chambre
     show char_ernust normal right  at speakingAnim(0.20,0.92,0.9,0.8)
@@ -413,8 +451,13 @@ label tourVeleda_MortVeleda:
             
     y "J'y vais, bouge surtout pas d'ici !"
     
-    scene black with Dissolve(0.5)
- #   play sound "sfx/SFX_Stairs_01.ogg"
+    scene bg_tour
+    
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+    
+    play sound "sfx/SFX_Stairs_02.ogg"
+    
     outline "Travelling vers le bas"
     
     jump tourVeleda_HistoireBrevetPart2
@@ -424,18 +467,23 @@ label tourVeleda_MortVeleda:
 label tourVeleda_HistoireBrevetPart2:
 
     scene bg_antichambre
+
+    $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-    show char_crossfit colere right at notSpeakingAnim(0.26,0.8,0.92,0.32)
+
     
-    y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Ah, enfin ! Parle, larbin."
-    show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
+    
+    show char_crossfit colere right at notSpeakingAnim(0.26,0.8,0.92,0.32)
+    y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
     
     menu :
-        cross "{cps=0}Ah, enfin ! Parle, larbin.{/cps}"
+        y "{cps=0}Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !{/cps}"
         "Crossfitrichernvald a raison !" :
+            $ Acte1_Tour_CoupableJugement = "Brutalmund"
             y "Brutalmund va devoir payer réparations !"
             show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)   
             cross "Aha !"
@@ -451,6 +499,7 @@ label tourVeleda_HistoireBrevetPart2:
             cross "Des... des buffles ?"
             
         "Crossfitrichernvald a tort !":
+            $ Acte1_Tour_CoupableJugement = "Crossfit"
             y "Les dieux sont insultés par la frivolité de cette acusation !"
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Hehe ! J'le savais !"
@@ -485,6 +534,9 @@ label tourVeleda_HistoireBrevetPart2:
     y "Ben moi je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
     y "Je vais pouvoir voir Ingrid en plus !"
     
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+    
     jump narration_ellipse02
     #jump tourVeleda_MarryingIngridPart2
     
@@ -493,25 +545,14 @@ label tourVeleda_HistoireBrevetPart2:
 label tourVeleda_MarryingIngridPart2:
     scene bg_place
     
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
+    
     show char_ernust normal right with Dissolve (0.5) :
         zoom 0.9 xpos 0.4 ypos 0.2
     
     y "Passe devant et prépare la Vélédarionnette, Ernust."
-    e "J'ai pas trop envie Gaufrid..."
-    e "Véléda elle sent un peu la clope."
-    
-    menu :
-        "S'il te plaît Ernust !" :
-            y "Ernust, s'il te plaît !"
-            y "T'es mon meilleur ami !"
-            e "Oh Gaufrid !"
-        "Fais ce que je te dis !" :
-            y "C'était pas vraiment une question, Ernust."
-            y "Allez hop !"
-            e "Euh... d'accord Gaufrid."
-            
-    e "T'as raison je suis égoïste..."
-    e "C'est important pour toi, j'y vais tout de suite !"
+    e "Oui Gaufrid !"
     
     hide char_ernust
     
@@ -522,7 +563,13 @@ label tourVeleda_MarryingIngridPart2:
     
     y "Allons-y ma pupuce !"
     
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+    
     scene bg_chambre
+    
+    $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
     show char_veledaernust normal
@@ -616,6 +663,9 @@ label ending_ChevrePart1 :
     v "Adieu Josiane..."
     v "Mon amie..."
 
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+
 jump ending_ChevreTrahie
 # -----------------------------------------#
 label ending_Admit :
@@ -631,6 +681,9 @@ label ending_Admit :
     v "Votre punition sera..."
 #    play sound "sfx/SFX_Drama_01.ogg"
     v "L'exil !"
+    
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
     
 jump ending_ExilPart1
 # -----------------------------------------#
@@ -663,6 +716,9 @@ label ending_ErnustPart1 :
     i "Ohlalala quel coquin !"
     
     hide char_ingrid
+    
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
     
     e "Je suis... tout seul"
 
@@ -698,6 +754,9 @@ label ending_ExilPart1 :
 #            play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
             e "Oh Bah Gaufrid... je suis tellement content !"
             
+            stop music1 fadeout 1.5
+            stop ambiance fadeout 0.5
+            
             jump ending_ExilAvecErnust
             
         "Je pars avec la chèvre !":
@@ -707,6 +766,9 @@ label ending_ExilPart1 :
             goat "Bê !"
             goat "..."
             goat "Bêêêêê."
+            
+            stop music1 fadeout 1.5
+            stop ambiance fadeout 0.5
             
             e "Au... au revoir Gaufrid !"
             
