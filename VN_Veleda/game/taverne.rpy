@@ -97,7 +97,6 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête."
-    $ loveGauge(ingrid_char, -10, 0.65, 0.3)
     show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.ogg"
