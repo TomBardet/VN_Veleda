@@ -296,17 +296,31 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
-
+            textbutton _("Nouveau"):
+                text_font "gui/ardagh.ttf"
+                text_size 45
+                text_idle_color "#0F0B0A"
+                text_hover_color "#B1991E"
+                action Start()
+            
         else:
 
-            textbutton _("History") action ShowMenu("history")
+           # textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Sauver"):
+                text_font "gui/ardagh.ttf"
+                text_size 45
+                text_idle_color "#0F0B0A"
+                text_hover_color "#B1991E"
+                action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("Charger"):
+            text_font "gui/ardagh.ttf"
+            text_size 45
+            text_idle_color "#0F0B0A"
+            text_hover_color "#B1991E"action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+       # textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -314,17 +328,22 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Menu"):
+                text_font "gui/ardagh.ttf"
+                text_size 45
+                text_idle_color "#0F0B0A"
+                text_hover_color "#B1991E"
+                action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+       # textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc"):
+      #  if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+          #  textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+         #   textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -345,10 +364,55 @@ style navigation_button_text:
 ##
 ## http://www.renpy.org/doc/html/screen_special.html#main-menu
 image main_menu = Movie(size=None, channel="main_menu", play="gui/Splashscreen.webm")
-
+image title_menu = "gui/title.png"
+image button_menu = "gui/buttonMenu.png"
 screen main_menu:
+    tag menu
     add "main_menu"
-    textbutton "Start" action Start() xalign 0.5 yalign 0.5
+    add "title_menu":
+        zoom 0.32 xalign 0.5 xpos 0.47
+    add "button_menu":
+        zoom 0.11 xalign 0.5 yalign 0.5
+        xpos 0.33 ypos 0.67
+    add "button_menu":
+        zoom 0.11 xalign 0.5 yalign 0.5
+        xpos 0.41 ypos 0.78
+    add "button_menu":
+        zoom 0.11 xalign 0.5 yalign 0.5
+        xpos 0.49 ypos 0.89
+    textbutton _("Jouer"):
+        xanchor 0.5
+        xpos 0.33
+        yanchor 0.5
+        ypos 0.67
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color "#f2de5c"
+       # text_outlines [(2,"#000000")]
+        text_font "gui/ardagh.ttf"
+        text_size 45
+        action Start()
+    textbutton _("Charger"):
+        xanchor 0.5
+        xpos 0.41
+        yanchor 0.5
+        ypos 0.78
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color "#f2de5c"
+       # text_outlines [(2,"#000000")]
+        text_font "gui/ardagh.ttf"
+        text_size 45
+        action ShowMenu("load")
+    textbutton _("Quitter"):
+        xanchor 0.5
+        xpos 0.49
+        yanchor 0.5
+        ypos 0.89
+        text_idle_color gui.actionButton_colorIdle
+        text_hover_color "#f2de5c"
+      #  text_outlines [(2,"#000000")]
+        text_font "gui/ardagh.ttf"
+        text_size 45
+        action Quit(confirm=not main_menu)
 
 screen main_menu_old():
     ## This ensures that any other menu screen is replaced.
@@ -422,11 +486,6 @@ screen game_menu(title, scroll=None):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
-
     frame:
         style "game_menu_outer_frame"
 
@@ -472,8 +531,12 @@ screen game_menu(title, scroll=None):
     use navigation
 
     textbutton _("Return"):
-        style "return_button"
-
+        xpos 0.032
+        ypos 0.7
+        text_font "gui/ardagh.ttf"
+        text_size 45
+        text_idle_color "#0F0B0A"
+        text_hover_color "#B1991E"
         action Return()
 
     label title
@@ -589,14 +652,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_("Sauvegarder"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_("Charger"))
 
 
 screen file_slots(title):
