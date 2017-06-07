@@ -338,6 +338,7 @@ style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
 
 
+
 ## Main Menu screen ############################################################
 ##
 ## Used to display the main menu when Ren'Py starts.
@@ -345,10 +346,12 @@ style navigation_button_text:
 ## http://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
+    add Movie(size=(1280, 720))
+    on "show" action Play("movie", "gui/Splashscreen.mov")
+    on "hide" action Stop("movie")
+    on "replaced" action Stop("movie")
     ## This ensures that any other menu screen is replaced.
     tag menu
-
     style_prefix "main_menu"
 
     add gui.main_menu_background
@@ -381,7 +384,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/overlay/game_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -1381,7 +1384,7 @@ screen inventory_screen(obj = ""):
      #   $ my_tooltip = "tooltip_inventory_" + picIdle.replace("images/inv_", "").replace(".png", "") # we use tooltips to describe what the item does.
         
         if obj == item.name:
-            imagebutton idle picIdle hover picIdle xpos x ypos y action [SetVariable("item", item), item.use] at inv_effGood(x,y)
+            imagebutton idle picIdle hover picIdle xpos x ypos y action [SetVariable("item", item)] at inv_effGood(x,y)
         else:
             imagebutton idle picIdle hover picIdle xpos x ypos y action [SetVariable("item", item)] at inv_eff(x,y)
 
@@ -1463,17 +1466,17 @@ screen action_choice_placeVillageFinal:
 screen action_choice_EtableTrumpet:
     zorder 10
     textbutton _("Jouer de la trompette"):
-        xpos 0.55
+        xpos 0.50
         xanchor 0.5
         ypos 0.35
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.35)
+        at sineV(0.55)
         action Return("trompette")
     textbutton _("Parler aux Buffles"):
-        xpos 0.85
+        xpos 0.22
         xanchor 0.5
         ypos 0.68
         yanchor 0.5
@@ -1483,32 +1486,32 @@ screen action_choice_EtableTrumpet:
         at sineV(0.68)
         action Return("buffles")
     textbutton _("Parler à Crossfitrichernvald"):
-        xpos 0.25
+        xpos 0.53
         xanchor 0.5
         ypos 0.6
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.58)
+        at sineV(0.28)
         action Return("crossfit")
     textbutton _("Sortir de l'étable"):
-        xpos 0.6
+        xpos 0.88
         xanchor 0.5
-        ypos 0.2
+        ypos 0.95
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.58)
+        at sineV(0.70)
         action Return("sortir")
 
 screen action_choice_Etable:
     zorder 10
     textbutton _("Parler aux Buffles"):
-        xpos 0.85
+        xpos 0.22
         xanchor 0.5
-        ypos 0.68
+        ypos 0.4
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
@@ -1516,24 +1519,24 @@ screen action_choice_Etable:
         at sineV(0.68)
         action Return("buffles")
     textbutton _("Parler à Crossfitrichernvald"):
-        xpos 0.25
         xanchor 0.5
-        ypos 0.6
+        xpos 0.53        
         yanchor 0.5
+        ypos 150        
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.58)
+        at sineV(0.28)
         action Return("crossfit")
     textbutton _("Sortir de l'étable"):
-        xpos 0.6
         xanchor 0.5
-        ypos 0.2
+        xpos 0.88
         yanchor 0.5
+        ypos 0.0
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.58)
+        at sineV(0.70)
         action Return("sortir")
         
 screen action_choice_Tente:

@@ -45,7 +45,7 @@ label start:
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         Acte2_Romains_FirstVisit = 0 #
     
-    #jump taverne_AbusAlcoolPart1
+    jump PlaceDuVillageDefault
     jump intro
     
 # -----------------------------------------#

@@ -106,7 +106,7 @@ init:
     #Les images des Lieux
     image bg_taverne = "images/decor/Lieu_taverne.png"
     image bg_taverne2 = "images/decor/Lieu_taverne2.png"
-    image bg_etables = "images/decor/Lieu_etables.png"
+    image bg_etablesBuffles = "images/decor/Lieu_etablesBuffles.jpg"
     image bg_forge = "images/decor/Lieu_forge.png"
     image bg_antichambre = "images/decor/Lieu_antichambre.png"
     image bg_chambre = im.FactorScale("images/decor/Lieu_chambre.png", 0.33)
@@ -198,8 +198,8 @@ init:
     image char_crossfit inquietG = "images/char/Char_Crossfit_Inquiet_02.png"
     image char_crossfit pleurs = "images/char/Char_Crossfit_Pleurs_01.png"
     image char_crossfit pleursG = "images/char/Char_Crossfit_Pleurs_02.png"
-    image char_crossfit pleurs = "images/char/Char_Crossfit_Choc_01.png"
-    image char_crossfit pleursG = "images/char/Char_Crossfit_Choc_02.png"
+    image char_crossfit choc = "images/char/Char_Crossfit_Choc_01.png"
+    image char_crossfit chocG = "images/char/Char_Crossfit_Choc_02.png"
     
     image char_crossfit colere right = im.Flip("images/char/Char_Crossfit_Colere_01.png", horizontal = True)
     image char_crossfit colereG right = im.Flip("images/char/Char_Crossfit_Colere_02.png", horizontal = True)
@@ -209,8 +209,8 @@ init:
     image char_crossfit inquietG right = im.Flip("images/char/Char_Crossfit_Inquiet_02.png", horizontal = True)
     image char_crossfit pleurs right = im.Flip("images/char/Char_Crossfit_Pleurs_01.png", horizontal = True)
     image char_crossfit pleursG right = im.Flip("images/char/Char_Crossfit_Pleurs_02.png", horizontal = True)
-    image char_crossfit pleurs right = im.Flip("images/char/Char_Crossfit_Choc_01.png", horizontal = True)
-    image char_crossfit pleursG right = im.Flip("images/char/Char_Crossfit_Choc_02.png", horizontal = True)
+    image char_crossfit choc right = im.Flip("images/char/Char_Crossfit_Choc_01.png", horizontal = True)
+    image char_crossfit chocG right = im.Flip("images/char/Char_Crossfit_Choc_02.png", horizontal = True)
 
     
     #Brutalmund

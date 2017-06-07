@@ -10,13 +10,13 @@ init:
     $  _testRomainsTalk = 0
     
 label etables_PeurDesBufflesPart1:
-    scene bg_etables
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.80, 0.8, 0.27)
-    #$ _testTrompette = 1
+    scene bg_etablesBuffles:
+        zoom 0.70
+    show char_crossfit inquietG right at notSpeakingAnim(0.7, 0.77, 0.8, 0.27)
+    $ _testTrompette = 1
     if _testTrompette == 1:
         if _testCrossfitTalk == 1:
             $ _testEtable = 1
-            
     if _testEtable == 1:
         $ _return = renpy.call_screen("action_choice_EtableTrumpet")
         if _return == "trompette":
@@ -26,6 +26,10 @@ label etables_PeurDesBufflesPart1:
             y "A vos souhaits"
             jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
+            scene bg_etablesBuffles:
+                zoom 0.7
+                linear 0.5 zoom 0.75 xpos -0.1
+            pause 0.5
             if _testCrossfitTalk == 0:
                 jump etables_PeurDesBufflesPart1bis
             else:
@@ -41,6 +45,14 @@ label etables_PeurDesBufflesPart1:
             y "A vos souhaits"
             jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
+            scene bg_etablesBuffles:
+                zoom 0.7
+                linear 0.5 zoom 0.75 xpos -0.1
+            show char_crossfit inquietG right:
+                xalign 0.5 yalign 0.8 zoom 0.27
+                xpos 0.7 ypos 0.77
+                linear 0.5 zoom 0.28 xpos 0.65 ypos 0.76
+            pause 0.5
             if _testCrossfitTalk == 0:
                 jump etables_PeurDesBufflesPart1bis
             else:
@@ -52,111 +64,99 @@ label etables_PeurDesBufflesPart1:
 # -----------------------------------------#
 
 label etables_PeurDesBufflesPart1bis:
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    y "Bonjour ! Alors ces Buffles ?"
+    show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "..."
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
-    show char_ernust normal right:
-        xalign 0.5 yalign 0.8
-        xpos -0.5 zoom 0.75 ypos 0.94
-        linear 1.0 xpos 0.15
-    pause 1.0
-    show char_ernust normal right at speakingAnim(0.15, 0.94, 0.92, 0.75)
-    e "..."
-    show char_ernust normal right at notSpeakingAnim(0.15, 0.94, 0.92, 0.75)
-    menu:
-        cross "..."
-        "Bonjour M.Crossfitrichmsze-machin":
-            y "Bonjour M.Crossfitrichmsze-machin"
-        "Bonjour M.Brossfitrirenlavd":
-            y "Bonjour M.Brossfitrirenlavd"
-        "Bonjour M.Crossfitricheval":
-            y "Bonjour M.Crossfitricheval"
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
-    cross "..."
-    cross "............."
-    cross "................................................"
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
+
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     y "... ?"
-    y "Vous m'entendez ?"
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
-    cross "C'est Crossfitrichernvald. Comme ça se prononce."
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
-    show char_ernust normal right at speakingAnim(0.15, 0.94, 0.92, 0.75)
-    e "Comment ça se prononce ?"
-    show char_ernust normal right at notSpeakingAnim(0.15, 0.94, 0.92, 0.75)
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "..."
-    cross "............."
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+    cross "....................."
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     menu:
-        cross "............."
+        cross "{cps=0}.....................{/cps}"
         "Ca a pas l'air d'aller fort dites moi !":
             y "Ca a pas l'air d'aller fort dites moi !"
-            show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+            show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             cross "Ils...Ils sont toujours là !"
-        "Satisfait de vos buffles ?":
+        "Satisfait de vos buffles ?" if Acte1_Tour_CoupableJugement=="Brutalmund":
             y "Alors, satisfait de vos buffles ?"
-            show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+            show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
+            cross "Ils...Ils sont toujours là !"
+        "Vous avez livrés vos buffles à Brutalmund ?" if Acte1_Tour_CoupableJugement=="Crossfit":
+            y "... Du coup, vous avez livrés vos buffles à Brutalmund ?"
+            show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             cross "Ils...Ils sont toujours là !"
         "Vous êtiez plus bavard avec la prophétesse...":
             y "Ben dis donc, vous êtiez plus bavard avec la prophétesse..."
-            show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+            show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             cross "Ca n'a rien à voir ! C'est juste que..."
             cross "Ils...Ils sont toujours là !"
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     y "Je vous demande pardon ?"
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "Les buffles crétin ! Ils sont toujours là !"
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     menu:
         cross "{cps=0}Les buffles crétin ! Ils sont toujours là !{/cps}"
         "Les buffles ont une espérance de vie élevée vous savez ?":
             y "Les buffles ont une espérance de vie assez élevée vous savez ?"
             y "20 ans environ !"
             y "Du coup ils risquent d'être là encore un moment !"
-            show char_ernust normal right at speakingAnim(0.15, 0.94, 0.92, 0.75)
-            e "Sauf si tu veux les manger ! Haha !"
-            show char_ernust normal right at notSpeakingAnim(0.15, 0.94, 0.92, 0.75)
-            show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+            show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             cross "C'EST PAS CA LE PROBLEME !"
             cross "Regardez comme ils m'observent, les yeux imbibés de sang... Brrrr..."
-            show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+            show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
             y "Attendez. Quoi ?"
         "Ils étaient censés partir ?":
             y "Mais ils étaient censés partir ?"
-            show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+            show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             cross "Evidemment !"
             cross "Ca fait 12 heures que la porte est ouverte, et ces imbéciles de bovins ne bougent pas d'un poil !"
-            show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
             cross "Je sais plus quoi faire moi !"
+            show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)            
             y "Attendez. Quoi ?"
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit pleursG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "Chuuuuuuuuuut ! Ils vont vous entendre !"
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
-    show char_ernust normal right at speakingAnim(0.15, 0.94, 0.92, 0.75)
-    e "... T'as peur des buffles ?"
-    show char_ernust normal right at notSpeakingAnim(0.15, 0.94, 0.92, 0.75)
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit pleursG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
+    y "... Mais vous avez peur des buffles ?"
+    show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "Répète ça et je t'écrase !"
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     "bruit meuglement meuuuuuuuh"
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit pleursG:
+        zoom 0.28 ypos 0.84
+        linear 0.4 xpos 0.79 rotate 15 ypos 0.95
     cross "AAAAAAAAAAH !"
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
-    pause 2.0
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit pleursG right:
+        zoom 0.28 ypos 0.95 xpos 0.79
+        linear 0.8 rotate 0 ypos 0.84
+    pause 0.8
+    show char_crossfit inquietG right at speakingAnim(0.79, 0.84, 0.82, 0.28)
     cross "..."
     cross "Bon OK, je trouve les buffles absolument terrifiants, heureux ?!"
-    show char_crossfit colere:
+    show char_crossfit inquietG right at notSpeakingAnim(0.79, 0.84, 0.82, 0.28)
+    show char_crossfit inquietG right:
         xalign 0.5 yalign 0.8
-        zoom 0.27 xpos 0.56 ypos 0.82
+        zoom 0.28 xpos 0.79 ypos 0.84
         parallel:
-            linear 1.5 xpos -0.5
+            linear 1.5 xpos -0.5 ypos 0.86
         parallel:
-            linear 0.5 rotate -20
-    "crossfit part en pleurant"
-    nar "Il y a forcèment quelquechose à faire pour aider ce pauvre homme..."
-    nar "Et qui sait... ça pourrait peut-être t'aider dans ta quête..."
+            linear 0.5 rotate -16 
+    pause 1.6
+    outline "Il y a forcèment quelquechose à faire pour aider ce pauvre homme..."
+    outline "Et qui sait... ça pourrait peut-être t'aider dans ta quête..."
+    scene bg_etablesBuffles:
+        zoom 0.75 xpos -0.1
+        linear 0.5 zoom 0.7 xpos 0.0
+    pause .5
+    show char_crossfit inquietG right:
+        xalign 0.5 yalign 0.8 zoom 0.28
+        xpos 0.7 ypos 1.5
+        linear 0.5 zoom 0.27 xpos 0.7 ypos 0.77
+    pause .5
     $ _testCrossfitTalk = 1
     jump etables_PeurDesBufflesPart1
     
@@ -165,10 +165,18 @@ label etables_PeurDesBufflesPart1bis:
 
 label etables_PeurDesBufflesPart1boucle:
     y "Alors, tout baigne ?"
-    show char_crossfit colere at speakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "... Les... les buffles... Ils me regardent..."
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.82, 0.8, 0.27)
+    show char_crossfit inquietG right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     y "Je vais vous laisser hein ?"
+    scene bg_etablesBuffles:
+        zoom 0.75 xpos -0.1
+        linear 0.5 zoom 0.7 xpos 0.0
+    show char_crossfit inquietG right:
+        xalign 0.5 yalign 0.8 zoom 0.28
+        xpos 0.65 ypos 0.76
+        linear 0.5 zoom 0.27 xpos 0.7 ypos 0.77
+    pause .5
     jump etables_PeurDesBufflesPart1
     
 # -----------------------------------------#    
