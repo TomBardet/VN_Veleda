@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/ressources.rpy", line 117: invalid syntax
-    im.FactorScale"images/decor/Lieu_tour.png", 0.33)
-                                              ^
+File "game/ressources.rpy", line 115: invalid syntax
+        image bg_place = im.FactorScale("images/decor/Lieu_place.png", 0.33)
+             ^
+    
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
