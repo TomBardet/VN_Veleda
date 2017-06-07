@@ -10,26 +10,28 @@ label tourVeleda_ErnustEtVeleda :
     $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
-    show vel_normal with Dissolve (2.5) :
+    show vel normal with Dissolve (2.5) :
         xpos 0 ypos 0
-
-    
-    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
     $ interlocuteur = "vel_char"
-    show screen datingSim(vel_char, 0.7, 0.4)
+    
+    show screen datingSim(vel_char, 0.625, 0.33)
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     
+    show vel normal2 :
+        xpos 0 ypos 0
+        
     v "Vous voilà Gaufrid ! Dépèchez vous, nous attendons des clients très importants."
-    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Mais... c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
-    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     $ loveGauge(vel_char, -3, 0.75, 0.4)
+    
+    show vel normal :
+        xpos 0 ypos 0
 
     v "Des chiffres ? De quoi parlez vous, enfin ?"
     
@@ -41,10 +43,16 @@ label tourVeleda_ErnustEtVeleda :
 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     
+    show vel normal2 :
+        xpos 0 ypos 0
+    
     v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
     
-    v "Monseigneur Crossfichtruc, le digne chef de nos voisins les Bataves."
-    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+    
+    v "Monseigneur Crossfiture, le digne chef de nos voisins les Bataves."
+    
+    show vel normal :
+        xpos 0 ypos 0
     menu :
         "Il vient demander conseil, Ô Véléda ? ":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
@@ -52,9 +60,11 @@ label tourVeleda_ErnustEtVeleda :
             y "Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
-            #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
+            
+            show vel normal2 :
+                xpos 0 ypos 0
             
             v "Oh vous ne nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
@@ -70,7 +80,9 @@ label tourVeleda_ErnustEtVeleda :
             y "Qu'est ce qu'il veut, celui-là ?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
-            #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+            
+            show vel normal2 :
+                xpos 0 ypos 0
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
@@ -81,34 +93,44 @@ label tourVeleda_ErnustEtVeleda :
             
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
     
-    v "Monseigneur Crossfriture accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
+    show vel normal :
+        xpos 0 ypos 0
+    
+    v "Monseigneur Crossfritrichenfer accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
     
     v "Monsieur Brutalmund nie l'accusation ! Nous allons donc les départager avec..."
     
+    show vel normal2 :
+        xpos 0 ypos 0
+        
     play sound "sfx/SFX_Drama_01.ogg"
     
     v "Une prophétie !"
-    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
- #   play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"
  
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Euh.. ils devraient pas plutôt porter plainte ?"
     
+    show vel normal :
+        xpos 0 ypos 0
+    
     play sound "sfx/Voices/Veleda/Char_Veleda_Rage_01.ogg"
-    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
     v "Vous doutez de la sagesse de nos visions, Monsieur Gaufrid ?"
     
-    v "Où se trouve votre cousin d'ailleurs ? Le simplet, Monsieur Ernust ?"
+    v "Où se trouve votre cousin, d'ailleurs ? Le simplet, Monsieur Ernust ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     v "Cela fait une heure qu'il doit nous apporter de quoi nous sustenter !"
     
+    show vel normal2 :
+        xpos 0 ypos 0
+    
     play sound "sfx/SFX_Entrance_01.ogg"
     
     v "Ah ! Cela doit être lui !"
-    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
    
     
@@ -118,9 +140,11 @@ label tourVeleda_ErnustEtVeleda :
     show screen datingSim(ern_char, 0.25, 0.10)
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
-    e "Oh, Bonjour Gaufrid !"
+    e "Oh, bonjour Gaufrid !"
     $ loveGauge(ern_char, 1, 0.3, 0.10)
     show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
+    show vel normal :
+        xpos 0 ypos 0
     menu :
         e "{cps=0}Oh, bonjour Gaufrid !{/cps}"
         "Bonjour Ernust !" :
@@ -164,11 +188,19 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
             
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
-    #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
-    v "Vous êtes adorables Messieurs, mais amenez nous notre nourriture. Nous mourrons de faim."
+    
+    $ interlocuteur = "vel_char"
+    show screen datingSim(vel_char, 0.625, 0.33)
+    
+    show vel normal2 :
+        xpos 0 ypos 0
+    $ loveGauge(vel_char, -1, 0.75, 0.4)
+    v "Amenez nous notre nourriture, monsieur Ernust !  Nous mourrons de faim."
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
+    show vel normal :
+        xpos 0 ypos 0
     e "Oh oui, Votre Excellessence Madame Véléda !"
     e "Je suis allé dans la forêt chasser un sanglier."
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
@@ -177,6 +209,10 @@ label tourVeleda_ErnustEtVeleda :
     show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
     menu :
         "Ça a l'air délicieux !" :
+            
+            $ interlocuteur = "ern_char"
+            show screen datingSim(ern_char, 0.25, 0.10)
+            
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
             y "Ça a l'air super bon Ernust, j'ai hâte de voir ça !"
             
@@ -196,6 +232,10 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust normal right at notSpeakingAnim(0.20,0.92,0.9,0.8)
             
         "Tu peux abréger ?" :
+            
+            $ interlocuteur = "ern_char"
+            show screen datingSim(ern_char, 0.25, 0.10)
+            
             play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             y "Abrège Ernust, on attend des clients."
             
@@ -216,12 +256,20 @@ label tourVeleda_ErnustEtVeleda :
                 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    show vel normal2 :
+        xpos 0 ypos 0
+    
+    $ interlocuteur = "vel_char"
+    show screen datingSim(vel_char, 0.625, 0.33)
+    
     v "Cela suffit ! Servez nous notre sanglier !"
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
     show char_ernust normal right at speakingAnim(0.20,0.92,0.9,0.8)
+    show vel normal :
+        xpos 0 ypos 0
     e "Ah bah non, y'a pas de sanglier !"
-    e "J'en ai vu un dans la forêt mais bon... j'ai pas d'arme !"
+    e "J'en ai vu un dans la forêt, mais bon... j'ai pas d'armes !"
     e "Ça se chasse pas à mains nues, hein, le sanglier."
     
     show char_ernust joyeux right at speakingAnim(0.20,0.92,0.9,0.8)
@@ -231,12 +279,16 @@ label tourVeleda_ErnustEtVeleda :
     show char_ernust joyeux right at notSpeakingAnim(0.20,0.92,0.9,0.8)
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
+    show vel normal2 :
+        xpos 0 ypos 0
     v "Cela suffira ! Et vous, Gaufrid, allez accueillir nos invités. Nous prophétisons qu'ils vont frapper à la porte !"
     
     play sound "sfx/SFX_Knock_01.ogg"
     v "Haa, vous voyez ? Allez-y, Monsieur Gaufrid."
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
+    show vel normal :
+        xpos 0 ypos 0
     y "Ok, ok, j'y vais..."
     
     window hide 
@@ -247,7 +299,7 @@ label tourVeleda_ErnustEtVeleda :
     scene bg_tour :
         xpos 0 ypos 0
         linear 2.0 xpos 0 ypos -960
-    show vel_normal :
+    show vel normal :
         xpos 0 ypos 0
         linear 2.0 xpos 0 ypos -960
     show char_ernust normal right :
@@ -301,7 +353,7 @@ label tourVeleda_HistoireBrevetPart1:
     y "Vous m'expliquez le problème, je lui transmet, et elle s'adresse aux dieux..."
     y "Elle divague un peu et moi, je vous interprète ses visions."
     
-    show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+    show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
  #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
     cross "Très bien, serviteur, mais si tu ne transmet pas nos messages exactement, je t'égorge."
     
@@ -310,7 +362,7 @@ label tourVeleda_HistoireBrevetPart1:
         cross "{cps=0}Très bien, serviteur, mais si tu ne transmet pas nos messages exactement, je t'égorge.{/cps}"
         "Oui, Monseigneur" :
   #          play sound "sfx/SFX_Char_Player_Ok_01.ogg"  
-            y "Bien sur Monsieur Crossfritrchrernvold, je ferai bien attention."
+            y "Bien sur Monsieur Crossfritrichernvald, je ferai bien attention."
             
         "Je sais faire mon travail, hein" :
   #          play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"  
@@ -484,7 +536,7 @@ label tourVeleda_HistoireBrevetPart2:
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Eh non !"
             show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-            y "Brutlamund va donner 2 buffles à Crossfritrichtrvald !"
+            y "Brutlamund va donner 2 buffles à Crossfritrichernvald !"
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Quoi ? Deux buffles ? Ça va pas la tête ?"
             show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
@@ -500,7 +552,7 @@ label tourVeleda_HistoireBrevetPart2:
             show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32) 
             cross "Quel scandale !"
             show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-            y "Crossfitrichenfer doit payer deux buffles à Brutalmund en tant que frais de dossier !"
+            y "Crossfitrichernvald doit payer deux buffles à Brutalmund en tant que frais de dossier !"
             show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
             brut "Des buffles ? Bah ! J'en ai plein déjà."
             show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
