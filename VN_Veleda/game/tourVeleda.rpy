@@ -3,6 +3,7 @@
 ##########################################################
 
 label tourVeleda_ErnustEtVeleda :
+    
     scene bg_tour with Dissolve (2.5) :
         xpos 0 ypos 0
     
@@ -22,20 +23,21 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Vous voilà Gaufrid ! Dépèchez vous, nous attendons des clients très importants."
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
-    $ loveGauge(vel_char, -3, 0.75, 0.4)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Mais... c'est encore là ces chiffres ? J'ai perdu la boule ou quoi ?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+    $ loveGauge(vel_char, -3, 0.75, 0.4)
+
     v "Des chiffres ? De quoi parlez vous, enfin ?"
     
     $ loveGauge(vel_char, -3, 0.75, 0.4)
-
+    
     v "Allez préparer la salle Monsieur Gaufrid, vos anneries ne nous intéressent pas."
     
-    $ loveGauge(vel_char, -3, 0.75, 0.4)
+
 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     
@@ -51,13 +53,15 @@ label tourVeleda_ErnustEtVeleda :
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+            
+            $ loveGauge(vel_char, -3, 0.5, 0.25)
+            
             v "Oh vous ne nous trompez pas avec vos minauderies Monsieur Gaufrid."
             
             $ loveGauge(vel_char, -3, 0.75, 0.4)
     
             v "La flatterie est le refuge des incompétents et des poissoniers."
             
-            $ loveGauge(vel_char, -3, 0.5, 0.25)
             
         "Il veut quoi lui ?":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
@@ -67,13 +71,13 @@ label tourVeleda_ErnustEtVeleda :
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
+            
+            $ loveGauge(vel_char, -3, 0.5, 0.25)
             v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
-            
             v "Qu'est ce que c'est que ce langage de sauvage ?"
-            
-            $ loveGauge(vel_char, -3, 0.5, 0.25)
+
             
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
     
@@ -92,9 +96,9 @@ label tourVeleda_ErnustEtVeleda :
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Rage_01.ogg"
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
-    v "Vous doutez de la sagesse de nos visions, Monsieur Gaufrid ?"
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
+    v "Vous doutez de la sagesse de nos visions, Monsieur Gaufrid ?"
     
     v "Où se trouve votre cousin d'ailleurs ? Le simplet, Monsieur Ernust ?"
     
