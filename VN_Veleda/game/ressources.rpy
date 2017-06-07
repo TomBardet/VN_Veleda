@@ -191,7 +191,6 @@ init:
     
     #Crossfit
     image char_crossfit colere = "images/char/Char_Crossfit_Colere_01.png"
-    image char_crossfit colere right = im.Flip("images/char/Char_Crossfit_Colere_01.png", horizontal = True)
     image char_crossfit colereG = "images/char/Char_Crossfit_Colere_02.png"
     image char_crossfit serieux = "images/char/Char_Crossfit_Serieux_01.png"
     image char_crossfit serieuxG = "images/char/Char_Crossfit_Serieux_02.png"
@@ -201,12 +200,24 @@ init:
     image char_crossfit pleursG = "images/char/Char_Crossfit_Pleurs_02.png"
     image char_crossfit pleurs = "images/char/Char_Crossfit_Choc_01.png"
     image char_crossfit pleursG = "images/char/Char_Crossfit_Choc_02.png"
+    
+    image char_crossfit colere right = im.Flip("images/char/Char_Crossfit_Colere_01.png", horizontal = True)
+    image char_crossfit colereG right = im.Flip("images/char/Char_Crossfit_Colere_02.png", horizontal = True)
+    image char_crossfit serieux right = im.Flip("images/char/Char_Crossfit_Serieux_01.png", horizontal = True)
+    image char_crossfit serieuxG right = im.Flip("images/char/Char_Crossfit_Serieux_02.png", horizontal = True)
+    image char_crossfit inquiet right = im.Flip("images/char/Char_Crossfit_Inquiet_01.png", horizontal = True)
+    image char_crossfit inquietG right = im.Flip("images/char/Char_Crossfit_Inquiet_02.png", horizontal = True)
+    image char_crossfit pleurs right = im.Flip("images/char/Char_Crossfit_Pleurs_01.png", horizontal = True)
+    image char_crossfit pleursG right = im.Flip("images/char/Char_Crossfit_Pleurs_02.png", horizontal = True)
+    image char_crossfit pleurs right = im.Flip("images/char/Char_Crossfit_Choc_01.png", horizontal = True)
+    image char_crossfit pleursG right = im.Flip("images/char/Char_Crossfit_Choc_02.png", horizontal = True)
 
     
     #Brutalmund
     image char_brutal normal = "images/char/Char_brutal_normal.png"
     image char_brutal colere = "images/char/Char_brutal_colere.png"
     image char_brutal heureux = "images/char/Char_brutal_heureux.png"
+    image char_brutal surpris = "images/char/Char_brutal_surpris.png"
     
     #Beaudrik
     image char_beaudrik mepris left = "images/char/Char_beaudrik_mepris.png"
