@@ -157,12 +157,12 @@ label forge_Beaudrik_06_leaving:
 
 label forge_Brutalmund_01:
     
-    show char_brutal colere :
+    show char_brutal normal :
         xalign 0.5 yalign 0.8
         zoom 0.4 xpos -0.5 ypos 0.77
         linear 0.7 xpos 0.52
     pause 0.9
-    show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.4)
+    show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
     brut "..."
     show char_brutal normal
     brut "Ah ! Je cherche un couillon, j’en trouve un autre !"
