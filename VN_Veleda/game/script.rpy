@@ -21,7 +21,7 @@ label start:
         ern_char = Chara("Ernust", 90, 9999)
         brut_char = Chara("Brutalmund", 35, 100)
         cross_char = Chara("Crossfitrichernvald", 20, 100)
-        beau_char = Chara("Beaudrik", 80, 100)
+        beau_char = Chara("Beaudrik", 50, 100)
         num_char = Chara ("Numerimus", 0, 100)
         dig_char = Chara("Digitimus", 0, 100)
 

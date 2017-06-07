@@ -6,12 +6,13 @@ label taverne_DatingIngrid:
     
 
     scene bg_taverne with Dissolve (2.5) :
-        xpos 20 ypos 70 zoom 0.9
+        xpos 20 ypos 70 zoom 0.95
         linear 1 xpos -100 ypos -50 zoom 1.1
+    $ renpy.pause(0.25, hard = True)
     
     $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
     $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 4)
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3) with Dissolve (1.5)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.35) with Dissolve (1.5)
 
     $ _window_during_transitions = True
     
@@ -22,42 +23,46 @@ label taverne_DatingIngrid:
     
     nar "{cps=2} {/cps}{cps=40}Tiens ?{cps=2} {/cps}{cps=20}On dirait qu'il essaie de draguer Ingrid !{/cps}"
     
+    play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
+    
+    y "C'est qui 'il' ? C'est de moi que tu parles ?"
+    
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_08.ogg"
     
     nar "{cps=2} {/cps}Eh,{cps=4} {/cps}{cps=28}réveille toi maintenant !{/cps}{cps=2} {/cps}{cps=25}Ça va être à ton tour.{/cps}"
     
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at speakingAnim(0.5, 1.25, 1.22, 0.35)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
     
-    i "Hihi Gaufrid t'es mignon !"
+    i "Hihi ! Gaufrid, t'es mignon !"
 
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
     
     menu:
-        i "{cps=0}Hihi Gaufrid t'es mignon !{/cps}"
+        i "{cps=0}Hihi ! Gaufrid, t'es mignon !{/cps}"
         
         "Viens regarder les étoiles avec moi Ingrid !":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             y "Ingrid, suis moi !"
             y "Allons observer les étoiles illuminer le clair de lune de ta beauté !"
-        "C'est vrai que je suis beau.":
+        "C'est vrai ça, que je suis beau.":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "On me dit souvent que je suis assez beau garçon oui..."
-            y "Je prends soin de moi, c'est pour ça."
-        "Ingrid épouse moi !":
+            y "On me dit souvent que je suis assez beau garçon, oui..."
+            y "Je prends soin de moi, c'est pour ça !"
+        "Ingrid, épouse moi !":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             y "Épouse moi Ingrid !"
             y "Je t'aime à la folie depuis 8 jours."
             y "Je pense à toi tout le temps !"
     
-    show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid degout at speakingAnim(0.5, 1.25, 1.22, 0.35)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
     
     i "Euh... je veux dire... t'es plus comme un ptit frère pour moi."
     
-    show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Un petit frère... Héhé je savais que j'avais une chance !"
@@ -65,12 +70,12 @@ label taverne_DatingIngrid:
     nar "Comment ça une chance ?!"
     nar "Tu vas vraiment avoir besoin d'un coup de main..."
     
-    show screen datingSim(ingrid_char, 0.56, 0.30)
-    pause 1.5
-    $ loveGauge(ingrid_char, -10, 0.65, 0.3)
+    show screen datingSim(ingrid_char, 0.60, 0.35)
     pause 1.0
+    $ loveGauge(ingrid_char, -10, 0.72, 0.35)
+
     menu:
-        " "
+        nar "{cps=0}Tu vas vraiment avoir besoin d'un coup de main...{/cps}"
         
         "Hein ? Mais c'est quoi ces chiffres ?!":
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
@@ -86,32 +91,34 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"        
     y "Les dating quoi ?"
-    $ loveGauge(ingrid_char, -5, 0.65, 0.3)
-    show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    $ loveGauge(ingrid_char, -5, 0.72, 0.35)
+    show char_ingrid degout at speakingAnim(0.5, 1.25, 1.22, 0.35)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_04.ogg"
     
     i "... Gaufrid ? A qui tu parles ? Tu m'inquiètes..."
     
-    show char_ingrid degout at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid degout at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête."
-    show char_ingrid degout at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid degout at speakingAnim(0.5, 1.25, 1.22, 0.35)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.ogg"
     
     i "..."
     i "Ecoute... je vais y aller je pense. Bisous hein !"
     
+    play sound "sfx/SFX_Stairs_02.ogg"
     hide screen datingSim
     show char_ingrid degout:
         xalign 0.5 yalign 0.8
-        xpos 0.5 ypos 1.15 zoom 0.3
+        xpos 0.5 ypos 1.25 zoom 0.35
         parallel:
-            linear 2.0 xpos 1.5
+            linear 1.6 xpos 1.5
         parallel:
             linear 0.1 rotate 10
+    $ renpy.pause (1.5, hard = True)
             
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"    
     y "..."
