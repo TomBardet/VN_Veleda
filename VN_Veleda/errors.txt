@@ -2,6 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/etables.rpy", line 20: indentation mismatch.
+File "game/script.rpy", line 80: end of line expected.
+    outlineBot {cps=0}"En l'an 70 après Jissé, toute la Germanie est occupée par les Romains."{/cps}
+                                                                                              ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
