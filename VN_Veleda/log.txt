@@ -260,4 +260,8 @@ Prepare screens took 0.00s
 Running _start took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.57s
-Build styl
+Build styles took 0.04s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.01s
