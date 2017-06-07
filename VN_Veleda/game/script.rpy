@@ -70,7 +70,7 @@ label intro:
     pause 1
     
     show introFlag zorder 2 with vpunch:
-        zoom 1 ,xanchor 0.5 yanchor 0.5
+        zoom 1 xanchor 0.5 yanchor 0.5
         xpos 0.65 ypos 0.20
         linear 0.2 ypos 0.35 zoom 0.65
     pause 0.2

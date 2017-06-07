@@ -3,12 +3,11 @@
 ##########################################################
 
 label tourVeleda_ErnustEtVeleda :
-    scene bg_chambre with Dissolve (2.0)
+    scene vel_normal with Dissolve (2.5)
     
     $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
-    
-    show vel_normal with Dissolve (2.5)
+
     
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     
@@ -230,7 +229,9 @@ label tourVeleda_ErnustEtVeleda :
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
-    scene black with Dissolve(0.5)
+    scene bg_tour :
+        xpos 0 ypos 0
+    
     play sound "sfx/SFX_Stairs_01.ogg"
     outline "Travelling vers le bas"
     
@@ -431,7 +432,7 @@ label tourVeleda_MortVeleda:
             
     y "J'y vais, bouge surtout pas d'ici !"
     
-    scene black with Dissolve(0.5)
+    scene bg_tour
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
