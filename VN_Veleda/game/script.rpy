@@ -130,6 +130,7 @@ label intro:
     show bg_place :
         linear 1 xpos -600 ypos -650 zoom 2.1
     scene black with Dissolve (1.5)
+    $ renpy.pause(1.5, hard = True)
     
     jump taverne_DatingIngrid
     
