@@ -198,8 +198,8 @@ init:
     image char_crossfit inquietG = "images/char/Char_Crossfit_Inquiet_02.png"
     image char_crossfit pleurs = "images/char/Char_Crossfit_Pleurs_01.png"
     image char_crossfit pleursG = "images/char/Char_Crossfit_Pleurs_02.png"
-    image char_crossfit pleurs = "images/char/Char_Crossfit_Choc_01.png"
-    image char_crossfit pleursG = "images/char/Char_Crossfit_Choc_02.png"
+    image char_crossfit choc = "images/char/Char_Crossfit_Choc_01.png"
+    image char_crossfit chocG = "images/char/Char_Crossfit_Choc_02.png"
     
     image char_crossfit colere right = im.Flip("images/char/Char_Crossfit_Colere_01.png", horizontal = True)
     image char_crossfit colereG right = im.Flip("images/char/Char_Crossfit_Colere_02.png", horizontal = True)
@@ -209,8 +209,8 @@ init:
     image char_crossfit inquietG right = im.Flip("images/char/Char_Crossfit_Inquiet_02.png", horizontal = True)
     image char_crossfit pleurs right = im.Flip("images/char/Char_Crossfit_Pleurs_01.png", horizontal = True)
     image char_crossfit pleursG right = im.Flip("images/char/Char_Crossfit_Pleurs_02.png", horizontal = True)
-    image char_crossfit pleurs right = im.Flip("images/char/Char_Crossfit_Choc_01.png", horizontal = True)
-    image char_crossfit pleursG right = im.Flip("images/char/Char_Crossfit_Choc_02.png", horizontal = True)
+    image char_crossfit choc right = im.Flip("images/char/Char_Crossfit_Choc_01.png", horizontal = True)
+    image char_crossfit chocG right = im.Flip("images/char/Char_Crossfit_Choc_02.png", horizontal = True)
 
     
     #Brutalmund

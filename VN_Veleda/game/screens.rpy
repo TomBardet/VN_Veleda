@@ -1466,14 +1466,14 @@ screen action_choice_placeVillageFinal:
 screen action_choice_EtableTrumpet:
     zorder 10
     textbutton _("Jouer de la trompette"):
-        xpos 0.55
+        xpos 0.50
         xanchor 0.5
         ypos 0.35
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.35)
+        at sineV(0.55)
         action Return("trompette")
     textbutton _("Parler aux Buffles"):
         xpos 0.22
