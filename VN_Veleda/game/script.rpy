@@ -53,9 +53,9 @@ label start:
 label intro:
     
     window hide
-    $ renpy.music.set_volume(0.85, delay=0, channel='music1')
-    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 2)
-    
+    $ renpy.music.set_volume(1, delay=0, channel='music1')
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 0.5)
+    $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 0.5)
     
     show introCarte :
         zoom 1,xanchor 0.0 yanchor 0.0
@@ -66,14 +66,14 @@ label intro:
    #     xpos 0.01 ypos 0.01 zoom 1.1
     pause 1
     
-    show introFlag with vpunch:
+    show introFlag zorder 2 with vpunch:
         zoom 1 ,xanchor 0.5 yanchor 0.5
-        xpos 0.65 ypos 0.25
+        xpos 0.65 ypos 0.20
         linear 0.2 ypos 0.35 zoom 0.65
     pause 0.2
-    show introCrack with Dissolve(1.0):
+    show introCrack zorder 1 with Dissolve(1.0):
         zoom 0.75,xanchor 0.5 yanchor 0.5
-        xpos 0.65 ypos 0.35
+        xpos 0.651 ypos 0.37
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
     outlineBot "{cps=1} {/cps}{cps=18}En l'an 70 après Jissé,{cps=2} {/cps}{cps=18}toute la Germanie est occupée par les Romains.{/cps}"
     
@@ -94,8 +94,8 @@ label intro:
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
 
     show introPoint with vpunch:
-        zoom 0.45,xanchor 0.5 yanchor 0.5
-        xpos 0.56 ypos 0.42 
+        zoom 1.1,xanchor 0.5 yanchor 0.5
+        xpos 0.6 ypos 0.45 
     pause 1.2
     outlineBot "{cps=4} {/cps}{cps=20}En tout cas,{cps=2} {/cps}pas le village des Bructères,{cps=2} {/cps}{cps=20}où habite la légendaire prophétesse Véléda.{/cps}"
     
@@ -106,7 +106,7 @@ label intro:
         zoom 1 xanchor 0.0 yanchor 0.0
         linear 2.5 xpos -1000 ypos 0 zoom 1.8
 
-    outlineBot "{cps=2} {/cps}{cps=20}Elle habite dans la tour{/cps}{cps=2} {/cps}{cps=10}là,{/cps}{cps=20} adulée par tous{/cps}{cps=3}...{/cps} {cps=45}sauf par ses proches parceque c'est quand même une vieille peau.{/cps}"
+    outlineBot "{cps=2} {/cps}{cps=20}Elle habite dans la tour,{/cps}{cps=2} {/cps}{cps=10}là,{/cps}{cps=20} adulée par tous{/cps}{cps=3}...{/cps} {cps=45}sauf par ses proches parceque c'est quand même une vieille peau.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.ogg"
     
@@ -139,7 +139,7 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     pause 3.0
     
     outline "Le lendemain matin..."
-    y "Waw c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
+    y "Woua c'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
     y "Et puis y avait ce gars qui parlait dans ma tête aussi..."
     y "Boarf ! C'est pas important..."
     y "Il faut que j'aille travailler moi !"
