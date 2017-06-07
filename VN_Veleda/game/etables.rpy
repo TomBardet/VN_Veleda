@@ -10,8 +10,9 @@ init:
     $  _testRomainsTalk = 0
     
 label etables_PeurDesBufflesPart1:
-    scene bg_etables
-    show char_crossfit colere at notSpeakingAnim(0.56, 0.80, 0.8, 0.27)
+    scene bg_etablesBuffles:
+        zoom 0.70
+    show char_crossfit colere at notSpeakingAnim(0.7, 0.75, 0.8, 0.27)
     #$ _testTrompette = 1
     if _testTrompette == 1:
         if _testCrossfitTalk == 1:
@@ -26,6 +27,10 @@ label etables_PeurDesBufflesPart1:
             y "A vos souhaits"
             jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
+            scene bg_etablesBuffles:
+                zoom 0.7
+                linear 0.5 zoom 0.75 xpos -0.1
+            pause 0.5
             if _testCrossfitTalk == 0:
                 jump etables_PeurDesBufflesPart1bis
             else:
@@ -41,6 +46,14 @@ label etables_PeurDesBufflesPart1:
             y "A vos souhaits"
             jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
+            scene bg_etablesBuffles:
+                zoom 0.7
+                linear 0.5 zoom 0.75 xpos -0.1
+            show char_crossfit colere:
+                xalign 0.5 yalign 0.8 zoom 0.27
+                xpos 0.7 ypos 0.75
+                linear 0.5 zoom 0.28 xpos 0.65 ypos 0.74
+            pause 0.5
             if _testCrossfitTalk == 0:
                 jump etables_PeurDesBufflesPart1bis
             else:
