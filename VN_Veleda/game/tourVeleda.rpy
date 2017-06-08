@@ -54,6 +54,7 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal :
         xpos 0 ypos 0
     menu :
+        v "{cps=0}Monseigneur Crossfiture, le digne chef de nos voisins les Bataves.{/cps}"
         "Il vient demander conseil, Ô Véléda ? ":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
             y "Vous voulez dire Crossfitrichernvald ?" 
@@ -291,6 +292,8 @@ label tourVeleda_ErnustEtVeleda :
         xpos 0 ypos 0
     y "Ok, ok, j'y vais..."
     
+    hide screen datingSim
+    
     window hide 
     
     stop music1 fadeout 1.5
@@ -338,11 +341,11 @@ label tourVeleda_HistoireBrevetPart1:
     cross "Nous voilà ! Je vais enfin trouver justice, Brutalmund !"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-    show char_brutal colere at speakingAnim(0.75, 0.82,0.80,0.32)
+    show char_brutal colere at speakingAnim(0.75, 1.05, 1.02, 0.32)
     #  play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
     brut "J't'ai déjà dit que j't'ai rien volé du tout !"
     
-    show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.2,0.32)
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
     #   play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
     cross "Toi, l'assistant, va chercher la prophétesse !"
@@ -350,55 +353,56 @@ label tourVeleda_HistoireBrevetPart1:
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
  #   play sound "sfx/SFX_Char_Player_No_01.ogg"
     y "Ah non ! La prophétesse ne voit pas directement ses visiteurs."
-    y "Vous m'expliquez le problème, je lui transmet, et elle s'adresse aux dieux..."
+    y "Vous m'expliquez le problème, je lui transmets, et elle s'adresse aux dieux..."
     y "Elle divague un peu et moi, je vous interprète ses visions."
     
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
  #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
-    cross "Très bien, serviteur, mais si tu ne transmet pas nos messages exactement, je t'égorge."
+    cross "Très bien, serviteur, mais si tu ne transmets pas nos messages exactement, je t'égorge."
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     menu :
         cross "{cps=0}Très bien, serviteur, mais si tu ne transmet pas nos messages exactement, je t'égorge.{/cps}"
         "Oui, Monseigneur" :
   #          play sound "sfx/SFX_Char_Player_Ok_01.ogg"  
-            y "Bien sur Monsieur Crossfritrichernvald, je ferai bien attention."
+            y "Bien sur, Monsieur Crossfritrichernvald, je ferai bien attention."
             
         "Je sais faire mon travail, hein" :
   #          play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"  
-            y "Eh oh je sais ce que je fais hein ? Pas la peine de me menacer."
+            y "Eh oh, je sais ce que je fais, hein ! Pas la peine de me menacer."
             
     y "Dites moi tout, quel est le problème ?"
     
  #   play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
-    show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal normal at speakingAnim(0.75, 1.05,1.02,0.32)
     brut "J'vais t'expliquer, Gaufrid, mon pote !"
     brut "T'vois, l'autre jour, Crossfitrichernvald, il passe d'vant chez moi."
-    brut "Et donc, il voit un bouclier qui ressemble au sien."
-    
+    show char_brutal heureux at speakingAnim(0.75, 1.05,1.02,0.32)
+    brut "Et il voit un bouclier qui ressemble au sien."
+    show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
  #   play sound "sfx/SFX_Char_Brutalmund_Normal_01.ogg"
     brut "Mais en fait, j'l'ai pas volé c'te bouclier !"
     brut "C'est moi qui l'ai fait. De mes p'tites mains ! J'te jure mon p'tit Gaufrid !"
-    show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
  #   play sound "sfx/SFX_Char_Crossfit_Colere_01.ogg"
-    show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+    show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Ah mais tu sais bien que c'est pas ça le problème, escroc !"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
  #   play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
-    show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
     brut "Moi ? Un escroc ?"
-    show char_brutal normal at notSpeakingAnim(0.68,0.94,0.92,0.35)
+    show char_brutal normal at notSpeakingAnim(0.75, 1.05,0.92,0.32)
 #    play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
-    show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+    show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Oui, un escroc ! Ce bouclier est exactement le même que le mien. Tu l'as copié !"
     cross "C'est du vol de propriété intellectuelle !"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)        
  #   play sound "sfx/SFX_Char_Brutalmund_Colere_01.ogg"
-    show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
     brut "Oh, toi, tout de suite avec les grands mots hein !"
-    show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.0,0.32)
  #   play sound "sfx/SFX_Char_Crossfit_Serieux_01.ogg"
-    show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+    show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
     cross "Le concept de propriété intellectuelle est fondamental à la société Germaine du premier siècle !"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     menu :
@@ -406,16 +410,17 @@ label tourVeleda_HistoireBrevetPart1:
         "C'est très grave !" :
             
             y "C'est vrai que c'est très grave !"
-            show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+            show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
             brut "Tu t'y mets, toi aussi ! Mon Gaufrid, mon poteau !"
-            show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
+            show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             y "Bon, je vais voir ce qu'en dit notre divine prophétesse."
         
         "On s'en fout, non ?" :
             y "Y'a pas de quoi en faire tout un plat, non ?"
-            show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+            show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
             cross "Comment oses-tu, domestique ?"
-            cross "Nos lois sont claires ! Va voir la prophétesse maintenant !"
+            show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
+            cross "Nos lois sont claires ! Va voir la prophétesse, maintenant !"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
             y "Ok ! Ok ! J'y vais ! Faut pas s'énerver comme ça !"
             
@@ -427,7 +432,7 @@ label tourVeleda_HistoireBrevetPart1:
     scene bg_tour :
         xpos 0 ypos -960
         linear 2.0 xpos 0 ypos 0
-    show vel_morte :
+    show vel morte :
         xpos 0 ypos -960
         linear 2.0 xpos 0 ypos 0
     show char_ernust normal right :
@@ -440,7 +445,7 @@ label tourVeleda_HistoireBrevetPart1:
         linear 2.0 xpos 0.20 ypos 3.0
     show char_brutal normal:
         xalign 0.5 yalign 0.8
-        xpos 0.75 ypos 0.92 zoom 0.32
+        xpos 0.75 ypos 1.05 zoom 0.32
         linear 2.0 xpos 0.81 ypos 3.0
         
     play sound "sfx/SFX_Stairs_01.ogg"   
@@ -496,14 +501,34 @@ label tourVeleda_MortVeleda:
             
     y "J'y vais, bouge surtout pas d'ici !"
     
-    scene bg_tour
+    hide screen datingSim
+    
+    window hide 
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
-    play sound "sfx/SFX_Stairs_02.ogg"
-    
-    outline "Travelling vers le bas"
+    scene bg_tour :
+        xpos 0 ypos 0
+        linear 1.75 xpos 0 ypos -960
+    show vel morte :
+        xpos 0 ypos 0
+        linear 1.75 xpos 0 ypos -960
+    show char_ernust normal right :
+        xalign 0.5 yalign 0.8
+        xpos 0.20 ypos 0.92 zoom 0.8
+        linear 1.75 xpos 0.25 ypos -0.52
+    show char_crossfit colere right :
+        xalign 0.5 yalign 0.8
+        xpos 0.20 ypos 3.0 zoom 0.32
+        linear 1.75 xpos 0.26 ypos 0.84
+    show char_brutal normal:
+        xalign 0.5 yalign 0.8
+        xpos 0.81 ypos 3.0 zoom 0.32
+        linear 1.75 xpos 0.75 ypos 0.92
+        
+    play sound "sfx/SFX_Stairs_02.ogg"   
+    $ renpy.pause(2, hard = True)
     
     jump tourVeleda_HistoireBrevetPart2
     
@@ -511,15 +536,16 @@ label tourVeleda_MortVeleda:
     
 label tourVeleda_HistoireBrevetPart2:
 
-    scene bg_antichambre
 
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
-    show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
+    show char_brutal normal at notSpeakingAnim(0.75, 0.92,1.02,0.32)
 
     
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+    
+    
     cross "Ah, enfin ! Parle, larbin."
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
@@ -530,48 +556,53 @@ label tourVeleda_HistoireBrevetPart2:
         "Brutalmund doit être châtié !" :
             $ Acte1_Tour_CoupableJugement = "Brutalmund"
             y "Brutalmund va devoir payer réparations !"
-            show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)   
-            cross "Aha !"
+            show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)   
+            cross "Aha ! Justice est faite !"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-            show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
-            brut "Eh non !"
-            show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
+            show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
+            brut "C'est quoi c't'histoire ?"
+            show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             y "Brutlamund va donner 2 buffles à Crossfritrichernvald !"
-            show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+            show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
             brut "Quoi ? Deux buffles ? Ça va pas la tête ?"
-            show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-            show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+            show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
+            show char_crossfit inquiet at speakingAnim(0.26,0.94,0.92,0.32)
             cross "Des... des buffles ?"
             
         "Les dieux se fichent de la propriété intellectuelle !":
             $ Acte1_Tour_CoupableJugement = "Crossfit"
             y "Les dieux sont insultés par la frivolité de cette accusation !"
-            show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
-            brut "Hehe ! J'le savais !"
-            show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-            show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32) 
+            show char_brutal heureux at speakingAnim(0.75, 1.05,1.02,0.32)
+            brut "Haha ! J'te l'avais dit !"
+            show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
+            show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32) 
             cross "Quel scandale !"
-            show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-            y "Crossfitrichernvald doit payer deux buffles à Brutalmund en tant que frais de dossier !"
-            show char_brutal normal at speakingAnim(0.75, 0.92,0.92,0.32)
+            show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
+            y "Crossfitrichernvald doit procurer deux buffles à Brutalmund, en tant que frais de dossier !"
+            show char_brutal normal at speakingAnim(0.75, 1.05,1.02,0.32)
             brut "Des buffles ? Bah ! J'en ai plein déjà."
-            show char_brutal normal at notSpeakingAnim(0.75, 0.92,0.92,0.32)
-            show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
+            show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
+            show char_crossfit inquiet at speakingAnim(0.26,0.94,0.92,0.32)
             cross "Des... des buffles ?"
     
-    show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-    y "La prophétesse a parlé messieurs !"
-    
-    y "Je vous prie de dégager de là vite fait, merci."
+    show char_crossfit inquiet at notSpeakingAnim(0.26,0.94,0.92,0.32)
+    y "La prophétesse a parlé, messieurs !"
+        
+    y "Je vous prie de dégager de là vite fait, maintenant !"
     
  #   play sound "sfx/SFX_Walk_02.ogg"
+ 
+    show char_crossfit inquiet :
+        xalign 0.5 yalign 0.8
+        xpos 0.26 ypos 0.94 zoom 0.32 rotate -12
+        linear 1.8 xpos 2.0 ypos 0.94
+    show char_brutal normal:
+        xalign 0.5 yalign 0.8
+        xpos 0.75 ypos 1.05 zoom 0.32 rotate 8
+        linear 2.0 xpos 2.0 ypos 1.05
     
-    transform char_brutal :
-        linear 2.0 xpos 3000
-    #hide char_brutal normal with Dissolve(0.2)
-    hide char_crossfit colere right with Dissolve(0.2)
     
-    y "Allez hop hop hop"
+    y "Allez, hop hop hop !"
     
     show char_ernust normal right at speakingAnim(0.6,0.95,0.93,0.8) with Dissolve (0.5)
     
