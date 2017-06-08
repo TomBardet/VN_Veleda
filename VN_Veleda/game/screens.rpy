@@ -1652,12 +1652,14 @@ screen action_choice_Tente1:
 ###################################################################################################
 ################ - Gestion des Jauges Dating Sim - ##################
 
+image hrt = im.FactorScale("images/heart.png",0.3)
+
 screen datingSim(char_name, x, y):
     zorder 7
     
     $ loveValue = char_name.love
     $ loveMax = char_name.max_love
-    text _(str(loveValue)+ "/100 {image=images/heart.png}"):
+    text _(str(loveValue)+ "/100 {image=hrt}"):
         xpos x
         xanchor 0.0
         ypos y

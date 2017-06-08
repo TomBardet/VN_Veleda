@@ -60,7 +60,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "ambiances/AMB_Lieu_CarteVillage_01.ogg"
 
 
 ## Transitions #################################################################
@@ -200,3 +200,8 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+
+init:
+   # $ config.keymap['game_menu'].remove('K_ESCAPE')
+   # $ config.keymap['game_menu'].remove('K_MENU')
+    $ config.keymap['game_menu'].remove('mouseup_3')

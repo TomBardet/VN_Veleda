@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/taverne.rpy", line 179: end of line expected.
-    hide screen datingSim Dissolve(1.5)
-                          ^
+File "game/options.rpy", line 63: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation.
+    define config.main_menu_music = "ambiances/AMB_Lieu_Antichambre_01.ogg"
+    ^
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187

@@ -1,3 +1,9 @@
+init -1:
+    image bad_img = im.FactorScale("images/ds_bad.png", 0.1)
+    image good_img = im.FactorScale("images/ds_neutral.png", 0.1)
+
+    
+
 init -1 python:
     import renpy.store as store
     import renpy.exports as renpy # we need this so Ren'Py properly handles rollback with classes
@@ -9,11 +15,7 @@ init -1 python:
     lieu = None
     CAactif = False
     
-    renpy.image("bad_img", "images/ds_bad.png")
-    renpy.image("neutral_img", "images/ds_neutral.png")
-    renpy.image("love_img", "images/ds_love.png")
-    renpy.image("sad_img", "images/ds_sad.png")
-    
+ 
     class Chara(renpy.store.object):
         def __init__(self, name, love=0,max_love=0):
             self.name=name
@@ -57,14 +59,9 @@ init -1 python:
             char_name.love=char_name.max_love
         
         if(loveCount>0):
-            if(char_name.love < 20):
-                renpy.show("bad_img", at_list=[animFeedbackPos(x,y)])
-            elif(char_name.love > 80):
-                renpy.show("love_img", at_list=[animFeedbackPos(x,y)])
-            else:
-                renpy.show("neutral_img", at_list=[animFeedbackPos(x,y)])
+            renpy.show("good_img", at_list=[animFeedbackPos(x,y)])
         else:
-            renpy.show("sad_img", at_list=[animFeedbackNeg(x,y)])
+            renpy.show("bad_img", at_list=[animFeedbackNeg(x,y)])
             
     style.tooltip_bottom = Style(style.default)
     style.tooltip_bottom.xalign = 0.5
