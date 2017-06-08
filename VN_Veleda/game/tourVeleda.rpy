@@ -717,6 +717,7 @@ label tourVeleda_HistoireBrevetPart2:
     y "Je vais pouvoir voir Ingrid, en plus !"
     
     stop music1 fadeout 1.5
+    stop music2 fadeout 1.5
     stop ambiance fadeout 0.5
     
     jump narration_ellipse02
