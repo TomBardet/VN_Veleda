@@ -145,11 +145,9 @@ label forge_Beaudrik_04:
     hide char_brutal
     show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_02.ogg"
-    bg "Oh non, papa m’appelle encore."
-    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "Bon, vaut mieux que je me casse."
+    bg "Oh non, papa m’appelle encore. Vaut mieux se casser !"
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "De tout façon je dois aller régler un truc avec Josiane, l’autre fiancée."
+    bg "De tout façon je dois aller régler un truc avec Josiane, mon autre fiancée."
 
 jump forge_Beaudrik_05_Josiane
 
@@ -350,7 +348,6 @@ label forge_Brutalmund_04:
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_04.ogg"
     brut "On l’a gâté, ce petit enfoiré !"
     brut "Tu sais qu’il dort avec un nounours car il a peur du noir ?"
-    brut "Genre tu l’as vu ? Il fait deux mètres cet abruti !"
     show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_05.ogg"
     brut "Enfin bref."
@@ -370,7 +367,9 @@ label forge_Brutalmund_04_choice:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
             y "Vous avez des sous-marques ? Je fais des economies."
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
-            $ loveGauge(brut_char, -5, 0.57, 0.15)
+            if Forge_LeaderPrice_check == 0:  
+                $ loveGauge(brut_char, -5, 0.57, 0.15)
+                $ Forge_LeaderPrice_check = 1
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
             brut "Gaufrid, tu crois être où, chez Leader Price ?"
             show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
