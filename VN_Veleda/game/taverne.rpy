@@ -10,8 +10,13 @@ label taverne_DatingIngrid:
         linear 1 xpos -100 ypos -50 zoom 0.85
     $ renpy.pause(0.25, hard = True)
     
-    $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
-    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 4)
+    $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 1)
+    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 1)
+    
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
+    
     show char_ingrid normal at notSpeakingAnim(0.5, 1.11, 1.09, 0.25) with Dissolve (1.5)
 
     $ _window_during_transitions = True
@@ -118,13 +123,14 @@ label taverne_DatingIngrid:
             linear 0.1 rotate 10
     $ renpy.pause (1.5, hard = True)
             
-    play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"    
+    play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"    
     y "Héhé, ce rencard s'est passé à merveille !"
     y "Bon, je vais me coucher."
     y "Si je suis en retard demain, Véléda va encore m'engueuler."
     
+    stop ambiance fadeout 1    
     stop music1 fadeout 1.5
-    stop ambiance fadeout 0.5
+
             
     jump narration_ellipse01
  
@@ -181,7 +187,7 @@ label taverne_PresentationDot:
     y "Avec plaisir !"
     hide screen datingSim
     scene black with Dissolve(2.0)
-    play sound "sfx/Voices/Player/Char_Player_Drink_03.ogg"
+    play sound "sfx/Voices/Player/Char_Player_Boire_03.ogg"
     pause 2.5
     scene bg_taverneJ:
         xpos -100 ypos -50 zoom 0.81
@@ -230,7 +236,7 @@ label taverne_PresentationDot:
     pause 1.0
     scene black with Dissolve(2.0)
     
-    play sound "sfx/Voices/Player/Char_Player_Drink_03.ogg"
+    play sound "sfx/Voices/Player/Char_Player_Boire_03.ogg"
     pause 2.8
     
     outline "Quelques verres plus tard..."

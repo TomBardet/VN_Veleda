@@ -5,8 +5,12 @@
 label forge_BrutalmundEtBeaudrik:
     
     stop music1 fadeout 1.5
-    stop ambiance fadeout 0.5
+    stop ambiance fadeout 1
+    
     $ renpy.music.play("ambiances/AMB_Lieu_Forge_01.ogg", channel = "ambiance", loop = True, fadein = 1)
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
 
     $ interlocuteur = "brut_char"
     $ interlocuteur = "beau_char"

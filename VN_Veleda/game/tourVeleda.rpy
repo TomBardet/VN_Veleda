@@ -711,13 +711,10 @@ label tourVeleda_HistoireBrevetPart2:
     
     y "Allez, hop hop hop !"
     
-    show char_ernust normal right at speakingAnim(0.20,1.02,1.0,0.6) with Dissolve (0.5)
-    
-    e "Ils t'ont cru Gaufrid ! T'es vraiment trop fort !"
-    e "Qu'est ce qu'on va faire maintenant ?"
-    show char_ernust normal right at notSpeakingAnim(0.20,1.02,1.0,0.6)
-    y "Ben moi je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
-    y "Je vais pouvoir voir Ingrid en plus !"
+    pause 0.5
+
+    y "Bon, moi, je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
+    y "Je vais pouvoir voir Ingrid, en plus !"
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
