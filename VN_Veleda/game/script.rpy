@@ -187,8 +187,9 @@ label narration_ellipse02:
 
 label PlaceDuVillageDefault:
 
-    scene bg_place
-    
+    scene bg_place:
+        zoom 1.1
+    window hide
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
@@ -196,12 +197,20 @@ label PlaceDuVillageDefault:
     
     if _return == "etables":
         y "C'est parti pour les étables !"
-        jump etables_PeurDesBufflesPart1
+        scene bg_place:
+            zoom 1.1
+            linear 0.5 zoom 1.3 xpos -0.27 ypos -0.28
+        pause 0.1
+        scene black with Dissolve(1.0)
+        window show
+        jump etable_fromPlace
     elif _return == "forge":
         y "Direction : la Forge !"
+        window show
         jump forge_BrutalmundEtBeaudrik
     elif _return == "tente":
         y "Allons faire un coucou aux Romains !"
+        window show
         jump romains_PremiereRencontre
 
 # -----------------------------------------#
@@ -218,6 +227,8 @@ label narration_ellipseCuite:
 # -----------------------------------------#
 
 label PlaceDuVillageAllObjects:
+    scene bg_place
+    window hide    
     y "Attends... J'ai un glaive..."
     show screen inventory_screen(obj = "glaive")
     pause 1.0
@@ -232,7 +243,8 @@ label PlaceDuVillageAllObjects:
     $ _return = renpy.call_screen("action_choice_placeVillageFinal")
     
     if _return == "taverne":
-            jump Act2_transition_alldone
+        window show
+        jump Act2_transition_alldone
 
 # -----------------------------------------#
 
