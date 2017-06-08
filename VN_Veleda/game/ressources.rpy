@@ -50,8 +50,8 @@ init:
         ctc=anim.Blink("gui/ctc.png"))
 
     define nar = Character("Narrateur : ",
-        what_xalign = 0.5,
-        what_xpos=0.5,
+        #what_xalign = 0.0,
+        #what_xpos=0.0,
         what_italic=True,
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
