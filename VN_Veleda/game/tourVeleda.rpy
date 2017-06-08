@@ -575,6 +575,7 @@ label tourVeleda_MortVeleda:
     show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
     
     menu :
+        e "Tu peux peut être faire une prophétie toi ?"
         "C'est complètement idiot." :
             y "Tu dis vraiment n'importe quoi Ernust !"
             y "J'ai l'air d'être un prophête moi ?"
