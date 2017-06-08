@@ -268,8 +268,7 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             
             e "Mais moi, je trouve que t'es vraiment spécial Gaufrid."
-            
-            show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
+
             
         "Tu peux abréger ?" :
             
@@ -292,7 +291,6 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 2, 0.26, 0.14)
             e "Ça m'aide beaucoup tu sais. J'ai l'impression d'être plus intelligent avec toi !"
             
-            show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
                 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
     
@@ -433,7 +431,7 @@ label tourVeleda_HistoireBrevetPart1:
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
     show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Ah mais tu sais bien que c'est pas ça le problème, escroc !"
+    cross "Ah ! Mais tu sais bien que ce n'est pas ça, le problème, escroc !"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
 
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
@@ -495,7 +493,7 @@ label tourVeleda_HistoireBrevetPart1:
     show char_ernust normal right :
         xalign 0.5 yalign 0.8
         xpos 0.24 ypos -0.55 zoom 0.6
-        linear 2.0 xpos 0.20 ypos 0.94
+        linear 2.0 xpos 0.193 ypos 0.92
     show char_crossfit colere right :
         xalign 0.5 yalign 0.8
         xpos 0.26 ypos 0.84 zoom 0.32
@@ -524,7 +522,8 @@ label tourVeleda_MortVeleda:
     e "Ah Gaufrid, ça c'est bien passé ?"
     e "Véléda fait une petite sieste !"
     
-    show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
+    show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
+   
     y "Comment ça, une sieste ?"
     
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
@@ -532,30 +531,48 @@ label tourVeleda_MortVeleda:
     e "Bah oui, elle a mangé ma soupe aux champignons et elle a fait des bruits bizarres."
     e "Je pense qu'elle a vomi à un moment, mais après elle s'est endormie tranquillement !"
     
-    show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
-    
+    show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
+    play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
     y "Quoi ? Mais... c'était quoi comme champignons ?"
     y "Va voir tout de suite si elle va bien !"
     
-    show char_ernust normal right
+    show char_ernust joyeux right :
+        xalign 0.5 yalign 0.8
+        xpos 0.185 ypos 1.01 zoom 0.6
+        linear 1 xpos 0.35 ypos 1.05 zoom 0.55 rotate 5
+        
+    $ renpy.pause (1.1, hard = True)
     
-    show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
+    show char_ernust normal right :
+        linear 0.15 rotate 25
     
-    e "Elle va pas bien du tout Gaufrid !"
+    $ renpy.pause (0.6, hard = True)
+    
+    e "Euh..."
+    
+    show char_ernust inquiet right :
+        linear 0.15 rotate -3
+        linear 0.15 rotate 3
+        linear 0.15 rotate 0
+        
+    $ renpy.pause (0.8, hard = True)
+    
+    show char_ernust inquiet right at speakingAnim(0.35,1.05,1.0,0.55)
+    
+    e "Elle va pas bien du tout, Gaufrid !"
     e "Je sens pas du tout son pouls !"
     
-    show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
+    show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
     
     y "Quoi ? Mais.. tu as tué Véléda, Ernust !"
     y "La prophétesse la plus connue de toute l'histoire !"
-    y "Qu'est ce qu'on va faire ?"
     
-    show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
+    show char_ernust inquiet right at speakingAnim(0.35,1.05,1.0,0.55)
     
-    e "Oh je suis désolé Gaufrid !"
+    e "Oh, je suis désolé Gaufrid !"
     e "Tu peux peut être faire une prophétie toi ?"
     
-    show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
+    show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
     
     menu :
         "C'est complètement idiot." :
@@ -564,9 +581,10 @@ label tourVeleda_MortVeleda:
             y "Mais attend... j'ai une idée !"
             y "Je vais faire semblant ! Je vais inventer une prophétie !"
             y "Ils verront jamais la différence !"
+    
             show char_ernust normal right  at speakingAnim(0.20,1.02,1.0,0.6)
             e "Qu'est ce que t'es intelligent Gaufrid !"
-            show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
+            show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
         "Bonne idée !" :
             y "Bien vu Ernust ! Ça c'est vraiment une bonne idée !"
             y "Je vais inventer une prophétie ! Ils verront jamais la différence !"
