@@ -187,7 +187,7 @@ label narration_ellipse02:
 
 label PlaceDuVillageDefault:
 
-    scene bg_place:
+    scene bg_place with Dissolve(1.0):
         zoom 1.1
     window hide
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
@@ -206,11 +206,20 @@ label PlaceDuVillageDefault:
         jump etable_fromPlace
     elif _return == "forge":
         y "Direction : la Forge !"
+        scene bg_place:
+            zoom 1.1
+            linear 0.5 zoom 1.3 xpos -0.25 ypos -0.28
+        pause 0.1
+        scene black with Dissolve(1.0)
         window show
         jump forge_BrutalmundEtBeaudrik
     elif _return == "tente":
         y "Allons faire un coucou aux Romains !"
-        window show
+        scene bg_place:
+            zoom 1.1
+            linear 0.5 zoom 1.6 xpos 0.0 ypos -0.35
+        pause 0.1
+        scene black with Dissolve(1.0)
         jump romains_PremiereRencontre
 
 # -----------------------------------------#

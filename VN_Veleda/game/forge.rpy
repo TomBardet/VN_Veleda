@@ -21,7 +21,7 @@ label forge_BrutalmundEtBeaudrik:
 
 label forge_Brutalmund_Tampon_HUB:
 
-    scene bg_forge
+    scene bg_forge with Dissolve(1.5)
     pause 0.5
     $ renpy.music.play("music/MUSIC_Forge.ogg", channel = "music1", loop = True, fadein = 1)
     show char_brutal normal :
@@ -37,7 +37,7 @@ label forge_Brutalmund_Tampon_HUB:
 
 label forge_Intro:
     
-    scene bg_forge
+    scene bg_forge with Dissolve(1.5)
     pause 1.0
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Euh... il y a quelqu'un ?"
