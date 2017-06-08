@@ -49,6 +49,7 @@ label start:
         Acte2_Romains_FirstVisit = 0 #
         Forge_reply_arnaque = 0
         Forge_LeaderPrice_check = 0
+        Romain_EntenduParlerDesLunettes_check = 0
     
     #jump taverne_AbusAlcoolPart1
     jump intro
