@@ -36,7 +36,6 @@ label romains_Part1:
         elif _return == "sortir":
             hide screen datingSim
             stop music1 fadeout 1.0
-            scene black with Dissolve(1.0)
             jump PlaceDuVillageDefault
     
         jump romains_Part5
@@ -54,7 +53,6 @@ label romains_Part1:
         elif _return == "sortir":
             hide screen datingSim
             stop music1 fadeout 1.0
-            scene black with Dissolve(1.0)
             jump PlaceDuVillageDefault
             
             

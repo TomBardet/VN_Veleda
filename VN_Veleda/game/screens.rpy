@@ -1482,38 +1482,44 @@ transform sineV(y):
             linear 1.8 rotate 1
             repeat
             
-screen action_choice_placeVillage:
+screen action_choice_placeVillage(lunette=0, glaive=0, bouclier=0):
     zorder 10
-    textbutton _("Etables"):
-        xpos 0.55
-        xanchor 0.5
-        ypos 0.35
-        yanchor 0.5
-        text_idle_color gui.actionButton_colorIdle
-        text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000")]
-        at sineV(0.35)
-        action Return("etables")
-    textbutton _("Forge"):
-        xpos 0.85
-        xanchor 0.5
-        ypos 0.68
-        yanchor 0.5
-        text_idle_color gui.actionButton_colorIdle
-        text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000")]
-        at sineV(0.68)
-        action Return("forge")
-    textbutton _("Tente Romaine"):
-        xpos 0.25
-        xanchor 0.5
-        ypos 0.58
-        yanchor 0.5
-        text_idle_color gui.actionButton_colorIdle
-        text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000")]
-        at sineV(0.58)
-        action Return("tente")
+    if _testLunettes == 0:
+        textbutton _("Etables"):
+            xpos 0.82
+            xanchor 0.5
+            ypos 0.33
+            yanchor 0.5
+            text_idle_color gui.actionButton_colorIdle
+            text_hover_color gui.actionButton_colorHover
+            text_outlines [(2,"#000000")]
+            text_size 32
+            at sineV(0.83)
+            action Return("etables")
+    if _testBouclier == 0:
+        textbutton _("Forge"):
+            xpos 0.76
+            xanchor 0.5
+            ypos 0.55
+            yanchor 0.5
+            text_idle_color gui.actionButton_colorIdle
+            text_hover_color gui.actionButton_colorHover
+            text_outlines [(2,"#000000")]
+            text_size 32
+            at sineV(0.56)
+            action Return("forge")
+    if _testGlaive == 0:
+        textbutton _("Tente Romaine"):
+            xpos 0.16
+            xanchor 0.5
+            ypos 0.58
+            yanchor 0.5
+            text_idle_color gui.actionButton_colorIdle
+            text_hover_color gui.actionButton_colorHover
+            text_outlines [(2,"#000000")]
+            text_size 32
+            at sineV(0.64)
+            action Return("tente")
 
 screen action_choice_placeVillageFinal:
     zorder 10
@@ -1531,14 +1537,15 @@ screen action_choice_placeVillageFinal:
 screen action_choice_EtableTrumpet:
     zorder 10
     textbutton _("Jouer de la trompette"):
-        xpos 0.50
+        xpos 0.53
         xanchor 0.5
         ypos 0.35
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.55)
+        text_size 30
+        at sineV(0.28)
         action Return("trompette")
     textbutton _("Parler aux Buffles"):
         xpos 0.22
@@ -1550,16 +1557,6 @@ screen action_choice_EtableTrumpet:
         text_outlines [(2,"#000000")]
         at sineV(0.68)
         action Return("buffles")
-    textbutton _("Parler à Crossfitrichernvald"):
-        xpos 0.53
-        xanchor 0.5
-        ypos 0.6
-        yanchor 0.5
-        text_idle_color gui.actionButton_colorIdle
-        text_hover_color gui.actionButton_colorHover
-        text_outlines [(2,"#000000")]
-        at sineV(0.28)
-        action Return("crossfit")
     textbutton _("Sortir de l'étable"):
         xpos 0.88
         xanchor 0.5
@@ -1591,6 +1588,7 @@ screen action_choice_Etable:
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
+        text_size 30
         at sineV(0.28)
         action Return("crossfit")
     textbutton _("Sortir de l'étable"):
@@ -1607,24 +1605,25 @@ screen action_choice_Etable:
 screen action_choice_Tente:
     zorder 10
     textbutton _("S'approcher de la Tente"):
-        xpos 0.85
+        xpos 0.6
         xanchor 0.5
         ypos 0.68
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.68)
+        text_size 30
+        at sineV(0.55)
         action Return("tente")
     textbutton _("Retourner au village"):
-        xpos 0.25
+        xpos 0.35
         xanchor 0.5
         ypos 0.6
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.58)
+        at sineV(0.88)
         action Return("sortir")
 
 screen action_choice_Tente1:

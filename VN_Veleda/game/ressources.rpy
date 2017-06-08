@@ -115,7 +115,7 @@ init:
     image bg_chambre = im.FactorScale("images/decor/Lieu_chambre.png", 0.70)
     image bg_chambre_nuit = im.FactorScale("images/decor/Lieu_chambre_nuit.png", 0.70)
     image bg_romains = ("images/decor/Lieu_romains.png")
-    image bg_place = im.FactorScale("images/decor/Lieu_place.png", 0.33)
+    image bg_place = im.FactorScale("images/decor/Lieu_place.png", 0.70)
     image bg_tour = im.FactorScale("images/decor/Lieu_tour.png", 0.70)
     image bg_buffles = "images/decor/Lieu_BuffleScene.png"
     #iamges de veleda

@@ -61,15 +61,17 @@ label intro:
     $ renpy.music.set_volume(1, delay=0, channel='music1')
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 0.5)
     $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
-    
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
     show introCarte :
         zoom 1,xanchor 0.0 yanchor 0.0
         xpos 0 ypos 0
-        linear 2.0 xpos -0.05 ypos 0.0025 zoom 1.05
+        linear 1.0 xpos -0.05 ypos 0.0025 zoom 1.05
         
    # show introCarte:
    #     xpos 0.01 ypos 0.01 zoom 1.1
-    $ renpy.pause(0.1, hard=True)
+    $ renpy.pause(0.8, hard=True)
     play sound "sfx/SFX_Drapeau_Fall_01.ogg"
     show introFlag zorder 2 with vpunch:
         zoom 1 xanchor 0.5 yanchor 0.5
@@ -188,7 +190,7 @@ label narration_ellipse02:
 label PlaceDuVillageDefault:
 
     scene bg_place with Dissolve(1.0):
-        zoom 1.1
+        zoom 1.0
     window hide
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
@@ -198,8 +200,8 @@ label PlaceDuVillageDefault:
     if _return == "etables":
         y "C'est parti pour les étables !"
         scene bg_place:
-            zoom 1.1
-            linear 0.5 zoom 1.3 xpos -0.27 ypos -0.28
+            zoom 1.0
+            linear 0.5 zoom 1.3 xpos -0.35 ypos -0.28
         pause 0.1
         scene black with Dissolve(1.0)
         window show
@@ -207,8 +209,8 @@ label PlaceDuVillageDefault:
     elif _return == "forge":
         y "Direction : la Forge !"
         scene bg_place:
-            zoom 1.1
-            linear 0.5 zoom 1.3 xpos -0.25 ypos -0.28
+            zoom 1.0
+            linear 0.5 zoom 1.3 xpos -0.3 ypos -0.28
         pause 0.1
         scene black with Dissolve(1.0)
         window show
@@ -216,8 +218,8 @@ label PlaceDuVillageDefault:
     elif _return == "tente":
         y "Allons faire un coucou aux Romains !"
         scene bg_place:
-            zoom 1.1
-            linear 0.5 zoom 1.6 xpos 0.0 ypos -0.35
+            zoom 1.0
+            easeout 0.5 zoom 1.6 xpos 0.0 ypos -0.45
         pause 0.1
         scene black with Dissolve(1.0)
         jump romains_PremiereRencontre
