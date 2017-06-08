@@ -5,14 +5,14 @@
 label taverne_DatingIngrid:
     
 
-    scene bg_taverne with Dissolve (2.5) :
-        xpos 20 ypos 70 zoom 0.95
-        linear 1 xpos -100 ypos -50 zoom 1.1
+    scene bg_taverneJ with Dissolve (2.5) :
+        xpos 20 ypos 70 zoom 0.7
+        linear 1 xpos -100 ypos -50 zoom 0.85
     $ renpy.pause(0.25, hard = True)
     
     $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
     $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 4)
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.35) with Dissolve (1.5)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.11, 1.09, 0.25) with Dissolve (1.5)
 
     $ _window_during_transitions = True
     
@@ -31,13 +31,13 @@ label taverne_DatingIngrid:
     
     nar "{cps=2} {/cps}Eh,{cps=4} {/cps}{cps=28}réveille toi maintenant !{/cps}{cps=2} {/cps}{cps=25}Ça va être à ton tour.{/cps}"
     
-    show char_ingrid normal at speakingAnim(0.5, 1.25, 1.22, 0.35)
+    show char_ingrid love at speakingAnim(0.5, 1.16, 1.14, 0.25)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
     
     i "Hihi ! Gaufrid, t'es mignon !"
 
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
+    show char_ingrid love at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     
     menu:
         i "{cps=0}Hihi ! Gaufrid, t'es mignon !{/cps}"
@@ -56,13 +56,13 @@ label taverne_DatingIngrid:
             y "Je t'aime à la folie depuis 8 jours."
             y "Je pense à toi tout le temps !"
     
-    show char_ingrid degout at speakingAnim(0.5, 1.25, 1.22, 0.35)
+    show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
     
     i "Euh... je veux dire... t'es plus comme un ptit frère pour moi."
     
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
+    show char_ingrid degout at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Un petit frère... Héhé je savais que j'avais une chance !"
@@ -70,9 +70,9 @@ label taverne_DatingIngrid:
     nar "Comment ça une chance ?!"
     nar "Tu vas vraiment avoir besoin d'un coup de main..."
     
-    show screen datingSim(ingrid_char, 0.60, 0.35)
+    show screen datingSim(ingrid_char, 0.57, 0.33)
     pause 1.0
-    $ loveGauge(ingrid_char, -10, 0.72, 0.35)
+    $ loveGauge(ingrid_char, -10, 0.67, 0.33)
 
     menu:
         nar "{cps=0}Tu vas vraiment avoir besoin d'un coup de main...{/cps}"
@@ -91,18 +91,18 @@ label taverne_DatingIngrid:
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"        
     y "Les dating quoi ?"
-    $ loveGauge(ingrid_char, -5, 0.72, 0.35)
-    show char_ingrid degout at speakingAnim(0.5, 1.25, 1.22, 0.35)
+    $ loveGauge(ingrid_char, -5, 0.67, 0.33)
+    show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_04.ogg"
     
     i "... Gaufrid ? A qui tu parles ? Tu m'inquiètes..."
     
-    show char_ingrid degout at notSpeakingAnim(0.5, 1.25, 1.21, 0.35)
+    show char_ingrid degout at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Bah je parle au narrateur. Il a fait apparaitre des chiffres au dessus de ta tête."
-    show char_ingrid degout at speakingAnim(0.5, 1.25, 1.22, 0.35)
+    show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
     
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.ogg"
     
@@ -113,7 +113,7 @@ label taverne_DatingIngrid:
     hide screen datingSim
     show char_ingrid degout:
         xalign 0.5 yalign 0.8
-        xpos 0.5 ypos 1.25 zoom 0.35
+        xpos 0.5 ypos 1.16 zoom 0.25
         parallel:
             linear 1.6 xpos 1.5
         parallel:
@@ -134,8 +134,8 @@ label taverne_DatingIngrid:
 # -----------------------------------------# 
  
 label taverne_PresentationDot:
-    scene bg_taverne
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    scene bg_taverneJ
+    show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
     
     $ _window_during_transitions = True
     
@@ -149,48 +149,48 @@ label taverne_PresentationDot:
     i "Euh... écoute, je suis désolée d'être partie en courant la dernière fois."
     i "C'est juste que tu disais des trucs vraiment bizarre  !"
     
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     menu:
         i "{cps=0}C'est juste que tu disais des trucs vraiment bizarre{/cps}"
         
         "Je suis comme ça Baby. C'est à prendre ou à laisser":
             y "Je suis comme ça Baby. C'est à prendre ou à laisser"
             $ loveGauge(ingrid_char, -2, 0.65, 0.3)
-            show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+            show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
             i "Euh..."
         "Ca t'es jamais arrivé de voir des chiffres au dessus de la tête des gens ?":
             y "Ca t'es jamais arrivé de voir des chiffres au dessus de la tête des gens ?"
             $ loveGauge(ingrid_char, -1, 0.65, 0.3)
-            show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+            show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
             i "Euh..."
         "Je veux t'épouser Ingrid !":
             y "Ingrid épouse moi !"
             $ loveGauge(ingrid_char, -4, 0.65, 0.3)
-            show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+            show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
             i "Euh..."
         
     i "Et si je te servais quelquechose à boire plutôt Gaufrid ?"
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     y "Avec plaisir !"
 
     scene black with Dissolve(2.0)
     "Add bruit glouglou"
-    scene bg_taverne
+    scene bg_taverneJ
     show char_ingrid normal at notSpeakingAnim(0.5, 1.12, 1.12, 0.3)    
     y "...Ingrid je..."
     y "Je t'aime, marions nous !"
     $ loveGauge(ingrid_char, 2, 0.65, 0.3)
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
     i "Bon écoute, Gaufrid, c'est pas si simple que ça tu sais"
     i "L'amour n'est pas un jeu."
     i "Je ne tomberai amoureuse de toi que si tu me ramène une dot."
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     y "Une dot ?"
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
     i "Une dot. Un {b}glaive{/b} et un {b}bouclier{/b} pour être plus précise."
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     y "Mais... quoi ?"
-    show char_ingrid normal at speakingAnim(0.5, 1.15, 1.12, 0.3)
+    show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
     i "N'en dis pas plus Gaufrid ! Nul ne peut comprendre l'Amour !"
     hide screen datingSim
     show char_ingrid normal:
@@ -225,7 +225,7 @@ label taverne_PresentationDot:
 # -----------------------------------------#
 
 label taverne_AbusAlcoolPart1:
-    scene bg_taverne2
+    scene bg_taverneJ2
     show char_goat normal at notSpeakingAnim(0.45, 0.7, 0.68, 1.0)
     
     $ lieu = "Taverne2"
@@ -421,8 +421,8 @@ label placeDuVillage_Concours_Placeholder:
 
 label taverne_ConcoursPart1:
     "label taverne_ConcoursPart1"
-    scene bg_taverne2
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    scene bg_taverneJ2
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     i "Gaufrid ! Enfin tu es là ! On t’attendait !"
     
     jump taverne_ConcoursPart1_choice
@@ -470,11 +470,11 @@ label taverne_Concours_Part2_0_Transition:
 label taverne_Concours_Part2_1_Intro:
     
     #NARRATEUR--------------> nar "{i}{color=#f2de5c}{/color}{/i}"
-    scene bg_taverne with Dissolve (0.5)
+    scene bg_taverneJ with Dissolve (0.5)
     pause 1.0
     outline "Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis à la taverne du village !"
     #nar "{i}{color=#f2de5c}Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis !{/color}{/i}"
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3):
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
         xpos 0.17 ypos 1.1
     outline "Ingrid est une jeune femme célibataire à la recherche de l’amour."
     outline "Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
@@ -583,7 +583,7 @@ label taverne_Concours_Part2_4_Hub:
         "{color=#FFFFFF}Interview de Ingrid{/color}":
             y "Je voudrais voir l’interview de Ingrid."
             outline "Excellent choix !"
-            show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3):
+            show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
                 xpos 0.17 ypos 1.1
             outline "Monsieur dames : Ingrid, 22 ans, belle du village et prix à gagner !"
             i "Bonjour ! Merci, merci !"
@@ -696,7 +696,7 @@ label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
 
 label taverne_Concours_Part3_Ingrid:
 
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3):
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
         xpos 0.17 ypos 1.1
     hide char_beaudrik normal left
 
