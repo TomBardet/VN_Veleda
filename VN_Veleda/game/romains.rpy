@@ -181,7 +181,7 @@ label romains_VisitePart1:
     show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
     play sound "sfx/Voices/Num/Char_Num_Doute_03.ogg"
     num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
-    num "Le génie qui me sert de porte-enseigne a oublié mes lunettes à Rome."
+    num "Le génie qui me sert de porte-enseigne a oublié mes {b}lunettes{b} à Rome."
     show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
     
     if _testLunettes == 1:
@@ -194,14 +194,14 @@ label romains_VisitePart1:
     else:
         menu :
             num "{cps=0}Le génie qui me sert de porte-enseigne a oublié mes lunettes à Rome.{/cps}"
-            "Vous avez pas une paire de rechange ?":
+            "Ah mince...Vous avez pas une paire de rechange ?":
                 play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
                 y "Vous avez pas une paire de rechange ?"
                 
                 show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
                 
                 play sound "sfx/Voices/Num/Char_Num_Doute_02.ogg"
-                num "... Non."
+                num "... Non. On l'a oublié aussi."
                 num "Ca nous aiderait pas mal si vous en trouviez une, Germain."
                 
             "Retournez les chercher à Rome.":
@@ -213,7 +213,6 @@ label romains_VisitePart1:
                 num "T'es un marrant toi..."
                 $ loveGauge(num_char, -10, 0.62, 0.28)
         
-        num "Bon on va y aller hein..."
         show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
         show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
         dig "Reviens nous voir si tu trouves des {b}lunettes{/b} !"
@@ -632,20 +631,15 @@ label romains_Blague:
         play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Rire_01.ogg"
         show char_numerimus normal at speakingAnim(0.45, 0.82, 0.8, 1.0)
         show char_digitimus normal at speakingAnim(0.7, 0.78, 0.76, 1.25)
-        num "... Ahahaha !"
+        num "... Hahahaha !"
         $ loveGauge(num_char, +10, 0.62, 0.28)
         show char_numerimus normal at notSpeakingAnim(0.45, 0.82, 0.8, 1.0)
-        dig "Ahahahahaha... Ahahaha!"
-        $ loveGauge(num_char, +15, 0.62, 0.28)
-        dig "Ahaha... Ahahaha!"
-        $ loveGauge(num_char, +5, 0.62, 0.28)
-        dig "Aha..."
+        dig "Haahahahaha... Haahaha!"
         $ loveGauge(num_char, +5, 0.62, 0.28)
         dig "C'est la meilleure blague que j'ai entendu de ma vie !"
         dig "Je sais pas comment je peux te remercier pour ce moment."
-        dig "Oh attend, si je sais ! Tiens attrape !"
+        dig "Oh attend, si je sais ! Tiens attrape ! C'est... Ma {b}trompette{b}."
         show char_digitimus normal at notSpeakingAnim(0.7, 0.78, 0.76, 1.25)
-        outline "Et Digitimus lança donc une... trompette (?)"
         $ inventory.add(trompette)
         $ _testTrompette = 1
         show img_trompette at center:
@@ -667,7 +661,7 @@ label romains_Blague:
             pause 0.5
             linear 0.3 xpos 1.0
         pause 3.0
-        y "... Mais je vais faire quoi d'une trompette moi ?"
+        y "... Mais je vais faire quoi d'une {b}trompette{b} moi ?"
         show char_ernust normal right:
             xalign 0.5 yalign 0.8
             xpos -0.5 ypos 1.5 zoom 0.8 rotate 30

@@ -29,7 +29,7 @@ label forge_Brutalmund_Tampon_HUB:
         linear 0.7 xpos 0.2
     brut "Gaufrid !"
     show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
-    lay sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_02.ogg"
+    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
     brut "Alors, ça te tente un {b}Bouclier Original de Capitaine Germanie™{/b} tout neuf ?"
     jump forge_Brutalmund_06_Hub
 
@@ -39,6 +39,7 @@ label forge_Intro:
     
     scene bg_forge
     pause 1.0
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Euh... il y a quelqu'un ?"
     
     jump forge_Beaudrik_01
@@ -65,9 +66,12 @@ label forge_Beaudrik_02:
     bg "Tiens ! C’est le p’tit Gaufrid !"
     show screen datingSim(beau_char, 0.75, 0.10)
     pause 0.5
+    
     $ renpy.music.play("music/MUSIC_Forge.ogg", channel = "music1", loop = True, fadein = 1)
+    
     bg "T’sais, justement je pensais à toi bonhomme."
     show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
+    play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
     y "Ah, merci Beaudrik ! Je suis flatté."
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     $ loveGauge(beau_char, -5, 0.85, 0.10)
@@ -141,11 +145,9 @@ label forge_Beaudrik_04:
     hide char_brutal
     show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_02.ogg"
-    bg "Oh non, papa m’appelle encore."
-    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "Bon, vaut mieux que je me casse."
+    bg "Oh non, papa m’appelle encore. Vaut mieux se casser !"
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "De tout façon je dois aller régler un truc avec Josiane, l’autre fiancée."
+    bg "De tout façon je dois aller régler un truc avec Josiane, mon autre fiancée."
 
 jump forge_Beaudrik_05_Josiane
 
@@ -157,6 +159,7 @@ label forge_Beaudrik_05_Josiane:
     menu:
         bg "{cps=0}De tout façon je dois aller régler un truc avec Josiane, l’autre fiancée.{/cps}"
         "Deux fiancées ? C’est abusé" :
+            play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             y "Non mais attends, moi je me trimballe Ernust et toi tu pécho des meufs à droite et à gauche ?"
             y "C'est abusé."
             show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
@@ -164,6 +167,7 @@ label forge_Beaudrik_05_Josiane:
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
             bg "Euh, je sais, c’est compliqué."
         "Tu ferais ça à Ingrid ?" :
+            play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             y "Deux copines, c’est un peu abusé et pas très gentil quand même."
             y "Tu penses pas que ça briserait le cœur à Ingrid ?"
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
@@ -172,6 +176,7 @@ label forge_Beaudrik_05_Josiane:
             bg "Euh, je sais, c’est compliqué."
         "Brutalmund a l’air vénère" :
             y "Et ton père ? Il a pas l’air d’être content."
+            play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_06.ogg"
             bg "Oui, il s’est mis en tête que je dois travailler pour gagner ma vie."
@@ -238,6 +243,7 @@ label forge_Brutalmund_02:
         brut "{cps=0}Tu n’aurais pas vu mon fils ?{/cps}"
         "Pas vraiment, non" :
             y "Je l’ai pas vu, non. Pourquoi ?"
+            play sound "sfx/Voices/Player/Char_Player_Non_01.ogg"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             if Acte1_Tour_CoupableJugement == "Crossfit":
                 show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
@@ -253,18 +259,22 @@ label forge_Brutalmund_02:
                 show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
                 brut "Et tous ces {b}boucliers{/b} ne vont pas se vendre tous seuls !"
             show char_brutal colere at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
             y "Bon, il faudra que vous alliez chercher votre fils alors, non ?"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_04.ogg"
             brut "Et te laisser là tout seul avec mes précieux boucliers ?"
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_03.ogg"
             brut "Hors question !"
         "Il est à la taverne" :
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
             y "Il allait à la taverne, vous faites encore à temps pour l’attraper."
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_04.ogg"
             brut "Et te laisser là tout seul avec mes précieux {b}boucliers{/b} ?"
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_03.ogg"
             brut "Hors question !"
             if Acte1_Tour_CoupableJugement == "Crossfit":
                 jump forge_Brutalmund_03
@@ -290,12 +300,14 @@ label forge_Brutalmund_03:
     menu:
         brut "{cps=0}Le troisième téton, c’était pas bon signe.{/cps}"
         "Trois tétons, c'est pas si grave" :
+            play sound "sfx/Voices/Player/Char_Player_Non_05.ogg"
             y "Bon, c’est pas sa faute non plus s’il est né comme ça."
             y "Je pense que les enfants comme lui, ils ont besoin d’encore plus d’amour que les gens normaux."
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_02.ogg"
             brut "C’est ce que sa mère disait aussi ! Et ça l’a ruiné ! Ruiné je te dis !"
         "En quoi c’est mauvais signe ?" :
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Ah bon ? Trois tétons c’est mauvais signe ?"
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
             $ loveGauge(brut_char, -5, 0.57, 0.152)
@@ -307,9 +319,11 @@ label forge_Brutalmund_03:
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_05.ogg"
             brut "Et alors je t’explique..."
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
             brut "Le troisième téton, c’est signe de faiblesse !"
         "Les gens comme lui, c’est des monstres" :
             y "C’est des punitions divines, les êtres comme lui."
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
             y "C’est peut-être pas trop tard, je vous accompagne à la falaise la plus proche ?"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             $ loveGauge(brut_char, +5, 0.57, 0.15)
@@ -317,6 +331,7 @@ label forge_Brutalmund_03:
             brut "Non mais là c’est mort, il fallait le faire avant."
             brut "J’ai essayé de le lâcher de l’autre côté de la Lippe, mais il revient toujours."
         "D'autres secrets bizarres sur lui ?":
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
             y "Ah ! Ça, ça m’intéresse."
             y "Vous savez si votre fils a d’autres secrets gênants comme celui-là ?"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
@@ -330,10 +345,11 @@ label forge_Brutalmund_03:
 label forge_Brutalmund_04:
     
     show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
+    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_04.ogg"
     brut "On l’a gâté, ce petit enfoiré !"
     brut "Tu sais qu’il dort avec un nounours car il a peur du noir ?"
-    brut "Genre tu l’as vu ? Il fait deux mètres cet abrouti !"
     show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
+    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_05.ogg"
     brut "Enfin bref."
     show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_03.ogg"
@@ -348,23 +364,29 @@ label forge_Brutalmund_04_choice:
     menu:
         brut "{cps=0}J’imagine que tu n’as pas besoin d’un {b}Bouclier Original de Capitaine Germanie™{/b}, hein ?{/cps}"
         "{color=#FFFFFF}C'est possible un bouclier normal ?{/color}":
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
             y "Vous avez des sous-marques ? Je fais des economies."
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
-            $ loveGauge(brut_char, -5, 0.57, 0.15)
+            if Forge_LeaderPrice_check == 0:  
+                $ loveGauge(brut_char, -5, 0.57, 0.15)
+                $ Forge_LeaderPrice_check = 1
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
             brut "Gaufrid, tu crois être où, chez Leader Price ?"
             show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_03.ogg"
             brut "Ici, c'est que des {b}Bouclier Originaux de Capitaine Germanie™{/b}"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             brut "Prendre ou laisser."
             show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
             jump forge_Brutalmund_04_choice
         "On peut le voir avant d'acheter ?":
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
             y "Ça m’intéresse, mais comment on sait s’ils sont bien ? On ne peut pas les voir ?"
             show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
             $ loveGauge(brut_char, -5, 0.57, 0.15)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
             brut "Ah bah là tu me brise le cœur, mon p’tit Gaufrid !"
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
             show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
             brut "Mes {b}Boucliers Originaux de Capitaine Germanie™{/b}, c’est de la balle !"
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
@@ -382,18 +404,23 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     menu:
         brut "{cps=0}Je te promets.{/cps}"
-        "Ça sent l'arnaque...":
+        "{color=#FFFFFF}Ça sent l'arnaque...{/color}":
+            play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             y "Non mais c’est bon, là vous abusez. Vous seriez pas en train de m'arnaquer ?"
             show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
-            $ loveGauge(brut_char, -5, 0.57, 0.15)
+            if Forge_reply_arnaque == 0:
+                $ loveGauge(brut_char, -5, 0.57, 0.15)
+                $ Forge_reply_arnaque = 1
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
             brut "Qui ?! Moi ?!"
             show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
             brut "Moi je veux juste te faire gagner du temps, hein !"
             show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_01.ogg"
             brut "Pourquoi perdre ton temps à les regarder, mon p’tit Gaufrid, quand tu peux directement les acheter ?"
-            jump forge_Brutalmund_05_CannotPay
+            jump forge_Brutalmund_04_01_Branche_EssaiRoutier
         "J'irai voir votre concurrent alors":
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
             y "Oui mais, le fait est que je suis indécis entre les vôtres et ceux de Crossfitrichentruc."
             show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
@@ -433,12 +460,13 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
 label forge_Brutalmund_05_CannotPay:
 
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
+    play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
     y "Euh, je veux bien, mais en tout cas je n’ai pas de quoi le troquer avec."
     show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_05.ogg"
     brut "Rien du tout ? Allez mon p’tit Gaufrid, ça fait deux mois que je ne vends rien, fais un effort !"
     show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
-    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Char_Brutalmund_Heureux_02.ogg"
+    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
     brut "Là on parle de mes {b}Boucliers Originaux de Capitaine Germanie™{/b}, hein !"
     show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
     brut "Il me faut quelque chose de valeur si t'en veux un."
@@ -452,11 +480,36 @@ label forge_Brutalmund_06_Hub:
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     menu:
         brut "..."
+        
+        "{color=#FFFFFF}Vous voulez quoi en échange ?{/color}":
+            play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
+            y "Bon, d’accord, admettons que je puisse vous payer. Vous voulez quoi en échange ?"
+            show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            if Acte1_Tour_CoupableJugement == "Brutalmund":
+                play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_06.ogg"
+                brut "Si tu trouves un moyen de me fournir un ou deux buffles… Tu sais, j’ai perdu les miens…"
+                show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
+                y "Vous pensez que je vous aurais imploré de me donner un bouclier si j’avais des buffles en rab ?"
+                show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
+                brut "J’ai pas dit qu’il faut que ça soit tes buffles à toi, hein !"
+                brut "Allez, mon p’tit Gaufrid ! T’es peut-être un peu un boulet, mais on sait tous les deux que t’es un débrouilleur."
+                brut "Un petit litige, une prophétie… j’suis sûr que tu vas trouver une solution."
+            if Acte1_Tour_CoupableJugement == "Crossfit":
+                show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
+                play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_06.ogg"
+                brut "Crossfit a un peu de mal avec les buffles."
+                brut "Si tu pouvais accélerer les choses... ce serait parfait."
+                show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_03.ogg"
+            brut "Amène-moi mes buffles et t’auras ton {b}Bouclier Original de Capitaine Germanie™{/b} !"
+            jump forge_Brutalmund_06_Hub
+        
         "Vos buffles sont en liberté..." if _testLunettes == 1:
+            play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
             y "Si ça vous intéresse, j’ai récupéré vos buffles."
             show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
             $ loveGauge(brut_char, +10, 0.57, 0.15)
-            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Char_Brutalmund_Heureux_01.ogg"
+            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_01.ogg"
             brut "Oh ! Ha ha ! Je le savais mon p’tit Gaufrid !"
             brut "Tu sers enfin à quelque chose !"
             #show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.4)
@@ -464,6 +517,7 @@ label forge_Brutalmund_06_Hub:
             #show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.4)
             #brut "Euh ? Comment ça ?"
             #show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.4)
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
             y "Enfin, je les ai libérés des étables, maintenant il faut aller les chercher."
             show char_brutal heureux at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
             pause 1.0
@@ -494,29 +548,8 @@ label forge_Brutalmund_06_Hub:
             hide char_brutal
             jump forge_Brutalmund_07_Bouclier
             
-        "{color=#FFFFFF}Vous voulez quoi en échange ?{/color}":
-            y "Bon, d’accord, admettons que je puisse vous payer. Vous voulez quoi en échange ?"
-            show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
-            if Acte1_Tour_CoupableJugement == "Brutalmund":
-                play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_06.ogg"
-                brut "Si tu trouves un moyen de me fournir un ou deux buffles… Tu sais, j’ai perdu les miens…"
-                show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
-                y "Vous pensez que je vous aurais imploré de me donner un bouclier si j’avais des buffles en rab ?"
-                show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
-                brut "J’ai pas dit qu’il faut que ça soit tes buffles à toi, hein !"
-                brut "Allez, mon p’tit Gaufrid ! T’es peut-être un peu un boulet, mais on sait tous les deux que t’es un débrouilleur."
-                brut "Un petit litige, une prophétie… j’suis sûr que tu vas trouver une solution."
-            if Acte1_Tour_CoupableJugement == "Crossfit":
-                show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
-                play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_06.ogg"
-                brut "Crossfit a un peu de mal avec les buffles."
-                brut "Si tu pouvais accélerer les choses... ce serait parfait."
-                show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
-            play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_03.ogg"
-            brut "Amène-moi mes buffles et t’auras ton {b}Bouclier Original de Capitaine Germanie™{/b} !"
-            jump forge_Brutalmund_06_Hub
-            
-        "Je n’ai rien à vous donner":
+        "Je retournerai quand je pourrai payer" if _testLunettes == 0:
+            play sound "sfx/Voices/Player/Char_Player_Non_01.ogg"
             y "Au moins que vous vouliez vous acheter un Ernust, je n’ai rien à vous donner pour le moment."
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
             if forge_cannotpay_check == 0:
@@ -540,6 +573,7 @@ label forge_Brutalmund_07_Bouclier:
     stop music1 fadeout 1.5
     
     hide  char_brutal
+    play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
     y "Bon, c’était pas très dur."
     y "Vaut mieux choper un bouclier et se casser, vite !"
     $ inventory.add(bouclier)

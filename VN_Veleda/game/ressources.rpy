@@ -104,8 +104,11 @@ init:
     image temp2 = "images/goat_idle.png"
     
     #Les images des Lieux
-    image bg_taverne = "images/decor/Lieu_taverne.png"
-    image bg_taverne2 = "images/decor/Lieu_taverne2.png"
+    image bg_taverneJ = "images/decor/Lieu_taverneJ.png"
+    image bg_taverne2J = "images/decor/Lieu_taverne2J.png"
+    image bg_taverneN = "images/decor/Lieu_taverneN.png"
+    image bg_taverne2N = "images/decor/Lieu_taverne2N.png"
+    image bg_taverneFull = "images/decor/Lieu_taverneAll.png"
     image bg_etables = "images/decor/Lieu_etablesBuffles.jpg"
     image bg_etables2 = "images/decor/Lieu_etables.png"
     image bg_forge = "images/decor/Lieu_forge.png"
@@ -240,14 +243,17 @@ init:
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
     image char_numerimus heureux = "images/char/Char_numerimus_heureux.png"
-    image char_numerimus choque = "images/char/Char_numerimus_choque.png"
     image char_numerimus dubitatif = "images/char/Char_numerimus_dubitatif.png"
+    image char_numerimus normal lunette = "images/char/Char_numerimus_normal_lunette.png"
+    image char_numerimus heureux lunette = "images/char/Char_numerimus_heureux_lunette.png"
+    image char_numerimus dubitatif lunette = "images/char/Char_numerimus_dubitatif_lunette.png"
     
     #Digitimus
-    image char_digitimus normal = "images/char/Char_digitimus_normal.png"
-    image char_digitimus choque = "images/char/Char_digitimus_choque.png"
-    image char_digitimus rire = "images/char/Char_digitimus_rire.png"
-    image char_digitimus dubitatif = "images/char/Char_digitimus_dubitatif.png"
+    image char_digitimus normal right = "images/char/Char_digitimus_normal_right.png"
+    image char_digitimus rire right = "images/char/Char_digitimus_rire_right.png"
+    image char_digitimus normal left = "images/char/Char_digitimus_normal_left.png"
+    image char_digitimus rire left = "images/char/Char_digitimus_rire_left.png"
+
     
     #Chêvre-Josiane
     image char_goat normal = "images/char/Char_goat_normal.png"
