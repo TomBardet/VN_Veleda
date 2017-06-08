@@ -510,14 +510,17 @@ label taverne_ConcoursPart1_choice:
     
 label taverne_Concours_Part2_0_Transition:
     scene black with Dissolve(0.5)
-    outline "Il était une fois en Germanie… Beaudrik et Gaufrid, germains presque charmants."
+    play sound "sfx/SFX_TVShow_01.ogg"
+    $ renpy.pause(1.5, hard = True)
+    outline "Il était une fois en Germanie…"
+    outline "...Beaudrik et Gaufrid, germains presque charmants."
+    $ renpy.pause(2.0, hard = True)
     jump taverne_Concours_Part2_1_Intro
     
 # -----------------------------------------#
     
 label taverne_Concours_Part2_1_Intro:
     
-    $ renpy.music.play("music/MUSIC_Etable_Normale.ogg", channel = "music1", loop = True, fadein = 4)
     
     #NARRATEUR--------------> nar "{i}{color=#f2de5c}{/color}{/i}"
     scene bg_taverneN with Dissolve (0.5):
@@ -525,21 +528,32 @@ label taverne_Concours_Part2_1_Intro:
     pause 1.0
     outline "Bienvenues à l’édition 1er Siècle de \n « Bachelor Bructère », à l’antenne tous les vendredis à la taverne du village !"
     #nar "{i}{color=#f2de5c}Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis !{/color}{/i}"
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25) with Dissolve(0.5):
-        xpos 0.17 ypos 1.1
-    nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire \n à la recherche de l’amour.{/i}{/color}"
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
+        zoom 1.0 xpos 0.0 ypos 1.115
+        linear 0.4 xpos 0.18
+    $ renpy.music.play("music/MUSIC_Etable_Normale.ogg", channel = "music1", loop = True, fadein = 4)
+    nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/i}{/color}"
     nar "{i}{color=#f2de5c}Tiraillée entre la beauté du corps et la beauté du cœur, \n Ingrid devra choisir entre deux Germains presque charmants.{/i}{/color}"
     show char_beaudrik normal left :
         zoom 0.2 xpos 1.0 ypos 0.2
         linear 0.4 xpos 0.6
+    pause 0.4
+    show char_ingrid love at notSpeakingAnim(0.18, 1.115, 1.14, 0.25)
     nar "{i}{color=#f2de5c}D'un coté, Beaudrik, parangon de virilité.{/i}{/color}"
+    show char_ingrid degout at notSpeakingAnim(0.18, 1.115, 1.14, 0.25)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
     nar "{i}{color=#f2de5c}De l'autre, Gaufrid, maigre et moche.{/i}{/color}"
+    show char_ingrid degout at notSpeakingAnim(0.18, 1.115, 1.14, 0.25)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    y "Quelqu’un peut m’expliquer ce qu’il se passe ?"
+    show char_ingrid degout at speakingAnim(0.18, 1.15, 1.17, 0.25)
+    i "Laisse le présentateur parler, Gaufrid !"
     #nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/color}{/i}"
     #nar "{i}{color=#f2de5c}Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
     #nar "{i}{color=#f2de5c}D'un coté, Beaudrik, parangon de virilité.{/color}{/i}"
     #nar "{i}{color=#f2de5c}De l'autre, Gaufrid, maigre et moche.{/color}{/i}"
 
-    jump taverne_Concours_Part2_1_Intro_choice
+    jump taverne_Concours_Part2_2_Manual
     
 # -----------------------------------------#   
 
@@ -569,27 +583,36 @@ label taverne_Concours_Part2_1_Intro_choice:
 
 label taverne_Concours_Part2_2_Manual:
 
-    outline "Il est maintenant l’heure de l’ultime épreuve qui départagera Beaudrik et Gaufrid !"
-    outline "« Le Procès de l’Amour ! »"
-    outline "Gaufrid, avez-vous lu le manuel, \n ou faut-il que je vous explique les règles ?"
+    show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    nar "{i}{color=#f2de5c}Il est maintenant l’heure de l’ultime épreuve qui départagera Beaudrik et Gaufrid !{/i}{/color}"
+    nar "{i}{b}{color=#f2de5c}« Le Procès de l’Amour ! »{/i}{/b}{/color}"
+    nar "{i}{color=#f2de5c}Gaufrid, avez-vous lu le manuel, ou faut-il que je vous explique les règles ?{/i}{/color}"
 
     menu:
+        nar "{cps=0}{i}{color=#f2de5c}Gaufrid, avez-vous lu le manuel, ou faut-il que je vous explique les règles ?{/i}{/color}{/cps}"
         "Quel manuel ?":
+            show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
             y "Euh ?"
-            outline "Celui à votre gauche, Gaufrid. \n Juste à côté de l’ordi."
+            nar "{i}{color=#f2de5c}Celui à votre gauche, Gaufrid. Juste à côté de l’ordi.{/i}{/color}"
             pause 1.5
-            outline "..."
-            outline "C'est bon ou pas ?"
+            nar "{i}{color=#f2de5c}...{/i}{/color}"
+            nar "{i}{color=#f2de5c}C'est bon ou pas ?{/i}{/color}"
             jump taverne_Concours_Part2_2_Manual_Extra
         "Bien sûr que oui":
             y "Je l’ai appris par cœur."
-            outline "Maigre, moche et menteur."
-            outline "Ça va surement bien se passer pour vous."
+            show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+            nar "{i}{color=#f2de5c}Maigre, moche et menteur.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Ça va surement bien se passer pour vous.{/i}{/color}"
             jump taverne_Concours_Part2_3_Rules
         "J’ai oublié règles":
+            show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
             y "Euh… j’ai un trou de mémoire."
-            outline "Maigre, moche et amnésique."
-            outline "Ça va surement bien se passer pour vous."
+            nar "{i}{color=#f2de5c}Maigre, moche et amnésique.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Ça va surement bien se passer pour vous.{/i}{/color}"
             jump taverne_Concours_Part2_3_Rules
 
 # -----------------------------------------#
@@ -597,19 +620,19 @@ label taverne_Concours_Part2_2_Manual:
 label taverne_Concours_Part2_2_Manual_Extra:
     
     menu:
+        nar "{cps=0}{i}{color=#f2de5c}C'est bon ou pas ?{/i}{/color}{/cps}"
         "Toujours pas":
             y "Je ne vois pas de manuels."
-            outline "Maigre, moche et aveugle."
-            outline "Ça va surement bien se passer pour vous."
+            nar "{i}{color=#f2de5c}Maigre, moche et aveugle.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Ça va surement bien se passer pour vous.{/i}{/color}"
         "J’ai trouvé":
             y "Euh… c’est bon !"
-            outline "Maigre, moche et menteur."
-            outline "Ça va surement bien se passer pour vous."
+            nar "{i}{color=#f2de5c}Maigre, moche et menteur.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Ça va surement bien se passer pour vous.{/i}{/color}"
         "Un manuel de jeu en 2017 ?":
             y "Ça fait 10 ans que les jeux-vidéo n’ont plus de manuels."
-            outline "Ne faites pas le type moderne, Gaufrid."
-            outline "Vous êtes un germain du 1er siècle \n et vous jouez à une Visual Novel."
-            outline "Vous n’êtes pas vraiment avant-gardiste."
+            nar "{i}{color=#f2de5c}Ne faits pas le type moderne, Gaufride{/i}{/color}"
+            nar "{i}{color=#f2de5c}Après tout, c'est vous le germain du premier siècle qui joue à une Visual Novel.{/i}{/color}"
     
     jump taverne_Concours_Part2_3_Rules
 
@@ -617,12 +640,24 @@ label taverne_Concours_Part2_2_Manual_Extra:
 
 label taverne_Concours_Part2_3_Rules:
     
-    outline "Bref, je vous explique les règles."
-    outline "Pour ce dernier test, {i}{b}{color=#f2de5c}Beaudrik{/color}{/b}{/i}, Champion en Titre, sera acclamé par les habitants du village pour ses nombreuses qualités."
-    outline "{i}{b}{color=#f2de5c}Gaufrid{/color}{/b}{/i}, Challengeur de cet épisode, devra faire preuve d’humilité et se taire, car de toute façon il ne vaut rien."
-    outline "Ceci dit, il pourra {i}{b}{color=#f2de5c}faire objection{/color}{/b}{/i} aux nombreux compliments faits à Beaudrik, s’il le souhaitera."
-    outline "Nous pouvons passer aux {i}{b}{color=#f2de5c}interviews{/color}{/b}{/i}, ou {i}{b}{color=#f2de5c}commencer le jeu{/color}{/b}{/i}."
-    outline "Que souhaitez-vous faire, Gaufrid ?"
+    nar "{i}{color=#f2de5c}Bref, je vous explique les règles.{/i}{/color}"
+    show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    nar "{i}{color=#f2de5c}Pour ce dernier test, {b}Beaudrik{/b}, Champion en Titre, sera acclamé par les habitants du village pour ses qualités.{/i}{/color}"
+    show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    nar "{i}{color=#f2de5c}{b}Gaufrid{/b}, Challengeur de cet épisode, devra faire preuve d’humilité et se taire, car de toute façon il ne vaut rien.{/i}{/color}"
+    nar "{i}{color=#f2de5c}Ceci dit, il pourra {i}{b}{color=#f2de5c}faire objection{/color}{/b}{/i} aux nombreux compliments faits à Beaudrik, s’il le souhaitera.{/i}{/color}"
+    show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    nar "{i}{color=#f2de5c}Nous pouvons passer aux {b}interviews{/b}, ou {b}commencer le jeu{/b}.{/i}{/color}"
+    show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25):
+        zoom 1.0 xpos 0.18 ypos 1.2
+        linear 1.0 xpos -0.3
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2):
+        zoom 1.0 xpos 0.86 ypos 0.85
+        linear 1.0 xpos 1.5
+    nar "{i}{color=#f2de5c}Que souhaitez-vous faire, Gaufrid ?{/i}{/color}"
     
     jump taverne_Concours_Part2_4_Hub
 
@@ -631,44 +666,72 @@ label taverne_Concours_Part2_3_Rules:
 label taverne_Concours_Part2_4_Hub:
     
     menu:
+        nar "{cps=0}{i}{color=#f2de5c}Que souhaitez-vous faire, Gaufrid ?{/i}{/color}{/cps}"
         "{color=#FFFFFF}Interview de Ingrid{/color}":
             y "Je voudrais voir l’interview de Ingrid."
-            outline "Excellent choix !"
-            show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
-                xpos 0.17 ypos 1.1
-            outline "Monsieur dames : Ingrid, 22 ans, belle du village et prix à gagner !"
+            nar "{i}{color=#f2de5c}Excellent choix !{/i}{/color}"
+            nar "{i}{color=#f2de5c}Monsieur dames : Ingrid, 22 ans, belle du village et prix à gagner !{/i}{/color}"
+            show char_ingrid love:
+                xalign 0.5 yalign 0.8
+                xpos -0.5 ypos 1.5 zoom 0.25 rotate 30
+                linear 0.5 xpos 0.05 ypos 1.15
+            #show char_ingrid normal at notSpeakingAnim(0.5, 0.95, 0.92, 0.22) with Dissolve(0.5)
+            pause 0.5
+            #show char_ingrid normal at speakingAnim(0.50, 1.0, 0.98, 0.22)
             i "Bonjour ! Merci, merci !"
-            outline "Ingrid, décrivez-nous votre homme idéal."
+            show char_ingrid love:
+                xalign 0.5 yalign 0.8
+                xpos 0.05 ypos 1.15 zoom 0.25 rotate 30
+                #linear 0.5 xpos 0.8 ypos 1.15
+                parallel:
+                    linear 0.5 xpos 0.5
+                parallel:
+                    linear 0.3 rotate 0
+            nar "{i}{color=#f2de5c}Ingrid, décrivez-nous votre homme idéal.{/i}{/color}"
+            show char_ingrid normal at speakingAnim(0.5, 1.15, 1.17, 0.25)
             i "J’ai besoin d’un homme fort qui sait monter les meubles."
             i "Je trouve que c’est vachement important un mec qui sait monter des meubles car… moi c’est pas du tout mon truc et…"
+            show char_ingrid degout at speakingAnim(0.5, 1.15, 1.17, 0.25)
             i "...voilà, s’il ne sait pas monter des meubles je ne sais pas comment on va faire."
+            show char_ingrid love at speakingAnim(0.5, 1.15, 1.17, 0.25)
             i "Sinon j’aime bien les hommes courageux, honnêtes et sans anormalités physiques."
-            outline "Merci Ingrid ! A bientôt !"
-            hide char_ingrid normal
+            show char_ingrid love at speakingAnim(0.5, 1.35, 1.17, 0.25):
+                    zoom 1.0 xpos 0.5 ypos 1.35
+                    linear 2.0 xpos 1.5
+            nar "{i}{color=#f2de5c}Merci Ingrid ! A bientôt !{/i}{/color}"
             jump taverne_Concours_Part2_4_Hub
             
         "{color=#FFFFFF}Interview de Beaudrik{/color}":
             y "Je voudrais voir l’interview de Beaudrik."
-            outline "Excellent choix !"
-            outline "Monsieur dames : Beaudrik, Champion en titre !"
-            show char_beaudrik normal left :
-                zoom 0.2 xpos 1.0 ypos 0.2
-                linear 0.4 xpos 0.6
+            nar "{i}{color=#f2de5c}Excellent choix !{/i}{/color}"
+            nar "{i}{color=#f2de5c}Monsieur dames : Beaudrik, Champion en titre !{/i}{/color}"
+            show char_beaudrik drague right at notSpeakingAnim(0.86, 0.85, 0.88, 0.45):
+                xalign 0.45 yalign 0.8
+                zoom 0.5 xpos 1.5 ypos 0.77
+                linear 0.7 xpos 0.7
             bg "Merci les gars !"
-            outline "Beaudrik, vous sentez-vous prêt ?"
+            nar "{i}{color=#f2de5c}Beaudrik, vous sentez-vous prêt ?{/i}{/color}"
+            show char_beaudrik normal left at speakingAnim(0.8, 0.85, 0.86, 0.2)
             bg "Je suis à fond dans le truc. Moi, les compètes j’aime bien."
-            bg "Sinon je suis un peu nerveux car Josiane, mon ex, est parmi le public."
+            show char_beaudrik mepris2 left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            bg "Sinon je suis un peu nerveux car Josiane, mon ex-fiancée, est parmi le public."
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.85, 0.86, 0.2)
             bg "J’espère que Ingrid ne découvre pas que ce n’est pas fini-fini entre Josiane et moi."
-            outline "Beaudrik, je vous rappelle que Gaufrid, votre adversaire, est juste devant vous."
-            bg "Ah ! Tiens, salut Gaufrid !"
-            outline "Au revoir Beaudrik !"
+            show char_beaudrik mepris left at notSpeakingAnim(0.8, 0.85, 0.86, 0.2)
+            nar "{i}{color=#f2de5c}Beaudrik, je vous rappelle que Gaufrid, votre adversaire, est juste devant vous.{/i}{/color}"
+            show char_beaudrik choque left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            bg "Ah ! Euh..."
+            show char_beaudrik choque left at speakingAnim(0.8, 0.85, 0.86, 0.2):
+                zoom 1.0 xpos 0.8 ypos 1.0
+                linear 1.0 xpos 1.5
+            nar "{i}{color=#f2de5c}Merci Beaudrik !{/i}{/color}"
             hide char_beaudrik normal left
             jump taverne_Concours_Part2_4_Hub
             
         "{color=#FFFFFF}Mon interview{/color}":
             y "Je voudrais m’interviewer moi-même."
-            outline "Gaufrid, déjà on ne vous donne pas favori."
-            outline "Ne vous tirez pas une balle dans le pied non plus."
+            nar "{i}{color=#f2de5c}Gaufrid, déjà on ne vous donne pas favori.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Ne vous tirez pas une balle dans le pied non plus.{/i}{/color}"
             jump taverne_Concours_Part2_4_Hub
             
         "On peut commencer !":
@@ -678,20 +741,34 @@ label taverne_Concours_Part2_4_Hub:
 # -----------------------------------------#
 label taverne_Concours_Part3_Brutalmund:
     
-    outline "Très bien, nous appelons le premier témoin : le père de Beaudrik !"
-    show char_brutal normal :
-        zoom 0.4 xpos -0.5 ypos 0.05
-        linear 0.7 xpos 0.001
-    brut "Alors déjà, tu ne m’appelles pas comme ça. C’est un peu gratuit quand même."
-    outline "Excusez-moi, Monsieur Brutalmund."
-    brut "Deuxième chose, je ne voulais pas venir. On m’a obligé ! Obligé je vous dis !"
+    nar "{i}{color=#f2de5c}Très bien, nous appelons le premier témoin : le père de Beaudrik !{/i}{/color}"
+    show char_brutal normal:
+        zoom 0.35 xpos 1.5 ypos 0.07
+        linear 1.5 xpos 0.27
+    pause 1.5
+    show char_brutal colere at speakingAnim(0.52, 0.95, 0.95, 0.35)
+    brut "Je vous avez dit de ne pas m'appeler comme ça en publique !"
+    show char_brutal normal at notSpeakingAnim(0.52, 0.95, 0.95, 0.35)
+    nar "{i}{color=#f2de5c}Excusez-moi, Monsieur Brutalmund.{/i}{/color}"
+    show char_brutal colere at speakingAnim(0.52, 0.95, 0.95, 0.35)
+    brut "Moi, je ne voulais pas venir. On m’a obligé ! Obligé je vous dis !"
+    show char_brutal normal at speakingAnim(0.52, 0.95, 0.95, 0.35)
     brut "Mais vous savez comment c’est. Je n’en peux plus de mon fils là, Beaudrik."
+    show char_brutal heureux at speakingAnim(0.52, 0.95, 0.95, 0.35)
     brut "Alors j’ai envie qu’il gagne, histoire qu’il se marie et qu’il se casse."
-    outline "Que pensez-vous de votre fils, Monsieur Brutalmund ?"
+    show char_brutal normal at notSpeakingAnim(0.52, 0.95, 0.95, 0.35)
+    nar "{i}{color=#f2de5c}Que pensez-vous de votre fils, Monsieur Brutalmund ?{/i}{/color}"
+    show char_brutal normal at speakingAnim(0.52, 0.95, 0.95, 0.35)
     brut "C’est une vraie mauviett…"
+    show char_brutal surpris at speakingAnim(0.52, 0.95, 0.95, 0.35)
     brut "Euh, attendez, il faut que je dise des trucs bien pour qu’il gagne ?"
-    outline "C’est l’idée."
+    show char_brutal surpris at notSpeakingAnim(0.52, 0.95, 0.95, 0.35)
+    nar "{i}{color=#f2de5c}C’est l’idée.{/i}{/color}"
+    show char_brutal normal at speakingAnim(0.52, 0.95, 0.95, 0.35)
     brut "Ah… euh… il est fort et courageux."
+    show char_brutal normal at speakingAnim(0.52, 0.95, 0.95, 0.35):
+        zoom 1.0 xpos 0.52 ypos 1.15
+        linear 1.5 xpos -0.5
     jump taverne_Concours_Part3_Brutalmund_Choice
 
 # -----------------------------------------#
@@ -699,21 +776,24 @@ label taverne_Concours_Part3_Brutalmund:
 label taverne_Concours_Part3_Brutalmund_Choice:
 
     menu:
+        brut "{cps=0}Ah… euh… il est fort et courageux.{/cps}"
         "Objection !":
-            y "Objection !"
-            y "Beaudrik est un lâche !"
-            brut "Gaufrid, mon pote ! Ne me fais pas ça !"
-            show char_beaudrik normal left :
-                zoom 0.2 xpos 1.0 ypos 0.2
-                linear 0.4 xpos 0.6
-            bg "Ne t’inquiète pas pour moi, Papounet, en tout cas il ne peut pas le prouver !"
+            y "Objection ! Beaudrik est un lâche !"
+            show char_beaudrik mepris left :
+                zoom 0.2 xpos 1.0 ypos 0.8
+                linear 0.4 xpos 0.8
+            bg "Tsk ! Tu ne peux pas le prouver !"
             jump taverne_Concours_Part3_Brutalmund_Choice_Subchoice
             
         "C'est pas faux":
+            show char_beaudrik normal left :
+                zoom 0.2 xpos 1.0 ypos 0.15
+                linear 0.4 xpos 0.6
             y "J’aimerais bien être comme lui."
             hide char_brutal normal
-            outline "Mais c’est le cas, Gaufrid."
-            outline "Vous ne saviez pas que Beaudrik dort avec un nounours car il peur du noir ?"
+            nar "{i}{color=#f2de5c}Mais c’est le cas, Gaufrid.{/i}{/color}"
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.8, 0.82, 0.2)
+            nar "{i}{color=#f2de5c}Vous ne saviez pas que Beaudrik dort avec un nounours car il peur du noir ?{/i}{/color}"
             jump taverne_Concours_Part3_Ingrid
 
 # -----------------------------------------#
@@ -721,24 +801,23 @@ label taverne_Concours_Part3_Brutalmund_Choice:
 label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
     
     hide char_brutal normal
+    show char_beaudrik normal left at notSpeakingAnim(0.85, 0.8, 0.86, 0.2)
     menu:
+        bg "{cps=0}Tsk ! Tu ne peux pas le prouver !{/cps}"
         "Il a peur du noir":
-            y "Brutalmund est un menteur. Il sait très bien que son fils dort avec un nounours !"
-            bg "Papounet, pourquoi tu lui as dit ?!"
-            i "Tu dors avec un nounours ?!"
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.8, 0.82, 0.2)
+            y "Brutalmund est un menteur. Il sait très bien que son fils a peur du noir !"
 
         "Il a peur des buffles":
             y "Les buffles, ils le terrifient !"
-            outline "Non, ça c'est l'autre"
+            nar "{i}{color=#f2de5c}Non, ça c'est l'autre{/i}{/color}"
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.85, 0.86, 0.2)
             bg "Mais comment tu peux dire ça ?!"
+            show char_beaudrik normal left at speakingAnim(0.8, 0.85, 0.86, 0.2)
             bg "Les buffles, c’est délicieux."
-            outline "Mauvaise réponse, Gaufrid ! La bonne réponse était qu’il a peur du noir."
-
-        "Il a peur de Ernust":
-            y "J’ai vu comment tu regardes Ernust."
-            y "Il te fait peur !"
-            bg "Écoute, on sait bien que ton pote ça craint. Mais en vrai je l’aime bien."
-            outline "Mauvaise réponse, Gaufrid ! La bonne réponse était qu’il a peur du noir."
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.85, 0.86, 0.2)
+            nar "{i}{color=#f2de5c}Mauvaise réponse, Gaufrid ! La bonne réponse était qu’il a peur du noir.{/i}{/color}"
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.85, 0.82, 0.18)
 
     jump taverne_Concours_Part3_Ingrid
 
@@ -747,17 +826,38 @@ label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
 
 label taverne_Concours_Part3_Ingrid:
 
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
-        xpos 0.17 ypos 1.1
-    hide char_beaudrik normal left
-
+    show char_ingrid choc:
+        xalign 0.5 yalign 0.8
+        xpos -0.5 ypos 1.5 zoom 0.25 rotate 30
+        linear 0.5 xpos 0.05 ypos 1.15
+            #show char_ingrid normal at notSpeakingAnim(0.5, 0.95, 0.92, 0.22) with Dissolve(0.5)
+    pause 0.5
+            #show char_ingrid normal at speakingAnim(0.50, 1.0, 0.98, 0.22)
+    i "Tu as peur du noir ?!"
+    show char_ingrid love:
+        xalign 0.5 yalign 0.8
+        xpos 0.05 ypos 1.15 zoom 0.25 rotate 30
+                #linear 0.5 xpos 0.8 ypos 1.15
+        parallel:
+            linear 1.5 xpos 0.2
+        parallel:
+            linear 1.5 rotate 0
+    show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    pause 0.5
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
     i "Tiens, moi aussi !"
+    show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18) # A FLIPPER
     i "Mais les hommes sensibles c’est pas trop mon truc."
-    outline "Silence ! J’appelle le \n dernier témoin, Ingrid elle-même !"
-    i "Faisons-ça vite, je ferme dans dix minutes !"
-    outline "Ingrid, que pensez-vous de Beaudrik ?"
+    show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+    nar "{i}{color=#f2de5c}Silence ! J’appelle le deuxième témoin, Ingrid elle-même !{/i}{/color}"
+    nar "{i}{color=#f2de5c}Ingrid, que pensez-vous de Beaudrik ?{/i}{/color}"
+    show char_ingrid normal at speakingAnim(0.2, 1.15, 1.17, 0.25)
     i "Bon, ce n’est pas le plus intelligent, mais Gaufrid n’est pas un génie non plus !"
-    i "Au moins Beaudrik est beau gosse, c’est un bon parti."
+    show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    i "Au moins Beaudrik n'a pas d'imperfections phyisiques."
+    show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
 
     jump taverne_Concours_Part3_Ingrid_Choice
     
@@ -766,24 +866,27 @@ label taverne_Concours_Part3_Ingrid:
 label taverne_Concours_Part3_Ingrid_Choice:
 
     menu:
-        "Objection ! Il est moche !":
-            y "Objection !"
-            y "Beaudrik est moche !"
+        i "{cps=0}Au moins Beaudrik n'a pas d'imperfections phyisiques.{/cps}"
+        "Objection ! Il est imparfait !":
+            y "Objection ! Beaudrik est moche !"
+            show char_ingrid normal at speakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             i "Tu n’aurais pas bu un coup de trop, Gaufrid ?"
-            show char_beaudrik normal left :
-                zoom 0.2 xpos 1.0 ypos 0.2
-                linear 0.4 xpos 0.6
-            i "Comment ça il est moche ?"
+            show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.8, 0.82, 0.18)
+            bg "Comment ça je suis moche ?"
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             jump taverne_Concours_Part3_Ingrid_Choice_Subchoice
             
         "En effet":
             y "C’est un joli garçon, en effet."
-            show char_beaudrik normal left :
-                zoom 0.2 xpos 1.0 ypos 0.2
-                linear 0.4 xpos 0.6
+            show char_beaudrik drague right at speakingAnim(0.70, 0.85, 0.86, 0.22)
             bg "Oh c’est gentil !"
-            bg "J’ai beau être un homme mais j’aime bien prendre soin de moi."
-            outline "Même de votre troisième téton ?"
+            show char_beaudrik normal left at speakingAnim(0.8, 0.8, 0.82, 0.18)
+            bg "J’ai beau être un homme mais j’aime bien prendre soin de mon corps."
+            show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            nar "{i}{color=#f2de5c}Même de votre troisième téton ?{/i}{/color}"
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.85, 0.82, 0.18)
             jump taverne_Concours_Part4_Final
 
 # -----------------------------------------#  
@@ -791,29 +894,36 @@ label taverne_Concours_Part3_Ingrid_Choice:
 label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
     
     menu:
+        bg "{cps=0}Comment ça je suis moche ?{/cps}"
         "Il a un gros nez !":
             y "Vous avez vu son nez ? C’est une caverne !"
+            show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
             i "Je sais pas, moi je trouve ça sécurisant."
-            outline "Ça va vous rassurer quand vous verrez son troisième téton."
+            show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            nar "{i}{color=#f2de5c}Vous changeriez d'avis quand vous verrez le troisième téton{/i}{/color}"
 
         "Il a 3 tétons !":
             y "Toutes les jeunes femmes du village le savent ! Il a un troisième téton !"
 
         "{color=#FFFFFF}Il est maigre et moche !{/color}":
             y "Euh… il est maigre et moche !"
-            outline "Non Gaufrid, ça c’est vous."
+            show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            nar "{i}{color=#f2de5c}Non Gaufrid, ça c’est vous.{/i}{/color}"
             y "Ah oui, c’est vrai. Désolé."
-            outline "Non, non, c’est moi. Excusez-moi."
-            outline "Je n’ai peut-être pas assez insisté là-dessus."
+            nar "{i}{color=#f2de5c}Non, non, c’est moi. Excusez-moi.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Je n’ai peut-être pas assez insisté là-dessus.{/i}{/color}"
             y "C’était pas super clair en effet."
-            outline "Alors écoutez-moi bien :"
-            outline "{b}VOUS ETES MAIGRE ET MOCHE.{/b}"
-            outline "C’est mieux comme ça ?"
+            nar "{i}{color=#f2de5c}Alors écoutez-moi bien :{/i}{/color}"
+            nar "{i}{color=#f2de5c}{b}VOUS ETES MAIGRE ET MOCHE.{/b}{/i}{/color}"
+            nar "{i}{color=#f2de5c}C’est mieux comme ça ?{/i}{/color}"
             y "Beaucoup mieux, merci."
-            outline "De rien. Hésitez pas s’il y a autre chose qui vous échappe."
+            nar "{i}{color=#f2de5c}De rien. Hésitez pas s’il y a autre chose qui vous échappe.{/i}{/color}"
             y "Merci bien."
-            outline "Je vous remets dans la boucle."
+            nar "{i}{color=#f2de5c}Je vous remets dans la boucle.{/i}{/color}"
             y "C’est gentil."
+            show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             jump taverne_Concours_Part3_Ingrid_Choice_Subchoice
 
     jump taverne_Concours_Part4_Final
@@ -822,17 +932,27 @@ label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
 
 label taverne_Concours_Part4_Final:
     
+    show char_ingrid normal at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
     i "Un troisième téton ?! Mais c’est une imperfection physique complètement discrète et négligeable !"
+    show char_ingrid choc at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
     i "C’est dégueulasse !"
+    show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
     i "Beaudrik, je suis très déçue."
-    bg "Ingrid ! Ne dis pas ça !"
     i "Ce n’est pas le téton, hein. C’est le principe."
-    i "T’aurais dû me le dire. Je ne sais pas si je peux te faire confiance."
+    show char_ingrid choc at speakingAnim(0.2, 1.15, 1.17, 0.25)
     i "Tu m’avais promis que tu n’avais que deux tétons !"
-    outline "Bon. En parlant de confiance, Ingrid, pensez-vous que Beaudrik est un gars honnête ?"
+    show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+    nar "{i}{color=#f2de5c}Bon. En parlant de confiance, Ingrid, pensez-vous que Beaudrik est un gars honnête ?{/i}{/color}"
+    show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
     i "Hors-mis le téton N°3 ?"
-    outline "Oui."
-    i "Il ne m’a jamais menti. Je pense qu’il serait un époux fidèle et loyal."
+    show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+    nar "{i}{color=#f2de5c}Oui.{/i}{/color}"
+    show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    i "Je pense qu’il serait un époux fidèle et loyal."
+    show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
 
     jump taverne_Concours_Part4_Final_Choice
 
@@ -841,18 +961,26 @@ label taverne_Concours_Part4_Final:
 label taverne_Concours_Part4_Final_Choice:
     
     menu:
+        i "Je pense qu’il serait un époux fidèle et loyal."
         "Objection !":
-            y "Objection !"
-            y "Beaudrik a déjà une copine !"
+            show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            y "Objection ! Beaudrik a déjà une copine !"
+            show char_ingrid choc at speakingAnim(0.2, 1.15, 1.17, 0.25)
             i "Comment ça il a une copine ?!"
             i "Comment elle s’appelle cette vache ?!"
+            show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             jump taverne_Concours_Part4_Final_Choice_Subchoice
             
         "Elle a raison":
             y "C’est vraiment un mec bien."
+            show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
             i "N’est-ce pas ?"
-            outline "Dommage qu’il soit déjà pris. Votre ami a déjà une fiancée."
-            outline "Elle s’appelle Josiane."
+            show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            nar "{i}{color=#f2de5c}Dommage qu’il soit déjà pris. Votre ami a déjà une fiancée.{/i}{/color}"
+            show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            nar "{i}{color=#f2de5c}Elle s’appelle Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
             
 # -----------------------------------------#
@@ -860,34 +988,54 @@ label taverne_Concours_Part4_Final_Choice:
 label taverne_Concours_Part4_Final_Choice_Subchoice:
 
     menu:
+        i "{cps=0}Comment elle s’appelle cette vache ?!{/cps}"
         "Johanne":
+            show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             y "Euh… Johanne ?"
-            outline "Vous y étiez presque, Gaufrid."
-            outline "Elle s’appelle Josiane."
+            nar "{i}{color=#f2de5c}Vous y étiez presque, Gaufrid.{/i}{/color}"
+            show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            nar "{i}{color=#f2de5c}Elle s’appelle Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
 
         "Josiane":
+            show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             y "Josiane ! Elle s’appelle Josiane !"
             jump taverne_Concours_Part5_Ending
 
         "Jovanne":
+            show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             y "Euh… Jovanne ?"
-            outline "Vous y étiez presque, Gaufrid."
-            outline "Elle s’appelle Josiane."
+            nar "{i}{color=#f2de5c}Vous y étiez presque, Gaufrid.{/i}{/color}"
+            show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            nar "{i}{color=#f2de5c}Elle s’appelle Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
 
         "{color=#FFFFFF}Ernust{/color}":
             y "Ernust !"
-            show char_ernust normal right :
-                zoom 0.9 xpos 0.4 ypos 0.2
+            show char_ernust love2 :
+                xpos 0.5 ypos 1.5 zoom 0.8 #rotate 30
+                linear 0.5 xpos 0.15 ypos 0.2
             e "Gaufrid ! Tu m’as appelé ?"
             y "Oui, comment elle s’appelle la copine de Beaudrik déjà ?"
+            show char_ernust inquiet at speakingAnim(0.5, 1.3, 1.32, 0.8)
             e "Ça commence avec un J, je crois."
             y "Ça m’aide beaucoup."
+            show char_ernust love2 at speakingAnim(0.5, 1.2, 1.22, 0.8)
             e "On est vraiment un duo dynamique !"
+            show char_ernust love2 :
+                xpos 0.5 ypos 1.2 zoom 0.8 #rotate 30
+                linear 1.0 xpos 0.5 ypos 2.0
             y "Dégage ! Hop !"
-            hide char_ernust normal right
-            i "Alors ?! Comment elle s’appelle ?"
+            hide char_ernust
+            show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
+            i "Alors ?!"
+            i "Comment elle s’appelle cette vache ?!"
+            show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             jump taverne_Concours_Part4_Final_Choice_Subchoice
 
 # -----------------------------------------#
@@ -899,7 +1047,7 @@ label taverne_Concours_Part5_Ending:
     goat "Beeeh !"
     i "MAIS QU’EST-CE QU’ELLE A DE PLUS QUE MOI ?!"
     bg "C’est platonique, Ingrid, crois-moi !"
-    outline "Beaudrik, vous êtes disqualifié."
+    nar "{i}{color=#f2de5c}Beaudrik, vous êtes disqualifié.{/i}{/color}"
     bg "Tu vas me la payer, Gaufrid !"
     bg "Je le dirai à mon Papa."
     hide char_beaudrik normal left
@@ -939,11 +1087,8 @@ label taverne_Concours_Part6_Conclusion:
     y "Ah oui… c’est vrai qu’il y a cette tradition."
     show char_ernust normal right :
                 zoom 0.9 xpos 0.4 ypos 0.2
-    e "Mince, dommage que Véléda soit morte !"
-    i "Euh ?"
-    y "MORTE… de rire pour les bêtises que tu racontes, mon cher Ernust !"
-    i "Bon ! C'est décidé ! Demain matin tu viendras me chercher et on ira se marier à la tour !"
-    i "Sois ponctuel !"
+    i "Bon ! C'est décidé ! On se voit dans dix minutes à la Tour de Véléda !"
+    i "Sois ponctuel ma Gaufrette !"
     
     jump taverne_Concours_Part6_FadeToBlack
 
@@ -952,13 +1097,10 @@ label taverne_Concours_Part6_Conclusion:
 label taverne_Concours_Part6_FadeToBlack:
 
     scene black with Dissolve(0.5)
-    y "On est mal. On est très mal."
-    y "Comment on va faire ?"
-    outline "Bon, moi j’ai fait ma part."
-    outline "Là tu vas devoir te débrouiller tout seul."
-    outline "Allez, salut ma caille !"
+    y "Je le savais."
+    y "Je me suis fait bolosser."
     pause 2.0
-    outline "{i}Le lendemain matin...{/i}"
+    outline "{i}Dix minutes plus tard...{/i}"
 
 label taverne_MarryingIngridPart1:
 
