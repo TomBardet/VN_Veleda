@@ -5,7 +5,11 @@ init python:
     _testA = 0
     _testB = 0
 label romains_PremiereRencontre:
-    
+    if Acte2_Romains_FirstVisit == 1:
+        scene bg_romains with Dissolve(1.5):
+                zoom 1.15 xpos -0.15
+    else:
+        scene bg_romains with Dissolve(1.5)
     jump romains_Part1
 
 # -----------------------------------------#
@@ -32,6 +36,7 @@ label romains_Part1:
         elif _return == "sortir":
             hide screen datingSim
             stop music1 fadeout 1.0
+            scene black with Dissolve(1.0)
             jump PlaceDuVillageDefault
     
         jump romains_Part5
@@ -49,6 +54,7 @@ label romains_Part1:
         elif _return == "sortir":
             hide screen datingSim
             stop music1 fadeout 1.0
+            scene black with Dissolve(1.0)
             jump PlaceDuVillageDefault
             
             

@@ -9,7 +9,10 @@ init:
     $ _etableDone = 0
     $  _testEtable = 0
     $  _testRomainsTalk = 0
-    
+label etable_fromPlace:
+    scene bg_etables with Dissolve(1.5):
+        zoom 0.70
+    jump etables_PeurDesBufflesPart1
 label etables_PeurDesBufflesPart1:
     $ _window_during_transitions = False
     scene bg_etables:
