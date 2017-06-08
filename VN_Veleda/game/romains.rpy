@@ -241,7 +241,7 @@ label romains_VisitePart2:
     
     play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
     show char_numerimus heureux at speakingAnim(0.2, 0.82, 0.8, 1)
-    num "Mais c'est extra ! Donne moi ça !"
+    num "Mais c'est extra ! Donnez moi ça !"
     $ loveGauge(num_char, +35, 0.36, 0.28)
     hide screen inventory_screen
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
@@ -325,8 +325,7 @@ label romains_VisitePart4:
     
     stop music1 fadeout 1.0
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 2)
-    scene bg_tour with Dissolve (1) :
-        xpos 0 ypos -960
+    scene bg_antichambre with Dissolve (1.0)
     show char_ernust normal right at notSpeakingAnim (0.3, 0.92, 0.9, 0.6)  with Dissolve(1.5)
     jump romains_VisitePart5
     
@@ -429,13 +428,9 @@ label romains_VisitePart9:
     
     stop music1 fadeout 1.0
     hide screen datingSim
-    scene bg_tour :
-        xpos 0 ypos -960
-        linear 2.0 xpos 0 ypos 0
-        
-    play sound "sfx/SFX_Stairs_01.ogg"   
-    pause 2.0
+    scene black with Dissolve (1.0)
     play sound "sfx/SFX_Stairs_01.ogg"
+    scene bg_chambre with Dissolve (3.0)
     jump romains_VisitePart10
 
 # -----------------------------------------#
@@ -608,12 +603,7 @@ label romains_FinDeLaVisite80:
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Le spectacle est terminé ! Hop hop hop, on retourne à l'entrée !"
     hide screen datingSim
-    scene bg_tour :
-        xpos 0 ypos 0
-        linear 2.0 xpos 0 ypos -960
-    play sound "sfx/SFX_Stairs_01.ogg"   
-    pause 2.0
-    
+    scene bg_antichambre with Dissolve (1.0)
     show char_numerimus heureux lunette at speakingAnim(0.5, 0.92, 0.9, 1)
     show screen datingSim(num_char, 0.55, 0.35)
 
@@ -644,8 +634,6 @@ label romains_FinDeLaVisite80:
         easeout 0.3 zoom 1.0 
         pause 0.5
         linear 0.3 xpos 1.0
-        
-    hide screen datingSim
     hide char_numerimus normal lunette with Dissolve(1.5)
     hide screen datingSim
     pause 3.0
@@ -670,7 +658,7 @@ label romains_Blague:
     if _testBlague == 1:
         y "Tenez lisez ça..."
         show screen inventory_screen(obj = "blague")
-        pause 3.0
+        pause 1.0
         hide screen inventory_screen
         play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Rire_01.ogg"
         show char_numerimus heureux at speakingAnim(0.2, 0.82, 0.8, 1)
@@ -706,16 +694,16 @@ label romains_Blague:
             linear 0.3 xpos 1.0
         pause 3.0
         y "... Mais je vais faire quoi d'une {b}trompette{/b} moi ?"
-        show char_ernust normal left:
+        show char_ernust normal right:
             xalign 0.5 yalign 0.8
-            xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
+            xpos -0.5 ypos 1.5 zoom 0.8 rotate 30
             linear 1.0 xpos 0.05 ypos 1.15
         pause 1.5
         
         play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
         e "On peut s'en servir pour faire peur aux animaux !"
         y "... Mais de quoi tu parles ?"
-        show char_ernust normal left:
+        show char_ernust normal right:
             xalign 0.5 yalign 0.8
             xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
             linear 1.0 xpos -0.5 ypos 1.5

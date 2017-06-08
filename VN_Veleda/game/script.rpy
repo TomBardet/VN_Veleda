@@ -238,7 +238,7 @@ label narration_ellipseCuite:
 # -----------------------------------------#
 
 label PlaceDuVillageAllObjects:
-    scene bg_place with Dissolve(1.5)
+    scene bg_place
     window hide    
     y "Attends... J'ai un glaive..."
     show screen inventory_screen(obj = "glaive")
