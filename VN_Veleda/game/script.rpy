@@ -47,6 +47,7 @@ label start:
         Acte1_Tour_CoupableJugement = "Brutalmund" # Coupable de l'Acte 1 -> "Brutalmund" ou "Crossfit"
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         Acte2_Romains_FirstVisit = 0 #
+        Forge_reply_arnaque = 0
     
     #jump taverne_AbusAlcoolPart1
     jump intro

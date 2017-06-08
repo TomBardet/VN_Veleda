@@ -113,19 +113,23 @@ init:
     image bg_etables2 = "images/decor/Lieu_etables.png"
     image bg_forge = "images/decor/Lieu_forge.png"
     image bg_antichambre = "images/decor/Lieu_antichambre.png"
-    image bg_chambre = im.FactorScale("images/decor/Lieu_chambre.png", 0.35)
-    image bg_chambre_nuit = im.FactorScale("images/decor/Lieu_chambre_nuit.png", 0.35)
+    image bg_chambre = im.FactorScale("images/decor/Lieu_chambre.png", 0.70)
+    image bg_chambre_nuit = im.FactorScale("images/decor/Lieu_chambre_nuit.png", 0.70)
     image bg_romains = ("images/decor/Lieu_romains.png")
     image bg_place = im.FactorScale("images/decor/Lieu_place.png", 0.33)
     image bg_tour = im.FactorScale("images/decor/Lieu_tour.png", 0.70)
     image bg_buffles = "images/decor/Lieu_BuffleScene.png"
     #iamges de veleda
-    image vel_normal = im.FactorScale("images/decor/Lieu_chambre_veleda.png", 0.35)
-    image vel_morte = im.FactorScale("images/decor/Lieu_chambre_veledaMorte.png", 0.35)
-    image vel_mario = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette.png", 0.35)
-    image vel_normal_nuit = im.FactorScale("images/decor/Lieu_chambre_veleda_nuit.png", 0.35)
-    image vel_morte_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMorte_nuit.png", 0.35)
-    image vel_mario_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette_nuit.png", 0.35)
+    image vel normal = im.FactorScale("images/decor/Lieu_chambre_veleda.png", 0.70)
+    image vel normal2 = im.FactorScale("images/decor/Lieu_chambre_veleda2.png", 0.70)
+    image vel morte = im.FactorScale("images/decor/Lieu_chambre_veledaMorte.png", 0.70)
+    image vel mario = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette.png", 0.70)
+    image vel mario2 = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette2.png", 0.70)
+    image vel normal_nuit = im.FactorScale("images/decor/Lieu_chambre_veleda_nuit.png", 0.70)
+    image vel morte_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMorte_nuit.png", 0.70)
+    image vel mario_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette_nuit.png", 0.70)
+    image vel normal2_nuit = im.FactorScale("images/decor/Lieu_chambre_veleda2_nuit.png", 0.70)
+    image vel mario2_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette2_nuit.png", 0.70)
     
     #Intro
     image introCarte = im.FactorScale("images/intro/intro_map.png", 0.35)
