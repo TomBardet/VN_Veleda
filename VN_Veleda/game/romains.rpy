@@ -705,19 +705,19 @@ label romains_Blague:
             pause 0.5
             linear 0.3 xpos 1.0
         pause 3.0
-        y "... Mais je vais faire quoi d'une {b}trompette{/b} moi ?"
+        y "... Qu'est ce que je vais bien faire d'une {b}trompette{/b}, moi ?"
         show char_ernust normal left:
             xalign 0.5 yalign 0.8
-            xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
-            linear 1.0 xpos 0.05 ypos 1.15
-        pause 1.5
+            xpos 0.999 ypos 1.9 zoom 0.8 rotate -30
+            linear 0.3 xpos 0.9 ypos 1.3
+        #pause 1.5
         
         play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
         e "On peut s'en servir pour faire peur aux animaux !"
         y "... Mais de quoi tu parles ?"
         show char_ernust normal left:
             xalign 0.5 yalign 0.8
-            xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
-            linear 1.0 xpos -0.5 ypos 1.5
+            xpos 0.9 ypos 1.3 zoom 0.8 rotate -30
+            linear 0.3 xpos 0.999 ypos 1.9
         pause 1.0
         jump romains_Part5
