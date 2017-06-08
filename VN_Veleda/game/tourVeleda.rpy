@@ -104,12 +104,22 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Monsieur Brutalmund nie l'accusation ! Nous allons donc les départager avec..."
     
+    $ renpy.music.set_volume(0, delay = 0, channel='music1')
+    $ renpy.music.set_volume(0, delay = 0, channel='music2')
+    $ renpy.music.set_volume(0, delay=0, channel='ambiance')
+    
     show vel normal2 :
         xpos 0 ypos 0
         
     play sound "sfx/SFX_Drama_01.ogg"
     
+    $ renpy.pause(2.0, hard = True)
     v "Une prophétie !"
+    
+    $ renpy.music.set_volume(1, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(1, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(1, delay=0.4, channel='ambiance')
+    
  
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Euh.. il devrait pas plutôt porter plainte ?"
@@ -168,7 +178,7 @@ label tourVeleda_ErnustEtVeleda :
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bonjour Ernust, comment ça va ?"
             
-            show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
+            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
             e "Ça va bien !"
@@ -180,7 +190,7 @@ label tourVeleda_ErnustEtVeleda :
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
             y "90 de love ? Il est amoureux de moi ?"
 
-            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
+            show char_ernust love2 at speakingAnim(0.23,1.025,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
             e "T'es mon meilleur ami Gaufrid !"
@@ -200,6 +210,7 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
             e "Oui je suis là !"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
+            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             e "Moi aussi ça me fait plaisir de te voir Gaufrid !"
 
             show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
@@ -310,7 +321,8 @@ label tourVeleda_ErnustEtVeleda :
     window hide 
     
     $ renpy.music.set_volume(0, delay=1, channel='music2')
-    stop ambiance fadeout 0.5
+    
+    stop ambiance fadeout 1.5
     
     scene bg_tour :
         xpos 0 ypos 0
@@ -452,7 +464,7 @@ label tourVeleda_HistoireBrevetPart1:
             
     window hide 
     
-    stop ambiance fadeout 0.5
+    stop ambiance fadeout 1.5
 
     scene bg_tour :
         xpos 0 ypos -960
@@ -502,10 +514,10 @@ label tourVeleda_MortVeleda:
     
     show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
     
-    y "Quoi ? Mais c'était quoi comme champignons ?"
+    y "Quoi ? Mais... c'était quoi comme champignons ?"
     y "Va voir tout de suite si elle va bien !"
     
-    outline "Ernust se faufile derrière le voile (on change son image)"
+    show char_ernust normal right
     
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     
@@ -546,7 +558,7 @@ label tourVeleda_MortVeleda:
     window hide 
     
     $ renpy.music.set_volume(0, delay=1, channel='music2')
-    stop ambiance fadeout 0.5
+    stop ambiance fadeout 1.5
     
     scene bg_tour :
         xpos 0 ypos 0
