@@ -83,7 +83,6 @@ label forge_Beaudrik_02:
     bg "C’est tellement n’importe quoi ! Ahahah."
     show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
         #zoom 0.2 xpos 0.6 ypos 0.09
-    bg "On entend vraiment des trucs drôles à la taverne, quand les gens se bourrent la gueule."
 
 jump forge_Beaudrik_03_EpouserIngrid
     
@@ -124,10 +123,8 @@ label forge_Beaudrik_04:
 
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     bg "Tu sais, c’est moi qui vais marier la gonzesse. J’ai une dot et tout."
-    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "J’aime beaucoup les femmes mais là j’ai envie de me poser."
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "T’sais, d’avoir quelqu’un qui me fasse des câlins et la vaisselle."
+    bg "J'ai envie de me poser, d’avoir quelqu’un qui me fasse des câlins et la vaisselle."
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     show char_brutal colere:
         xalign 0.5 yalign 0.8
@@ -469,7 +466,7 @@ label forge_Brutalmund_05_CannotPay:
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
     brut "Là on parle de mes {b}Boucliers Originaux de Capitaine Germanie™{/b}, hein !"
     show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
-    brut "Il me faut quelque chose de valeur si t'en veux un."
+    brut "Il me faut quelque chose en échange si t'en veux un."
     $ Acte2_Forge_FirstVisit = 1
 
 jump forge_Brutalmund_06_Hub

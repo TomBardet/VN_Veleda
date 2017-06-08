@@ -122,16 +122,9 @@ label etables_PeurDesBufflesPart1bis:
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_03.ogg"
     cross "Les buffles crétin ! Ils sont toujours là !"
-    show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
-    play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-    y "Mais ils étaient censés partir ?"
     $ loveGauge(cross_char, -4, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
-    play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_01.ogg"
-    cross "Evidemment !"
     cross "Ca fait 12 heures que la porte est ouverte, et ces imbéciles de bovins ne bougent pas d'un poil !"
-    cross "Je sais plus quoi faire moi !"
-    show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
     y "Attendez. Quoi ?"
     show char_crossfit pleurs right at speakingAnim(0.65, 0.84, 0.82, 0.28)
