@@ -517,17 +517,17 @@ label taverne_Concours_Part2_1_Intro:
     scene bg_taverneN with Dissolve (0.5):
         zoom 0.70
     pause 1.0
-    outline "Bienvenues à l’édition 1er Siècle de /n« Bachelor Bructère », à l’antenne tous les vendredis à la taverne du village !"
+    outline "Bienvenues à l’édition 1er Siècle de \n « Bachelor Bructère », à l’antenne tous les vendredis à la taverne du village !"
     #nar "{i}{color=#f2de5c}Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis !{/color}{/i}"
     show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25) with Dissolve(0.5):
         xpos 0.17 ypos 1.1
-    nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/i}{/color}"
-    outline "Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
+    nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire \n à la recherche de l’amour.{/i}{/color}"
+    nar "{i}{color=#f2de5c}Tiraillée entre la beauté du corps et la beauté du cœur, \n Ingrid devra choisir entre deux Germains presque charmants.{/i}{/color}"
     show char_beaudrik normal left :
         zoom 0.2 xpos 1.0 ypos 0.2
         linear 0.4 xpos 0.6
-    outline "D'un coté, Beaudrik, \n parangon de virilité."
-    outline "De l'autre, Gaufrid, \n maigre et moche."
+    nar "{i}{color=#f2de5c}D'un coté, Beaudrik, parangon de virilité.{/i}{/color}"
+    nar "{i}{color=#f2de5c}De l'autre, Gaufrid, maigre et moche.{/i}{/color}"
     #nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/color}{/i}"
     #nar "{i}{color=#f2de5c}Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
     #nar "{i}{color=#f2de5c}D'un coté, Beaudrik, parangon de virilité.{/color}{/i}"
