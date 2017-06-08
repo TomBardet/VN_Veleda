@@ -181,8 +181,8 @@ init:
     image char_veleda marionnette = "images/char/Char_veleda_marionnette.png"
     
     #Véléda(Ernust)
-    image char_veledaernust normal = "images/char/Char_veledaernust_01.png"
-    image char_veledaernust normal = "images/char/Char_veledaernust_02.png"
+    image char_veledaernust 01 = "images/char/Char_veledaernust_01.png"
+    image char_veledaernust 02 = "images/char/Char_veledaernust_02.png"
     
     #Ernust
     image char_ernust normal left = "images/char/Char_ernust_normal.png"
