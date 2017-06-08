@@ -1427,7 +1427,7 @@ style slider_pref_slider:
   #  modal True#prevent clicking on other stuff when inventory is shown
     
 screen inventory_screen(obj = ""): 
-    zorder 20
+   # zorder 5
   #  add "gui/toolTip.png" xalign 0.5 xpos 0.5 ypos 0.85 #at inv_fadeIn # bottom black bar
    # add "gui/toolTip.png" xalign 0.5 xpos 0.5 ypos 0.0 #at inv_fadeIn # top black bar
     
