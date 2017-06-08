@@ -47,11 +47,10 @@ init:
  
     define ve = Character("Véléda(Ernust) : ",
         what_suffix=" ",
+        who_size=24,
         ctc=anim.Blink("gui/ctc.png"))
 
     define nar = Character("Narrateur : ",
-        what_xalign = 0.5,
-        what_xpos=0.5,
         what_italic=True,
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
@@ -194,6 +193,7 @@ init:
     image char_ernust marionnette1 = "images/char/Char_ernust_marionnette1.png"
     image char_ernust marionnette2 = "images/char/Char_ernust_marionnette2.png"
     image char_ernust trahi = "images/char/Char_ernust_trahi.png"
+    image char_ernust inquiet = "images/char/Char_ernust_inquiet.png"
     
     #Ingrid
     image char_ingrid normal = "images/char/Char_ingrid_normal.png"
