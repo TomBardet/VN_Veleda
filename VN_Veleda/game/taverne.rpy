@@ -109,7 +109,7 @@ label taverne_DatingIngrid:
     i "..."
     i "Ecoute... je vais y aller je pense. Bisous hein !"
     
-    play sound "sfx/SFX_Stairs_02.ogg"
+    play sound "sfx/SFX_Run_01.ogg"
     hide screen datingSim
     show char_ingrid degout:
         xalign 0.5 yalign 0.8
@@ -123,7 +123,7 @@ label taverne_DatingIngrid:
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"    
     y "..."
     y "Héhé, ce rencard s'est passé à merveille !"
-    y "Bon je vais me coucher."
+    y "Bon, je vais me coucher."
     y "Si je suis en retard demain, Véléda va encore m'engueuler."
     
     stop music1 fadeout 1.5

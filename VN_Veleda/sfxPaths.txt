@@ -38,6 +38,9 @@
 "sfx/SFX_Stairs_02.ogg"
 "sfx/SFX_Trumpet_01.ogg"
 "sfx/SFX_Walk_01.ogg"
+"sfx/SFX_Drapeau_Fall_01.ogg"
+"sfx/SFX_Drapeau_Fly_01.ogg"
+"sfx/SFX_Cross_01.ogg"
 
 
 ///SFX UI///
