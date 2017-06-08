@@ -471,7 +471,7 @@ label forge_Brutalmund_06_Hub:
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     
     menu:
-        brut "..."
+        brut "{cps=0]Rien du tout ? Allez mon p’tit Gaufrid, ça fait deux mois que je ne vends rien, fais un effort !{/cps]"
         
         "{color=#FFFFFF}Tu veux quoi en échange ?{/color}":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
@@ -538,7 +538,7 @@ label forge_Brutalmund_06_Hub:
             hide char_brutal
             jump forge_Brutalmund_07_Bouclier
             
-        "Je retournerai quand je pourrai payer" if _testLunettes == 0:
+        "Je reviens quand je peux te payer." if _testLunettes == 0:
             play sound "sfx/Voices/Player/Char_Player_Non_01.ogg"
             y "J'ai rien à te donner pour l'instant."
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
