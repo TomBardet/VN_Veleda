@@ -4,8 +4,8 @@
 
 label forge_BrutalmundEtBeaudrik:
     
-    stop music1 fadeout 1.5
-    stop ambiance fadeout 1
+    stop music1 fadeout 1
+    stop ambiance fadeout 0.5
     
     $ renpy.music.play("ambiances/AMB_Lieu_Forge_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
@@ -43,8 +43,8 @@ label forge_Intro:
     
     scene bg_forge with Dissolve(1.5)
     pause 1.0
-    play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
-    y "Euh... il y a quelqu'un ?"
+    #play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
+    #y "Euh... il y a quelqu'un ?"
     
     jump forge_Beaudrik_01
 
@@ -69,18 +69,18 @@ label forge_Beaudrik_02:
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_02.ogg"
     bg "Tiens ! C’est le p’tit Gaufrid !"
     show screen datingSim(beau_char, 0.75, 0.10)
-    pause 0.5
     
     $ renpy.music.play("music/MUSIC_Forge.ogg", channel = "music1", loop = True, fadein = 1)
     
-    bg "T’sais, justement je pensais à toi bonhomme."
-    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
-    play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
-    y "Ah, merci Beaudrik ! Je suis flatté."
+    #bg "T’sais, justement je pensais à toi bonhomme."
+    #show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
+    #play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
+    #y "Ah, merci Beaudrik ! Je suis flatté."
+    
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
     $ loveGauge(beau_char, -5, 0.85, 0.10)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
-    bg "J’ai entendu des rumeurs comme quoi tu veux épouser Ingrid !"
+    bg "J’ai entendu des rumeurs comme quoi tu voudrais épouser Ingrid !"
     show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.22)
         #zoom 0.22 xpos 0.4 ypos 0.09
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Drague_04.ogg"
@@ -126,31 +126,35 @@ label forge_Beaudrik_03_EpouserIngrid:
 label forge_Beaudrik_04:
 
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "Tu sais, c’est moi qui vais marier la gonzesse. J’ai une dot et tout."
+    bg "Tu sais, c’est moi qui vais me marier avec Ingrid. J’ai une dot et tout."
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "J'ai envie de me poser, d’avoir quelqu’un qui me fasse des câlins et la vaisselle."
+    bg "J'ai envie de me poser. Tu sais, avoir quelqu’un qui me fasse des câlins et la vaisselle."
     show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    
+    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
     show char_brutal colere:
         xalign 0.5 yalign 0.8
         xpos -0.55 ypos 1.5 zoom 0.2 rotate 45
         linear 0.7 xpos 0.045 ypos 0.7
-    pause 0.5
+    pause 1
+    brut "{i}Hé, la feignasse ! Beaudrik ! Viens ici !{/i}"    
     show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
-    brut "{i}Hey feignasse ! Beaudrik ! Viens ici !{/i}"
+
     show char_brutal colere:
         xalign 0.5 yalign 0.8
         xpos 0.1 ypos 0.6 zoom 0.2 rotate 45
         linear 2.5 xpos -1.0 ypos 1.5
-    pause 1.0
-    hide char_brutal
-    show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_02.ogg"
-    bg "Oh non, papa m’appelle encore. Vaut mieux se casser !"
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
-    bg "De tout façon je dois aller régler un truc avec Josiane, mon autre fiancée."
 
-jump forge_Beaudrik_05_Josiane
+    $ renpy.pause(0.5, hard = True)
+    
+    show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    hide char_brutal
+    play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_02.ogg"
+    bg "Oh non, Papa m’appelle ! Je me casse !"
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    bg "De toute façon, je dois aller régler un truc avec Josiane... mon autre fiancée."
+
+jump forge_Beaudrik_06_leaving
 
 #------------------------------------------#
 
@@ -158,15 +162,14 @@ label forge_Beaudrik_05_Josiane:
     
     show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
     menu:
-        bg "{cps=0}De tout façon je dois aller régler un truc avec Josiane, l’autre fiancée.{/cps}"
-        "Deux fiancées ? C’est abusé" :
+        bg "{cps=0}De toute façon, je dois aller régler un truc avec Josiane... mon autre fiancée.{/cps}"
+        "Deux fiancées ? C’est abusé !" :
             play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
-            y "Non mais attends, moi je me trimballe Ernust et toi tu pécho des meufs à droite et à gauche ?"
-            y "C'est abusé."
+            y "Attends, moi je me trimballe Ernust, et toi tu drague des filles à droite et à gauche ?"
             show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
             $ loveGauge(beau_char, -5, 0.85, 0.10)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
-            bg "Euh, je sais, c’est compliqué."
+            bg "Ouais, je sais, c’est compliqué."
         "Tu ferais ça à Ingrid ?" :
             play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             y "Deux copines, c’est un peu abusé et pas très gentil quand même."
