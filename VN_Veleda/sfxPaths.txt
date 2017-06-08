@@ -313,9 +313,9 @@
 "sfx/Voices/Player/Char_Player_Hesitation_03.ogg"
 "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
 
-"sfx/Voices/Player/Char_Player_Drink_01.ogg"
-"sfx/Voices/Player/Char_Player_Drink_02.ogg"
-"sfx/Voices/Player/Char_Player_Drink_03.ogg"
+"sfx/Voices/Player/Char_Player_Boire_01.ogg"
+"sfx/Voices/Player/Char_Player_Boire_02.ogg"
+"sfx/Voices/Player/Char_Player_Boire_03.ogg"
 
 "sfx/Voices/Player/Char_Player_Baille_01.ogg"
 "sfx/Voices/Player/Char_Player_Baille_02.ogg"

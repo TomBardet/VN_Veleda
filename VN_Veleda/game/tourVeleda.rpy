@@ -11,6 +11,12 @@ label tourVeleda_ErnustEtVeleda :
     $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music2", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
+    
+    
+    
     show vel normal with Dissolve (2.5) :
         xpos 0 ypos 0
     
@@ -115,9 +121,9 @@ label tourVeleda_ErnustEtVeleda :
     $ renpy.pause(2.0, hard = True)
     v "Une prophétie !"
     
-    $ renpy.music.set_volume(1, delay=0.4, channel='music1')
-    $ renpy.music.set_volume(1, delay=0.4, channel='music2')
-    $ renpy.music.set_volume(1, delay=0.4, channel='ambiance')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
     
  
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
@@ -392,7 +398,7 @@ label tourVeleda_HistoireBrevetPart1:
     cross "Toi, l'assistant, va chercher la prophétesse !"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
- #   play sound "sfx/SFX_Char_Player_No_01.ogg"
+    play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
     y "Ah non ! La prophétesse ne voit pas directement ses visiteurs."
     y "Vous m'expliquez le problème, et je lui transmets. Après, je vous interprète ses visions."
     
@@ -404,13 +410,15 @@ label tourVeleda_HistoireBrevetPart1:
     menu :
         cross "{cps=0}Très bien, serviteur ! Mais si tu ne transmets pas nos messages exactement, je t'égorge.{/cps}"
         "Oui, Monseigneur" :
-  #          play sound "sfx/SFX_Char_Player_Ok_01.ogg"  
+
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bien sur, Monsieur Crossfritrichernvald, je ferai bien attention."
             
         "Je sais faire mon travail, hein" :
-  #          play sound "sfx/SFX_Char_Player_Sarcasm_01.ogg"  
+ 
+            play sound "sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
             y "Eh oh, je sais ce que je fais, hein ! Pas la peine de me menacer."
-            
+    
     y "Dites moi tout, quel est le problème ?"
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_01.ogg"
@@ -424,7 +432,7 @@ label tourVeleda_HistoireBrevetPart1:
     show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_03.ogg"
-    brut "Mais en fait, j'l'ai pas volé c'te bouclier !"
+    brut "Mais j'l'ai pas volé c'te bouclier !"
     brut "C'est moi qui l'ai fait. De mes p'tites mains ! J'te jure mon p'tit Gaufrid !"
     show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
     
@@ -456,7 +464,7 @@ label tourVeleda_HistoireBrevetPart1:
     menu :
         cross "{cps=0}Le concept de propriété intellectuelle est fondamental à la société Germaine du premier siècle !{/cps}"
         "C'est très grave !" :
-            
+            play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             y "C'est vrai que c'est très grave !"
             
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
@@ -464,9 +472,11 @@ label tourVeleda_HistoireBrevetPart1:
             brut "Tu t'y mets, toi aussi ! Gaufrid, mon poteau !"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bon, je vais voir ce qu'en dit notre divine prophétesse."
         
         "On s'en fout, non ?" :
+            play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             y "Y'a pas de quoi en faire tout un plat, non ?"
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
@@ -477,6 +487,7 @@ label tourVeleda_HistoireBrevetPart1:
             cross "Nos lois sont claires ! Va voir la prophétesse, maintenant !"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
             
+            play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Ok ! Ok ! J'y vais ! Faut pas s'énerver comme ça !"
             
     window hide 
@@ -511,21 +522,26 @@ label tourVeleda_HistoireBrevetPart1:
     
 label tourVeleda_MortVeleda:
     
-    $ renpy.music.set_volume(1, delay=1, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=1, channel='music2')
     $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     pause 0.5
     
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     
+    play sound "sfx/Voices/Ernust/Char_Ernust_Normal_07.ogg"
+    
     e "Ah Gaufrid, ça c'est bien passé ?"
     e "Véléda fait une petite sieste !"
     
     show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
    
+    play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Comment ça, une sieste ?"
     
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
+    
+    play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
     
     e "Bah oui, elle a mangé ma soupe aux champignons et elle a fait des bruits bizarres."
     e "Je pense qu'elle a vomi à un moment, mais après elle s'est endormie tranquillement !"
@@ -533,8 +549,9 @@ label tourVeleda_MortVeleda:
     show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
     play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
     y "Quoi ? Mais... c'était quoi comme champignons ?"
-    y "Va voir tout de suite si elle va bien !"
+    y "Va voir si elle va bien !"
     
+    play sound "sfx/Voices/Ernust/Char_Ernust_Normal_02.ogg"
     show char_ernust joyeux right :
         xalign 0.5 yalign 0.8
         xpos 0.185 ypos 1.01 zoom 0.6
@@ -546,9 +563,10 @@ label tourVeleda_MortVeleda:
         linear 0.15 rotate 25
     
     $ renpy.pause (0.6, hard = True)
-    
+    play sound "sfx/Voices/Ernust/Char_Ernust_Normal_01.ogg"
     e "Euh..."
     
+    play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
     show char_ernust inquiet right :
         linear 0.15 rotate -3
         linear 0.15 rotate 3
@@ -557,39 +575,22 @@ label tourVeleda_MortVeleda:
     $ renpy.pause (0.8, hard = True)
     
     show char_ernust inquiet right at speakingAnim(0.35,1.05,1.0,0.55)
-    
+
     e "Elle va pas bien du tout, Gaufrid !"
     e "Je sens pas du tout son pouls !"
     
     show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
-    
+    play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
     y "Quoi ? Mais.. tu as tué Véléda, Ernust !"
     y "La prophétesse la plus connue de toute l'histoire !"
     
     show char_ernust inquiet right at speakingAnim(0.35,1.05,1.0,0.55)
     
     e "Oh, je suis désolé Gaufrid !"
-    e "Tu peux peut être faire une prophétie toi ?"
+    e "Qu'est ce qu'on va faire ?"
     
     show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
-    
-    menu :
-        e "Tu peux peut être faire une prophétie toi ?"
-        "C'est complètement idiot." :
-            y "Tu dis vraiment n'importe quoi Ernust !"
-            y "J'ai l'air d'être un prophête moi ?"
-            y "Mais attend... j'ai une idée !"
-            y "Je vais faire semblant ! Je vais inventer une prophétie !"
-            y "Ils verront jamais la différence !"
-    
-            show char_ernust joyeux right  at speakingAnim(0.20,1.02,1.0,0.6)
-            e "Qu'est ce que t'es intelligent Gaufrid !"
-            show char_ernust love1  at notSpeakingAnim(0.185,1.01,1.0,0.6)
-        "Bonne idée !" :
-            y "Bien vu Ernust ! Ça c'est vraiment une bonne idée !"
-            y "Je vais inventer une prophétie ! Ils verront jamais la différence !"
-            
-    y "J'y vais, bouge surtout pas d'ici !"
+    y "Je vais trouver quelquechose... bouge surtout pas d'ici !"
     
     hide screen datingSim
     
@@ -604,10 +605,10 @@ label tourVeleda_MortVeleda:
     show vel morte :
         xpos 0 ypos 0
         linear 1.75 xpos 0 ypos -960
-    show char_ernust normal right :
+    show char_ernust inquiet right :
         xalign 0.5 yalign 0.8
-        xpos 0.20 ypos 1.02 zoom 0.6
-        linear 2.0 xpos 0.24 ypos -0.55
+        xpos 0.35 ypos 0.94 zoom 0.55
+        linear 2.0 xpos 0.36 ypos -0.59
     show char_crossfit colere right :
         xalign 0.5 yalign 0.8
         xpos 0.20 ypos 3.0 zoom 0.32
