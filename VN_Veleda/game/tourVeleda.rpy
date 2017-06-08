@@ -104,12 +104,22 @@ label tourVeleda_ErnustEtVeleda :
     
     v "Monsieur Brutalmund nie l'accusation ! Nous allons donc les départager avec..."
     
+    $ renpy.music.set_volume(0, delay = 0, channel='music1')
+    $ renpy.music.set_volume(0, delay = 0, channel='music2')
+    $ renpy.music.set_volume(0, delay=0, channel='ambiance')
+    
     show vel normal2 :
         xpos 0 ypos 0
         
     play sound "sfx/SFX_Drama_01.ogg"
     
+    $ renpy.pause(2.0, hard = True)
     v "Une prophétie !"
+    
+    $ renpy.music.set_volume(1, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(1, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(1, delay=0.4, channel='ambiance')
+    
  
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Euh.. il devrait pas plutôt porter plainte ?"
@@ -159,7 +169,7 @@ label tourVeleda_ErnustEtVeleda :
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
     e "Oh, bonjour Gaufrid !"
     $ loveGauge(ern_char, 1, 0.26, 0.14)
-    show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
+    show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
     show vel normal :
         xpos 0 ypos 0
     menu :
@@ -168,13 +178,12 @@ label tourVeleda_ErnustEtVeleda :
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bonjour Ernust, comment ça va ?"
             
-            show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
+            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
             e "Ça va bien !"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
             e "C'est gentil de demander Gaufrid !"
-            show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
             
         "90 points d'affection ?" :
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
@@ -187,8 +196,6 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 3, 0.26, 0.14)
             e "J'taime bien !"
 
-            show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
-
             
         "Ah... t'es là, toi ?" :
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
@@ -200,11 +207,18 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
             e "Oui je suis là !"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
+            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             e "Moi aussi ça me fait plaisir de te voir Gaufrid !"
 
-            show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
+
             
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
+    
+    pause 0.1 
+    
+    show char_ernust inquiet right :
+            xpos 0.195 ypos 1.02 zoom 0.6
+            linear 0.15 xpos 0.185 ypos 1.03 rotate -5
     
     $ interlocuteur = "vel_char"
     show screen datingSim(vel_char, 0.625, 0.33)
@@ -213,7 +227,7 @@ label tourVeleda_ErnustEtVeleda :
         xpos 0 ypos 0
     $ loveGauge(vel_char, -1, 0.75, 0.4)
     v "Amenez nous notre nourriture, monsieur Ernust !  Nous mourrons de faim."
-    #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
+
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     show vel normal :
@@ -221,9 +235,11 @@ label tourVeleda_ErnustEtVeleda :
     e "Oh oui, Votre Excellessence Madame Véléda !"
     e "Je suis allé dans la forêt chasser un sanglier."
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
+    show char_ernust normal right at speakingAnim(0.19,1.02,1.0,0.6)
     e "Je me suis dit : un bon sanglier rôti, ça tient le corps et c'est vraiment bon !"
+    show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     e "Avec un peu de thym et des p'tites pommes sautées..."
-    show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
+    show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
     menu :
         e "{cps=0}Avec un peu de thym et des p'tites pommes sautées...{/cps}"
         "Ça a l'air délicieux !" :
@@ -240,14 +256,20 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 3, 0.26, 0.14)
             e "T'es gentil Gaufrid !"
             $ loveGauge(ern_char, 2, 0.26, 0.14)
+            
             e "Je pensais à toi en plus. Je me suis dit : Gaufrid, il doit être triste !"
             $ loveGauge(ern_char, 2, 0.26, 0.14)
+            
+            show char_ernust normal right at speakingAnim(0.19,1.02,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_02.ogg"
             e "Ingrid elle est pas gentille avec toi !"
             $ loveGauge(ern_char, 5, 0.26, 0.14)
+            
+            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
+            
             e "Mais moi, je trouve que t'es vraiment spécial Gaufrid."
             
-            show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
+            show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
             
         "Tu peux abréger ?" :
             
@@ -261,6 +283,8 @@ label tourVeleda_ErnustEtVeleda :
             show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
             e "T'as raison Gaufrid. Je parle trop encore !"
             
+            show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
+            
             $ loveGauge(ern_char, 3, 0.26, 0.14)
             e "Tu me dis tout le temps quand je fais des bêtises !"
             
@@ -268,9 +292,16 @@ label tourVeleda_ErnustEtVeleda :
             $ loveGauge(ern_char, 2, 0.26, 0.14)
             e "Ça m'aide beaucoup tu sais. J'ai l'impression d'être plus intelligent avec toi !"
             
-            show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
+            show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
                 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
+    
+    pause 0.1 
+    
+    show char_ernust inquiet right :
+            xpos 0.195 ypos 1.02 zoom 0.6
+            linear 0.15 xpos 0.185 ypos 1.03 rotate -5
+    
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     show vel normal2 :
         xpos 0 ypos 0
@@ -290,7 +321,7 @@ label tourVeleda_ErnustEtVeleda :
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
     e "Mais j'ai trouvé des champignons, alors j'ai fait une soupe ! Une bonne soupe de champignons !"
-    show char_ernust normal right at notSpeakingAnim(0.195,1.02,1.0,0.6)
+    show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
     show vel normal2 :
@@ -310,7 +341,8 @@ label tourVeleda_ErnustEtVeleda :
     window hide 
     
     $ renpy.music.set_volume(0, delay=1, channel='music2')
-    stop ambiance fadeout 0.5
+    
+    stop ambiance fadeout 1.5
     
     scene bg_tour :
         xpos 0 ypos 0
@@ -452,7 +484,7 @@ label tourVeleda_HistoireBrevetPart1:
             
     window hide 
     
-    stop ambiance fadeout 0.5
+    stop ambiance fadeout 1.5
 
     scene bg_tour :
         xpos 0 ypos -960
@@ -502,10 +534,10 @@ label tourVeleda_MortVeleda:
     
     show char_ernust normal right  at notSpeakingAnim(0.20,1.02,1.0,0.6)
     
-    y "Quoi ? Mais c'était quoi comme champignons ?"
+    y "Quoi ? Mais... c'était quoi comme champignons ?"
     y "Va voir tout de suite si elle va bien !"
     
-    outline "Ernust se faufile derrière le voile (on change son image)"
+    show char_ernust normal right
     
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     
@@ -546,7 +578,7 @@ label tourVeleda_MortVeleda:
     window hide 
     
     $ renpy.music.set_volume(0, delay=1, channel='music2')
-    stop ambiance fadeout 0.5
+    stop ambiance fadeout 1.5
     
     scene bg_tour :
         xpos 0 ypos 0
