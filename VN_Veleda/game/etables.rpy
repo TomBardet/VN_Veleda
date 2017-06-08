@@ -209,18 +209,25 @@ label etables_PeurDesBufflesPart2:
         xpos 0.7 ypos 0.77
         linear 0.8 xpos 1.2 
     pause 1.0
-    show char_ernust normal left:
+    show char_ernust inquiet left:
         xalign 0.5 yalign 0.8
         xpos 0.65 zoom 0.75 ypos 1.6
         linear 0.4 ypos 0.94
     pause 1.0
+<<<<<<< HEAD
     show char_ernust normal left at speakingAnim(0.65, 0.94, 0.92, 0.75)
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_04.ogg"
     e "Euh... Gaufrid, t'es sur que c'est une bonne idée ?"
     show char_ernust normal left at notSpeakingAnim(0.65, 0.94, 0.92, 0.75)
+=======
+    show char_ernust inquiet left at speakingAnim(0.65, 1.02, 1.0, 0.65)
+    play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_04.ogg"
+    e "Euh... Gaufrid, t'es sur que c'est une bonne idée ?"
+    show char_ernust inquiet left at notSpeakingAnim(0.65, 1.02, 1.0, 0.65)
+>>>>>>> b20bf234411eca138e915205edeb4dae523d3846
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     y "Il faut bien utiliser cette trompette quelque part non ?"
-    outline "J'aurais pas fait ça à ta place..."
+    nar "J'aurais pas fait ça à ta place..."
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Trop tard."
     scene black with Dissolve (1.0)
@@ -243,7 +250,16 @@ label etables_PeurDesBufflesPart2:
     outline "Et c'est ainsi que le brave Crossfitrichernvald pris la fuite devant les buffles fonçant sur lui"
     scene bg_etables2 with Dissolve(1.0):
         zoom 0.7
+<<<<<<< HEAD
     show char_ernust normal right at speakingAnim(0.65, 0.94, 0.92, 0.75)
+=======
+    show char_ernust normal right:
+        xalign 0.5 yalign 0.8
+        xpos 0.65 zoom 0.65 ypos 1.6
+        linear 0.3 ypos 0.94
+    pause 0.3
+    show char_ernust normal right at speakingAnim(0.65, 1.02, 1.0, 0.65)
+>>>>>>> b20bf234411eca138e915205edeb4dae523d3846
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
     e "Ah ben tiens, il a fait tomber ses lunettes en courant."
     
