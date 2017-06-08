@@ -242,6 +242,8 @@ init:
     image char_beaudrik insulte right = im.Flip("images/char/Char_beaudrik_insulte.png", horizontal = True)
     image char_beaudrik normal right = im.Flip("images/char/Char_beaudrik_normal.png", horizontal = True)
     image char_beaudrik choque left = im.Flip("images/char/Char_beaudrik_surpris.png", horizontal = True)
+    image char_beaudrik mepris2 left = "images/char/Char_Beaudrik_Mepris_02.png"
+    image char_beaudrik mepris2 right = im.Flip("images/char/Char_Beaudrik_Mepris_02.png", horizontal = True)
     
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
