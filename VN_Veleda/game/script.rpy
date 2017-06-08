@@ -48,6 +48,7 @@ label start:
         Acte2_Forge_FirstVisit = 0 # Check si on a déjà visité la forge
         Acte2_Romains_FirstVisit = 0 #
         Forge_reply_arnaque = 0
+        Forge_LeaderPrice_check = 0
     
     #jump taverne_AbusAlcoolPart1
     jump intro
@@ -67,42 +68,57 @@ label intro:
         
    # show introCarte:
    #     xpos 0.01 ypos 0.01 zoom 1.1
-    pause 1
-    
+    $ renpy.pause(0.1, hard=True)
+    play sound "sfx/SFX_Drapeau_Fall_01.ogg"
     show introFlag zorder 2 with vpunch:
         zoom 1 xanchor 0.5 yanchor 0.5
         xpos 0.65 ypos 0.20
         linear 0.2 ypos 0.35 zoom 0.65
-    pause 0.2
-    show introCrack zorder 1 with Dissolve(1.0):
+    show introCrack zorder 1 with Dissolve(0.25):
         zoom 0.75,xanchor 0.5 yanchor 0.5
-        xpos 0.651 ypos 0.37
+        xpos 0.651 ypos 0.37  
+    $ renpy.pause(0.2, hard=True)
+    
+    
+
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
       
     outlineBot "{cps=1} {/cps}{cps=18}En l'an 70 après Jissé,{cps=2} {/cps}{cps=18}toute la Germanie est occupée par les Romains.{/cps}"
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
+    
+    
+    play sound "sfx/SFX_Drapeau_Fly_01.ogg"
     
     show introFlag:
         parallel:
             linear 1.5 xpos -.2
         parallel:
-            easeout 1.0 rotate -720 #counterclockwise
+            easeout 1.5 rotate -3200
+            repeat #counterclockwise
         parallel:
             linear 2.0 alpha 0.0
     
     show introCrack:
         linear 1.3 alpha 0.0
+        
+    $ renpy.pause(0.9, hard=True)
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
        
     outlineBot "{cps=1} {/cps}{cps=20}Bon,{cps=1} {/cps}{cps=18}pas vraiment toute en fait...{/cps}"
     
-    play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
+    
 
+    play sound "sfx/SFX_Cross_01.ogg"
     show introPoint with vpunch:
         zoom 1.1,xanchor 0.5 yanchor 0.5
         xpos 0.6 ypos 0.45 
-    pause 1.2
-    outlineBot "{cps=4} {/cps}{cps=20}En tout cas,{cps=2} {/cps}pas le village des Bructères,{cps=2} {/cps}{cps=20}où habite la légendaire prophétesse Véléda.{/cps}"
+    
+    play sound "sfx/Voices/Narrateur/Narrateur_Intro_03.ogg"
+    
+    $ renpy.pause (0.2, hard = True)
+    
+    outlineBot "{cps=1} {/cps}{cps=20}En tout cas,{cps=2} {/cps}pas le village des Bructères,{cps=2} {/cps}{cps=20}où habite la légendaire prophétesse Véléda.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):
