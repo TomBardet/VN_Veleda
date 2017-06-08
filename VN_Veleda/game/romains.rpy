@@ -164,7 +164,7 @@ label romains_Part5:
             y "C'est une longue histoire, mais j'ai trouvé des lunettes !"
             jump romains_VisitePart2
             
-        "Je vous fais visiter ?" if _testGlaive == 0:
+        "Je vous fais visiter ?" if Romain_EntenduParlerDesLunettes_check == 1:
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Il y a des belles choses à voir dans le coin."
             y "Venez avec moi, j'vais vous faire visiter."
@@ -181,7 +181,7 @@ label romains_Part5:
                 #VISITE
 # -----------------------------------------#
 label romains_VisitePart1:
-    
+    $ Romain_EntenduParlerDesLunettes_check = 1
 
     show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
     play sound "sfx/Voices/Num/Char_Num_Doute_03.ogg"
