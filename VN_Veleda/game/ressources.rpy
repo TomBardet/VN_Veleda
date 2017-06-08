@@ -240,14 +240,17 @@ init:
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
     image char_numerimus heureux = "images/char/Char_numerimus_heureux.png"
-    image char_numerimus choque = "images/char/Char_numerimus_choque.png"
     image char_numerimus dubitatif = "images/char/Char_numerimus_dubitatif.png"
+    image char_numerimus normal lunette = "images/char/Char_numerimus_normal_lunette.png"
+    image char_numerimus heureux lunette = "images/char/Char_numerimus_heureux_lunette.png"
+    image char_numerimus dubitatif lunette = "images/char/Char_numerimus_dubitatif_lunette.png"
     
     #Digitimus
-    image char_digitimus normal = "images/char/Char_digitimus_normal.png"
-    image char_digitimus choque = "images/char/Char_digitimus_choque.png"
-    image char_digitimus rire = "images/char/Char_digitimus_rire.png"
-    image char_digitimus dubitatif = "images/char/Char_digitimus_dubitatif.png"
+    image char_digitimus normal right = "images/char/Char_digitimus_normal_right.png"
+    image char_digitimus rire right = "images/char/Char_digitimus_rire_right.png"
+    image char_digitimus normal left = "images/char/Char_digitimus_normal_left.png"
+    image char_digitimus rire left = "images/char/Char_digitimus_rire_left.png"
+
     
     #Chêvre-Josiane
     image char_goat normal = "images/char/Char_goat_normal.png"
