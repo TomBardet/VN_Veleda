@@ -122,7 +122,7 @@ init:
     image vel normal = im.FactorScale("images/decor/Lieu_chambre_veleda.png", 0.70)
     image vel normal2 = im.FactorScale("images/decor/Lieu_chambre_veleda2.png", 0.70)
     image vel morte = im.FactorScale("images/decor/Lieu_chambre_veledaMorte.png", 0.70)
-    image vel mario = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette.png", 0.70)
+    image vel mario = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette1.png", 0.70)
     image vel mario2 = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette2.png", 0.70)
     image vel normal_nuit = im.FactorScale("images/decor/Lieu_chambre_veleda_nuit.png", 0.70)
     image vel morte_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMorte_nuit.png", 0.70)
@@ -181,7 +181,8 @@ init:
     image char_veleda marionnette = "images/char/Char_veleda_marionnette.png"
     
     #Véléda(Ernust)
-    image char_veledaernust normal = "images/char/Char_veledaernust_normal.png"
+    image char_veledaernust 01 = "images/char/Char_veledaernust_01.png"
+    image char_veledaernust 02 = "images/char/Char_veledaernust_02.png"
     
     #Ernust
     image char_ernust normal left = "images/char/Char_ernust_normal.png"
