@@ -161,9 +161,9 @@ label taverne_PresentationDot:
             show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
             i "Euh..."
-        "Ca t'es jamais arrivé de voir des chiffres au dessus de la tête des gens ?":
+        "C'était à cause des chiffres !":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "Ca t'es jamais arrivé de voir des chiffres au dessus de la tête des gens ?"
+            y "Ca t'es jamais arrivé de voir des chiffres au-dessus de la tête des gens ?"
             $ loveGauge(ingrid_char, -1, 0.65, 0.3)
             show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
@@ -425,9 +425,7 @@ label taverne_AbusAlcoolPart1:
 label Act2_transition_alldone:
 
     scene black with Dissolve(0.5)
-    outline "Le meme soir, plus tard..."
-    y "Ça y est ! J'ai la dot !"
-    y "Ingrid, ma Choquette, j'arrive !"
+    outline "Un peu plus tard, à la taverne..."
     jump taverne_ConcoursPart1
     
 #------------------------------------------#
@@ -439,18 +437,43 @@ label placeDuVillage_Concours_Placeholder:
 # -----------------------------------------#
 
 label taverne_ConcoursPart1:
-    "label taverne_ConcoursPart1"
-    scene bg_taverneJ2
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
-    i "Gaufrid ! Enfin tu es là ! On t’attendait !"
     
-    jump taverne_ConcoursPart1_choice
+    $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 0.5)
+    
+    scene bg_taverne2N with Dissolve(0.5):
+        zoom 0.70
+    show char_ingrid normal:
+        xalign 0.5 yalign 0.8
+        xpos -0.5 ypos 1.5 zoom 0.25 rotate 30
+        linear 0.5 xpos 0.05 ypos 1.15
+    #show char_ingrid normal at notSpeakingAnim(0.5, 0.95, 0.92, 0.22) with Dissolve(0.5)
+    pause 0.5
+    #show char_ingrid normal at speakingAnim(0.50, 1.0, 0.98, 0.22)
+    i "Gaufrid ! Enfin tu es là ! On t’attendait !"
+    show char_ingrid normal:
+        xalign 0.5 yalign 0.8
+        xpos 0.05 ypos 1.15 zoom 0.25 rotate 30
+        #linear 0.5 xpos 0.8 ypos 1.15
+        parallel:
+            linear 0.5 xpos 0.5
+        parallel:
+            linear 0.3 rotate 0
+    y "J'ai la dot, ma Chouquette !"
+    show char_ingrid normal at speakingAnim(0.50, 1.15, 1.12, 0.25)
+    i "Bien ! On peut enfin commencer le concours !"
+    show char_ingrid normal at notSpeakingAnim(0.50, 1.15, 1.12, 0.25)
+    y "Oui bien sûr ! …attends, quoi ?"
+    show char_ingrid normal at speakingAnim(0.50, 1.15, 1.12, 0.25)
+    i "Shh ! ça commence !"
+    
+    jump taverne_Concours_Part2_0_Transition
 
-# -----------------------------------------#
+# --------------DESACTIVé--------------#
 
 label taverne_ConcoursPart1_choice:
 
     menu:
+        i "{cps=0}Gaufrid ! Enfin tu es là ! On t’attendait !{/cps}"
         "J'étais attendu ?":
             y "Ah bon ? Vous m’attendiez ?"
             i "Tout le village est là pour toi Gaufrid !"
@@ -488,14 +511,17 @@ label taverne_Concours_Part2_0_Transition:
     
 label taverne_Concours_Part2_1_Intro:
     
+    $ renpy.music.play("music/MUSIC_Etable_Normale.ogg", channel = "music1", loop = True, fadein = 4)
+    
     #NARRATEUR--------------> nar "{i}{color=#f2de5c}{/color}{/i}"
-    scene bg_taverneJ with Dissolve (0.5)
+    scene bg_taverneN with Dissolve (0.5):
+        zoom 0.70
     pause 1.0
-    outline "Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis à la taverne du village !"
+    outline "Bienvenues à l’édition 1er Siècle de /n« Bachelor Bructère », à l’antenne tous les vendredis à la taverne du village !"
     #nar "{i}{color=#f2de5c}Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis !{/color}{/i}"
-    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25) with Dissolve(0.5):
         xpos 0.17 ypos 1.1
-    outline "Ingrid est une jeune femme célibataire à la recherche de l’amour."
+    nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/i}{/color}"
     outline "Tiraillée entre la beauté du corps et la beauté du cœur, Ingrid devra choisir entre deux Germains presque charmants."
     show char_beaudrik normal left :
         zoom 0.2 xpos 1.0 ypos 0.2
