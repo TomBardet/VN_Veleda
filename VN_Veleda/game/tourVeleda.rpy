@@ -41,7 +41,6 @@ label tourVeleda_ErnustEtVeleda :
     v "Allez préparer la salle, Monsieur Gaufrid. Vos âneries ne nous intéressent pas."
     
 
-
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     
     show vel normal2 :
@@ -572,7 +571,7 @@ label tourVeleda_MortVeleda:
     e "Oh, je suis désolé Gaufrid !"
     e "Tu peux peut être faire une prophétie toi ?"
     
-    show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
+    show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
     
     menu :
         e "Tu peux peut être faire une prophétie toi ?"
@@ -583,9 +582,9 @@ label tourVeleda_MortVeleda:
             y "Je vais faire semblant ! Je vais inventer une prophétie !"
             y "Ils verront jamais la différence !"
     
-            show char_ernust normal right  at speakingAnim(0.20,1.02,1.0,0.6)
+            show char_ernust joyeux right  at speakingAnim(0.20,1.02,1.0,0.6)
             e "Qu'est ce que t'es intelligent Gaufrid !"
-            show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
+            show char_ernust love1  at notSpeakingAnim(0.185,1.01,1.0,0.6)
         "Bonne idée !" :
             y "Bien vu Ernust ! Ça c'est vraiment une bonne idée !"
             y "Je vais inventer une prophétie ! Ils verront jamais la différence !"
