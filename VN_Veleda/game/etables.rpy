@@ -211,7 +211,7 @@ label etables_PeurDesBufflesPart2:
     pause 1.0
     show char_ernust inquiet left:
         xalign 0.5 yalign 0.8
-        xpos 0.65 zoom 0.75 ypos 1.6
+        xpos 0.65 zoom 0.65 ypos 1.6
         linear 0.4 ypos 0.94
     pause 1.0
     show char_ernust inquiet left at speakingAnim(0.65, 1.02, 1.0, 0.65)
@@ -225,19 +225,19 @@ label etables_PeurDesBufflesPart2:
     y "Trop tard."
     scene black with Dissolve (1.0)
     show screen inventory_screen(obj = "trompette")
-    $ renpy.pause(3.0, hard = True)
+    pause 3.0
     play sound "sfx/SFX_Trumpet_01.ogg"
-    $ renpy.pause(2.0, hard = True)
+    pause 2.0
     hide screen inventory_screen
     window hide
     scene bg_buffles with hpunch:
         zoom 0.7
     pause 1.5
     window show
-    show char_crossfit pleurs right:
-        zoom 0.28 xalign 0.5 yalign 0.8
+    show char_crossfit pleursG right:
+        zoom 0.3 xalign 0.5 yalign 0.8
         xpos 1.2 ypos 0.84
-        linear 2.0 xpos -0.5 rotate -15
+        linear 1.8 xpos -0.5 rotate -15
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Pleurs_01.ogg"
     cross "AU SECOUUUURS ! LES BUFFLES M'ATTAQUENT !" 
