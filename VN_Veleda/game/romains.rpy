@@ -17,8 +17,14 @@ label romains_PremiereRencontre:
 label romains_Part1:
     
     stop music1 fadeout 1.0
-    $ renpy.music.set_volume(0.5, delay=0, channel='music1')
-    $ renpy.music.play("music/MUSIC_Tente_Romain.ogg", channel = "music1", loop = True, fadein = 2)
+    $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music2", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
+    
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
+    
     
     $ interlocuteur = "num_char"
     

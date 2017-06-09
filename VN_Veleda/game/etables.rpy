@@ -273,7 +273,7 @@ label etables_PeurDesBufflesPart2:
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Pleurs_01.ogg"
     cross "Au secooouuuurs ! Les buffles m'attaquent !" 
     #scene black with Dissolve(1.0)
-    outline "Et c'est ainsi que le brave Crossfitrichernvald prit la fuite devant les buffles fonçant sur lui"
+    outline "Et c'est ainsi que le brave Crossfitrichernvald prit la fuite devant les buffles fonçant sur lui..."
     scene bg_etables2 with Dissolve(1.0):
         zoom 0.7
     show char_ernust normal right:
