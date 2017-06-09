@@ -594,7 +594,7 @@ label tourVeleda_MortVeleda:
     e "Qu'est ce qu'on va faire ?"
     
     show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
-    y "Je vais trouver quelquechose... bouge surtout pas d'ici !"
+    y "Je vais trouver quelquechose... Ne bouge surtout pas d'ici !"
     
     hide screen datingSim
     
