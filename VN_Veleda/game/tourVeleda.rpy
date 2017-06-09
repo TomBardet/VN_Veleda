@@ -862,7 +862,7 @@ label ending_ChevrePart1 :
     i "Josiane ?! Vraiment ?!"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     show char_beaudrik choque right zorder 2:
-        xalign 0.5 yalign 0.8 zoom 0.39
+        xalign 0.5 yalign 0.8 zoom 0.8
         xpos -0.2 ypos 0.88
         easein 0.8 xpos 0.2
     show char_ingrid choc:
@@ -885,7 +885,7 @@ label ending_ChevrePart1 :
     goat "Bêêêêêêêêêêh !"
     show char_goat normal at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Humilie_01.ogg"
-    show char_beaudrik insulte at speakingAnim(0.18, 0.98, 0.96, 0.20)
+    show char_beaudrik insulte at speakingAnim(0.18, 0.98, 0.96, 0.8)
     bg "Adieu Josiane..."
     bg "Mon amie..."
 
