@@ -166,8 +166,8 @@ label etables_PeurDesBufflesPart1bis:
         parallel:
             linear 0.5 rotate -16 
     pause 1.6
-    outline "Il y a forcèment quelquechose à faire pour aider ce pauvre homme..."
-    outline "Et qui sait... ça pourrait peut-être t'aider dans ta quête..."
+    nar "{i}Il y a forcèment quelquechose à faire pour aider ce pauvre homme...{/i}"
+    nar "{i}Et qui sait... ça pourrait peut-être t'aider dans ta quête...{/i}"
     scene bg_etables:
         zoom 0.75 xpos -0.1
         linear 0.5 zoom 0.7 xpos 0.0
