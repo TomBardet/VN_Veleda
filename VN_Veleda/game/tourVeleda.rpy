@@ -769,46 +769,56 @@ label tourVeleda_MarryingIngridPart2:
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
-    scene vel mario2 
-    pause 1.5
+    scene vel mario2 with Dissolve(1.5) 
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
-    
-    show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
-    show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3)
+
+    show char_veledaernust 01 at speakingAnim(0.8, 0.78, 0.76, 0.3) zorder 2:
+
+    show char_ingrid normal zorder 2:
+        xalign 0.5 yalign 0.8 zoom 0.25
+        xpos 0.0 ypos 1.5
+        linear 1.5 xpos 0.15 ypos 1.16
+    pause 2.0
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
     ve "Nous sommes réunis en ce jour heureux pour célébrer le..."
+    show vel mario zorder 1 with Dissolve(0.5) 
+    pause 0.5
+    show vel mario2 zorder 1 with Dissolve(0.5) 
+    show char_veledaernust 02 at speakingAnim(0.8, 0.78, 0.76, 0.3) zorder 2:
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
     e "Eh ! Mais elle arrête pas de bouger !"
     play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
     y "De bouger ?!"
     
+    show vel normal zorder 1 with hpunch
+    show char_veledaernust 02:
+        xalign 0.5 yalign 0.8
+        zoom 0.3 xpos 0.8 ypos 0.78
+        linear 0.6 xpos 2.0 ypos 1.0
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
     v "Ernust ! Que faites-vous !"
     v "Lâchez nous immédiatement !"
     
-    show char_ingrid choc
+    show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
     i "Ernust ! Tu as fait semblant d'être Véléda ?"
     i "Quelle horreur ! Tu as bafoué toutes nos traditions !"
     
-    scene black
+    show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
+    show vel normal2 zorder 1
+    show char_ernust inquiet left zorder 2:
+            xalign 0.5 yalign 0.8
+            xpos 1.0 ypos 1.9 zoom 0.7 rotate -15
+            linear 0.8 xpos 0.9 ypos 1.13
+    pause 1.2
     
-    outline "ici scène clé des personnages de la VN tous sous le choc"
-    
-    scene bg_chambre
-    
-    show char_ingrid choc at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
-    show char_veleda normal :
-        zoom 0.7 xpos 0.38 ypos 0.22
-    show char_ernust normal left :
-        zoom 0.75 xpos 0.75 ypos 0.27
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_01.ogg"
     e "Ah ben mince Gaufrid, on a été démasqué."
-    show char_ingrid choc
+    show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
     i "Gaufrid ?! Tu est dans le coup toi aussi ?!"
-    
+    show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     y "Ernust ! Tu m'avais dit qu'elle était morte !"
     jump ending_AskErnust
 
@@ -816,38 +826,50 @@ label tourVeleda_MarryingIngridPart2:
 
 label ending_AskErnust:
 
-    
+    show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
     e "Bah oui ! Je l'ai reniflée et j'ai pas senti son pouls."
     e "Y avait bien une odeur d'oignon séché, mais c'est tout."
-    
+    show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
+    show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
+    i "Gaufrid explique toi !"
+    show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     menu :
-        " "
-        "test":
+        i "{cps=0}Gaufrid explique toi !{/cps}"
+        "J'ai rien fait ! C'est Ernust !":
             jump ending_ErnustPart1
-        "Ingrid, je dois t'avouer la vérité !" :
+        "Ingrid, je dois t'avouer la vérité..." :
             jump ending_Admit
         "La vrai coupable, c'est la chêvre !" :
             jump ending_ChevrePart1
 
 # -----------------------------------------#
 label ending_ChevrePart1 :
-
+    
+    play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
     y "Ne l'écoute pas Ingrid !"
     y "La seule et unique coupable ici, c'est Josiane, la chêvre. J'en suis sûr !"
-    show char_goat choc at center
+    show char_goat normal zorder 2:
+        xalign 0.5 yalign 0.8
+        zoom 0.45 xpos 0.5 ypos 1.5
+        easein 0.8 ypos 0.85
+    play sound "sfx/Voices/Chevre/Char_Chevre_Choc1_01.ogg"
     goat "Bêêêêêêêêêêêêh !"
-    
+    show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
     i "Josiane ?! Vraiment ?!"
+    show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
+    show char_beaudrik choque left
+        
+    play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Choc_01.ogg"
     bg "Josiane ?! Mais comment t'as pu me faire ça ?!"
     bg "Après tout ce que nous avons vécu ensemble, Josiane !"
-    
+    play sound "sfx/Voices/Chevre/Char_Chevre_Love_03.ogg"
     goat "Bêêêêêêêêh..."
-    
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     v "Josiane, les faits sont là."
     v "Je n'ai d'autres choix que de vous condamner à l'exil..."
-
+    play sound "sfx/Voices/Chevre/Char_Chevre_Normal_01.ogg"
     goat "Bêêêêêêêêêêh !"
-    
+    play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Humilie_01.ogg"
     bg "Adieu Josiane..."
     bg "Mon amie..."
 
@@ -859,15 +881,16 @@ jump ending_ChevreTrahie
 label ending_Admit :
     
     y "Ingrid, je dois tout t'avouer..."
-    y "Je suis coupable avec Ernust !"
-    
+    y "Ernust et moi sommes coupables !"
+    play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
     i "Oh ! Mon tout nouveau fiancé !"
     i "Comment as tu pu ? Quelle tristesse !"
-    i "Je me suis tellement attachée à toi depuis que tu m'as amené un {b}glaive{/b} et un {b}bouclier{/b} !"
-    
-    v "Monsieur Gaufrid ! Comment avez vous pu crachoter sur nos traditions de la sorte ?"
+    i "Je me suis tellement attachée à toi depuis que tu m'as rapporté un {b}glaive{/b} et un {b}bouclier{/b} !"
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
+    v "Gaufrid ! Comment avez vous pu crachoter sur nos traditions de la sorte ?"
     v "Votre punition sera..."
-#    play sound "sfx/SFX_Drama_01.ogg"
+    play sound "sfx/SFX_Drama_01.ogg"
+    pause 0.5
     v "L'exil !"
     
     stop music1 fadeout 1.5
@@ -876,70 +899,44 @@ label ending_Admit :
 jump ending_ExilPart1
 # -----------------------------------------#
 label ending_ErnustPart1 :
-    y "Ernust ? Comment tu as pu faire une chose pareil !"
     
-    e "Oh bah mais... Gaufrid !"
+    play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
+    y "J'ai rien fait ! C'est Ernust le coupable !"
+    play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_01.ogg"
+    e "Oh bah mais... Gaufrid..."
     
-    y "Silence ! Je peux pas écouter un tel criminel !"
-    
-    i "Ernust... il semblait si gentil !"
-    
-    v "Monsieur Ernust, votre bétise nous a toujours dégoûté !"
-    v "Nous avions prévenu vos parents..."
-    v "Après qu'il vous ai cogné contre le pourtour d'un chaudron !"
-    
-    e "Mais... mais euh..."
-    
+    i "Ernust... Il semblait pourtant si gentil..."
+    play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
+    v "Ernust, vous avez tourné en ridicule nos traditions."
+
     v "C'est avec grand plaisir que nous vous condamnons à..."
- #   play sound "sfx/SFX_Drama_01.ogg"
+    play sound "sfx/SFX_Drama_01.ogg"
     v "L'exil !"
+    play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
+    e "Oh non ! Mais je vais aller où moi ?"
     
-    e "Oh non ! Mais où je vais aller ?"
-    
-    i "Le pauvre Ernust !"
-    
-    y "Laisse tomber ma belle Ingridounette, c'est un criminel !"
-    y "Viens on va vivre heureux et faire beaucoup d'enfants !"
-    
-    i "Ohlalala quel coquin !"
     
     hide char_ingrid
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
-    
-    e "Je suis... tout seul"
+    play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
+    e "Gaufrid... Pourquoi...?"
 
 
 jump ending_ErnustTrahi
 # -----------------------------------------#
 
 label ending_ExilPart1 :
-    y "L'exil ? Très bien !"
-    y "Je suis désolé ma Gridounette..."
-    y "Au moment de notre marriage, je te laisse seule !"
     
-    i "Oh t'inquiète pas y'a Beaudrik !"
-    
-    y "Ah bon d'accord..."
-    y "Au moins je peux partir avec mon meilleur ami !"
-    
-    e "Oh bah alors Gaufrid..."
-    e "Tu parles de moi ?"
-    
+    y "L'exil !?"
+    y "Si je dois partir, je partirai avec mon meilleur ami !"
+    e "Vraiment ?"
     menu:
-        " "
+        e "{cps=0}Vraiment ?{/cps}"
         "Oui Ernust, on s'en va !":
-            y "Oui Ernust, tu es mon meilleur ami !"
-            y "Des fois je suis un peu méchant avec toi..."
-            y "Mais tu es toujours là pour moi !"
-            
-#            play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
-            e "Ohlala Gaufrid tu vas me faire rougir !"
-            
-            y "Viens, on part en voyage ensemble !"
-            
-#            play sound "sfx/SFX_Char_Ernust_Joyeux_01.ogg"
+            y "Oui Ernust, on s'en va !"
+
             e "Oh Bah Gaufrid... je suis tellement content !"
             
             stop music1 fadeout 1.5
@@ -947,17 +944,14 @@ label ending_ExilPart1 :
             
             jump ending_ExilAvecErnust
             
-        "Je pars avec la chèvre !":
-            y "Viens Josiane, on va découvrir le monde ensemble !"
+        "Allez viens Josiane, on s'en va !":
+            y "Viens Josiane, allons découvrir le monde ensemble !"
             
-            goat "Bêêê ?"
-            goat "Bê !"
-            goat "..."
-            goat "Bêêêêê."
+            goat "Bêêêêêêêêêêh ?"
             
             stop music1 fadeout 1.5
             stop ambiance fadeout 0.5
             
-            e "Au... au revoir Gaufrid !"
+            e "Mais... Gaufrid ?"
             
             jump ending_ExilAvecChevre

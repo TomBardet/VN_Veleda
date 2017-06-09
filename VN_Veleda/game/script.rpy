@@ -51,6 +51,7 @@ label start:
         Forge_LeaderPrice_check = 0
         Romain_EntenduParlerDesLunettes_check = 0
     
+    jump tourVeleda_MarryingIngridPart2
     jump intro
     
 # -----------------------------------------#

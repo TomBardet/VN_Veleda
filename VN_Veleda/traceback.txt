@@ -1,32 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/forge.rpy", line 473, in script
-    menu:
-Exception: Open text tag at end of string u'{cps=0]Rien du tout ? Allez mon p\u2019tit Gaufrid, \xe7a fait deux mois que je ne vends rien, fais un effort !{/cps] '.
+  File "game/tourVeleda.rpy", line 816, in script
+    show char_ernust inquiet left at speakingAnimation(0.9, 1.3, 1.1, 0.8)
+  File "game/tourVeleda.rpy", line 816, in <module>
+    show char_ernust inquiet left at speakingAnimation(0.9, 1.3, 1.1, 0.8)
+NameError: name 'speakingAnimation' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/forge.rpy", line 473, in script
-    menu:
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
-    renpy.exports.say(who, what, interact=self.interact)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
-    who(what, interact=interact)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
-    **display_args)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 496, in display_say
-    what_text.update()
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\text\text.py", line 1505, in update
-    tokens = self.tokenize(text)
-  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\text\text.py", line 1887, in tokenize
-    tokens.extend(textsupport.tokenize(i))
-  File "renpy/text/textsupport.pyx", line 120, in renpy.text.textsupport.tokenize (gen\renpy.text.textsupport.c:3641)
-    raise Exception("Open text tag at end of string {0!r}.".format(s))
-Exception: Open text tag at end of string u'{cps=0]Rien du tout ? Allez mon p\u2019tit Gaufrid, \xe7a fait deux mois que je ne vends rien, fais un effort !{/cps] '.
+  File "game/tourVeleda.rpy", line 816, in script
+    show char_ernust inquiet left at speakingAnimation(0.9, 1.3, 1.1, 0.8)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1075, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 1036, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1749, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1743, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/tourVeleda.rpy", line 816, in <module>
+    show char_ernust inquiet left at speakingAnimation(0.9, 1.3, 1.1, 0.8)
+NameError: name 'speakingAnimation' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
