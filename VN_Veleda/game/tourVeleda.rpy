@@ -983,11 +983,13 @@ label ending_ExilPart1 :
                 easein 0.8 ypos 0.85
             pause 0.8
             show char_goat choc at speakingAnim(0.75, 0.88, 0.86, 0.45)
+            play sound "sfx/Voices/Chevre/Char_Chevre_Heureux_03.ogg"
             goat "Bêêêêêêêêêêh ?"
             show char_goat choc at notSpeakingAnim(0.75, 0.88, 0.86, 0.45)
             stop music1 fadeout 1.5
             stop ambiance fadeout 0.5
             show char_ernust inquiet left at speakingAnim(0.5, 1.18, 1.16, 0.7)
+            play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_04.ogg"
             e "Mais... Gaufrid ?"
             show char_ernust inquiet left at notSpeakingAnim(0.5, 1.18, 1.16, 0.7)
             jump ending_ExilAvecChevre
