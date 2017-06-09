@@ -1,24 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 196, in script
-    $ _return = renpy.call_screen("action_choice_placeVillage"(lunette=_testLunettes, glaive=_testGlaive, bouclier=_testBouclier))
-  File "game/script.rpy", line 196, in <module>
-    $ _return = renpy.call_screen("action_choice_placeVillage"(lunette=_testLunettes, glaive=_testGlaive, bouclier=_testBouclier))
-TypeError: 'unicode' object is not callable
+IOError: Couldn't find file 'ambiances/AMB_Lieu_CarteVillage_01'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 196, in script
-    $ _return = renpy.call_screen("action_choice_placeVillage"(lunette=_testLunettes, glaive=_testGlaive, bouclier=_testBouclier))
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 814, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1719, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 196, in <module>
-    $ _return = renpy.call_screen("action_choice_placeVillage"(lunette=_testLunettes, glaive=_testGlaive, bouclier=_testBouclier))
-TypeError: 'unicode' object is not callable
+  File "renpy/common/_layout/screen_main_menu.rpym", line 30, in <module>
+    ui.interact()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2825, in interact_core
+    renpy.audio.audio.interact()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 930, in interact
+    periodic()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 864, in periodic
+    c.periodic()
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 403, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 67, in load
+    rv = renpy.loader.load(fn)
+  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'ambiances/AMB_Lieu_CarteVillage_01'.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187

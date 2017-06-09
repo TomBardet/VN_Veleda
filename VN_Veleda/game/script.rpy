@@ -51,7 +51,6 @@ label start:
         Forge_LeaderPrice_check = 0
         Romain_EntenduParlerDesLunettes_check = 0
     
-    #jump taverne_AbusAlcoolPart1
     jump intro
     
 # -----------------------------------------#
