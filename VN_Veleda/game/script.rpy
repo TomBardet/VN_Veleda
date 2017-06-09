@@ -52,7 +52,6 @@ label start:
         Romain_EntenduParlerDesLunettes_check = 0
     
     stop music
-    jump tourVeleda_MarryingIngridPart2
     jump intro
     
 # -----------------------------------------#
