@@ -200,7 +200,6 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
-
 init:
    # $ config.keymap['game_menu'].remove('K_ESCAPE')
    # $ config.keymap['game_menu'].remove('K_MENU')

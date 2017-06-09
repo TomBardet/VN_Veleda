@@ -51,7 +51,6 @@ label start:
         Forge_LeaderPrice_check = 0
         Romain_EntenduParlerDesLunettes_check = 0
     
-    #jump taverne_AbusAlcoolPart1
     jump intro
     
 # -----------------------------------------#
@@ -238,7 +237,7 @@ label narration_ellipseCuite:
 # -----------------------------------------#
 
 label PlaceDuVillageAllObjects:
-    scene bg_place with Dissolve(1.5)
+    scene bg_place
     window hide    
     y "Attends... J'ai un glaive..."
     show screen inventory_screen(obj = "glaive")

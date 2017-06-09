@@ -2,8 +2,6 @@ init -1:
     image bad_img = im.FactorScale("images/ds_bad.png", 0.1)
     image good_img = im.FactorScale("images/ds_neutral.png", 0.1)
 
-    
-
 init -1 python:
     import renpy.store as store
     import renpy.exports as renpy # we need this so Ren'Py properly handles rollback with classes
@@ -14,8 +12,7 @@ init -1 python:
     interlocuteur = None
     lieu = None
     CAactif = False
-    
- 
+
     class Chara(renpy.store.object):
         def __init__(self, name, love=0,max_love=0):
             self.name=name
