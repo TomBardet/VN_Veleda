@@ -415,10 +415,10 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
             jump forge_Brutalmund_04_01_Branche_EssaiRoutier
         "Je vais l'acheter à Crossfitrichernvald, alors.":
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
-            y "Oui mais, le fait est que je suis indécis entre les vôtres et ceux de Crossfitrichernvald."
+            y "Je vais peut être me fournir chez Crossfitrichernvald alors !"
             show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
-            brut "Quoi !? Il m'accuse de vol, et en plus il me fait d'la concurrence ?!"
+            brut "Quoi ? Ce sale Batave m'accuse de vol, et en plus, il me fait d'la concurrence ?!"
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_02.ogg"
             brut "Ha ! Là, j’en peux plus mon p’tit Gaufrid. J’en peux plus j'te dis !"

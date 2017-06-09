@@ -289,5 +289,6 @@ init:
     $renpy.music.register_channel("music1", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
     $renpy.music.register_channel("music2", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
     $renpy.music.register_channel("ambiance", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
+    $renpy.music.register_channel("endings", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
     
 
