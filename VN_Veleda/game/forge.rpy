@@ -560,10 +560,10 @@ label forge_Brutalmund_07_Bouclier:
     stop music1 fadeout 1.5
     
     hide  char_brutal
-    nar "Ainsi, Brutalmund quitta son poste." 
-    nar "En profiter pour lui voler un {b}bouclier{/b} serait parfaitement déloyal !"
+    outline "Ainsi, Brutalmund quitta son poste." 
+    outline "En profiter pour lui voler un {b}bouclier{/b} serait parfaitement déloyal !"
     play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
-    y "T'as raison, c'est une super bonne idée."
+    y "T'as raison, c'est une super bonne idée !"
     $ inventory.add(bouclier)
     $ _testBouclier = 1
     show img_bouclier at center:

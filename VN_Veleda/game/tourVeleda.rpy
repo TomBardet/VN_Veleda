@@ -843,7 +843,7 @@ label ending_AskErnust:
             jump ending_ErnustPart1
         "Ingrid, je dois t'avouer la vérité..." :
             jump ending_Admit
-        "La vrai coupable, c'est la chêvre !" :
+        "La vrai coupable, c'est la chèvre !" :
             jump ending_ChevrePart1
 
 # -----------------------------------------#
@@ -879,14 +879,14 @@ label ending_ChevrePart1 :
     show char_goat choc at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     v "Josiane, les faits sont là."
-    v "Je n'ai d'autres choix que de vous condamner à l'exil..."
+    v "Je n'ai d'autre choix que de vous condamner à l'exil..."
     play sound "sfx/Voices/Chevre/Char_Chevre_Normal_01.ogg"
     show char_goat choc at speakingAnim(0.6, 0.88, 0.86, 0.45)
     goat "Bêêêêêêêêêêh !"
     show char_goat normal at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Humilie_01.ogg"
     show char_beaudrik insulte at speakingAnim(0.18, 0.98, 0.96, 0.8)
-    bg "Adieu Josiane..."
+    bg "Adieu, Josiane..."
     bg "Mon amie..."
 
     stop music1 fadeout 1.5

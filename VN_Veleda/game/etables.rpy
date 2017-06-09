@@ -38,7 +38,7 @@ label etables_PeurDesBufflesPart1:
             jump etables_PeurDesBufflesPart2
         elif _return == "buffles":
             buf "Meuuuuuuuh !"
-            y "A vos souhaits"
+            y "À vos souhaits !"
             jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
             scene bg_etables:
