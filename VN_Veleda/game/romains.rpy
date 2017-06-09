@@ -241,7 +241,7 @@ label romains_VisitePart2:
     
     play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
     show char_numerimus heureux at speakingAnim(0.2, 0.82, 0.8, 1)
-    num "Mais c'est extra ! Donnez moi ça !"
+    num "Mais c'est extra ! Donne moi ça !"
     $ loveGauge(num_char, +35, 0.36, 0.28)
     hide screen inventory_screen
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
@@ -325,7 +325,8 @@ label romains_VisitePart4:
     
     stop music1 fadeout 1.0
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 2)
-    scene bg_antichambre with Dissolve (1.0)
+    scene bg_tour with Dissolve (1) :
+        xpos 0 ypos -960
     show char_ernust normal right at notSpeakingAnim (0.3, 0.92, 0.9, 0.6)  with Dissolve(1.5)
     jump romains_VisitePart5
     
@@ -428,9 +429,15 @@ label romains_VisitePart9:
     
     stop music1 fadeout 1.0
     hide screen datingSim
-    scene black with Dissolve (1.0)
+    scene bg_tour :
+        xpos 0 ypos -960
+        linear 2.0 xpos 0 ypos 0
+        
+    play sound "sfx/SFX_Stairs_01.ogg"   
+    pause 3.0
+    scene vel mario zorder 1 :
+        xpos 0 ypos 0
     play sound "sfx/SFX_Stairs_01.ogg"
-    scene bg_chambre with Dissolve (3.0)
     jump romains_VisitePart10
 
 # -----------------------------------------#
@@ -438,26 +445,33 @@ label romains_VisitePart10:
     
     
     $ renpy.music.play("music/MUSIC_Tour_Chambre_Jour.ogg", channel = "music1", loop = True, fadein = 2)
-    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
+    show char_veledaernust 02 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     show screen datingSim(num_char, 0.25, 0.35)
     
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
-    num "Wow. Voici donc la vénérable Véléda..."
-    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
-    
+    num "Wow. Voici donc la vénérable Véléda..."    
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_02.ogg"
-    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
     ve "Bonnnnnnnjouuuuur etranger !"
     ve "Je vaiiiis vous faire une prophétie !!!"
+    scene vel mario2 zorder 1:
+        xpos 0 ypos 0
+
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
+        
+    show char_veledaernust 02 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
     ve "Souuus le soleil de la pierre couleur cailloux !!!!!!"
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
-    
+    scene vel mario zorder 1 :
+        xpos 0 ypos 0
+    show char_veledaernust 01 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
+ 
+        
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
     num "Fascinant... Qu'est-ce qu'elle veut dire ?"
-    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
@@ -467,7 +481,7 @@ label romains_VisitePart10:
     play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
     $ loveGauge(num_char, +15, 0.34, 0.28)
     num "Ahah ! C'est bien vrai !"
-    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     
     jump romains_VisiteProphetie
     
@@ -475,14 +489,17 @@ label romains_VisitePart10:
 label romains_VisiteProphetie:
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_01.ogg"
-    show char_veledaernust normal lunette at speakingAnim(0.55, 0.65, 0.67, 1)
+    scene vel mario2 zorder 1 :
+        xpos 0 ypos 0
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
+    show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
     ve  " Les oiseauuuuuuux chantent on dirait des corbeaux  !" 
-    show char_veledaernust normal lunette at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    show char_veledaernust 02 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     
-    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
     num "... Une traduction s'il vous plaît ?"
-    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     y "Là elle dit que..."
@@ -492,35 +509,39 @@ label romains_VisiteProphetie:
         y "{cps=0}Là elle dit que{/cps}"
         "La mort est proche." :
             y "Un présage de mort plane sur vous..."
-            show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
             $ loveGauge(num_char, -15, 0.34, 0.28)
             num "Euuh... Merci... J'imagine? "
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
         "Il y a... des corbeaux ?" :
             y "Les oiseaux sont surement des corbeaux."
-            show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
             $ loveGauge(num_char, +1, 0.34, 0.28)
             num "Humm..."
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
-        "Les oiseaux profiterons bientôt du printemps." :
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
+        "Les oiseaux profiterons bientôt du printemps." : 
             y "Les oiseaux profiterons bientôt du printemps qui arrive."
-            show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
             $ loveGauge(num_char, +15, 0.34, 0.28)
             num "Super ! Qui n'aime pas le printemps ?"
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
             
     
     
     #Proph 03#
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_03.ogg"
-    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    scene vel mario zorder 1 :
+        xpos 0 ypos 0
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:    
+    show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
+   
     ve  " Eau chauuuuuude….. et eau froide ne font pas bon ménage  !" 
-    
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+
+    show char_veledaernust 02 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
     y "Et là elle dit que..."
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
@@ -528,36 +549,39 @@ label romains_VisiteProphetie:
         y "{cps=0}Et là elle dit que...{/cps}"
         "Il y a un traître dans vos rangs !" :
             y "Il y a un traître dans vos rangs !"
-            show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Doute_02.ogg"
             $ loveGauge(num_char, -15, 0.34, 0.28)
             num "J'espère que ce n'est pas Digitimus..."
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
         "Vous allez sortir du lot." :
             y "Vous vous démarquerez en tant que grand centurion."
-            show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Heureux_03.ogg"
             $ loveGauge(num_char, +15, 0.34, 0.28)
             num "J'en étais sur !"
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
         "L'eau tiède c'est désagréable" :
             y "Mélanger l'eau chaude et l'eau froide, c'est mal. " 
-            show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
             $ loveGauge(num_char, +1, 0.34, 0.28)
             num "Humm... Oui."
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
             
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
-    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    scene vel mario2 zorder 1 :
+        xpos 0 ypos 0
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
+    show char_veledaernust 02 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
     ve  " Ah.... Je commence à avoir mal au bras..."
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
+    show char_veledaernust 01 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
-    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
     num "Hein ?"
-    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
     y "Heuuu là... elle dit que..."
 #    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
@@ -569,7 +593,7 @@ label romains_VisiteProphetie:
             play sound "sfx/Voices/Num/Char_Num_Normal_03.ogg"
             $ loveGauge(num_char, -15, 0.34, 0.28)
             num "Ca va... Je sais."
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1)
             jump romains_FinDeLaVisite80
         "Votre bras est très musclé." :
             y "Votre bras droit est plus musclé que le gauche. "
@@ -577,7 +601,7 @@ label romains_VisiteProphetie:
             play sound "sfx/Voices/Num/Char_Num_Heureux_03.ogg"
             $ loveGauge(num_char, +15, 0.34, 0.28)
             num "C'est extraordinaire !"
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1)
             jump romains_FinDeLaVisite80
         "Le poids de votre réussite sera remarquable !" :
             y "Le poids de votre réussite se fera sentir sur tout l’empire."
@@ -585,25 +609,34 @@ label romains_VisiteProphetie:
             play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
             $ loveGauge(num_char, +20, 0.34, 0.28)
             num "Pas étonnant mon petit père, pas étonnant !"
-            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+            show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1)
             jump romains_FinDeLaVisite80
 
 # -----------------------------------------#
 label romains_FinDeLaVisite80:
     
  
-    show char_veledaernust normal at speakingAnim(0.55, 0.65, 0.67, 1)
+    
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_01.ogg"
+    scene vel mario zorder 1 :
+        xpos 0 ypos 0
+    show char_veledaernust 02 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     ve  "... C'est fini."
-    show char_veledaernust normal at notSpeakingAnim(0.55, 0.65, 0.67, 1)
-    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1)
+    show char_veledaernust 01 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
+    show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
     num "De quoi ?"
-    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.92, 0.9, 1)
+    show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Le spectacle est terminé ! Hop hop hop, on retourne à l'entrée !"
     hide screen datingSim
-    scene bg_antichambre with Dissolve (1.0)
+    scene bg_tour :
+        xpos 0 ypos 0
+        linear 2.0 xpos 0 ypos -960
+    play sound "sfx/SFX_Stairs_01.ogg"   
+    pause 2.0
+    
     show char_numerimus heureux lunette at speakingAnim(0.5, 0.92, 0.9, 1)
     show screen datingSim(num_char, 0.55, 0.35)
 
@@ -634,6 +667,8 @@ label romains_FinDeLaVisite80:
         easeout 0.3 zoom 1.0 
         pause 0.5
         linear 0.3 xpos 1.0
+        
+    hide screen datingSim
     hide char_numerimus normal lunette with Dissolve(1.5)
     hide screen datingSim
     pause 3.0
@@ -658,7 +693,7 @@ label romains_Blague:
     if _testBlague == 1:
         y "Tenez lisez ça..."
         show screen inventory_screen(obj = "blague")
-        pause 1.0
+        pause 3.0
         hide screen inventory_screen
         play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Rire_01.ogg"
         show char_numerimus heureux at speakingAnim(0.2, 0.82, 0.8, 1)
@@ -693,19 +728,19 @@ label romains_Blague:
             pause 0.5
             linear 0.3 xpos 1.0
         pause 3.0
-        y "... Mais je vais faire quoi d'une {b}trompette{/b} moi ?"
-        show char_ernust normal right:
+        y "... Qu'est ce que je vais bien faire d'une {b}trompette{/b}, moi ?"
+        show char_ernust normal left:
             xalign 0.5 yalign 0.8
-            xpos -0.5 ypos 1.5 zoom 0.8 rotate 30
-            linear 1.0 xpos 0.05 ypos 1.15
-        pause 1.5
+            xpos 0.999 ypos 1.9 zoom 0.8 rotate -30
+            linear 0.3 xpos 0.9 ypos 1.3
+        #pause 1.5
         
         play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
         e "On peut s'en servir pour faire peur aux animaux !"
         y "... Mais de quoi tu parles ?"
-        show char_ernust normal right:
+        show char_ernust normal left:
             xalign 0.5 yalign 0.8
-            xpos 0.05 ypos 1.15 zoom 0.8 rotate 30
-            linear 1.0 xpos -0.5 ypos 1.5
+            xpos 0.9 ypos 1.3 zoom 0.8 rotate -30
+            linear 0.3 xpos 0.999 ypos 1.9
         pause 1.0
         jump romains_Part5
