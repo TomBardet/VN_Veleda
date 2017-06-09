@@ -471,7 +471,7 @@ label forge_Brutalmund_06_Hub:
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     
     menu:
-        brut "{cps=0]Rien du tout ? Allez mon p’tit Gaufrid, ça fait deux mois que je ne vends rien, fais un effort !{/cps]"
+        brut "{cps=0}Rien du tout ? Allez mon p’tit Gaufrid, ça fait deux mois que je ne vends rien, fais un effort !{/cps}"
         
         "{color=#FFFFFF}Tu veux quoi en échange ?{/color}":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"

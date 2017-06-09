@@ -1,36 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-IOError: Couldn't find file 'ambiances/AMB_Lieu_CarteVillage_01'.
+  File "game/forge.rpy", line 473, in script
+    menu:
+Exception: Open text tag at end of string u'{cps=0]Rien du tout ? Allez mon p\u2019tit Gaufrid, \xe7a fait deux mois que je ne vends rien, fais un effort !{/cps] '.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ast.py", line 814, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\python.py", line 1719, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/_layout/screen_main_menu.rpym", line 30, in <module>
-    ui.interact()
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\ui.py", line 285, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2526, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\display\core.py", line 2825, in interact_core
-    renpy.audio.audio.interact()
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 930, in interact
-    periodic()
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 864, in periodic
-    c.periodic()
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 403, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\audio\audio.py", line 67, in load
-    rv = renpy.loader.load(fn)
-  File "D:\RenPy\renpy-6.99.12.4-sdk\renpy\loader.py", line 543, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'ambiances/AMB_Lieu_CarteVillage_01'.
+  File "game/forge.rpy", line 473, in script
+    menu:
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\ast.py", line 613, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\exports.py", line 1147, in say
+    who(what, interact=interact)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 877, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 716, in do_display
+    **display_args)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\character.py", line 496, in display_say
+    what_text.update()
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\text\text.py", line 1505, in update
+    tokens = self.tokenize(text)
+  File "D:\Programs\Renpy\renpy-6.99.12.4-sdk\renpy\text\text.py", line 1887, in tokenize
+    tokens.extend(textsupport.tokenize(i))
+  File "renpy/text/textsupport.pyx", line 120, in renpy.text.textsupport.tokenize (gen\renpy.text.textsupport.c:3641)
+    raise Exception("Open text tag at end of string {0!r}.".format(s))
+Exception: Open text tag at end of string u'{cps=0]Rien du tout ? Allez mon p\u2019tit Gaufrid, \xe7a fait deux mois que je ne vends rien, fais un effort !{/cps] '.
 
 Windows-8-6.2.9200
 Ren'Py 6.99.12.4.2187
