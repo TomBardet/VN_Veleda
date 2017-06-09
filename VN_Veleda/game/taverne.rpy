@@ -169,7 +169,7 @@ label taverne_PresentationDot:
             i "Euh..."
         "C'était à cause des chiffres !":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "Ca t'es jamais arrivé de voir des chiffres au-dessus de la tête des gens ?"
+            y "Ça t'es jamais arrivé de voir des chiffres au-dessus de la tête des gens ?"
             $ loveGauge(ingrid_char, -1, 0.65, 0.3)
             show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
@@ -465,15 +465,25 @@ label taverne_ConcoursPart1:
             linear 0.5 xpos 0.5
         parallel:
             linear 0.3 rotate 0
+    pause 1.0
+    
+    show screen datingSim(ingrid_char, 0.50, 0.13)
+    
     play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
     y "J'ai la dot, ma Chouquette !"
     show char_ingrid normal at speakingAnim(0.50, 1.15, 1.12, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_02.ogg"
+    
+    $ loveGauge(ingrid_char, +10, 0.50, 0.13)
+    
     i "Bien ! On peut enfin commencer le concours !"
     show char_ingrid normal at notSpeakingAnim(0.50, 1.15, 1.12, 0.25)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
     y "Oui bien sûr ! …attends, quoi ?"
     show char_ingrid normal at speakingAnim(0.50, 1.15, 1.12, 0.25)
+    
+    hide screen datingSim
+    
     i "Shh ! ça commence !"
     
     jump taverne_Concours_Part2_0_Transition
@@ -813,6 +823,7 @@ label taverne_Concours_Part3_Brutalmund_Choice:
             show char_beaudrik normal left :
                 zoom 0.2 xpos 1.0 ypos 0.8
                 linear 0.4 xpos 0.85
+            
             bg "Tsk ! Tu ne peux pas le prouver !"
             jump taverne_Concours_Part3_Brutalmund_Choice_Subchoice
             
@@ -885,8 +896,12 @@ label taverne_Concours_Part3_Ingrid:
         parallel:
             linear 1.5 rotate 0
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
+    
     show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_03.ogg"
+    
+    show screen datingSim(ingrid_char, 0.23, 0.15)
+    
     i "Tiens, moi aussi !"
     show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
     show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18) # A FLIPPER
@@ -894,6 +909,9 @@ label taverne_Concours_Part3_Ingrid:
     pause 0.7
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_01.ogg"
     i "Mais les hommes sensibles c’est pas trop mon truc."
+    
+    $ loveGauge(ingrid_char, +10, 0.23, 0.15)
+    
     show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
     nar "{i}{color=#f2de5c}Silence ! J’appelle le deuxième témoin, Ingrid elle-même !{/i}{/color}"
     nar "{i}{color=#f2de5c}Ingrid, que pensez-vous de Beaudrik ?{/i}{/color}"
@@ -953,12 +971,15 @@ label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
             y "Vous avez vu son nez ? C’est une caverne !"
             show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_02.ogg"
+            $ loveGauge(ingrid_char, -5, 0.23, 0.15)
             i "Je sais pas, moi je trouve ça sécurisant."
             show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             nar "{i}{color=#f2de5c}Vous changeriez d'avis quand vous verrez le troisième téton{/i}{/color}"
 
         "Il a 3 tétons !":
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
+            $ loveGauge(ingrid_char, +10, 0.23, 0.15)
+            show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             y "Toutes les jeunes femmes du village le savent ! Il a un troisième téton !"
 
         "{color=#FFFFFF}Il est maigre et moche !{/color}":
@@ -1061,6 +1082,7 @@ label taverne_Concours_Part4_Final_Choice_Subchoice:
             show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
             y "Euh… Johanne ?"
+            $ loveGauge(ingrid_char, -5, 0.23, 0.15)
             nar "{i}{color=#f2de5c}Vous y étiez presque, Gaufrid.{/i}{/color}"
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
@@ -1071,6 +1093,7 @@ label taverne_Concours_Part4_Final_Choice_Subchoice:
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
+            $ loveGauge(ingrid_char, +10, 0.23, 0.15)
             y "Josiane ! Elle s’appelle Josiane !"
             jump taverne_Concours_Part5_Ending
 
@@ -1079,6 +1102,7 @@ label taverne_Concours_Part4_Final_Choice_Subchoice:
             show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
             y "Euh… Jovanne ?"
+            $ loveGauge(ingrid_char, -5, 0.23, 0.15)
             nar "{i}{color=#f2de5c}Vous y étiez presque, Gaufrid.{/i}{/color}"
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
@@ -1121,6 +1145,9 @@ label taverne_Concours_Part5_Ending:
     stop music1 fadeout 1.5
     $ renpy.pause(2.0, hard = True)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
+    
+    hide screen datingSim
+    
     i "JOSIANE ?!"
     play sound "sfx/SFX_Drama_01.ogg"
     i "LA CHEVRE !?!"
@@ -1155,7 +1182,10 @@ label taverne_Concours_Part5_Ending:
         linear 2.0 xpos 1.5
     play sound "sfx/SFX_Stairs_02.ogg"
     
-    jump taverne_Concours_Part5_Ending_BadEnding
+    if ingrid_char.love >= 60:
+        jump taverne_Concours_Part5_Ending_GoodEnding
+    else:
+        jump taverne_Concours_Part5_Ending_BadEnding
     
 # ------------BAD ENDING----------------#
 
@@ -1184,7 +1214,7 @@ label taverne_Concours_Part5_Ending_GoodEnding:
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
     y "Ingrid ! Oh Ingrid!"
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    i "Gaufrid !"
+    i "Gaufrette ! On va pouvoir se marier !"
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
     y "C’est bon ? je te fais la demande ?" 
     

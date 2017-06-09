@@ -233,18 +233,18 @@ init:
     image char_brutal surpris = "images/char/Char_brutal_surpris.png"
     
     #Beaudrik
-    image char_beaudrik mepris left = "images/char/Char_beaudrik_mepris.png"
+    image char_beaudrik mepris left = im.FactorScale("images/char/Char_beaudrik_mepris.png", 2.0)
     image char_beaudrik drague left = "images/char/Char_beaudrik_drague.png"
     image char_beaudrik insulte left = "images/char/Char_beaudrik_insulte.png"
     image char_beaudrik normal left = "images/char/Char_beaudrik_normal.png"
     image char_beaudrik choque right = "images/char/Char_beaudrik_surpris.png"
-    image char_beaudrik mepris right = im.Flip("images/char/Char_beaudrik_mepris.png", horizontal = True)
-    image char_beaudrik drague right = im.Flip("images/char/Char_beaudrik_drague.png", horizontal = True)
+    image char_beaudrik mepris right = im.FactorScale(im.Flip("images/char/Char_beaudrik_mepris.png", horizontal = True), 2.0)
+    image char_beaudrik drague right = im.FactorScale(im.Flip("images/char/Char_beaudrik_drague.png", horizontal = True), 2.0)
     image char_beaudrik insulte right = im.Flip("images/char/Char_beaudrik_insulte.png", horizontal = True)
-    image char_beaudrik normal right = im.Flip("images/char/Char_beaudrik_normal.png", horizontal = True)
-    image char_beaudrik choque left = im.Flip("images/char/Char_beaudrik_surpris.png", horizontal = True)
-    image char_beaudrik mepris2 left = "images/char/Char_Beaudrik_Mepris_02.png"
-    image char_beaudrik mepris2 right = im.Flip("images/char/Char_Beaudrik_Mepris_02.png", horizontal = True)
+    image char_beaudrik normal right = im.FactorScale(im.Flip("images/char/Char_beaudrik_normal.png", horizontal = True), 2.0)
+    image char_beaudrik choque left = im.FactorScale(im.Flip("images/char/Char_beaudrik_surpris.png", horizontal = True), 2.0)
+    image char_beaudrik mepris2 left = im.FactorScale("images/char/Char_Beaudrik_Mepris_02.png", 2.0)
+    image char_beaudrik mepris2 right = im.FactorScale(im.Flip("images/char/Char_Beaudrik_Mepris_02.png", horizontal = True), 2.0)
     
     #Numerimus
     image char_numerimus normal = "images/char/Char_numerimus_normal.png"
