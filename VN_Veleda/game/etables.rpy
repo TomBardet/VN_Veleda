@@ -50,8 +50,8 @@ label etables_PeurDesBufflesPart1:
 
     else:
         $ _return = renpy.call_screen("action_choice_Etable")
-        if _return == "buffles"
-            play sound "sfx/SFX_Buffle_Dialogue.ogg":
+        if _return == "buffles":
+            play sound "sfx/SFX_Buffle_Dialogue.ogg"
             buf "Meuuuuuuuh !"
             y "A vos souhaits"
             jump etables_PeurDesBufflesPart1

@@ -60,7 +60,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
- define config.main_menu_music = "ambiances/AMB_Lieu_CarteVillage_01"
+define config.main_menu_music = "ambiances/AMB_Lieu_CarteVillage_01.ogg"
 
 
 ## Transitions #################################################################
