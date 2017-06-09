@@ -10,6 +10,15 @@ init:
     $  _testEtable = 0
     $  _testRomainsTalk = 0
 label etable_fromPlace:
+            
+    $ renpy.music.play("music/MUSIC_Etable_Normale.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("music/MUSIC_Etable_Panique.ogg", channel = "music2", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_Etable_Normal_01.ogg", channel = "ambiance", loop = True, fadein = 1)
+    
+    $ renpy.music.set_volume(0.4, delay=0, channel='music1')
+    $ renpy.music.set_volume(0, delay=0, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0, channel='ambiance')
+    
     scene bg_etables with Dissolve(1.5):
         zoom 0.70
     jump etables_PeurDesBufflesPart1
@@ -75,6 +84,7 @@ label etables_PeurDesBufflesPart1:
 # -----------------------------------------#
 
 label etables_PeurDesBufflesPart1bis:
+    
     show screen datingSim(cross_char, 0.45, .27)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
     y "Bonjour ! Alors, ces buffles ?"
@@ -166,8 +176,8 @@ label etables_PeurDesBufflesPart1bis:
         parallel:
             linear 0.5 rotate -16 
     pause 1.6
-    outline "Il y a forcèment quelquechose à faire pour aider ce pauvre homme..."
-    outline "Et qui sait... ça pourrait peut-être t'aider dans ta quête..."
+    nar "{i}Il y a forcèment quelquechose à faire pour aider ce pauvre homme...{/i}"
+    nar "{i}Et qui sait... ça pourrait peut-être t'aider dans ta quête...{/i}"
     scene bg_etables:
         zoom 0.75 xpos -0.1
         linear 0.5 zoom 0.7 xpos 0.0
@@ -213,11 +223,18 @@ label etables_PeurDesBufflesPart2:
         xpos 0.7 ypos 0.77
         linear 0.8 xpos 1.2 
     pause 1.0
+    
+    $ renpy.music.set_volume(0.3, delay=1, channel='music1')
+    $ renpy.music.set_volume(0, delay=0, channel='music2')
+    $ renpy.music.set_volume(0.3, delay=1, channel='ambiance')
+    
     show char_ernust inquiet left:
         xalign 0.5 yalign 0.8
         xpos 0.65 zoom 0.65 ypos 1.6
         linear 0.4 ypos 0.94
     pause 1.0
+    
+
     show char_ernust inquiet left at speakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_04.ogg"
     e "Euh... Gaufrid, t'es sur que c'est une bonne idée ?"
@@ -230,8 +247,17 @@ label etables_PeurDesBufflesPart2:
     scene black with Dissolve (1.0)
     show screen inventory_screen(obj = "trompette")
     pause 3.0
+    
+    $ renpy.music.play("ambiances/AMB_Lieu_Etable_Panic_01.ogg", channel = "ambiance", loop = True, fadein = 0.5)
+    
+    $ renpy.music.set_volume(0.4, delay=0.5, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0.5, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0.5, channel='ambiance')
+    
     play sound "sfx/SFX_Trumpet_01.ogg"
-    pause 2.0
+    
+    pause 1.0
+    
     play sound "sfx/SFX_Buffle_Peur.ogg"
     hide screen inventory_screen
     window hide
@@ -266,13 +292,15 @@ label etables_PeurDesBufflesPart2:
     show img_lunettes at center:
         xalign 0.7 yalign 0.9 zoom 0.3
         linear 0.5 yalign 0.7 zoom 0.4
-        easein 0.5 zoom 0.45
+        easein 0.5 zoom 0.55
         easeout 0.5 zoom 0.4
         pause 0.5
         parallel :
             linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
         parallel :
             linear 0.9 alpha 0
+    pause 0.5
+    play sound "sfx/SFX_UI_Lunettes_01.ogg"
     show img_bag:
         xpos 1.0 yalign 0.05 zoom 1.0
         linear 0.5 xpos 0.87 yalign 0.05
@@ -281,12 +309,22 @@ label etables_PeurDesBufflesPart2:
         easeout 0.3 zoom 1.0 
         pause 0.5
         linear 0.3 xpos 1.0
-    pause 3.0
+    pause 2.0
+    play sound "sfx/SFX_UI_Inventory_Bag_01.ogg"
+    pause 0.5
     show char_ernust normal right at speakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_07.ogg"
     e "On devrais ptêtre les lui rendre ?"
     show char_ernust normal right at notSpeakingAnim(0.65, 1.02, 1.0, 0.65)
     $ _etableDone = 1
+    $ renpy.music.play("ambiances/AMB_Lieu_Etable_Panic_01.ogg", channel = "ambiance", loop = True, fadein = 0.5)
+    
+    stop music1 fadeout 1.5
+    stop music2 fadeout 1.5
+    stop ambiance fadeout 0.5
+    
+    pause 0.5
+    
     jump PlaceDuVillageDefault
     
 # -----------------------------------------#
