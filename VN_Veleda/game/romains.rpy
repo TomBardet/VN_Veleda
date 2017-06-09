@@ -125,11 +125,16 @@ label romains_Part4:
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     menu :
         num "{cps=0}Yup. On s'ennuie...{/cps}"
-        "Je vous fais visiter ?" if _testGlaive == 0:
+        "Racontez-vous des choses." if _testGlaive == 0:
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Il y a des belles choses à voir dans le coin."
-            y "Venez avec moi, j'vais vous faire visiter."
-            jump romains_VisitePart1
+            y "Vous êtes deux, profitez-en ! Racontez vous des choses par exemple."
+            play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
+            show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
+            num "Avec lui là ?! Mon porte-enseigne ?"
+            num "Oh non merci j'me le coltine déjà toute l'année..."
+            num "Enfin bon... du coup..."
+            show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
+            jump romains_Part4
             
         "J'ai une bonne blague pour vous !" if _testTrompette == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
@@ -190,7 +195,7 @@ label romains_VisitePart1:
     show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
     play sound "sfx/Voices/Num/Char_Num_Doute_03.ogg"
     num "Je vois pas à 2 mètres. Pour le folklore local on repassera...  "
-    num "Le génie qui me sert de porte-enseigne a oublié mes {b}lunettes{b} à Rome."
+    num "Le génie qui me sert de porte-enseigne a oublié mes {b}lunettes{/b} à Rome."
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     
     if _testLunettes == 1:
@@ -202,7 +207,7 @@ label romains_VisitePart1:
         
     else:
         menu :
-            num "{cps=0}Le génie qui me sert de porte-enseigne a oublié mes lunettes à Rome.{/cps}"
+            num "{cps=0}Le génie qui me sert de porte-enseigne a oublié mes {b}lunettes{/b} à Rome.{/cps}"
             "Ah mince...Vous avez pas une paire de rechange ?":
                 play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
                 y "Vous avez pas une paire de rechange ?"
