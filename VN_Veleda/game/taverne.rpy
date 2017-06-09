@@ -573,16 +573,17 @@ label taverne_Concours_Part2_1_Intro:
     nar "{i}{color=#f2de5c}Ingrid est une jeune femme célibataire à la recherche de l’amour.{/i}{/color}"
     nar "{i}{color=#f2de5c}Tiraillée entre la beauté du corps et la beauté du cœur, \n Ingrid devra choisir entre deux Germains presque charmants.{/i}{/color}"
     show char_beaudrik normal left :
-        zoom 0.2 xpos 1.0 ypos 0.2
-        linear 0.4 xpos 0.6
+        xalign 0.5 yalign 0.8
+        zoom 0.8 xpos 1.0 ypos 0.8
+        linear 0.4 xpos 0.86
     pause 0.4
     show char_ingrid love at notSpeakingAnim(0.18, 1.115, 1.14, 0.25)
     nar "{i}{color=#f2de5c}D'un coté, Beaudrik, parangon de virilité.{/i}{/color}"
     show char_ingrid degout at notSpeakingAnim(0.18, 1.115, 1.14, 0.25)
-    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
     nar "{i}{color=#f2de5c}De l'autre, Gaufrid, maigre et moche.{/i}{/color}"
     show char_ingrid degout at notSpeakingAnim(0.18, 1.115, 1.14, 0.25)
-    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
     play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
     y "Quelqu’un peut m’expliquer ce qu’il se passe ?"
     show char_ingrid degout at speakingAnim(0.18, 1.15, 1.17, 0.25)
@@ -624,7 +625,7 @@ label taverne_Concours_Part2_1_Intro_choice:
 label taverne_Concours_Part2_2_Manual:
 
     show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
     nar "{i}{color=#f2de5c}Il est maintenant l’heure de l’ultime épreuve qui départagera Beaudrik et Gaufrid !{/i}{/color}"
     nar "{i}{b}{color=#f2de5c}« Le Procès de l’Amour ! »{/i}{/b}{/color}"
     jump taverne_Concours_Part2_3_Rules
@@ -635,7 +636,7 @@ label taverne_Concours_Part2_2_Manual:
         nar "{cps=0}{i}{color=#f2de5c}Gaufrid, avez-vous lu le manuel, ou faut-il que je vous explique les règles ?{/i}{/color}{/cps}"
         "Quel manuel ?":
             show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
             y "Euh ?"
             nar "{i}{color=#f2de5c}Celui à votre gauche, Gaufrid. Juste à côté de l’ordi.{/i}{/color}"
@@ -647,13 +648,13 @@ label taverne_Concours_Part2_2_Manual:
             play sound "sfx/Voices/Player/Char_Player_Hesitation_03.ogg"
             y "Je l’ai appris par cœur."
             show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
             nar "{i}{color=#f2de5c}Maigre, moche et menteur.{/i}{/color}"
             nar "{i}{color=#f2de5c}Ça va surement bien se passer pour vous.{/i}{/color}"
             jump taverne_Concours_Part2_3_Rules
         "J’ai oublié règles":
             show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
             y "Euh… j’ai un trou de mémoire."
             nar "{i}{color=#f2de5c}Maigre, moche et amnésique.{/i}{/color}"
@@ -690,20 +691,20 @@ label taverne_Concours_Part2_3_Rules:
     
     nar "{i}{color=#f2de5c}Je vous explique les règles !{/i}{/color}"
     show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
     nar "{i}{color=#f2de5c}Pour ce dernier test, {b}Beaudrik{/b}, Champion en Titre, sera acclamé par les habitants du village pour ses qualités.{/i}{/color}"
     show char_ingrid degout at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
     nar "{i}{color=#f2de5c}{b}Gaufrid{/b}, Challengeur de cet épisode, devra faire preuve d’humilité et se taire, car de toute façon il ne vaut rien.{/i}{/color}"
     nar "{i}{color=#f2de5c}Ceci dit, il pourra {i}{b}{color=#f2de5c}faire objection{/color}{/b}{/i} aux nombreux compliments faits à Beaudrik, s’il le souhaitera.{/i}{/color}"
     show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25)
-    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2)
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8)
     nar "{i}{color=#f2de5c}Nous pouvons passer aux {b}interviews{/b}, ou {b}commencer le jeu{/b}.{/i}{/color}"
     show char_ingrid normal at notSpeakingAnim(0.18, 1.2, 1.14, 0.25):
         zoom 1.0 xpos 0.18 ypos 1.2
         linear 1.0 xpos -0.3
-    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.2):
-        zoom 1.0 xpos 0.86 ypos 0.85
+    show char_beaudrik normal left at notSpeakingAnim(0.86, 0.85, 0.88, 0.8):
+        zoom 0.8 xpos 0.86 ypos 0.85
         linear 1.0 xpos 1.5
     nar "{i}{color=#f2de5c}Que souhaitez-vous faire, Gaufrid ?{/i}{/color}"
     
@@ -757,28 +758,28 @@ label taverne_Concours_Part2_4_Hub:
             y "Je voudrais voir l’interview de Beaudrik."
             nar "{i}{color=#f2de5c}Excellent choix !{/i}{/color}"
             nar "{i}{color=#f2de5c}Messieurs-dames : Beaudrik, Champion en titre !{/i}{/color}"
-            show char_beaudrik drague right at notSpeakingAnim(0.86, 0.85, 0.88, 0.45):
+            show char_beaudrik drague right at notSpeakingAnim(0.86, 0.85, 0.88, 1.0):
                 xalign 0.45 yalign 0.8
-                zoom 0.5 xpos 1.5 ypos 0.77
+                zoom 0.88 xpos 1.5 ypos 0.77
                 linear 0.7 xpos 0.7
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Drague_03.ogg"
             bg "Merci les gars !"
             nar "{i}{color=#f2de5c}Beaudrik, vous sentez-vous prêt ?{/i}{/color}"
-            show char_beaudrik normal left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik normal left at speakingAnim(0.8, 0.85, 0.86, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_02.ogg"
             bg "Je suis à fond ! Moi, les compétitions, c'est mon truc."
-            show char_beaudrik mepris2 left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik mepris2 left at speakingAnim(0.8, 0.85, 0.86, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_08.ogg"
             bg "Sinon je suis un peu nerveux car Josiane, mon ex-fiancée, est dans le public."
-            show char_beaudrik mepris left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.85, 0.86, 0.8)
             bg "J’espère qu'Ingrid ne découvrira pas que ce n’est pas fini-fini entre Josiane et moi."
-            show char_beaudrik mepris left at notSpeakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik mepris left at notSpeakingAnim(0.8, 0.85, 0.86, 0.8)
             nar "{i}{color=#f2de5c}Beaudrik, je vous rappelle que Gaufrid, votre adversaire, est juste devant vous.{/i}{/color}"
-            show char_beaudrik choque left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik choque left at speakingAnim(0.8, 0.85, 0.86, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Doute_04.ogg"
             bg "Ah ! Euh..."
-            show char_beaudrik choque left at speakingAnim(0.8, 0.85, 0.86, 0.2):
-                zoom 1.0 xpos 0.8 ypos 1.0
+            show char_beaudrik choque left at speakingAnim(0.8, 0.85, 0.86, 1.0):
+                zoom 0.8 xpos 0.8 ypos 1.0
                 linear 1.0 xpos 1.5
             nar "{i}{color=#f2de5c}Merci Beaudrik !{/i}{/color}"
             hide char_beaudrik normal left
@@ -850,14 +851,14 @@ label taverne_Concours_Part3_Brutalmund_Choice:
             
         "C'est pas faux":
             show char_beaudrik normal left :
-                zoom 0.2 xpos 1.0 ypos 0.8
+                zoom 0.8 xpos 1.0 ypos 0.8
                 linear 0.4 xpos 0.85
             play sound "sfx/Voices/Player/Char_Player_Heureux_04.ogg"
             y "J’aimerais bien être comme lui."
             hide char_brutal normal
             nar "{i}{color=#f2de5c}Mais c’est le cas, Gaufrid.{/i}{/color}"
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Doute_03.ogg"
-            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.8, 0.82, 0.2)
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Choc_01.ogg"
             nar "{i}{color=#f2de5c}Vous ne saviez pas que Beaudrik dort avec un nounours car il peur du noir ?{/i}{/color}"
             jump taverne_Concours_Part3_Ingrid
@@ -867,7 +868,7 @@ label taverne_Concours_Part3_Brutalmund_Choice:
 label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
     
     hide char_brutal normal
-    show char_beaudrik normal left at notSpeakingAnim(0.85, 0.8, 0.86, 0.2) with Dissolve (0.5)
+    show char_beaudrik normal left at notSpeakingAnim(0.85, 0.8, 0.86, 0.8) with Dissolve (0.5)
     
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_03.ogg"
             
@@ -875,7 +876,7 @@ label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
     menu:
         bg "{cps=0}Tsk ! Tu ne peux pas le prouver !{/cps}"
         "Il a peur du noir":
-            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.8, 0.82, 0.2)
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             pause 0.5
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Choc_01.ogg"
@@ -885,16 +886,16 @@ label taverne_Concours_Part3_Brutalmund_Choice_Subchoice:
             play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
             y "Les buffles le terrifient !"
             nar "{i}{color=#f2de5c}Non, ça, c'est Crossfitrichernvald.{/i}{/color}"
-            show char_beaudrik mepris left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.85, 0.86, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
             bg "Comment tu peux dire ça ?!"
-            show char_beaudrik normal left at speakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik normal left at speakingAnim(0.8, 0.85, 0.86, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_04.ogg"
             bg "Les buffles, c’est délicieux."
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.85, 0.86, 0.2)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.85, 0.86, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Choc_01.ogg"
             nar "{i}{color=#f2de5c}Mauvaise réponse, Gaufrid ! La bonne réponse était qu’il a peur du noir.{/i}{/color}"
-            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.85, 0.82, 0.18)
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.85, 0.82, 0.8)
 
     jump taverne_Concours_Part3_Ingrid
 
@@ -922,14 +923,14 @@ label taverne_Concours_Part3_Ingrid:
             linear 1.5 rotate 0
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
     
-    show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_03.ogg"
     
     show screen datingSim(ingrid_char, 0.23, 0.15)
     
     i "Tiens, moi aussi !"
     show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18) # A FLIPPER
+    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.8) # A FLIPPER
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
     pause 0.7
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_01.ogg"
@@ -944,7 +945,7 @@ label taverne_Concours_Part3_Ingrid:
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_04.ogg"
     i "Bon, ce n’est pas le plus intelligent, mais Gaufrid n’est pas un génie non plus !"
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_01.ogg"
     i "Au moins, Beaudrik n'a pas d'imperfections physiques."
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
@@ -961,28 +962,28 @@ label taverne_Concours_Part3_Ingrid_Choice:
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             y "Objection ! Beaudrik est moche !"
             show char_ingrid normal at speakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
             i "Tu n’aurais pas bu un coup en trop, Gaufrid ?"
             show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik mepris left at speakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_06.ogg"
             bg "Comment ça, je suis moche ?"
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             jump taverne_Concours_Part3_Ingrid_Choice_Subchoice
             
         "En effet":
             play sound "sfx/Voices/Player/Char_Player_Heureux_02.ogg"
             y "C’est un joli garçon, en effet."
-            show char_beaudrik drague right at speakingAnim(0.70, 0.85, 0.86, 0.22)
+            show char_beaudrik drague right at speakingAnim(0.70, 0.85, 0.86, 0.88)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Doute_03.ogg"
             bg "Oh, c’est gentil !"
-            show char_beaudrik normal left at speakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik normal left at speakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Drague_02.ogg"
             bg "J’ai beau être un homme, j’aime bien prendre soin de mon corps !"
-            show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             nar "{i}{color=#f2de5c}Même de votre troisième téton ?{/i}{/color}"
-            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.85, 0.82, 0.18)
+            show char_beaudrik choque left at notSpeakingAnim(0.75, 0.85, 0.82, 0.8)
             jump taverne_Concours_Part4_Final
 
 # -----------------------------------------#  
@@ -1011,7 +1012,7 @@ label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
             play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
             y "Euh… il est maigre et moche !"
             show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             nar "{i}{color=#f2de5c}Non Gaufrid, ça, c’est vous.{/i}{/color}"
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
             y "Ah oui, c’est vrai. Désolé."
@@ -1023,7 +1024,7 @@ label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
             y "C’était pas super clair en effet."
             nar "{i}{color=#f2de5c}Alors écoutez-moi bien :{/i}{/color}"
             show char_ingrid normal at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             nar "{i}{color=#f2de5c}{b}VOUS ETES MAIGRE ET MOCHE.{/b}{/i}{/color}"
             nar "{i}{color=#f2de5c}C’est mieux comme ça ?{/i}{/color}"
             y "Beaucoup mieux, merci."
@@ -1040,11 +1041,11 @@ label taverne_Concours_Part3_Ingrid_Choice_Subchoice:
 label taverne_Concours_Part4_Final:
     
     show char_ingrid normal at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.ogg"
     i "Un troisième téton ?! Mais c’est une imperfection physique complètement discrète et négligeable !"
     show char_ingrid choc at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_03.ogg"
     i "Ça me dégoûte !"
@@ -1064,7 +1065,7 @@ label taverne_Concours_Part4_Final:
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_02.ogg"
     i "Je pense qu’il serait un époux fidèle et loyal."
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
 
     jump taverne_Concours_Part4_Final_Choice
 
@@ -1076,7 +1077,7 @@ label taverne_Concours_Part4_Final_Choice:
         i "Je pense qu’il serait un époux fidèle et loyal."
         "Objection !":
             show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
             y "Objection ! Beaudrik a déjà une fiancée !"
             show char_ingrid choc at speakingAnim(0.2, 1.15, 1.17, 0.25)
@@ -1095,7 +1096,7 @@ label taverne_Concours_Part4_Final_Choice:
             show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             nar "{i}{color=#f2de5c}Dommage qu’il soit déjà pris. Votre ami a déjà une fiancée.{/i}{/color}"
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             nar "{i}{color=#f2de5c}Elle s’appelle Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
             
@@ -1107,19 +1108,19 @@ label taverne_Concours_Part4_Final_Choice_Subchoice:
         i "{cps=0}Comment elle s’appelle cette vache ?!{/cps}"
         "Johanne":
             show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
             y "Euh… Johanne ?"
             $ loveGauge(ingrid_char, -5, 0.23, 0.15)
             nar "{i}{color=#f2de5c}Vous y étiez presque, Gaufrid.{/i}{/color}"
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             nar "{i}{color=#f2de5c}Elle s’appelle Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
 
         "Josiane":
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             $ loveGauge(ingrid_char, +10, 0.23, 0.15)
             y "Josiane ! Elle s’appelle Josiane !"
@@ -1127,13 +1128,13 @@ label taverne_Concours_Part4_Final_Choice_Subchoice:
 
         "Jovanne":
             show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik mepris2 left at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
             y "Euh… Jovanne ?"
             $ loveGauge(ingrid_char, -5, 0.23, 0.15)
             nar "{i}{color=#f2de5c}Vous y étiez presque, Gaufrid.{/i}{/color}"
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+            show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
             nar "{i}{color=#f2de5c}Elle s’appelle Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
 
@@ -1186,15 +1187,15 @@ label taverne_Concours_Part5_Ending:
         easein 0.8 ypos 0.73
     play sound "sfx/Voices/Chevre/Char_Chevre_Choc2_01.ogg"
     goat "Bêêêh !"
-    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Humilie_01.ogg"
-    show char_beaudrik insulte right at speakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik insulte right at speakingAnim(0.8, 0.8, 0.82, 0.8)
     show char_ingrid degout at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
     bg "C’est platonique, Ingrid ! Crois-moi !"
-    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik insulte right at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
     show char_goat normal:
     nar "{i}{color=#f2de5c}Beaudrik, vous êtes disqualifié.{/i}{/color}"
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.8, 0.82, 0.18)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.8, 0.82, 0.8)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_01.ogg"
     bg "Tu vas me le payer, Gaufrid !"
     bg "Allons-y, Josiane."
@@ -1206,7 +1207,7 @@ label taverne_Concours_Part5_Ending:
         zoom 0.35 xpos 0.5 ypos 0.73
         linear 2.5 xpos 1.5
     show char_beaudrik mepris right:
-        zoom 0.18 xpos 0.8 ypos 0.8
+        zoom 0.8 xpos 0.8 ypos 0.8
         linear 2.0 xpos 1.5
     play sound "sfx/SFX_Stairs_02.ogg"
     
@@ -1235,16 +1236,10 @@ label taverne_Concours_Part5_Ending_BadEnding:
 
 label taverne_Concours_Part5_Ending_GoodEnding:
 
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_03.ogg"
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    i "Gaufrid ! Oh Gaufrid !"
-    play sound "sfx/Voices/Player/Char_Player_Heureux_04.ogg"
+    i "Gaufrid ! On va pouvoir se marier !"
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-    y "Ingrid ! Oh Ingrid!"
-    show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    i "Gaufrette ! On va pouvoir se marier !"
-    show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-    y "C’est bon ? je te fais la demande ?" 
+    y "Du coup je doit te faire la demande ?" 
     
     jump taverne_Concours_Part6_Conclusion
     

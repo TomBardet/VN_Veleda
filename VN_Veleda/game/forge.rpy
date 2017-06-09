@@ -50,7 +50,7 @@ label forge_Intro:
 # -----------------------------------------#
 
 label forge_Beaudrik_01:
-    
+    $ _window_during_transitions = False
     $ Acte2_Forge_FirstVisit = 1
     show char_beaudrik normal left :
         xalign 0.5 yalign 0.8
@@ -80,7 +80,7 @@ label forge_Beaudrik_02:
     $ loveGauge(beau_char, -5, 0.85, 0.10)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
     bg "J’ai entendu des rumeurs comme quoi tu voudrais épouser Ingrid !"
-    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.8)
+    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.88)
         #zoom 0.22 xpos 0.4 ypos 0.09
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Drague_04.ogg"
     bg "C’est tellement n’importe quoi ! Ahahah."
@@ -196,13 +196,13 @@ label forge_Beaudrik_06_leaving:
     bg "Heureusement que toi tu n’as pas ce genre de problèmes, Gaufrid ! Je t’envie mon pote."
     show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     bg "Bon, je me casse, avant que Papa n'arrive."
-    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.82)
+    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.88)
         #zoom 0.23 xpos 0.4 ypos 0.09
     hide screen datingSim
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_04.ogg"
     bg "À plus !"
     show char_beaudrik drague right :
-        zoom 0.82 xpos 0.7 ypos 0.9
+        zoom 0.88 xpos 0.7 ypos 0.9
         linear 1.0 xpos 1.5
     pause 1
     hide char_beaudrik drague right
@@ -422,7 +422,7 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_02.ogg"
             brut "Ha ! Là, j’en peux plus mon p’tit Gaufrid. J’en peux plus j'te dis !"
-            brut "J'vais lui dire ses quatre verités."
+            brut "J'vais lui dire ses quatre vérités."
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             hide screen datingSim
             brut "Attends-moi ici, j'reviens dans une minute."
