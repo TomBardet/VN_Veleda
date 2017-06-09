@@ -968,7 +968,7 @@ label ending_ExilPart1 :
         "Oui Ernust, on s'en va !":
             y "Oui Ernust, on s'en va !"
             show char_ernust love2 at speakingAnim(0.5, 1.18, 1.16, 0.72)
-            e "Oh Bah Gaufrid... Si tu savais comme j'suis content !"
+            e "Oh bah, Gaufrid... si tu savais comme j'suis content !"
             show char_ernust love2 at notSpeakingAnim(0.5, 1.18, 1.16, 0.72)
             stop music1 fadeout 1.5
             stop ambiance fadeout 0.5
