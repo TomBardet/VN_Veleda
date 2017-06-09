@@ -77,7 +77,7 @@ label etables_PeurDesBufflesPart1:
 label etables_PeurDesBufflesPart1bis:
     show screen datingSim(cross_char, 0.45, .27)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Bonjour ! Alors ces Buffles ?"
+    y "Bonjour ! Alors, ces buffles ?"
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "..."
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
@@ -86,17 +86,16 @@ label etables_PeurDesBufflesPart1bis:
     y "... ?"
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "..."
-    cross "....................."
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     menu:
-        cross "{cps=0}.....................{/cps}"
-        "Ca a pas l'air d'aller fort dites moi !":
+        cross "{cps=0}...{/cps}"
+        "Ca a pas l'air d'aller fort, dites moi !":
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-            y "Ca a pas l'air d'aller fort dites moi !"
+            y "Ça a pas l'air d'aller fort, dites moi !"
             $ loveGauge(cross_char, -4, 0.44, 0.27)
             show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-            cross "Ils...Ils sont toujours là !"
+            cross "Ils...ils sont toujours là !"
         "Satisfait de vos buffles ?" if Acte1_Tour_CoupableJugement=="Brutalmund":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
             y "Alors, satisfait de vos buffles ?"
@@ -106,12 +105,12 @@ label etables_PeurDesBufflesPart1bis:
             cross "Ils...Ils sont toujours là !"
         "Vous avez livrés vos buffles à Brutalmund ?" if Acte1_Tour_CoupableJugement=="Crossfit":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "... Du coup, vous avez livrés vos buffles à Brutalmund ?"
+            y "... Du coup, vous avez livré vos buffles à Brutalmund ?"
             $ loveGauge(cross_char, -4, 0.44, 0.27)
             show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
             cross "Ils...Ils sont toujours là !"
-        "Vous êtiez plus bavard avec la prophétesse...":
+        "Vous étiez plus bavard avec la prophétesse...":
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
             y "Ben dis donc, vous êtiez plus bavard avec la prophétesse..."
             $ loveGauge(cross_char, -4, 0.44, 0.27)
@@ -125,18 +124,18 @@ label etables_PeurDesBufflesPart1bis:
     $ loveGauge(cross_char, -6, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_03.ogg"
-    cross "Les buffles crétin ! Ils sont toujours là !"
+    cross "Les buffles, crétin ! Ils sont toujours là !"
     $ loveGauge(cross_char, -4, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
-    cross "Ca fait 12 heures que la porte est ouverte, et ces imbéciles de bovins ne bougent pas d'un poil !"
+    cross "Ça fait 12 heures que la porte est ouverte, et ces imbéciles de bovins ne bougent pas d'un poil !"
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Attendez. Quoi ?"
+    y "Attendez... quoi ?"
     show char_crossfit pleurs right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_inquiet_02.ogg"
     cross "Chuuuuuuuuuut ! Ils vont vous entendre !"
     show char_crossfit pleurs right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-    y "... Mais vous avez peur des buffles ?"
+    y "Mais... vous avez peur des buffles ?"
     $ loveGauge(cross_char, -20, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_03.ogg"
@@ -149,7 +148,7 @@ label etables_PeurDesBufflesPart1bis:
         zoom 0.28 ypos 0.84
         linear 0.4 xpos 0.79 rotate 15 ypos 0.95
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Pleurs_01.ogg"
-    cross "AAAAAAAAAAH !"
+    cross "Aaaaaaah !"
     show char_crossfit pleurs:
         zoom 0.28 ypos 0.95 xpos 0.79
         linear 0.8 rotate 0 ypos 0.84
@@ -157,7 +156,7 @@ label etables_PeurDesBufflesPart1bis:
     show char_crossfit inquiet right at speakingAnim(0.79, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_02.ogg"
     cross "..."
-    cross "Bon OK, je trouve les buffles absolument terrifiants, heureux ?!"
+    cross "Bon, d'accord, je trouve les buffles absolument terrifiants. Heureux ?!"
     show char_crossfit inquiet right at notSpeakingAnim(0.79, 0.84, 0.82, 0.28)
     show char_crossfit inquiet right:
         xalign 0.5 yalign 0.8
@@ -190,9 +189,9 @@ label etables_PeurDesBufflesPart1boucle:
     y "Alors, tout baigne ?"
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-    cross "... Les... les buffles... Ils me regardent..."
+    cross "Les... les buffles. Ils me regardent..."
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
-    y "Je vais vous laisser hein ?"
+    y "Je vais vous laisser, hein ?"
     hide screen datingSim
     scene bg_etables:
         zoom 0.75 xpos -0.1
@@ -201,7 +200,7 @@ label etables_PeurDesBufflesPart1boucle:
         xalign 0.5 yalign 0.8 zoom 0.28
         xpos 0.65 ypos 0.76
         linear 0.5 zoom 0.27 xpos 0.7 ypos 0.77
-    pause .5
+    pause 0.5
     jump etables_PeurDesBufflesPart1
     
 # -----------------------------------------#    
@@ -224,8 +223,8 @@ label etables_PeurDesBufflesPart2:
     e "Euh... Gaufrid, t'es sur que c'est une bonne idée ?"
     show char_ernust inquiet left at notSpeakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-    y "Il faut bien utiliser cette trompette quelque part non ?"
-    nar "J'aurais pas fait ça à ta place..."
+    y "Il faut bien utiliser cette trompette quelque part, non ?"
+    nar "Je ne ferai pas ça, à ta place..."
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
     y "Trop tard."
     scene black with Dissolve (1.0)
@@ -246,9 +245,9 @@ label etables_PeurDesBufflesPart2:
         linear 1.8 xpos -0.5 rotate -15
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Pleurs_01.ogg"
-    cross "AU SECOUUUURS ! LES BUFFLES M'ATTAQUENT !" 
+    cross "Au secooouuuurs ! Les buffles m'attaquent !" 
     #scene black with Dissolve(1.0)
-    outline "Et c'est ainsi que le brave Crossfitrichernvald pris la fuite devant les buffles fonçant sur lui"
+    outline "Et c'est ainsi que le brave Crossfitrichernvald prit la fuite devant les buffles fonçant sur lui"
     scene bg_etables2 with Dissolve(1.0):
         zoom 0.7
     show char_ernust normal right:

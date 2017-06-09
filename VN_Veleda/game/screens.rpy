@@ -1509,7 +1509,7 @@ screen action_choice_placeVillage(lunette=0, glaive=0, bouclier=0):
             at sineV(0.56)
             action Return("forge")
     if _testGlaive == 0:
-        textbutton _("Tente Romaine"):
+        textbutton _("Tente romaine"):
             xpos 0.16
             xanchor 0.5
             ypos 0.58
@@ -1547,7 +1547,7 @@ screen action_choice_EtableTrumpet:
         text_size 30
         at sineV(0.28)
         action Return("trompette")
-    textbutton _("Parler aux Buffles"):
+    textbutton _("Parler aux buffles"):
         xpos 0.22
         xanchor 0.5
         ypos 0.68
@@ -1570,7 +1570,7 @@ screen action_choice_EtableTrumpet:
 
 screen action_choice_Etable:
     zorder 10
-    textbutton _("Parler aux Buffles"):
+    textbutton _("Parler aux buffles"):
         xpos 0.22
         xanchor 0.5
         ypos 0.4
@@ -1604,7 +1604,7 @@ screen action_choice_Etable:
         
 screen action_choice_Tente:
     zorder 10
-    textbutton _("S'approcher de la Tente"):
+    textbutton _("S'approcher de la tente"):
         xpos 0.6
         xanchor 0.5
         ypos 0.68
@@ -1628,7 +1628,7 @@ screen action_choice_Tente:
 
 screen action_choice_Tente1:
     zorder 10
-    textbutton _("Parler aux romains"):
+    textbutton _("Parler aux Romains"):
         xpos 0.85
         xanchor 0.5
         ypos 0.68
