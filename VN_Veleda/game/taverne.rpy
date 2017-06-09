@@ -1239,7 +1239,7 @@ label taverne_Concours_Part5_Ending_GoodEnding:
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
     i "Gaufrid ! On va pouvoir se marier !"
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-    y "Du coup je doit te faire la demande ?" 
+    y "Du coup, je dois te faire la demande ?" 
     
     jump taverne_Concours_Part6_Conclusion
     
