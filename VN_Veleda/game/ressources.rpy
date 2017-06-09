@@ -47,7 +47,7 @@ init:
  
     define ve = Character("Véléda(Ernust) : ",
         what_suffix=" ",
-        who_size=24,
+        #who_size=24,
         ctc=anim.Blink("gui/ctc.png"))
 
     define nar = Character("Narrateur : ",
