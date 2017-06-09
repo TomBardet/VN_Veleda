@@ -726,69 +726,48 @@ label tourVeleda_HistoireBrevetPart2:
 # -----------------------------------------#
 
 label tourVeleda_MarryingIngridPart2:
-    scene bg_place:
-        zoom 1 xanchor 0.0 yanchor 0.0
-        easein 2.0 xpos -2000 ypos -150 zoom 2.5
+    scene bg_place
     
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
-    pause 2.0
-    show char_ernust normal right :
-        xalign 0.5 yalign 0.8
-        zoom 0.7 xpos 0.2 ypos 1.5
-        easein 0.8 xpos 0.4 ypos 0.94 
-    pause 0.8
-    play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
-    y "Vite Ernust ! Passe devant et prépare la Vélédarionnette !"
-    show char_ernust normal right at speakingAnim(0.4, 1.03, 1.01, 0.7)
-    play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
-    e "À tes ordres Gaufrid !"
-    show char_ernust normal right :
-        xalign 0.5 yalign 0.8
-        zoom 0.7 xpos 0.4 ypos 1.03
-        easeout 0.8 xpos 1.5
-    pause 0.8
+    
+    show char_ernust normal right with Dissolve (0.5) :
+        zoom 0.9 xpos 0.4 ypos 0.2
+    
+    y "Passe devant et prépare la Vélédarionnette, Ernust."
+    e "Oui Gaufrid !"
+    
     hide char_ernust
     
-    show char_ingrid normal right :
-        xalign 0.5 yalign 0.8
-        zoom 0.25 xpos 0.2 ypos 1.5
-        easein 0.8 xpos 0.4 ypos 1.06
-    pause 0.8
-    show char_ingrid love at speakingAnim(0.4, 1.16, 1.14, 0.25)
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_02.ogg"
-    i "Oh mon Gaufrid ! On va enfin pouvoir se marier !"
-    i "Véléda doit nous attendre pour donner sa bénédiction"
-    show char_ingrid love:
-        xalign 0.5 yalign 0.8
-        zoom 0.25 xpos 0.4 ypos 1.18
-        easeout 0.8 xpos 1.5
-    pause 0.8
-
+    show char_ingrid normal at notSpeakingAnim(0.5, 1.15, 1.12, 0.3)
+    
+    i "Oh ma Gaufrette, on va pouvoir se marier !"
+    i "Viens, on va vite voir Véléda pour sa bénédiction !"
+    
+    y "Allons-y ma pupuce !"
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
     scene bg_chambre
-    pause 1.5
+    
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
     show char_veledaernust normal
-    play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
-    ve "Nous sommes réunis en ce jour heureux pour célébrer le..."
-    play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
-    e "Eh ! Mais elle arrête pas de bouger !"
-    play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
-    y "De bouger ?!"
     
-    play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
-    v "Ernust ! Que faites-vous !"
-    v "Lâchez nous immédiatement !"
+    ve "Ooooh mes enfants les dieux bénissent votre marriage !"
+    ve "Oh bah... elle arrête pas de gigoter !"
+    
+    i "...gigoter ? C'est bizarre comme prophétie !"
+    
+#    play sound "sfx/SFX_Char_Veleda_Normal_01.ogg"
+    v "Ernust ! Qu'est ce que vous faites !"
+#    play sound "sfx/SFX_Char_Veleda_Rage_01.ogg"
+    v "Lachez nous immédiatement !"
     
     show char_ingrid choc
-    play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
     i "Ernust ! Tu as fait semblant d'être Véléda ?"
     i "Quelle horreur ! Tu as bafoué toutes nos traditions !"
     
@@ -804,52 +783,68 @@ label tourVeleda_MarryingIngridPart2:
     show char_ernust normal left :
         zoom 0.75 xpos 0.75 ypos 0.27
     
-    play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_01.ogg"
-    e "Ah ben mince Gaufrid, on a été démasqué."
-    show char_ingrid choc
-    i "Gaufrid ?! Tu est dans le coup toi aussi ?!"
-    
-    y "Ernust ! Tu m'avais dit qu'elle était morte !"
-    jump ending_AskErnust
+#    play sound "sfx/SFX_Char_Ernust_Normal_01.ogg"
+    e "Euh... oh bah..."
+    i "Ma Gaufrette ! Qu'est ce qu'il se passe ici ?"
+    i "Tu étais au courant ?"
 
+    menu:
+        " "
+        "Tu m'as dit qu'elle était morte Ernust ?":
+            jump ending_AskErnust
+        "Ernust ! Comment as tu osé ?":
+            jump ending_ErnustPart1
+        "Ingrid, je dois t'avouer la vérité !":
+            jump ending_Admit
+        "C'est la faute de la chèvre !":
+            jump ending_ChevrePart1
 # -----------------------------------------#
 
 label ending_AskErnust:
-
+    y "Mais Ernust, tu m'as dit qu'elle était morte ?"
     
     e "Bah oui ! Je l'ai reniflée et j'ai pas senti son pouls."
-    e "Y avait bien une odeur d'oignon séché, mais c'est tout."
+    e "C'est comme ça qu'on fait, non ?"
+    
+    i "Tu étais dans le coup mon Gaufridou !"
     
     menu :
         " "
-        "test":
-            jump ending_ErnustPart1
         "Ingrid, je dois t'avouer la vérité !" :
             jump ending_Admit
-        "La vrai coupable, c'est la chêvre !" :
+        "Non, c'était la chèvre !" :
             jump ending_ChevrePart1
 
 # -----------------------------------------#
 label ending_ChevrePart1 :
 
-    y "Ne l'écoute pas Ingrid !"
-    y "La seule et unique coupable ici, c'est Josiane, la chêvre. J'en suis sûr !"
+    y "Non ma choupette je te jure !"
+    y "C'est Josiane la chèvre, j'en suis sur !"
     show char_goat choc at center
-    goat "Bêêêêêêêêêêêêh !"
+    goat "Bêêê !"
+            
+    y "Elle est dans tous les sales coups !"
     
-    i "Josiane ?! Vraiment ?!"
-    bg "Josiane ?! Mais comment t'as pu me faire ça ?!"
-    bg "Après tout ce que nous avons vécu ensemble, Josiane !"
+    v "Josiane comment avez vous pu nous faire cela ?"
     
-    goat "Bêêêêêêêêh..."
+    goat "Bêê bêêêê, bêê !"
     
-    v "Josiane, les faits sont là."
-    v "Je n'ai d'autres choix que de vous condamner à l'exil..."
-
-    goat "Bêêêêêêêêêêh !"
+    i "Josiane ? J'arrive pas à y croire !"
     
-    bg "Adieu Josiane..."
-    bg "Mon amie..."
+    v "Après tout ce que nous avons vécu ensemble, Josiane !"
+    v "Après cet été langoureux de nos 20 ans..."
+    
+    goat "Bêê... bêêê..."
+    
+    v "Josiane, je suis bouleversée !"
+    v "Mais je vais devoir vous condamener à..."
+#    play sound "sfx/SFX_Drama_01.ogg"
+    v "L'exil !"
+    
+    goat "Bêêêêê !"
+    
+    v "Adieu Josiane..."
+    v "Mon amie..."
 
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5

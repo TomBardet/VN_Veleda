@@ -51,7 +51,6 @@ label etables_PeurDesBufflesPart1:
     else:
         $ _return = renpy.call_screen("action_choice_Etable")
         if _return == "buffles":
-            play sound "sfx/SFX_Buffle_Dialogue.ogg"
             buf "Meuuuuuuuh !"
             y "A vos souhaits"
             jump etables_PeurDesBufflesPart1
@@ -142,8 +141,7 @@ label etables_PeurDesBufflesPart1bis:
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_03.ogg"
     cross "Répète ça et je t'écrase !"
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
-    play sound "sfx/SFX_Buffle_Dialogue.ogg"
-    buf "Meuuuuuuuuuuuuuuuh !"
+    "bruit meuglement meuuuuuuuh"
     hide screen datingSim
     show char_crossfit pleurs:
         zoom 0.28 ypos 0.84
@@ -233,7 +231,6 @@ label etables_PeurDesBufflesPart2:
     pause 3.0
     play sound "sfx/SFX_Trumpet_01.ogg"
     pause 2.0
-    play sound "sfx/SFX_Buffle_Peur.ogg"
     hide screen inventory_screen
     window hide
     scene bg_buffles with hpunch:
