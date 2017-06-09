@@ -204,21 +204,23 @@ label PlaceDuVillageDefault:
             zoom 1.0
             linear 0.5 zoom 1.3 xpos -0.35 ypos -0.28
         pause 0.1
-        scene black with Dissolve(1.0)
-        window show
         stop music1 fadeout 1.5
         stop ambiance fadeout 0.5
+        scene black with Dissolve(1.5)
+        window show
+    
         jump etable_fromPlace
+        
     elif _return == "forge":
         y "Direction : la forge !"
         scene bg_place:
             zoom 1.0
             linear 0.5 zoom 1.3 xpos -0.3 ypos -0.28
         pause 0.1
-        scene black with Dissolve(1.0)
         window show
         stop music1 fadeout 1.5
         stop ambiance fadeout 0.5
+        scene black with Dissolve(1.5)
         jump forge_BrutalmundEtBeaudrik
     elif _return == "tente":
         y "Allons faire un coucou aux Romains !"
@@ -226,9 +228,9 @@ label PlaceDuVillageDefault:
             zoom 1.0
             easeout 0.5 zoom 1.6 xpos 0.0 ypos -0.45
         pause 0.1
-        scene black with Dissolve(1.0)
         stop music1 fadeout 1.5
         stop ambiance fadeout 0.5
+        scene black with Dissolve(1.5)
         jump romains_PremiereRencontre
 
 # -----------------------------------------#
