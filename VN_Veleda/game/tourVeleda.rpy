@@ -857,19 +857,31 @@ label ending_ChevrePart1 :
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
     i "Josiane ?! Vraiment ?!"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
-    show char_beaudrik choque left
-        
+    show char_beaudrik choque right zorder 2:
+        xalign 0.5 yalign 0.8 zoom 0.39
+        xpos -0.2 ypos 0.88
+        easein 0.8 xpos 0.2
+    show char_ingrid choc:
+        linear 0.8 xpos 0.1
+    show char_goat normal:
+        xpos 0.5
+        linear 0.8 xpos 0.6
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Choc_01.ogg"
     bg "Josiane ?! Mais comment t'as pu me faire ça ?!"
     bg "Après tout ce que nous avons vécu ensemble, Josiane !"
     play sound "sfx/Voices/Chevre/Char_Chevre_Love_03.ogg"
+    show char_goat choc at speakingAnim(0.6, 0.88, 0.86, 0.45)
     goat "Bêêêêêêêêh..."
+    show char_goat choc at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
     v "Josiane, les faits sont là."
     v "Je n'ai d'autres choix que de vous condamner à l'exil..."
     play sound "sfx/Voices/Chevre/Char_Chevre_Normal_01.ogg"
+    show char_goat choc at speakingAnim(0.6, 0.88, 0.86, 0.45)
     goat "Bêêêêêêêêêêh !"
+    show char_goat normal at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Humilie_01.ogg"
+    show char_beaudrik insulte at speakingAnim(0.18, 0.98, 0.96, 0.20)
     bg "Adieu Josiane..."
     bg "Mon amie..."
 
@@ -883,9 +895,11 @@ label ending_Admit :
     y "Ingrid, je dois tout t'avouer..."
     y "Ernust et moi sommes coupables !"
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
+    show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
     i "Oh ! Mon tout nouveau fiancé !"
     i "Comment as tu pu ? Quelle tristesse !"
     i "Je me suis tellement attachée à toi depuis que tu m'as rapporté un {b}glaive{/b} et un {b}bouclier{/b} !"
+    show char_ingrid normal at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
     v "Gaufrid ! Comment avez vous pu crachoter sur nos traditions de la sorte ?"
     v "Votre punition sera..."
@@ -903,9 +917,12 @@ label ending_ErnustPart1 :
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
     y "J'ai rien fait ! C'est Ernust le coupable !"
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_01.ogg"
+    show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
     e "Oh bah mais... Gaufrid..."
-    
+    show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
+    show char_ingrid degout at speakingAnim(0.15, 1.22, 1.20, 0.25)
     i "Ernust... Il semblait pourtant si gentil..."
+    show char_ingrid degout at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
     v "Ernust, vous avez tourné en ridicule nos traditions."
 
@@ -913,10 +930,12 @@ label ending_ErnustPart1 :
     play sound "sfx/SFX_Drama_01.ogg"
     v "L'exil !"
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
+    show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
     e "Oh non ! Mais je vais aller où moi ?"
+    show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     
     
-    hide char_ingrid
+    scene black with Dissolve(1.5)
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
@@ -931,14 +950,21 @@ label ending_ExilPart1 :
     
     y "L'exil !?"
     y "Si je dois partir, je partirai avec mon meilleur ami !"
+    show char_ernust love2:
+        xalign 0.5 yalign 0.8 zoom 0.7
+        xpos 0.88 ypos 1.16
+        easeout 0.8 xpos 0.5 zoom 0.72
+    pause 0.8
+    show char_ernust love2 at speakingAnim(0.5, 1.16, 1.14, 0.72)
     e "Vraiment ?"
+    show char_ernust love2 at notSpeakingAnim(0.5, 1.16, 1.14, 0.72)
     menu:
         e "{cps=0}Vraiment ?{/cps}"
         "Oui Ernust, on s'en va !":
             y "Oui Ernust, on s'en va !"
-
-            e "Oh Bah Gaufrid... je suis tellement content !"
-            
+            show char_ernust love2 at speakingAnim(0.5, 1.18, 1.16, 0.72)
+            e "Oh Bah Gaufrid... Si tu savais comme j'suis content !"
+            show char_ernust love2 at notSpeakingAnim(0.5, 1.18, 1.16, 0.72)
             stop music1 fadeout 1.5
             stop ambiance fadeout 0.5
             
@@ -946,12 +972,17 @@ label ending_ExilPart1 :
             
         "Allez viens Josiane, on s'en va !":
             y "Viens Josiane, allons découvrir le monde ensemble !"
-            
+            show char_goat choc zorder 2:
+                xalign 0.5 yalign 0.8
+                zoom 0.45 xpos 0.75 ypos 1.5
+                easein 0.8 ypos 0.85
+            pause 0.8
+            show char_goat choc at speakingAnim(0.75, 0.88, 0.86, 0.45)
             goat "Bêêêêêêêêêêh ?"
-            
+            show char_goat choc at notSpeakingAnim(0.75, 0.88, 0.86, 0.45)
             stop music1 fadeout 1.5
             stop ambiance fadeout 0.5
-            
+            show char_ernust inquiet left at speakingAnim(0.5, 1.18, 1.16, 0.7)
             e "Mais... Gaufrid ?"
-            
+            show char_ernust inquiet left at notSpeakingAnim(0.5, 1.18, 1.16, 0.7)
             jump ending_ExilAvecChevre
