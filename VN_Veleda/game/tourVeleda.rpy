@@ -819,9 +819,9 @@ label tourVeleda_MarryingIngridPart2:
     
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_01.ogg"
-    e "Ah ben mince Gaufrid, on a été démasqué."
+    e "Ah ben mince Gaufrid, on a été démasqué !"
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Gaufrid ?! Tu est dans le coup toi aussi ?!"
+    i "Gaufrid ?! Tu es dans le coup, toi aussi ?!"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     y "Ernust ! Tu m'avais dit qu'elle était morte !"
     jump ending_AskErnust
@@ -835,10 +835,10 @@ label ending_AskErnust:
     e "Y avait bien une odeur d'oignon séché, mais c'est tout."
     show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Gaufrid explique toi !"
+    i "Gaufrid, explique toi !"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     menu :
-        i "{cps=0}Gaufrid explique toi !{/cps}"
+        i "{cps=0}Gaufrid, explique toi !{/cps}"
         "J'ai rien fait ! C'est Ernust !":
             jump ending_ErnustPart1
         "Ingrid, je dois t'avouer la vérité..." :
@@ -905,7 +905,7 @@ label ending_Admit :
     i "Je me suis tellement attachée à toi depuis que tu m'as rapporté un {b}glaive{/b} et un {b}bouclier{/b} !"
     show char_ingrid normal at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
-    v "Gaufrid ! Comment avez vous pu crachoter sur nos traditions de la sorte ?"
+    v "Gaufrid ! Comment avez vous pu cracher sur nos traditions de la sorte ?"
     v "Votre punition sera..."
     play sound "sfx/SFX_Drama_01.ogg"
     pause 0.5
@@ -919,13 +919,13 @@ jump ending_ExilPart1
 label ending_ErnustPart1 :
     
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "J'ai rien fait ! C'est Ernust le coupable !"
+    y "J'ai rien fait ! C'est Ernust, le coupable !"
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_01.ogg"
     show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
-    e "Oh bah mais... Gaufrid..."
+    e "Oh bah... mais... Gaufrid !"
     show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     show char_ingrid degout at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Ernust... Il semblait pourtant si gentil..."
+    i "Ernust... il semble pourtant si gentil..."
     show char_ingrid degout at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
     v "Ernust, vous avez tourné en ridicule nos traditions."
@@ -935,7 +935,7 @@ label ending_ErnustPart1 :
     v "L'exil !"
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
     show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
-    e "Oh non ! Mais je vais aller où moi ?"
+    e "Oh non ! Mais je vais aller où, moi ?"
     show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     
     
@@ -944,7 +944,7 @@ label ending_ErnustPart1 :
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
-    e "Gaufrid... Pourquoi...?"
+    e "Gaufrid... pourquoi ?"
 
 
 jump ending_ErnustTrahi
@@ -960,6 +960,7 @@ label ending_ExilPart1 :
         easeout 0.8 xpos 0.5 zoom 0.72
     pause 0.8
     show char_ernust love2 at speakingAnim(0.5, 1.16, 1.14, 0.72)
+    play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_04.ogg"
     e "Vraiment ?"
     show char_ernust love2 at notSpeakingAnim(0.5, 1.16, 1.14, 0.72)
     menu:
