@@ -117,10 +117,13 @@ label tourVeleda_ErnustEtVeleda :
         xpos 0 ypos 0
         
     play sound "sfx/SFX_Drama_01.ogg"
-    
+    show vel normal2 :
+        xpos 0 ypos 0
+        easein 0.8 xpos -300 zoom 1.2
     $ renpy.pause(2.0, hard = True)
     v "Une prophétie !"
-    
+    show vel normal2 with Dissolve(0.5):
+        xpos 0 ypos 0 zoom 1.0
     $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
     $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
     $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
@@ -332,6 +335,7 @@ label tourVeleda_ErnustEtVeleda :
     v "Cela suffira ! Et vous, Gaufrid, allez accueillir nos invités. Nous prophétisons qu'ils vont frapper à la porte !"
     
     play sound "sfx/SFX_Knock_01.ogg"
+    pause 1.0
     v "Haa, vous voyez ? Allez-y, Monsieur Gaufrid."
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"

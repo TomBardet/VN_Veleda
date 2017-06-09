@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/tourVeleda.rpy", line 938: u'with' is not a keyword argument or valid child for the screen statement.
-    screen black with Dissolve(1.5)
-                     ^
+File "game/class.rpy", line 65: invalid syntax
+    def clickSound()
+    
 
 Ren'Py Version: Ren'Py 6.99.12.4.2187
