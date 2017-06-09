@@ -122,7 +122,7 @@ init:
     image vel normal = im.FactorScale("images/decor/Lieu_chambre_veleda.png", 0.70)
     image vel normal2 = im.FactorScale("images/decor/Lieu_chambre_veleda2.png", 0.70)
     image vel morte = im.FactorScale("images/decor/Lieu_chambre_veledaMorte.png", 0.70)
-    image vel mario = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette1.png", 0.70)
+    image vel mario = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette.png", 0.70)
     image vel mario2 = im.FactorScale("images/decor/Lieu_chambre_veledaMarionnette2.png", 0.70)
     image vel normal_nuit = im.FactorScale("images/decor/Lieu_chambre_veleda_nuit.png", 0.70)
     image vel morte_nuit = im.FactorScale("images/decor/Lieu_chambre_veledaMorte_nuit.png", 0.70)
@@ -289,5 +289,5 @@ init:
     $renpy.music.register_channel("music1", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
     $renpy.music.register_channel("music2", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
     $renpy.music.register_channel("ambiance", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False)
-    $renpy.music.register_channel("endings", mixer=None, loop=None, stop_on_mute=True, tight=True, buffer_queue=True, movie=False) 
+    
 
