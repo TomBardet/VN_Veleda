@@ -406,20 +406,26 @@ label tourVeleda_HistoireBrevetPart1:
     y "Ah non ! La prophétesse ne voit pas directement ses visiteurs."
     y "Vous m'expliquez le problème, et je lui transmets. Après, je vous interprète ses visions."
     
+
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_02.ogg"
     cross "Très bien, serviteur ! Mais si tu ne transmets pas nos messages exactement, je t'égorge."
+    
+    $ interlocuteur = "cross_char"
+    
+    show screen datingSim(cross_char, 0.35, 0.27)
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     menu :
         cross "{cps=0}Très bien, serviteur ! Mais si tu ne transmets pas nos messages exactement, je t'égorge.{/cps}"
         "Oui, Monseigneur" :
-
+            
+            $ loveGauge(cross_char, 5, 0.45, 0.27)
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bien sur, Monsieur Crossfritrichernvald, je ferai bien attention."
             
         "Je sais faire mon travail, hein" :
- 
+            $ loveGauge(cross_char, -5, 0.45, 0.27)
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
             y "Eh oh, je sais ce que je fais, hein ! Pas la peine de me menacer."
     
@@ -427,6 +433,11 @@ label tourVeleda_HistoireBrevetPart1:
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_01.ogg"
     show char_brutal normal at speakingAnim(0.75, 1.05,1.02,0.32)
+    
+    $ interlocuteur = "brut_char"
+    
+    show screen datingSim(brut_char, 0.63, 0.29)
+    
     brut "J'vais t'expliquer, Gaufrid, mon pote !"
     brut "T'vois, l'autre jour, Crossfitrichernvald, il passe d'vant chez moi."
     show char_brutal heureux at speakingAnim(0.75, 1.05,1.02,0.32)
@@ -439,6 +450,10 @@ label tourVeleda_HistoireBrevetPart1:
     brut "Mais j'l'ai pas volé c'te bouclier !"
     brut "C'est moi qui l'ai fait. De mes p'tites mains ! J'te jure mon p'tit Gaufrid !"
     show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
+    
+    $ interlocuteur = "cross_char"
+    
+    show screen datingSim(cross_char, 0.35, 0.27)
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
     show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
@@ -470,11 +485,18 @@ label tourVeleda_HistoireBrevetPart1:
         "C'est très grave !" :
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             y "C'est vrai que c'est très grave !"
+            $ interlocuteur = "brut_char"
+    
+            show screen datingSim(brut_char, 0.63, 0.29)
+            
+            
             
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
             show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
             brut "Tu t'y mets, toi aussi ! Gaufrid, mon poteau !"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
+            
+            $ loveGauge(brut_char, -5, 0.55, 0.27)
             
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Bon, je vais voir ce qu'en dit notre divine prophétesse."
@@ -482,6 +504,8 @@ label tourVeleda_HistoireBrevetPart1:
         "On s'en fout, non ?" :
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
             y "Y'a pas de quoi en faire tout un plat, non ?"
+            
+            $ loveGauge(cross_char, -5, 0.45, 0.27)
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
             show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
@@ -494,6 +518,8 @@ label tourVeleda_HistoireBrevetPart1:
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
             y "Ok ! Ok ! J'y vais ! Faut pas s'énerver comme ça !"
             
+    hide screen datingSim        
+    
     window hide 
     
     stop ambiance fadeout 1.5
@@ -594,7 +620,10 @@ label tourVeleda_MortVeleda:
     e "Qu'est ce qu'on va faire ?"
     
     show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
-    y "Je vais trouver quelquechose... Ne bouge surtout pas d'ici !"
+    play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
+    y "Tu sais quoi... je vais inventer une prophétie !"
+    y "Ils verront jamais la différence !"
+    y "Bouge surtout pas d'ici !"
     
     hide screen datingSim
     
@@ -649,12 +678,23 @@ label tourVeleda_HistoireBrevetPart2:
         y "{cps=0}Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !{/cps}"
         "Crossfitrichernvald a été spolié !" :
             $ Acte1_Tour_CoupableJugement = "Brutalmund"
+            $ interlocuteur = "cross_char"
+    
+            show screen datingSim(cross_char, 0.35, 0.27)
+            
             y "Brutalmund va devoir payer réparations !"
+            
+            $ loveGauge(cross_char, 5, 0.45, 0.27)
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_02.ogg"
             show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)   
             cross "Aha ! Justice est faite !"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
+            
+            $ interlocuteur = "brut_char"
+    
+            show screen datingSim(brut_char, 0.63, 0.29)
+            
             
             show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_03.ogg"
@@ -662,6 +702,8 @@ label tourVeleda_HistoireBrevetPart2:
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
             y "Brutlamund va donner 2 buffles à Crossfritrichernvald !"
+            
+            $ loveGauge(brut_char, -5, 0.73, 0.29)
             
             show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
@@ -674,18 +716,29 @@ label tourVeleda_HistoireBrevetPart2:
             
         "Brutalmund est accusé à tort !":
             $ Acte1_Tour_CoupableJugement = "Crossfit"
+            
+            $ interlocuteur = "brut_char"
+    
+            show screen datingSim(brut_char, 0.63, 0.29)
+            
             y "Les dieux sont insultés par la frivolité de cette accusation !"
+            
+            $ loveGauge(brut_char, 5, 0.73, 0.29)
             
             show char_brutal heureux at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
             brut "Haha ! J'te l'avais dit !"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
+            $ interlocuteur = "cross_char"
+    
+            show screen datingSim(cross_char, 0.35, 0.27)
+            
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
             show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32) 
             cross "Quel scandale !"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-            
+            $ loveGauge(cross_char, -5, 0.45, 0.27)
             y "Crossfitrichernvald doit procurer deux buffles à Brutalmund, en tant que frais de dossier !"
             show char_brutal normal at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere2_03.ogg"
@@ -696,9 +749,12 @@ label tourVeleda_HistoireBrevetPart2:
             show char_crossfit inquiet at speakingAnim(0.26,0.94,0.92,0.32)
             cross "Des... des buffles ?"
     
+    
     show char_crossfit inquiet at notSpeakingAnim(0.26,0.94,0.92,0.32)
     y "La prophétesse a parlé, messieurs !"
-        
+    
+    hide screen datingSim
+    
     y "Je vous prie de dégager de là vite fait, maintenant !"
     
  #   play sound "sfx/SFX_Walk_02.ogg"
