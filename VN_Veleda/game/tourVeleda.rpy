@@ -769,13 +769,13 @@ label tourVeleda_MarryingIngridPart2:
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     
-    scene bg_chambre
+    scene vel mario2 
     pause 1.5
     $ renpy.music.play("music/MUSIC_Tour_Antichambre.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_Antichambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     show char_ingrid normal at notSpeakingAnim(0.15, 1.15, 1.12, 0.3)
-    show char_veledaernust normal
+    show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3)
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
     ve "Nous sommes réunis en ce jour heureux pour célébrer le..."
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"

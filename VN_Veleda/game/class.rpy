@@ -57,8 +57,10 @@ init -1 python:
         
         if(loveCount>0):
             renpy.show("good_img", at_list=[animFeedbackPos(x,y)])
+            renpy.play("/sfx/UI_FEEDBACK_GOOD.ogg", channel = None)
         else:
             renpy.show("bad_img", at_list=[animFeedbackNeg(x,y)])
+            renpy.play("/sfx/UI_FEEDBACK_BAD.ogg", channel = None)
             
     style.tooltip_bottom = Style(style.default)
     style.tooltip_bottom.xalign = 0.5

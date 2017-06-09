@@ -1524,14 +1524,15 @@ screen action_choice_placeVillage(lunette=0, glaive=0, bouclier=0):
 screen action_choice_placeVillageFinal:
     zorder 10
     textbutton _("Taverne"):
-        xpos 0.55
+        xpos 0.5
         xanchor 0.5
-        ypos 0.35
+        ypos 0.5
         yanchor 0.5
         text_idle_color gui.actionButton_colorIdle
         text_hover_color gui.actionButton_colorHover
         text_outlines [(2,"#000000")]
-        at sineV(0.35)
+        text_size 32
+        at sineV(0.5)
         action Return("taverne")
 
 screen action_choice_EtableTrumpet:

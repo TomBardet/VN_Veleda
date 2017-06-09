@@ -204,6 +204,8 @@ label PlaceDuVillageDefault:
         pause 0.1
         scene black with Dissolve(1.0)
         window show
+        stop music1 fadeout 1.5
+        stop ambiance fadeout 0.5
         jump etable_fromPlace
     elif _return == "forge":
         y "Direction : la Forge !"
@@ -213,6 +215,8 @@ label PlaceDuVillageDefault:
         pause 0.1
         scene black with Dissolve(1.0)
         window show
+        stop music1 fadeout 1.5
+        stop ambiance fadeout 0.5
         jump forge_BrutalmundEtBeaudrik
     elif _return == "tente":
         y "Allons faire un coucou aux Romains !"
@@ -221,6 +225,8 @@ label PlaceDuVillageDefault:
             easeout 0.5 zoom 1.6 xpos 0.0 ypos -0.45
         pause 0.1
         scene black with Dissolve(1.0)
+        stop music1 fadeout 1.5
+        stop ambiance fadeout 0.5
         jump romains_PremiereRencontre
 
 # -----------------------------------------#
@@ -231,29 +237,35 @@ label narration_ellipseCuite:
     y "... Mal à la tête..."
     y "Bon. Ingrid m'a demandé de lui ramener un {b}glaive{/b} et un {b}bouclier{/b}"
     y "Je trouverais surement ça au village."
-    
+    stop music1 fadeout 1.5
+    stop ambiance fadeout 0.5
+    $ _window_during_transitions = False
     jump PlaceDuVillageDefault
 
 # -----------------------------------------#
 
 label PlaceDuVillageAllObjects:
     scene bg_place
-    window hide    
+    window hide
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
+    $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     y "Attends... J'ai un glaive..."
     show screen inventory_screen(obj = "glaive")
-    pause 1.0
+    pause 3.0
     hide screen inventory_screen
     y "... Et j'ai un bouclier..."
     show screen inventory_screen(obj = "bouclier")
-    pause 1.0
+    pause 3.0
     hide screen inventory_screen
-    y "... J'AI LA DOT POUR INGRID !"
-    y "Youpi !"
+    y "J'ai la dot pour Ingrid !"
+    y "Faut que j'aille à la taverne !"
     
     $ _return = renpy.call_screen("action_choice_placeVillageFinal")
     
     if _return == "taverne":
         window show
+        stop music1 fadeout 1.5
+        stop ambiance fadeout 0.5
         jump Act2_transition_alldone
 
 # -----------------------------------------#
