@@ -42,7 +42,6 @@ label forge_Brutalmund_Tampon_HUB:
 label forge_Intro:
     
     scene bg_forge with Dissolve(1.5)
-    pause 1.0
     #play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
     #y "Euh... il y a quelqu'un ?"
     
@@ -51,11 +50,11 @@ label forge_Intro:
 # -----------------------------------------#
 
 label forge_Beaudrik_01:
-    
+    $ _window_during_transitions = False
     $ Acte2_Forge_FirstVisit = 1
     show char_beaudrik normal left :
         xalign 0.5 yalign 0.8
-        zoom 0.2 xpos 1.5 ypos 0.78
+        zoom 0.8 xpos 1.5 ypos 0.78
         linear 0.4 xpos 0.8
 
 jump forge_Beaudrik_02
@@ -65,7 +64,7 @@ jump forge_Beaudrik_02
 label forge_Beaudrik_02:
     
     pause 0.5
-    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_02.ogg"
     bg "Tiens ! C’est le p’tit Gaufrid !"
     show screen datingSim(beau_char, 0.75, 0.10)
@@ -77,15 +76,15 @@ label forge_Beaudrik_02:
     #play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
     #y "Ah, merci Beaudrik ! Je suis flatté."
     
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     $ loveGauge(beau_char, -5, 0.85, 0.10)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
     bg "J’ai entendu des rumeurs comme quoi tu voudrais épouser Ingrid !"
-    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.22)
+    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.88)
         #zoom 0.22 xpos 0.4 ypos 0.09
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Drague_04.ogg"
     bg "C’est tellement n’importe quoi ! Ahahah."
-    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.8)
         #zoom 0.2 xpos 0.6 ypos 0.09
 
 jump forge_Beaudrik_03_EpouserIngrid
@@ -125,11 +124,11 @@ label forge_Beaudrik_03_EpouserIngrid:
 
 label forge_Beaudrik_04:
 
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     bg "Tu sais, c’est moi qui vais me marier avec Ingrid. J’ai une dot et tout."
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     bg "J'ai envie de me poser. Tu sais, avoir quelqu’un qui me fasse des câlins et la vaisselle."
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
     show char_brutal colere:
@@ -138,7 +137,7 @@ label forge_Beaudrik_04:
         linear 0.7 xpos 0.045 ypos 0.7
     pause 1
     brut "{i}Hé, la feignasse ! Beaudrik ! Viens ici !{/i}"    
-    show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.8)
 
     show char_brutal colere:
         xalign 0.5 yalign 0.8
@@ -147,11 +146,11 @@ label forge_Beaudrik_04:
 
     $ renpy.pause(0.5, hard = True)
     
-    show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik choque left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     hide char_brutal
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_02.ogg"
     bg "Oh non, Papa m’appelle ! Je me casse !"
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     bg "De toute façon, je dois aller régler un truc avec Josiane... mon autre fiancée."
 
 jump forge_Beaudrik_06_leaving
@@ -160,13 +159,13 @@ jump forge_Beaudrik_06_leaving
 
 label forge_Beaudrik_05_Josiane:
     
-    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik normal left at notSpeakingAnim(0.8, 0.9, 0.88, 0.8)
     menu:
         bg "{cps=0}De toute façon, je dois aller régler un truc avec Josiane... mon autre fiancée.{/cps}"
         "Deux fiancées ? C’est abusé !" :
             play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
             y "Attends, moi je me trimballe Ernust, et toi tu drague des filles à droite et à gauche ?"
-            show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
             $ loveGauge(beau_char, -5, 0.85, 0.10)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
             bg "Ouais, je sais, c’est compliqué."
@@ -175,16 +174,16 @@ label forge_Beaudrik_05_Josiane:
             y "Deux copines, c’est un peu abusé et pas très gentil quand même."
             y "Tu penses pas que ça briserait le cœur à Ingrid ?"
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_02.ogg"
-            show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
             $ loveGauge(beau_char, -5, 0.85, 0.10)
             bg "Euh, je sais, c’est compliqué."
         "Brutalmund a l’air vénère" :
             y "Et ton père ? Il a pas l’air d’être content."
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+            show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.8)
             play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Mepris_06.ogg"
             bg "Oui, il s’est mis en tête que je dois travailler pour gagner ma vie."
-            show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+            show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
             bg "Mais là j’ai des questions de meufs à régler."
 
 jump forge_Beaudrik_06_leaving
@@ -193,17 +192,17 @@ jump forge_Beaudrik_06_leaving
 
 label forge_Beaudrik_06_leaving:
     
-    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik mepris left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     bg "Heureusement que toi tu n’as pas ce genre de problèmes, Gaufrid ! Je t’envie mon pote."
-    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.2)
+    show char_beaudrik normal left at speakingAnim(0.8, 0.9, 0.88, 0.8)
     bg "Bon, je me casse, avant que Papa n'arrive."
-    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.22)
+    show char_beaudrik drague right at speakingAnim(0.7, 0.9, 0.88, 0.88)
         #zoom 0.23 xpos 0.4 ypos 0.09
     hide screen datingSim
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Normal_04.ogg"
     bg "À plus !"
     show char_beaudrik drague right :
-        zoom 0.23 xpos 0.7 ypos 0.9
+        zoom 0.88 xpos 0.7 ypos 0.9
         linear 1.0 xpos 1.5
     pause 1
     hide char_beaudrik drague right
@@ -423,7 +422,7 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
             show char_brutal colere at speakingAnim(0.52, 0.93, 0.91, 0.35)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_02.ogg"
             brut "Ha ! Là, j’en peux plus mon p’tit Gaufrid. J’en peux plus j'te dis !"
-            brut "J'vais lui dire ses quatre verités."
+            brut "J'vais lui dire ses quatre vérités."
             show char_brutal normal at speakingAnim(0.52, 0.93, 0.91, 0.35)
             hide screen datingSim
             brut "Attends-moi ici, j'reviens dans une minute."

@@ -161,7 +161,7 @@ label ending_ExilAvecChevre:
     
     pause 0.7
     
-    outline "Unis par une force irresistible, Gaufrid et Josiane la chèvre s’exilent ensemble et partent en voyage."
+    outline "Unis par une force irrésistible, Gaufrid et Josiane la chèvre s’exilent ensemble et partent en voyage."
     
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BROTRIP_Chevre_02.ogg"
     
