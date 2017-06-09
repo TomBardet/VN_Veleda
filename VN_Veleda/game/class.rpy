@@ -61,7 +61,10 @@ init -1 python:
         else:
             renpy.show("bad_img", at_list=[animFeedbackNeg(x,y)])
             renpy.play("/sfx/UI_FEEDBACK_BAD.ogg", channel = None)
-            
+    
+    def clickSound():
+        renpy.play("/sfx/SFX_Drapeau_Fall_01.ogg", channel = None)
+    
     style.tooltip_bottom = Style(style.default)
     style.tooltip_bottom.xalign = 0.5
     style.tooltip_bottom.yalign = 0.5
