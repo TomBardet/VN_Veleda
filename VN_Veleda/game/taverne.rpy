@@ -1261,6 +1261,9 @@ label taverne_Concours_Part6_Conclusion:
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_01.ogg"
     i "Sois ponctuel, ma Gaufrette !"
     
+    stop music1 fadeout 1.0
+    stop music2 fadeout 1.0
+    stop ambiance fadeout 0.5
     jump taverne_Concours_Part6_FadeToBlack
 
 # -----------------------------------------#
