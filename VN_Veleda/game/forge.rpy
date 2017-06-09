@@ -35,6 +35,7 @@ label forge_Brutalmund_Tampon_HUB:
     show char_brutal heureux at speakingAnim(0.52, 0.93, 0.91, 0.35)
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
     brut "Alors, ça te tente un {b}Bouclier Original de Capitaine Germanie™{/b} tout neuf ?"
+    show screen datingSim(brut_char, 0.57, 0.15)
     jump forge_Brutalmund_06_Hub
 
 # -----------------------------------------#

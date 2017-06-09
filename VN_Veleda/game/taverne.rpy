@@ -89,7 +89,7 @@ label taverne_DatingIngrid:
             y "Hé ! Mais pourquoi j'ai perdu 10 points ?!"
 
     nar "Ces chiffres représentent l'affection de ton interlocuteur."
-    nar "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécies."
+    nar "Plus le chiffre à gauche est élevé, plus ton interlocuteur t'apprécie."
     nar "C'est le genre de mécanique qu'on trouve assez couramment dans les dating sim..."
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"        
