@@ -13,9 +13,9 @@ label taverne_DatingIngrid:
     $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 1)
     $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 1)
     
-    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
-    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
-    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
+    $ renpy.music.set_volume(0.4, delay=0, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0, channel='ambiance')
     
     show char_ingrid normal at notSpeakingAnim(0.5, 1.11, 1.09, 0.25) with Dissolve (1.5)
 
@@ -138,27 +138,32 @@ label taverne_DatingIngrid:
  
 label taverne_PresentationDot:
     $ _window_during_transitions = False
-    scene bg_taverneN with Dissolve (2.5) :
+    scene bg_taverneJ with Dissolve (2.5) :
         xpos 20 ypos 70 zoom 0.7
         linear 1 xpos -100 ypos -50 zoom 0.81
     $ renpy.pause(0.25, hard = True)
     show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25) with Dissolve(1.5)
     
    
+    $ renpy.music.play("ambiances/AMB_Lieu_Taverne_02.ogg", channel = "ambiance", loop = True, fadein = 1)
+    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 1)
     
-    $ renpy.music.play("music/MUSIC_Taverne.ogg", channel = "music1", loop = True, fadein = 2)
+    $ renpy.music.set_volume(0.4, delay=0, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0, channel='ambiance')
     
     $ lieu = "Taverne"
     $ interlocuteur = "ingrid_char"
+    
     show screen datingSim(ingrid_char, 0.57, 0.30)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
     i "Gaufrid ?!"
     i "Euh... écoute, je suis désolée d'être partie en courant la dernière fois."
-    i "C'est juste que tu disais des trucs vraiment bizarre !"
+    i "C'est juste que tu disais des trucs vraiment bizarres !"
     
     show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     menu:
-        i "{cps=0}C'est juste que tu disais des trucs vraiment bizarre !{/cps}"
+        i "{cps=0}C'est juste que tu disais des trucs vraiment bizarres !{/cps}"
         
         "Je suis comme ça Baby. C'est à prendre ou à laisser":
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
@@ -175,26 +180,31 @@ label taverne_PresentationDot:
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
             i "Euh..."
         "Je veux t'épouser Ingrid !":
-            y "Ingrid épouse moi !"
+            y "Ingrid, épouse moi !"
             $ loveGauge(ingrid_char, -4, 0.65, 0.3)
             show char_ingrid degout at speakingAnim(0.5, 1.16, 1.14, 0.25)
             play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_04.ogg"
             i "Euh..."
         
-    i "Et si je te servais quelquechose à boire plutôt Gaufrid ?"
+    i "Et si je te servais quelquechose à boire plutôt, Gaufrid ?"
     show char_ingrid degout at notSpeakingAnim(0.5, 1.16, 1.14, 0.25)
     play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
     y "Avec plaisir !"
     hide screen datingSim
-    scene black with Dissolve(2.0)
+    $ renpy.music.set_volume(0, delay = 0.4, channel='music1')
+    $ renpy.music.set_volume(0, delay = 0.4, channel='music2')
+    $ renpy.music.set_volume(0, delay=0.4, channel='ambiance')
+    scene black with Dissolve(1.5)
     play sound "sfx/Voices/Player/Char_Player_Boire_03.ogg"
     pause 2.5
-    scene bg_taverneJ:
+    $ renpy.music.set_volume(0.4, delay = 1, channel='music1')
+    $ renpy.music.set_volume(0.4, delay= 1, channel='ambiance')
+    scene bg_taverneJ with Dissolve (1.0):
         xpos -100 ypos -50 zoom 0.81
     show screen datingSim(ingrid_char, 0.57, 0.30)
     show char_ingrid normal at notSpeakingAnim(0.5, 1.11, 1.14, 0.25)   
-    y "...Ingrid je..."
-    y "Je t'aime, marions nous !"
+    y "Ingrid, je..."
+    y "Je t'aime ! Marions nous !"
     $ loveGauge(ingrid_char, 2, 0.65, 0.3)
     show char_ingrid normal at speakingAnim(0.5, 1.16, 1.14, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_03.ogg"
@@ -234,6 +244,11 @@ label taverne_PresentationDot:
         xpos 0.05 ypos 1.15 zoom 0.25 rotate 30
         linear 1.0 xpos -0.5 ypos 1.5
     pause 1.0
+    
+    $ renpy.music.set_volume(0, delay = 0.2, channel='music1')
+    $ renpy.music.set_volume(0, delay = 0.2, channel='music2')
+    $ renpy.music.set_volume(0, delay=0.2, channel='ambiance')
+    
     scene black with Dissolve(2.0)
     
     play sound "sfx/Voices/Player/Char_Player_Boire_03.ogg"
@@ -246,6 +261,10 @@ label taverne_PresentationDot:
 # -----------------------------------------#
 
 label taverne_AbusAlcoolPart1:
+    
+    $ renpy.music.set_volume(0.4, delay = 0.5, channel='music1')
+    $ renpy.music.set_volume(0.4, delay= 0.5, channel='ambiance')
+    
     scene bg_taverneFull with Dissolve(0.8):
         zoom 0.65 xpos -0.5
         easein 2.0 zoom 0.73 xpos -1.15
@@ -260,51 +279,51 @@ label taverne_AbusAlcoolPart1:
     $ lieu = "Taverne2"
     $ interlocuteur = "goat_char"
     
-    y "Et là elle m'dit : "
-    y "Ramène moi un {b}bouclier{/b} et un {b}glaive{/b}"
+    y "Et là, elle m'dit : "
+    y "Ramène moi un {b}bouclier{/b} et un {b}glaive{/b} !"
     show char_goat choc at speakingAnim(0.5, 0.73, 0.71, 0.35)
     show screen datingSim(goat_char, 0.28, 0.42)
     play sound "sfx/Voices/Chevre/Char_Chevre_Normal_01.ogg"
-    goat "Bêêêêêêêêêêêêêêêh."
+    goat "Bêêêêêêêêêêêêh."
     show char_goat choc at notSpeakingAnim(0.5, 0.73, 0.71, 0.35)
     play sound "sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
     y "Non mais t'y crois toi ?"
     show char_goat normal at speakingAnim(0.5, 0.73, 0.71, 0.35)
     play sound "sfx/Voices/Chevre/Char_Chevre_Normal_02.ogg"
-    goat "Bêêêêêêêêêêêêêêêh."
+    goat "Bêêêêêêêêêêh."
     show char_goat normal at notSpeakingAnim(0.5, 0.73, 0.71, 0.35)
     menu:
-        goat "{cps=0}Bêêêêêêêêêêêêêêêh.{/cps}"
-        "T'as complètement raison":
-            y "Nan mais t'as complètement raison !"
+        goat "{cps=0}Bêêêêêêêêêêêh.{/cps}"
+        "T'as complètement raison !":
+            y "Nan, mais, t'as complètement raison !"
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
             $ loveGauge(goat_char, 15, 0.25, 0.41)
-            y "Faut pas prendre bibi pour un canard sauvage hein !"
+            y "Faut pas prendre bibi pour un canard sauvage, hein !"
             $ loveGauge(goat_char, 10, 0.25, 0.41)
-            y "Enfin... Je m'emportes. Retournons à nos moutons."
+            y "Enfin... je m'emporte ! Retournons à nos moutons."
             $ loveGauge(goat_char, -4, 0.25, 0.41)
             show char_goat choc at speakingAnim(0.5, 0.73, 0.71, 0.35)
             play sound "sfx/Voices/Chevre/Char_Chevre_Choc1_01.ogg"
-            goat "BÊÊÊÊÊÊÊÊÊÊÊÊÊÊH !"
+            goat "BÊÊÊÊÊÊH !"
             show char_goat choc at notSpeakingAnim(0.5, 0.73, 0.71, 0.35)
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
-            y "Oups, pardon, je voulais pas te vexer."
-        "T'y vas ptêtre un peu fort":
+            y "Oh pardon ! Je voulais pas te vexer."
+        "T'y vas ptêtre un peu fort...":
             play sound "sfx/Voices/Player/Char_Player_Non_01.ogg"
-            y "T'y vas ptêtre un peu fort là par contre."
+            y "T'y vas ptêtre un peu fort, là, par contre."
             $ loveGauge(goat_char, -1, 0.25, 0.41)
-            y "Elle a pas dit ça méchamment non plus hein."
+            y "Elle a pas dit ça méchamment non plus, hein."
             $ loveGauge(goat_char, -1, 0.25, 0.41)
-            y "Enfin... Je m'emportes. Retournons à nos moutons."
+            y "Enfin... je m'emporte ! Retournons à nos moutons."
             $ loveGauge(goat_char, -2, 0.25, 0.41)
             show char_goat choc at speakingAnim(0.5, 0.73, 0.71, 0.35)
             play sound "sfx/Voices/Chevre/Char_Chevre_Choc1_01.ogg"
             goat "BÊÊÊÊÊÊÊÊÊÊÊÊÊÊH !"
             show char_goat choc at notSpeakingAnim(0.5, 0.73, 0.71, 0.35)
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_03.ogg"
-            y "Oups, pardon, je voulais pas te vexer."
-        "Bêêêêêêêêêêêêêêêh":
-            y "Bêêêêêêêêêêêêêêêh."
+            y "Oh pardon ! Je voulais pas te vexer."
+        "Bêêêêêêêêêêêh.":
+            y "Bêêêêêêêêêêêêh."
             $ loveGauge(goat_char, 22, 0.25, 0.41)
     show char_goat love at speakingAnim(0.5, 0.73, 0.71, 0.35)
     play sound "sfx/Voices/Chevre/Char_Chevre_Love_01.ogg"
@@ -312,7 +331,7 @@ label taverne_AbusAlcoolPart1:
     show char_goat love at notSpeakingAnim(0.5, 0.73, 0.71, 0.35)
     menu:
         goat "{cps=0}Bêêêêêêêêêêêêêêêh.{/cps}"
-        "Ouf, je suis content que tu me pardonnes":
+        "Ouf, je suis content que tu me pardonnes.":
             play sound "sfx/Voices/Player/Char_Player_Heureux_04.ogg"
             y "Ouf, je suis vraiment content que tu me pardonnes."
             $ loveGauge(goat_char, 16, 0.25, 0.41)
@@ -341,20 +360,20 @@ label taverne_AbusAlcoolPart1:
         goat "{cps=0}Bêêêêêêêêêêêêêêêh{/cps}"
         "Tu sais que t'as de beaux yeux ?":
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
-            y "... Dis... Tu sais que t'as de beaux yeux ?"
+            y "Dis... tu sais que t'as de beaux yeux ?"
             $ loveGauge(goat_char, 21, 0.25, 0.41)
-            y "Je suis sérieux. Quand tu me regarde comme ça j'ai..."
-            y "... j'ai l'impression que tu scrutes jusqu'au plus profond de mon âme."
+            y "Je suis sérieux. Quand tu me regarde comme ça, j'ai..."
+            y "J'ai l'impression que tu scrutes jusqu'au plus profond de mon âme."
             $ loveGauge(goat_char, 19, 0.25, 0.41)
             y "Tu crois aux âmes soeurs toi ?"
-        "Waaaah t'as le pelage super doux !":
+        "Waaaah ! T'as le pelage super doux !":
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
             y "Waaaaah ! T'as vraiment le pelage super doux !"
             $ loveGauge(goat_char, 15, 0.25, 0.41)
-            y "Un poil si soyeux... Faut que tu me donnes ta marque de shampooing !"
+            y "Un poil si soyeux... il faut que tu me donnes ta marque de shampooing !"
             $ loveGauge(goat_char, 10, 0.25, 0.41)
             y "J'ai toujours accordé une immense importance à l'hygiène corporelle."
-            y "Toi aussi apparemment..."
+            y "Toi aussi, apparemment..."
             $ loveGauge(goat_char, 13, 0.25, 0.41)
             y "Tu crois aux âmes soeurs ?"
         "Bêêêêêêêêêêêêêêêêêêêêêêêêêêêh": 
@@ -371,7 +390,7 @@ label taverne_AbusAlcoolPart1:
     show char_goat normal at speakingAnim(0.5, 0.73, 0.71, 0.35)
     play sound "sfx/Voices/Chevre/Char_Chevre_Heureux_02.ogg"
     goat "Pardon. G-G-Gaaaaaaaufriiiid."
-    goat "Tu as rompu le malèfice en me parlant avec amour."
+    goat "Tu as rompu le maléfice en me parlant avec amour."
     goat "Tu es une personne extraordinaire Gaufrid. Vraiment."
     goat "En gage de ma gratitude, je te cède cette {b}blague{/b}."
     $ inventory.add(blague)
@@ -379,8 +398,8 @@ label taverne_AbusAlcoolPart1:
     show img_blague at center:
         xalign 0.7 yalign 0.9 zoom 0.3
         linear 0.5 yalign 0.7 zoom 0.4
-        easein 0.5 zoom 0.45
-        easeout 0.5 zoom 0.4
+        easein 0.5 zoom 0.55
+        easeout 0.5 zoom 0.38
         pause 0.5
         parallel :
             linear 0.8 yalign 0.05 xalign 0.95 zoom 0.3
@@ -394,7 +413,9 @@ label taverne_AbusAlcoolPart1:
         easeout 0.3 zoom 1.0 
         pause 0.5
         linear 0.3 xpos 1.0
-    pause 3.0
+        pause 2.0
+    play sound "sfx/SFX_UI_Inventory_Bag_01.ogg"
+    pause 1.0
     play sound "sfx/Voices/Chevre/Char_Chevre_Heureux_03.ogg"
     goat "Elle fera rire tous tes interlocuteurs, et marquera ton ascension dans la société."
     goat "Je dois y aller maintenant."
@@ -416,10 +437,13 @@ label taverne_AbusAlcoolPart1:
                 repeat
     pause 1.5
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "NOOOON ! Reviens !"
+    y "Noon ! Reviens !"
     y "..."
     y "Elle est partie..."
-    y "... J'ai trop bu..."
+    y "J'ai trop bu..."
+    stop music1 fadeout 1.5
+    stop music2 fadeout 1.5
+    stop ambiance fadeout 1.0
     scene black with Dissolve (2.0)
     jump narration_ellipseCuite
 

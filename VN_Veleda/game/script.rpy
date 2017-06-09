@@ -51,18 +51,19 @@ label start:
         Forge_LeaderPrice_check = 0
         Romain_EntenduParlerDesLunettes_check = 0
     
+    stop music
     jump intro
     
 # -----------------------------------------#
 label intro:
     
     window hide
-    $ renpy.music.set_volume(1, delay=0, channel='music1')
-    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 0.5)
-    $ renpy.music.play("ambiances/AMB_Lieu_Tour_Chambre_01.ogg", channel = "ambiance", loop = True, fadein = 1)
-    $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
-    $ renpy.music.set_volume(0.4, delay=0.4, channel='music2')
-    $ renpy.music.set_volume(0.4, delay=0.4, channel='ambiance')
+
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1.5)
+    $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
+    $ renpy.music.set_volume(0.4, delay=0, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=0, channel='music2')
+    $ renpy.music.set_volume(0.4, delay=0, channel='ambiance')
     show introCarte :
         zoom 1,xanchor 0.0 yanchor 0.0
         xpos 0 ypos 0
@@ -191,13 +192,14 @@ label PlaceDuVillageDefault:
     scene bg_place with Dissolve(1.0):
         zoom 1.0
     window hide
-    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
+    
+    $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1.5)
     $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
     
     $ _return = renpy.call_screen("action_choice_placeVillage")
     
     if _return == "etables":
-        y "C'est parti pour les étables !"
+        y "On passe aux étables !"
         scene bg_place:
             zoom 1.0
             linear 0.5 zoom 1.3 xpos -0.35 ypos -0.28
@@ -208,7 +210,7 @@ label PlaceDuVillageDefault:
         stop ambiance fadeout 0.5
         jump etable_fromPlace
     elif _return == "forge":
-        y "Direction : la Forge !"
+        y "Direction : la forge !"
         scene bg_place:
             zoom 1.0
             linear 0.5 zoom 1.3 xpos -0.3 ypos -0.28
@@ -234,9 +236,9 @@ label PlaceDuVillageDefault:
 label narration_ellipseCuite:
     scene black with Dissolve (1.5)
     outline "Une durée indéterminée de temps plus tard..."
-    y "... Mal à la tête..."
-    y "Bon. Ingrid m'a demandé de lui ramener un {b}glaive{/b} et un {b}bouclier{/b}"
-    y "Je trouverais surement ça au village."
+    y "J'ai mal à la tête..."
+    y "Bon. Ingrid m'a demandé de lui ramener un {b}glaive{/b} et un {b}bouclier{/b}..."
+    y "Je trouverai surement ça au village."
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     $ _window_during_transitions = False
