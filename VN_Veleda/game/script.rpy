@@ -51,11 +51,6 @@ label start:
         Forge_LeaderPrice_check = 0
         Romain_EntenduParlerDesLunettes_check = 0
     
-<<<<<<< HEAD
-   # jump taverne_Concours_Part6_FadeToBlack
-=======
-    #jump taverne_AbusAlcoolPart1
->>>>>>> parent of fbe0b63... début TourVéléda, add sons étables
     jump intro
     
 # -----------------------------------------#
