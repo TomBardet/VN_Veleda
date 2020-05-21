@@ -579,8 +579,8 @@ label tourVeleda_MortVeleda:
     
     show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
     play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-    y "Quoi ? Mais... c'était quoi comme champignons ?"
-    y "Va voir si elle va bien !"
+    y "What? What kind of mushrooms were they?"
+    y "Check on her right now!"
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_02.ogg"
     show char_ernust joyeux right :
@@ -595,7 +595,7 @@ label tourVeleda_MortVeleda:
     
     $ renpy.pause (0.6, hard = True)
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_01.ogg"
-    e "Euh..."
+    e "Hmm..."
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
     show char_ernust inquiet right :
@@ -607,24 +607,24 @@ label tourVeleda_MortVeleda:
     
     show char_ernust inquiet right at speakingAnim(0.35,1.05,1.0,0.55)
 
-    e "Elle va pas bien du tout, Gaufrid !"
-    e "Je sens pas du tout son pouls !"
+    e "Shes' not ok, Wafflid!"
+    e "I can't feel her pulse!"
     
     show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "Quoi ? Mais.. tu as tué Véléda, Ernust !"
-    y "La prophétesse la plus connue de toute l'histoire !"
+    y "What? You... you killed Veleda, Ernust !"
+    y "The most famous and legendary prophetess in history!"
     
     show char_ernust inquiet right at speakingAnim(0.35,1.05,1.0,0.55)
     
-    e "Oh, je suis désolé Gaufrid !"
-    e "Qu'est ce qu'on va faire ?"
+    e "Oh, I'm so sorry Wafflid!"
+    e "What are we going to do?"
     
     show char_ernust inquiet right at notSpeakingAnim(0.35,1.04,1.0,0.55)
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-    y "Tu sais quoi... je vais inventer une prophétie !"
-    y "Ils verront jamais la différence !"
-    y "Bouge surtout pas d'ici !"
+    y "You know what... I'll just make up a prophecy!"
+    y "They will never be able to tell the difference!"
+    y "Don't move from here!"
     
     hide screen datingSim
     
@@ -670,26 +670,26 @@ label tourVeleda_HistoireBrevetPart2:
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_02.ogg"
-    cross "Ah, enfin ! Parle, larbin."
+    cross "Ah, finally! Talk, servant."
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
-    y "Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !"
+    y "Gentlemen! The divine Veleda has consulted the gods, and passed onto me the prophecy!"
     
     menu :
-        y "{cps=0}Messieurs ! La divine Véléda a consulté les dieux, et m'a transmis sa prophétie !{/cps}"
-        "Crossfitrichernvald a été spolié !" :
+        y "{cps=0}Gentlemen! The divine Veleda has consulted the gods, and passed onto me the prophecy!{/cps}"
+        "Crossfitrichernvald has suffered injustice!" :
             $ Acte1_Tour_CoupableJugement = "Brutalmund"
             $ interlocuteur = "cross_char"
     
             show screen datingSim(cross_char, 0.35, 0.27)
             
-            y "Brutalmund va devoir payer réparations !"
+            y "Brutalmund must pay reparations!"
             
             $ loveGauge(cross_char, 5, 0.45, 0.27)
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_02.ogg"
             show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)   
-            cross "Aha ! Justice est faite !"
+            cross "Aha! Justice is sweet!"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
             
             $ interlocuteur = "brut_char"
@@ -699,36 +699,36 @@ label tourVeleda_HistoireBrevetPart2:
             
             show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_03.ogg"
-            brut "C'est quoi c't'histoire ?"
+            brut "What kinda story is that?"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
-            y "Brutlamund va donner 2 buffles à Crossfritrichernvald !"
+            y "Brutlamund must give Crossfritrichernvald two buffalos!"
             
             $ loveGauge(brut_char, -5, 0.73, 0.29)
             
             show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
-            brut "Quoi ? Deux buffles ? Ça va pas la tête ?"
+            brut "Two whole buffalos? There something wrong with ya' head?"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_03.ogg"
             show char_crossfit inquiet at speakingAnim(0.26,0.94,0.92,0.32)
-            cross "Des... des buffles ?"
+            cross "Buff... buffalos?"
             
-        "Brutalmund est accusé à tort !":
+        "Brutalmund has been unjustly accused!":
             $ Acte1_Tour_CoupableJugement = "Crossfit"
             
             $ interlocuteur = "brut_char"
     
             show screen datingSim(brut_char, 0.63, 0.29)
             
-            y "Les dieux sont insultés par la frivolité de cette accusation !"
+            y "The gods are insulted by this baseless accusation!"
             
             $ loveGauge(brut_char, 5, 0.73, 0.29)
             
             show char_brutal heureux at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_02.ogg"
-            brut "Haha ! J'te l'avais dit !"
+            brut "Haha! I knew it!"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
             $ interlocuteur = "cross_char"
@@ -737,26 +737,26 @@ label tourVeleda_HistoireBrevetPart2:
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
             show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32) 
-            cross "Quel scandale !"
+            cross "What a scandal!"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
             $ loveGauge(cross_char, -5, 0.45, 0.27)
-            y "Crossfitrichernvald doit procurer deux buffles à Brutalmund, en tant que frais de dossier !"
+            y "Crossfitrichernvald must give Brutalmund two buffalos, as a booking fee!"
             show char_brutal normal at speakingAnim(0.75, 1.05,1.02,0.32)
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere2_03.ogg"
-            brut "Des buffles ? Bah ! J'en ai plein déjà."
+            brut "Buffalos? Bah ! I got's tons of 'em already."
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_03.ogg"
             show char_crossfit inquiet at speakingAnim(0.26,0.94,0.92,0.32)
-            cross "Des... des buffles ?"
+            cross "Buff... buffalos?"
     
     
     show char_crossfit inquiet at notSpeakingAnim(0.26,0.94,0.92,0.32)
-    y "La prophétesse a parlé, messieurs !"
+    y "The prophetess has spoken, gentlemen!"
     
     hide screen datingSim
     
-    y "Je vous prie de dégager de là vite fait, maintenant !"
+    y "Pray, now, gentlemen, get yourselves out of here!"
     
  #   play sound "sfx/SFX_Walk_02.ogg"
  
@@ -770,12 +770,12 @@ label tourVeleda_HistoireBrevetPart2:
         linear 2.0 xpos 2.0 ypos 1.05
     
     
-    y "Allez, hop hop hop !"
+    y "Come on, hop hop hop!"
     
     pause 0.5
 
-    y "Bon, moi, je vais aller à la taverne ! Ça donne soif toutes ces émotions !"
-    y "Je vais pouvoir voir Ingrid, en plus !"
+    y "Well then. Let's go to the tavern! All this excitement made me thirsty!"
+    y "And I can see Ingrid again!"
     
     stop music1 fadeout 1.5
     stop music2 fadeout 1.5
@@ -800,10 +800,10 @@ label tourVeleda_MarryingIngridPart2:
         easein 0.8 xpos 0.4 ypos 0.94 
     pause 0.8
     play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
-    y "Vite Ernust ! Passe devant et prépare la Vélédarionnette !"
+    y "Quick Ernust! Go ahead and prepare the Veledapuppet!"
     show char_ernust normal right at speakingAnim(0.4, 1.03, 1.01, 0.7)
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
-    e "À tes ordres Gaufrid !"
+    e "Sir, yes, sir, Wafflid!"
     show char_ernust normal right :
         xalign 0.5 yalign 0.8
         zoom 0.7 xpos 0.4 ypos 1.03
@@ -818,8 +818,8 @@ label tourVeleda_MarryingIngridPart2:
     pause 0.8
     show char_ingrid love at speakingAnim(0.4, 1.16, 1.14, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_02.ogg"
-    i "Oh mon Gaufrid ! On va enfin pouvoir se marier !"
-    i "Véléda doit nous attendre pour donner sa bénédiction"
+    i "Oh my dear Wafflid! We can finally get married!"
+    i "Veleda must be waiting to give us her blessing."
     show char_ingrid love:
         xalign 0.5 yalign 0.8
         zoom 0.25 xpos 0.4 ypos 1.18
@@ -842,15 +842,15 @@ label tourVeleda_MarryingIngridPart2:
         linear 1.5 xpos 0.15 ypos 1.16
     pause 2.0
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
-    ve "Nous sommes réunis en ce jour heureux pour célébrer le..."
+    ve "We are gathered together on this blessed day to celebrate..."
     show vel mario zorder 1 with Dissolve(0.5) 
     pause 0.5
     show vel mario2 zorder 1 with Dissolve(0.5) 
     show char_veledaernust 02 at speakingAnim(0.8, 0.78, 0.76, 0.3) zorder 2:
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
-    e "Eh ! Mais elle arrête pas de bouger !"
+    e "Hey! She won't stop moving!"
     play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
-    y "De bouger ?!"
+    y "Moving?!"
     
     show vel normal zorder 1 with hpunch
     show char_veledaernust 02:
@@ -858,13 +858,13 @@ label tourVeleda_MarryingIngridPart2:
         zoom 0.3 xpos 0.8 ypos 0.78
         linear 0.6 xpos 2.0 ypos 1.0
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
-    v "Ernust ! Que faites-vous !"
-    v "Lâchez nous immédiatement !"
+    v "Ernust! What are you doing?!"
+    v "Release us immediately!"
     
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
-    i "Ernust ! Tu as fait semblant d'être Véléda ?"
-    i "Quelle horreur ! Tu as bafoué toutes nos traditions !"
+    i "Ernust! Were you pretending to be Veleda ?"
+    i "How shocking! You have disrespected our most valued traditions!"
     
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     show vel normal2 zorder 1
@@ -876,11 +876,11 @@ label tourVeleda_MarryingIngridPart2:
     
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_01.ogg"
-    e "Ah ben mince Gaufrid, on a été démasqué !"
+    e "Oh snap Wafflid, we got caught!"
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Gaufrid ?! Tu es dans le coup, toi aussi ?!"
+    i "Wafflid?! You knew about this?!"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
-    y "Ernust ! Tu m'avais dit qu'elle était morte !"
+    y "Ernust! You told me she was dead!"
     jump ending_AskErnust
 
 # -----------------------------------------#
@@ -888,27 +888,27 @@ label tourVeleda_MarryingIngridPart2:
 label ending_AskErnust:
 
     show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
-    e "Bah oui ! Je l'ai reniflée et j'ai pas senti son pouls."
-    e "Y avait bien une odeur d'oignon séché, mais c'est tout."
+    e "Yeah! I really focused but I couldn't feel her pulse."
+    e "There was a weird dried onion smell but that's it."
     show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Gaufrid, explique toi !"
+    i "Wafflid, tell me what's going on!"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     menu :
-        i "{cps=0}Gaufrid, explique toi !{/cps}"
-        "J'ai rien fait ! C'est Ernust !":
+        i "{cps=0}Wafflid, tell me what's going on!{/cps}"
+        "It wasn't me! It was all Ernust!":
             jump ending_ErnustPart1
-        "Ingrid, je dois t'avouer la vérité..." :
+        "Ingrid, I have to tell you the truth..." :
             jump ending_Admit
-        "La vrai coupable, c'est la chèvre !" :
+        "The real culprit here is... the goat!" :
             jump ending_ChevrePart1
 
 # -----------------------------------------#
 label ending_ChevrePart1 :
     
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "Ne l'écoute pas Ingrid !"
-    y "La seule et unique coupable ici, c'est Josiane, la chêvre. J'en suis sûr !"
+    y "Don"t listen to him Ingrid !"
+    y "The only criminal here is Josiane, the goat. I'm sure of it!"
     show char_goat normal zorder 2:
         xalign 0.5 yalign 0.8
         zoom 0.45 xpos 0.5 ypos 1.5
@@ -916,7 +916,7 @@ label ending_ChevrePart1 :
     play sound "sfx/Voices/Chevre/Char_Chevre_Choc1_01.ogg"
     goat "Bêêêêêêêêêêêêh !"
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Josiane ?! Vraiment ?!"
+    i "Josiane?! Really?!"
     show char_ingrid choc at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     show char_beaudrik choque right zorder 2:
         xalign 0.5 yalign 0.8 zoom 0.8
@@ -928,23 +928,23 @@ label ending_ChevrePart1 :
         xpos 0.5
         linear 0.8 xpos 0.6
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Choc_01.ogg"
-    bg "Josiane ?! Mais comment t'as pu me faire ça ?!"
-    bg "Après tout ce que nous avons vécu ensemble, Josiane !"
+    bg "Josiane?! How could you?!"
+    bg "After everything we've been through!"
     play sound "sfx/Voices/Chevre/Char_Chevre_Love_03.ogg"
     show char_goat choc at speakingAnim(0.6, 0.88, 0.86, 0.45)
     goat "Bêêêêêêêêh..."
     show char_goat choc at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
-    v "Josiane, les faits sont là."
-    v "Je n'ai d'autre choix que de vous condamner à l'exil..."
+    v "Josiane, the facts are clear."
+    v "I have no other choice than condemn you to exile..."
     play sound "sfx/Voices/Chevre/Char_Chevre_Normal_01.ogg"
     show char_goat choc at speakingAnim(0.6, 0.88, 0.86, 0.45)
     goat "Bêêêêêêêêêêh !"
     show char_goat normal at notSpeakingAnim(0.6, 0.88, 0.86, 0.45)
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Humilie_01.ogg"
     show char_beaudrik insulte at speakingAnim(0.18, 0.98, 0.96, 0.8)
-    bg "Adieu, Josiane..."
-    bg "Mon amie..."
+    bg "Goodbye, Josiane..."
+    bg "My dear..."
 
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
@@ -953,20 +953,20 @@ jump ending_ChevreTrahie
 # -----------------------------------------#
 label ending_Admit :
     
-    y "Ingrid, je dois tout t'avouer..."
-    y "Ernust et moi sommes coupables !"
+    y "Ingrid, I have to tell you the truth..."
+    y "Ernust and I are guilty!"
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Choc_01.ogg"
     show char_ingrid choc at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Oh ! Mon tout nouveau fiancé !"
-    i "Comment as tu pu ? Quelle tristesse !"
-    i "Je me suis tellement attachée à toi depuis que tu m'as rapporté un {b}glaive{/b} et un {b}bouclier{/b} !"
+    i "Oh! My brand new fiancé!"
+    i "How could you? What sadness!"
+    i "I had gotten so attached to you since you gave me a {b}glaive{/b} and a {b}shield{/b} !"
     show char_ingrid normal at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
-    v "Gaufrid ! Comment avez vous pu cracher sur nos traditions de la sorte ?"
-    v "Votre punition sera..."
+    v "Wafflid! How dare you spit on our traditions this way?"
+    v "Your punishment shall be..."
     play sound "sfx/SFX_Drama_01.ogg"
     pause 0.5
-    v "L'exil !"
+    v "Exile!"
     
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
@@ -976,23 +976,23 @@ jump ending_ExilPart1
 label ending_ErnustPart1 :
     
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "J'ai rien fait ! C'est Ernust, le coupable !"
+    y "I didn't do anything! It was Ernust, he is guilty!"
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_01.ogg"
     show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
-    e "Oh bah... mais... Gaufrid !"
+    e "Oh bah... but... Wafflid!"
     show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     show char_ingrid degout at speakingAnim(0.15, 1.22, 1.20, 0.25)
-    i "Ernust... il semble pourtant si gentil..."
+    i "Ernust... he seemed so innocent..."
     show char_ingrid degout at notSpeakingAnim(0.15, 1.22, 1.20, 0.25)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
-    v "Ernust, vous avez tourné en ridicule nos traditions."
+    v "Ernust, you have ridiculed our traditions."
 
-    v "C'est avec grand plaisir que nous vous condamnons à..."
+    v "It is with great pleasure that we condemn you to..."
     play sound "sfx/SFX_Drama_01.ogg"
-    v "L'exil !"
+    v "Exile!"
     play sound "sfx/Voices/Ernust/Char_Ernust_Trahi_02.ogg"
     show char_ernust inquiet left at speakingAnim(0.9, 1.18, 1.16, 0.7)
-    e "Oh non ! Mais je vais aller où, moi ?"
+    e "Oh no! Where am I going to go?"
     show char_ernust inquiet left at notSpeakingAnim(0.9, 1.18, 1.16, 0.7)
     
     
@@ -1001,7 +1001,7 @@ label ending_ErnustPart1 :
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
-    e "Gaufrid... pourquoi ?"
+    e "Wafflid... why?"
 
 
 jump ending_ErnustTrahi
@@ -1009,8 +1009,8 @@ jump ending_ErnustTrahi
 
 label ending_ExilPart1 :
     
-    y "L'exil !?"
-    y "Si je dois partir, je partirai avec mon meilleur ami !"
+    y "Exile!?"
+    y "If I must leave, I will go with my best friend!"
     show char_ernust love2:
         xalign 0.5 yalign 0.8 zoom 0.7
         xpos 0.88 ypos 1.16
@@ -1018,22 +1018,22 @@ label ending_ExilPart1 :
     pause 0.8
     show char_ernust love2 at speakingAnim(0.5, 1.16, 1.14, 0.72)
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_04.ogg"
-    e "Vraiment ?"
+    e "Really?"
     show char_ernust love2 at notSpeakingAnim(0.5, 1.16, 1.14, 0.72)
     menu:
-        e "{cps=0}Vraiment ?{/cps}"
-        "Oui Ernust, on s'en va !":
-            y "Oui Ernust, on s'en va !"
+        e "{cps=0}Really?{/cps}"
+        "Yes Ernust, let's go!":
+            y "Yes Ernust, let's go!"
             show char_ernust love2 at speakingAnim(0.5, 1.18, 1.16, 0.72)
-            e "Oh bah, Gaufrid... si tu savais comme j'suis content !"
+            e "Oh, Wafflid... you're making me so happy!"
             show char_ernust love2 at notSpeakingAnim(0.5, 1.18, 1.16, 0.72)
             stop music1 fadeout 1.5
             stop ambiance fadeout 0.5
             
             jump ending_ExilAvecErnust
             
-        "Allez viens Josiane, on s'en va !":
-            y "Viens Josiane, allons découvrir le monde ensemble !"
+        "Come on Josiane, we're leaving!":
+            y "Let's )go Josiane, we will discover the world together!"
             show char_goat choc zorder 2:
                 xalign 0.5 yalign 0.8
                 zoom 0.45 xpos 0.75 ypos 1.5
@@ -1047,6 +1047,6 @@ label ending_ExilPart1 :
             stop ambiance fadeout 0.5
             show char_ernust inquiet left at speakingAnim(0.5, 1.18, 1.16, 0.7)
             play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_04.ogg"
-            e "Mais... Gaufrid ?"
+            e "But... Wafflid?"
             show char_ernust inquiet left at notSpeakingAnim(0.5, 1.18, 1.16, 0.7)
             jump ending_ExilAvecChevre
