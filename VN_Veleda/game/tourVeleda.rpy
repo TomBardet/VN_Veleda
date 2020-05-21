@@ -105,7 +105,7 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal :
         xpos 0 ypos 0
     
-    v "My lord Crossfritrichierich accuses our village's blacksmith, Mister Brutalmund, of unjustly appropirating his property!"
+    v "My lord Crossfritrichierich accuses our village's blacksmith, Mister Brutalmund, of unjustly appropriating his property!"
     
     v "Mister Brutalmund denies the allegation! We shall therefore render justice with..."
     
@@ -139,7 +139,7 @@ label tourVeleda_ErnustEtVeleda :
 
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
-    v "You dare doubt the wisdon of our prophecies, Mister Wafflid?"
+    v "You dare doubt the wisdom of our prophecies, Mister Wafflid?"
     
     v "Where is your cousin by the way? The dopey Mister Ernust?"
     
@@ -315,33 +315,33 @@ label tourVeleda_ErnustEtVeleda :
     $ interlocuteur = "vel_char"
     show screen datingSim(vel_char, 0.625, 0.33)
     
-    v "Cela suffit ! Servez nous notre sanglier !"
+    v "That is enough! Serve us our boar!"
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     show vel normal :
         xpos 0 ypos 0
-    e "Ah bah non, y'a pas de sanglier !"
-    e "J'en ai vu un dans la forêt, mais bon... j'ai pas d'armes !"
-    e "Ça se chasse pas à mains nues, hein, le sanglier."
+    e "Oh no, I don't have a boar!"
+    e "I saw one in the forest but... I don't have a weapon!"
+    e "You can't hunt boars with your bare hands, oh no."
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
-    e "Mais j'ai trouvé des champignons, alors j'ai fait une soupe ! Une bonne soupe de champignons !"
+    e "But I did find mushrooms, so I made a soup! A nice mushroom soup!"
     show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
     #show char_veleda normal at speakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
     show vel normal2 :
         xpos 0 ypos 0
-    v "Cela suffira ! Et vous, Gaufrid, allez accueillir nos invités. Nous prophétisons qu'ils vont frapper à la porte !"
+    v "It shall be enough! You, Mister Wafflid, go meet our guests. We are prophecisizing that they will knock on the door soon!"
     
     play sound "sfx/SFX_Knock_01.ogg"
     pause 1.0
-    v "Haa, vous voyez ? Allez-y, Monsieur Gaufrid."
+    v "Aha, see? Go on then, mister Wafflid."
     #show char_veleda normal at notSpeakingAnim(0.48,0.82,0.80,0.7)
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
     show vel normal :
         xpos 0 ypos 0
-    y "Ok, ok, j'y vais..."
+    y "Alright, I'm going, I'm going..."
     
     hide screen datingSim
     
@@ -389,27 +389,27 @@ label tourVeleda_HistoireBrevetPart1:
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_01.ogg"
     show char_crossfit colere right at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Nous voilà ! Je vais enfin trouver justice, Brutalmund !"
+    cross "There you are! I will finally have justice, Brutalmund !"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     show char_brutal colere at speakingAnim(0.75, 1.05, 1.02, 0.32)
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_01.ogg"
-    brut "J't'ai déjà dit que j't'ai rien volé du tout !"
+    brut "I told ya I didn' steal a thing!"
     
     show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.2,0.32)
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_03.ogg"
-    cross "Toi, l'assistant, va chercher la prophétesse !"
+    cross "You, assistant, go and get the prophetess!"
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
-    y "Ah non ! La prophétesse ne voit pas directement ses visiteurs."
-    y "Vous m'expliquez le problème, et je lui transmets. Après, je vous interprète ses visions."
+    y "Ah no! The prophetess does not see visitors directly."
+    y "You tell me the problem, and I'll bring it to her. I'll come back down and tell you the result of the prophecy."
     
 
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_02.ogg"
-    cross "Très bien, serviteur ! Mais si tu ne transmets pas nos messages exactement, je t'égorge."
+    cross "Very well, servant! If you don't transmit my exact words, I will gut you like a fish."
     
     $ interlocuteur = "cross_char"
     
@@ -417,19 +417,19 @@ label tourVeleda_HistoireBrevetPart1:
     
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     menu :
-        cross "{cps=0}Très bien, serviteur ! Mais si tu ne transmets pas nos messages exactement, je t'égorge.{/cps}"
-        "Oui, Monseigneur" :
+        cross "{cps=0}Very well, servant! If you don't transmit my exact words, I will gut you like a fish.{/cps}"
+        "Yes, My Lord" :
             
             $ loveGauge(cross_char, 5, 0.45, 0.27)
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Bien sur, Monsieur Crossfritrichernvald, je ferai bien attention."
+            y "Of course, My Lord Crossfritrichernvald, I will be very careful."
             
-        "Je sais faire mon travail, hein" :
+        "I know how to do my job, you know" :
             $ loveGauge(cross_char, -5, 0.45, 0.27)
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
-            y "Eh oh, je sais ce que je fais, hein ! Pas la peine de me menacer."
+            y "Hey, I know what I'm doing! You don't need to threaten me."
     
-    y "Dites moi tout, quel est le problème ?"
+    y "Tell me everything, what is the issue?"
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Heureux_01.ogg"
     show char_brutal normal at speakingAnim(0.75, 1.05,1.02,0.32)
@@ -438,17 +438,17 @@ label tourVeleda_HistoireBrevetPart1:
     
     show screen datingSim(brut_char, 0.63, 0.29)
     
-    brut "J'vais t'expliquer, Gaufrid, mon pote !"
-    brut "T'vois, l'autre jour, Crossfitrichernvald, il passe d'vant chez moi."
+    brut "Imma tell you right there buddy, my friend Wafflid!"
+    brut "Y'see, the other day, Crossfitrichernvald, he's walking by my shop y'know."
     show char_brutal heureux at speakingAnim(0.75, 1.05,1.02,0.32)
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Normal_05.ogg"
-    brut "Et il voit un bouclier qui ressemble au sien."
+    brut "And he sees that shield, right? Looks just like his!"
     show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
     
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_03.ogg"
-    brut "Mais j'l'ai pas volé c'te bouclier !"
-    brut "C'est moi qui l'ai fait. De mes p'tites mains ! J'te jure mon p'tit Gaufrid !"
+    brut "But I didn' steal no shield I can tell y'a that buddy!"
+    brut "I made it m'self. With ma'own hands! I swear, Wafflid, pal, y'a gotta believe me!"
     show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
     
     $ interlocuteur = "cross_char"
@@ -457,34 +457,34 @@ label tourVeleda_HistoireBrevetPart1:
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
     show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Ah ! Mais tu sais bien que ce n'est pas ça, le problème, escroc !"
+    cross "Hey! You know very well that that is not the problem, crook!"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
 
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
     show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
-    brut "Moi ? Un escroc ?"
+    brut "Me? A crook?"
     show char_brutal normal at notSpeakingAnim(0.75, 1.05,0.92,0.32)
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Oui, un escroc ! Ce bouclier est exactement le même que le mien. Tu l'as copié !"
-    cross "C'est du vol de propriété intellectuelle !"
+    cross "Yes, a crook! This shield is the same as mine, you copied it!"
+    cross "It's {b}copyright infringement{/b}!"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)        
 
     play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Colere1_02.ogg"
     show char_brutal colere at speakingAnim(0.75, 1.05,1.02,0.32)
-    brut "Oh, toi, tout de suite avec les grands mots hein !"
+    brut "Oh wow, usin' fancy words there I see!"
     show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.0,0.32)
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_01.ogg"
     show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
-    cross "Le concept de propriété intellectuelle est fondamental à la société Germaine du premier siècle !"
+    cross "Copyright law is a fundamental aspect of first century Germanic society!"
     show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
     menu :
-        cross "{cps=0}Le concept de propriété intellectuelle est fondamental à la société Germaine du premier siècle !{/cps}"
-        "C'est très grave !" :
+        cross "{cps=0}Copyright law is a fundamental aspect of first century Germanic society{/cps}"
+        "That's very serious!" :
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
-            y "C'est vrai que c'est très grave !"
+            y "You're right, this is a big deal!"
             $ interlocuteur = "brut_char"
     
             show screen datingSim(brut_char, 0.63, 0.29)
@@ -493,30 +493,30 @@ label tourVeleda_HistoireBrevetPart1:
             
             play sound "sfx/Voices/Brutalmund/Char_Brutalmund_Choc_01.ogg"
             show char_brutal surpris at speakingAnim(0.75, 1.05,1.02,0.32)
-            brut "Tu t'y mets, toi aussi ! Gaufrid, mon poteau !"
+            brut "You too! Wafflid, my brother from another mother, turning against me!"
             show char_brutal normal at notSpeakingAnim(0.75, 1.05,1.02,0.32)
             
             $ loveGauge(brut_char, -5, 0.55, 0.27)
             
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Bon, je vais voir ce qu'en dit notre divine prophétesse."
+            y "Well, let me see what the prophetess thinks."
         
-        "On s'en fout, non ?" :
+        "Who cares?" :
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
-            y "Y'a pas de quoi en faire tout un plat, non ?"
+            y "No reason to get all worked up over it, right?"
             
             $ loveGauge(cross_char, -5, 0.45, 0.27)
             
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Choc_01.ogg"
             show char_crossfit choc right at speakingAnim(0.26,0.94,0.92,0.32)
-            cross "Comment oses-tu, domestique ?"
+            cross "How dare you, lackey?"
             show char_crossfit serieux at speakingAnim(0.26,0.94,0.92,0.32)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Serieux_03.ogg"
-            cross "Nos lois sont claires ! Va voir la prophétesse, maintenant !"
+            cross "Our laws are clear! Go and see the prophetess, now!"
             show char_crossfit colere right at notSpeakingAnim(0.26,0.94,0.92,0.32)
             
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Ok ! Ok ! J'y vais ! Faut pas s'énerver comme ça !"
+            y "Alright! Alright! I'm going! No need to get angry!"
             
     hide screen datingSim        
     
@@ -561,20 +561,21 @@ label tourVeleda_MortVeleda:
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_07.ogg"
     
-    e "Ah Gaufrid, ça c'est bien passé ?"
-    e "Véléda fait une petite sieste !"
+    e "Oh, Wafflid! How did it go?"
+    e "Veleda's having a quick nap!"
     
     show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
    
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-    y "Comment ça, une sieste ?"
+    y "A nap? What do you mean"
     
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
     
-    e "Bah oui, elle a mangé ma soupe aux champignons et elle a fait des bruits bizarres."
-    e "Je pense qu'elle a vomi à un moment, mais après elle s'est endormie tranquillement !"
+    e "Well yeah, she ate my soup and then she made some weird sounds."
+    e "She was gagging and choking, it was pretty scary."
+    e "But now she's sleaping peacefully!"
     
     show char_ernust normal right  at notSpeakingAnim(0.185,1.01,1.0,0.6)
     play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
