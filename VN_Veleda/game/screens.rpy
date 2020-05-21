@@ -380,7 +380,7 @@ screen main_menu:
     add "button_menu":
         zoom 0.11 xalign 0.5 yalign 0.5
         xpos 0.49 ypos 0.89
-    textbutton _("Jouer"):
+    textbutton _("Play"):
         xanchor 0.5
         xpos 0.33
         yanchor 0.5
@@ -391,7 +391,7 @@ screen main_menu:
         text_font "gui/ardagh.ttf"
         text_size 45
         action Start()
-    textbutton _("Charger"):
+    textbutton _("Load"):
         xanchor 0.5
         xpos 0.41
         yanchor 0.5
@@ -402,7 +402,7 @@ screen main_menu:
         text_font "gui/ardagh.ttf"
         text_size 45
         action ShowMenu("load")
-    textbutton _("Quitter"):
+    textbutton _("Exit"):
         xanchor 0.5
         xpos 0.49
         yanchor 0.5

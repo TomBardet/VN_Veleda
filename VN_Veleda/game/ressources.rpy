@@ -3,54 +3,54 @@
 
 init:
     
-    define goat = Character("Chêvre : ",
+    define goat = Character("Goat: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define y = Character("Gaufrid : ",
+    define y = Character("Wafflid: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define e = Character("Ernust : ",
+    define e = Character("Ernust: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define i = Character("Ingrid : ",
+    define i = Character("Ingrid: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define v = Character("Véléda : ",
+    define v = Character("Veleda: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define brut = Character("Brutalmund : ",
+    define brut = Character("Brutalmund: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define cross = Character("Crossfitrichernvald : ",
+    define cross = Character("Crossfitrichernvald: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"),
         who_size=22,
         who_ypos=0.8)
     
-    define bg = Character("Beaudrik : ",
+    define bg = Character("Hotdrik: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define num = Character("Numerimus : ",
+    define num = Character("Numerimus: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
-    define dig = Character("Digitimus : ",
+    define dig = Character("Digitimus: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
  
-    define ve = Character("Véléda(Ernust) : ",
+    define ve = Character("Veleda(Ernust): ",
         what_suffix=" ",
         #who_size=24,
         ctc=anim.Blink("gui/ctc.png"))
 
-    define nar = Character("Narrateur : ",
+    define nar = Character("Narrator: ",
         what_italic=True,
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))

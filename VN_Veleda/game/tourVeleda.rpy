@@ -29,10 +29,10 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal2 :
         xpos 0 ypos 0
         
-    v "Vous voilà Gaufrid ! Dépèchez vous, nous attendons des clients très importants."
+    v "There you are Wafflid! Hurry it up, we are waiting for some very important guests."
     
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-    y "Mais... ils sont encore là, ces chiffres ? J'ai perdu la boule ou quoi ?"
+    y "What?... the numbers are still here? Have I lost my marbles?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_rage_01.ogg"
     $ loveGauge(vel_char, -3, 0.75, 0.4)
@@ -40,11 +40,11 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal :
         xpos 0 ypos 0
 
-    v "Des chiffres ? De quoi parlez vous, enfin ?"
+    v "Numbers? What ARE you talking about?"
     
     $ loveGauge(vel_char, -3, 0.75, 0.4)
     
-    v "Allez préparer la salle, Monsieur Gaufrid. Vos âneries ne nous intéressent pas."
+    v "Go prepare the room, Mister Wafflid. Your shenanigans are no business of ours."
     
 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_02.ogg"
@@ -52,22 +52,22 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal2 :
         xpos 0 ypos 0
     
-    v "Nous attendons un invité de marque aujourd'hui ! Monseigneur Crossfrit... croshfritsh... crosrustr..."
+    v "We are expecting a noteworthy guest! My Lord Crossfrit... croshfritsh... crosrustr..."
     
     
-    v "Monseigneur Crossfriture, le digne chef de nos voisins les Bataves."
+    v "My Lord Crossfrenchfry, the noble chief of our Batavian neighbours."
     
     show vel normal :
         xpos 0 ypos 0
         
-    y "Vous voulez dire Crossfitrichernvald ?" 
+    y "Do you mean Crossfitrichernvald?" 
     
     menu :
-        y "{cps=0}Vous voulez dire Crossfitrichernvald ?{/cps}"
-        "Il vient demander conseil, Ô Véléda ? ":
+        y "{cps=0}Do you mean Crossfitrichernvald?{/cps}"
+        "Is he coming for advice, O honourable Veleda? ":
             play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
             
-            y "Il vient écouter la grande sagesse de vos légendaires prophéties, Ô divine Véléda ?"
+            y "Will he listen to your legendary prophecies, O divine Veleda?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             
@@ -76,17 +76,17 @@ label tourVeleda_ErnustEtVeleda :
             show vel normal2 :
                 xpos 0 ypos 0
             
-            v "Oh vous ne nous trompez pas avec vos minauderies Monsieur Gaufrid."
+            v "You will not trick me with your simpering, Mister Wafflid."
             
             $ loveGauge(vel_char, -3, 0.75, 0.4)
     
-            v "La flatterie est le refuge des incompétents."
+            v "Flattery is but a refuge for the incompetent."
             
             
-        "Il veut quoi lui ?":
+        "What does this brute want?":
 
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_04.ogg"
-            y "Qu'est ce qu'il veut, celui-là ?"
+            y "What's this animal's problem this time?"
             
             play sound "sfx/Voices/Veleda/Char_Veleda_Normal_03.ogg"
             
@@ -94,10 +94,10 @@ label tourVeleda_ErnustEtVeleda :
                 xpos 0 ypos 0
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
-            v "Oh ! Quelle vulgarité Monsieur Gaufrid !"
+            v "Oh! How vulgar Mister Wafflid!"
             
             $ loveGauge(vel_char, -3, 0.5, 0.25)
-            v "Qu'est ce que c'est que ce langage de sauvage ?"
+            v "What kind of uncivilized language is that?"
 
             
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"
@@ -105,9 +105,9 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal :
         xpos 0 ypos 0
     
-    v "Monseigneur Crossfritrichenfer accuse le forgeron de notre village, Monsieur Brutalmund, de lui avoir dérobé sa propriété !"
+    v "My lord Crossfritrichierich accuses our village's blacksmith, Mister Brutalmund, of unjustly appropirating his property!"
     
-    v "Monsieur Brutalmund nie l'accusation ! Nous allons donc les départager avec..."
+    v "Mister Brutalmund denies the allegation! We shall therefore render justice with..."
     
     $ renpy.music.set_volume(0, delay = 0, channel='music1')
     $ renpy.music.set_volume(0, delay = 0, channel='music2')
@@ -121,7 +121,7 @@ label tourVeleda_ErnustEtVeleda :
         xpos 0 ypos 0
         easein 0.8 xpos -300 zoom 1.2
     $ renpy.pause(2.0, hard = True)
-    v "Une prophétie !"
+    v "A prophecy!"
     show vel normal2 with Dissolve(0.5):
         xpos 0 ypos 0 zoom 1.0
     $ renpy.music.set_volume(0.4, delay=0.4, channel='music1')
@@ -130,7 +130,7 @@ label tourVeleda_ErnustEtVeleda :
     
  
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
-    y "Euh.. il devrait pas plutôt porter plainte ?"
+    y "Erm... why doesn't he just file a complaint?"
     
     show vel normal :
         xpos 0 ypos 0
@@ -139,12 +139,12 @@ label tourVeleda_ErnustEtVeleda :
 
     
     $ loveGauge(vel_char, -3, 0.8, 0.25)
-    v "Vous doutez de la sagesse de nos visions, Monsieur Gaufrid ?"
+    v "You dare doubt the wisdon of our prophecies, Mister Wafflid?"
     
-    v "Où se trouve votre cousin, d'ailleurs ? Le simplet, Monsieur Ernust ?"
+    v "Where is your cousin by the way? The dopey Mister Ernust?"
     
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_04.ogg"
-    v "Cela fait une heure qu'il doit nous apporter de quoi nous sustenter !"
+    v "He should have brought us sustenance hours ago!"
     
     show vel normal2 :
         xpos 0 ypos 0
@@ -153,7 +153,7 @@ label tourVeleda_ErnustEtVeleda :
     
     pause 0.8
     
-    v "Ah ! Cela doit être lui !"
+    v "Aha! That must be him!"
     
     play sound "sfx/SFX_Stairs_02.ogg"
     show char_ernust normal right :
@@ -175,48 +175,48 @@ label tourVeleda_ErnustEtVeleda :
     
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
-    e "Oh, bonjour Gaufrid !"
+    e "Oh, hello there Wafflid!"
     $ loveGauge(ern_char, 1, 0.26, 0.14)
     show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
     show vel normal :
         xpos 0 ypos 0
     menu :
-        e "{cps=0}Oh, bonjour Gaufrid !{/cps}"
-        "Bonjour Ernust !" :
+        e "{cps=0}Oh, hello there Wafflid!{/cps}"
+        "Hello Ernust!" :
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Bonjour Ernust, comment ça va ?"
+            y "Hello Ernust, how are you?"
             
             show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
-            e "Ça va bien !"
+            e "I'm doing very well!"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
-            e "C'est gentil de demander Gaufrid !"
+            e "It is so nice of you to ask Wafflid!"
             
-        "90 points d'affection ?" :
+        "90 affection points?" :
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
-            y "90 de love ? Il est amoureux de moi ?"
+            y "90 love points? Is he in love with me?"
 
             show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
-            e "T'es mon meilleur ami Gaufrid !"
+            e "You're my bestest best friend Wafflid!"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
-            e "J'taime bien !"
+            e "I like you!"
 
             
-        "Ah... t'es là, toi ?" :
+        "Ah... you're here too?" :
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
-            y "Ah... t'es là toi ? Pfff..."
+            y "Oh... you're here? Pfff..."
 
             show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
 
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_05.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)            
-            e "Oui je suis là !"
+            e "Yes, I am here!"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
             show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
-            e "Moi aussi ça me fait plaisir de te voir Gaufrid !"
+            e "I'm so glad to see you too Wafflid!"
 
 
             
@@ -234,70 +234,70 @@ label tourVeleda_ErnustEtVeleda :
     show vel normal2 :
         xpos 0 ypos 0
     $ loveGauge(vel_char, -1, 0.75, 0.4)
-    v "Amenez nous notre nourriture, monsieur Ernust !  Nous mourrons de faim."
+    v "Bring us our food, mister Ernust! We are perishing from hunger."
 
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_06.ogg"
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
     show vel normal :
         xpos 0 ypos 0
-    e "Oh oui, Votre Excellessence Madame Véléda !"
-    e "Je suis allé dans la forêt chasser un sanglier."
+    e "Oh yes, Your Excelency My Lady Veleda!"
+    e "I was in the forest hunting boars."
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
     show char_ernust normal right at speakingAnim(0.19,1.02,1.0,0.6)
-    e "Je me suis dit : un bon sanglier rôti, ça tient le corps et c'est vraiment bon !"
+    e "I was thinking: a nice grilled boar, that's hearty and it will fill you right up!"
     show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
-    e "Avec un peu de thym et des p'tites pommes sautées..."
+    e "With a bit of thyme, and a couple of potatoes..."
     show char_ernust normal right at notSpeakingAnim(0.193,1.02,1.0,0.6)
     menu :
-        e "{cps=0}Avec un peu de thym et des p'tites pommes sautées...{/cps}"
-        "Ça a l'air délicieux !" :
+        e "{cps=0}With a bit of thyme, and a couple of potatoes...{/cps}"
+        "That sounds delicious!" :
             
             $ interlocuteur = "ern_char"
             show screen datingSim(ern_char, 0.15, 0.17)
             
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
-            y "Ça a l'air super bon Ernust, j'ai hâte de voir ça !"
+            y "That really sounds great Ernust, I can't wait to see it!"
             
             show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
             
             play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_01.ogg"
             $ loveGauge(ern_char, 3, 0.26, 0.14)
-            e "T'es gentil Gaufrid !"
+            e "You're so nice Wafflid!"
             $ loveGauge(ern_char, 2, 0.26, 0.14)
             
-            e "Je pensais à toi en plus. Je me suis dit : Gaufrid, il doit être triste !"
+            e "I was thinking about you you know. I was thinking: Wafflid must be so sad!"
             $ loveGauge(ern_char, 2, 0.26, 0.14)
             
             show char_ernust normal right at speakingAnim(0.19,1.02,1.0,0.6)
             play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_02.ogg"
-            e "Ingrid elle est pas gentille avec toi !"
+            e "Ingrid is so mean to you!"
             $ loveGauge(ern_char, 5, 0.26, 0.14)
             
             show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             
-            e "Mais moi, je trouve que t'es vraiment spécial Gaufrid."
+            e "But I think you are a really special guy Wafflid."
 
             
-        "Tu peux abréger ?" :
+        "Hurry it up Ernust." :
             
             $ interlocuteur = "ern_char"
             show screen datingSim(ern_char, 0.15, 0.17)
             
             play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
-            y "Abrège Ernust, on attend des clients."
+            y "Hurry up Ernust, we're waiting for customers."
             
             play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_02.ogg"
             show char_ernust joyeux right at speakingAnim(0.20,1.02,1.0,0.6)
-            e "T'as raison Gaufrid. Je parle trop encore !"
+            e "You're right Wafflid, I'm talking too much again!"
             
             show char_ernust love1 at speakingAnim(0.23,1.025,1.0,0.6)
             
             $ loveGauge(ern_char, 3, 0.26, 0.14)
-            e "Tu me dis tout le temps quand je fais des bêtises !"
+            e "You always tell me when I mess up."
             
             play sound "sfx/Voices/Ernust/Char_Ernust_Normal_02.ogg"
             $ loveGauge(ern_char, 2, 0.26, 0.14)
-            e "Ça m'aide beaucoup tu sais. J'ai l'impression d'être plus intelligent avec toi !"
+            e "It really helps you know, I feel so much smarter when I'm with you!"
             
                 
     play sound "sfx/Voices/Veleda/Char_Veleda_Normal_01.ogg"

@@ -86,7 +86,7 @@ label intro:
 
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_01.ogg"
       
-    outlineBot "{cps=1} {/cps}{cps=18}En l'an 70 après Jissé,{cps=2} {/cps}{cps=18}toute la Germanie est occupée par les Romains.{/cps}"
+    outlineBot "{cps=1} {/cps}{cps=18}In the year 70 after Jay-C,{cps=2} {/cps}{cps=18}all of Germany is occupied by the Romans.{/cps}"
     
     
     
@@ -108,7 +108,7 @@ label intro:
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_02.ogg"
        
-    outlineBot "{cps=1} {/cps}{cps=20}Bon,{cps=1} {/cps}{cps=18}pas vraiment toute en fait...{/cps}"
+    outlineBot "{cps=1} {/cps}{cps=20}Well,{cps=1} {/cps}{cps=18}maybe not ALL of it...{/cps}"
     
     
 
@@ -121,7 +121,7 @@ label intro:
     
     $ renpy.pause (0.2, hard = True)
     
-    outlineBot "{cps=1} {/cps}{cps=20}En tout cas,{cps=2} {/cps}pas le village des Bructères,{cps=2} {/cps}{cps=20}où habite la légendaire prophétesse Véléda.{/cps}"
+    outlineBot "{cps=1} {/cps}{cps=20}At least,{cps=2} {/cps}not the village of the Bructeri,{cps=2} {/cps}{cps=20}home of the legendary prohetess: Veleda!{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):
@@ -130,11 +130,11 @@ label intro:
         zoom 1 xanchor 0.0 yanchor 0.0
         linear 2.5 xpos -1000 ypos 0 zoom 1.8
 
-    outlineBot "{cps=2} {/cps}{cps=20}Elle habite dans la tour,{/cps}{cps=2} {/cps}{cps=10}là,{/cps}{cps=20} adulée par tous{/cps}{cps=3}...{/cps} {cps=45}sauf par ses proches parceque c'est quand même une vieille peau.{/cps}"
+    outlineBot "{cps=2} {/cps}{cps=20}She lives in the tower,{/cps}{cps=2} {/cps}{cps=10}here,{/cps}{cps=20} loved by all{/cps}{cps=3}...{/cps} {cps=45}except those close to here since she's an old cow.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_05.ogg"
     
-    outlineBot "{cps=2} {/cps}{cps=20}Tu vas incarner Gaufrid{/cps},{cps=2} {/cps}{cps=20}son assistant.{/cps}"
+    outlineBot "{cps=2} {/cps}{cps=20}You will play as Wafflid{/cps},{cps=2} {/cps}{cps=20}her assistant.{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_06.ogg"
     
@@ -143,7 +143,7 @@ label intro:
         zoom 1.8 xanchor 0.0 yanchor 0.0
         linear 0.9 xpos -400 ypos -500 zoom 1.8
     
-    outlineBot "{cps=2} {/cps}{cps=20}Il doit être à la Taverne{/cps}{cps=10}...{/cps}{cps=20} c'est un peu sa deuxième maison.{/cps}"
+    outlineBot "{cps=2} {/cps}{cps=20}He must be in the Tavern{/cps}{cps=10}...{/cps}{cps=20} it's sort of his second home.{/cps}"
 
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
@@ -163,13 +163,13 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     
     pause 3.0
     
-    outline "Le lendemain matin..."
+    outline "The next morning..."
     
     play sound "sfx/Voices/Player/Char_Player_Baille_02.ogg"
-    y "Ooooaaaaah !"
-    y "C'était vraiment bizarre, hier soir je voyais des chiffres au-dessus de la tête des gens !"
-    y "Et puis le narrateur arrêtait pas de parler..."
-    y "Allez, faut que j'aille au boulot moi !"
+    y "Yaaawwwnnnnn !"
+    y "Yesterday night was so weird, I could see numbers over peoples' heads!"
+    y "And the narrator would not shut up..."
+    y "Well, I've got to get to work!"
     
     play sound "sfx/SFX_Walk_01.ogg"
     
@@ -181,7 +181,7 @@ label narration_ellipse01: #La première ellipse après le Dating Sim avec Ingri
     
 label narration_ellipse02:
     scene black with Dissolve (1.5)
-    outline "De retour à la Taverne..."
+    outline "Back at the Tavern..."
     
     jump taverne_PresentationDot
     
@@ -199,7 +199,7 @@ label PlaceDuVillageDefault:
     $ _return = renpy.call_screen("action_choice_placeVillage")
     
     if _return == "etables":
-        y "On passe aux étables !"
+        y "Let's set out for the stables!"
         scene bg_place:
             zoom 1.0
             linear 0.5 zoom 1.3 xpos -0.35 ypos -0.28
@@ -212,7 +212,7 @@ label PlaceDuVillageDefault:
         jump etable_fromPlace
         
     elif _return == "forge":
-        y "Direction : la forge !"
+        y "Next stop: the forge!"
         scene bg_place:
             zoom 1.0
             linear 0.5 zoom 1.3 xpos -0.3 ypos -0.28
@@ -223,7 +223,7 @@ label PlaceDuVillageDefault:
         scene black with Dissolve(1.5)
         jump forge_BrutalmundEtBeaudrik
     elif _return == "tente":
-        y "Allons faire un coucou aux Romains !"
+        y "Let's go and say hi to the Romans!"
         scene bg_place:
             zoom 1.0
             easeout 0.5 zoom 1.6 xpos 0.0 ypos -0.45
@@ -237,10 +237,10 @@ label PlaceDuVillageDefault:
 
 label narration_ellipseCuite:
     scene black with Dissolve (1.5)
-    outline "Une durée indéterminée de temps plus tard..."
-    y "J'ai mal à la tête..."
-    y "Bon. Ingrid m'a demandé de lui ramener un {b}glaive{/b} et un {b}bouclier{/b}..."
-    y "Je trouverai surement ça au village."
+    outline "Some amount of time later..."
+    y "Ouch my head hurts..."
+    y "Well, Ingrid told me to find a {b}glaive{/b} and a {b}shield{/b}..."
+    y "I can probably find them in the village."
     stop music1 fadeout 1.5
     stop ambiance fadeout 0.5
     $ _window_during_transitions = False
@@ -253,16 +253,16 @@ label PlaceDuVillageAllObjects:
     window hide
     $ renpy.music.play("music/MUSIC_Main_CarteVillage.ogg", channel = "music1", loop = True, fadein = 1)
     $ renpy.music.play("ambiances/AMB_Lieu_CarteVillage_01.ogg", channel = "ambiance", loop = True, fadein = 1)
-    y "Attends... J'ai un glaive..."
+    y "Wait a minute... I have a glaive..."
     show screen inventory_screen(obj = "glaive")
     pause 3.0
     hide screen inventory_screen
-    y "... Et j'ai un bouclier..."
+    y "... And a shield..."
     show screen inventory_screen(obj = "bouclier")
     pause 3.0
     hide screen inventory_screen
-    y "J'ai la dot pour Ingrid !"
-    y "Faut que j'aille à la taverne !"
+    y "I have the dowry for Ingrid!"
+    y "Let's get to the Tavern!"
     
     $ _return = renpy.call_screen("action_choice_placeVillageFinal")
     
