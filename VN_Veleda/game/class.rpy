@@ -182,8 +182,8 @@ transform apparitionJuicy:
             
 #Tooltips-inventory: Très chiant de régler leur position, du à une restriction de Renpy qui pue un peu. Modifier à la main le 2e paramètres. WARNING : ça prend des plombes
 
-#image tooltip_inventory_swordIdle=LiveComposite((1.0, 1.0), (0.71, 0.88), Text("Un glaive solide et affuté. Il y a écrit sur le pommeau \"made in china\"", style = "tooltip_bottom"))
-#image tooltip_inventory_shieldIdle=LiveComposite((1.0,1.0), (0.77, 0.88), Text("Tout guerrier qui se respecte possède un bouclier.", style = "tooltip_bottom" ))
-#image tooltip_inventory_jokeIdle=LiveComposite((1.0, 1.0), (0.77, 0.88), Text("Très certainement la blague la plus drôle du monde.", style = "tooltip_bottom" ))
-#image tooltip_inventory_glassesIdle=LiveComposite((1.0, 1.0), (0.72, 0.88), Text("Des lunettes, pour mieux voir, ou pour brûler les fourmis. Au choix.", style = "tooltip_bottom" ))
+#image tooltip_inventory_swordIdle=LiveComposite((1.0, 1.0), (0.71, 0.88), Text("A fine glaive. An inscription on the pommel reads: \"made in china\"", style = "tooltip_bottom"))
+#image tooltip_inventory_shieldIdle=LiveComposite((1.0,1.0), (0.77, 0.88), Text("All warriors should have a shield.", style = "tooltip_bottom" ))
+#image tooltip_inventory_jokeIdle=LiveComposite((1.0, 1.0), (0.77, 0.88), Text("Probably the funniest joke in the world.", style = "tooltip_bottom" ))
+#image tooltip_inventory_glassesIdle=LiveComposite((1.0, 1.0), (0.72, 0.88), Text("Glasses. Can help you see or burn ants, your choice.", style = "tooltip_bottom" ))
 

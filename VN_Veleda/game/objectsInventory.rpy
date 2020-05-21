@@ -15,13 +15,13 @@ label Obj_use (obj = "none", objUser = "none"):
             "erreur pas d'objet sélectionné - Success"
     else :                          # Ecrire ici les conditions d'échec d'objet, on peut en faire pour chaque interlocuteur ! faut en profiter
         if obj == "glaive" :
-            y "Je suis pas certain qu'un glaive puisse me servir dans cette situation"
+            y "I don't think a glaive would be useful here"
         elif obj == "bouclier":
-            y "J'utiliserai le bouclier si on m'attaque, mais je me sens pas vraiment en danger là"
+            y "I could use the shield if I get assaulted, but I don't feel like there is any danger here"
         elif obj == "blague" :
-            y "Je pourrais pas dire pourquoi, mais je sens que ce n'est pas le bon moment pour faire une blague..."
+            y "This is not an appropriate moment to make a joke..."
         elif obj == "lunettes" :
-            y "Je ne vois pas en quoi des lunettes me seraient utiles dans cette situation"
+            y "I don't see how glasses could be useful here"
         else:
             "erreur pas d'objet sélectionné - Failed"
     call screen inventory_screen

@@ -29,10 +29,10 @@ label start:
         ########## - LES ITEMS DE L'INVENTAIRE - ############
         
         glaive = Item("glaive",player="ex", imageIdle="images/inv_swordIdle.png",imageHover="images/inv_swordHover.png")
-        bouclier = Item("bouclier",player="ex", imageIdle="images/inv_shieldIdle.png",imageHover="images/inv_shieldHover.png")   
-        blague = Item("blague",player="ex", imageIdle="images/inv_jokeIdle.png",imageHover="images/inv_jokeHover.png") 
-        lunettes = Item("lunettes",player="ex", imageIdle="images/inv_glassesIdle.png",imageHover="images/inv_glassesHover.png")
-        trompette = Item("trompette",player="ex", imageIdle="images/inv_trumpetidle.png",imageHover="images/inv_glassesHover.png")
+        bouclier = Item("shield",player="ex", imageIdle="images/inv_shieldIdle.png",imageHover="images/inv_shieldHover.png")   
+        blague = Item("joke",player="ex", imageIdle="images/inv_jokeIdle.png",imageHover="images/inv_jokeHover.png") 
+        lunettes = Item("glasses",player="ex", imageIdle="images/inv_glassesIdle.png",imageHover="images/inv_glassesHover.png")
+        trompette = Item("trumpet",player="ex", imageIdle="images/inv_trumpetidle.png",imageHover="images/inv_glassesHover.png")
             
         ########## - LES ITEMS DE L'INVENTAIRE - ############
         

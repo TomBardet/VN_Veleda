@@ -462,7 +462,7 @@ label Act2_transition_alldone:
 
 label placeDuVillage_Concours_Placeholder:
 
-    outline "Le joueur clique sur la taverne"
+    outline "The player clicks on the tavern"
        
 # -----------------------------------------#
 
@@ -480,7 +480,7 @@ label taverne_ConcoursPart1:
     pause 0.5
     #show char_ingrid normal at speakingAnim(0.50, 1.0, 0.98, 0.22)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Normal_01.ogg"
-    i "Gaufrid ! Enfin tu es là ! On t’attendait !"
+    i "Wafflid! You are finally here, we were waiting for you!"
     show char_ingrid normal:
         xalign 0.5 yalign 0.8
         xpos 0.05 ypos 1.15 zoom 0.25 rotate 30
@@ -494,21 +494,21 @@ label taverne_ConcoursPart1:
     show screen datingSim(ingrid_char, 0.50, 0.13)
     
     play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
-    y "J'ai la dot, ma Chouquette !"
+    y "I have the dowry, my dear pancake!"
     show char_ingrid normal at speakingAnim(0.50, 1.15, 1.12, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Love_02.ogg"
     
     $ loveGauge(ingrid_char, +10, 0.50, 0.13)
     
-    i "Bien ! On peut enfin commencer le concours !"
+    i "Good! We can start the contest!"
     show char_ingrid normal at notSpeakingAnim(0.50, 1.15, 1.12, 0.25)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Oui bien sûr ! …attends, quoi ?"
+    y "Of course! …wait, what?"
     show char_ingrid normal at speakingAnim(0.50, 1.15, 1.12, 0.25)
     
     hide screen datingSim
     
-    i "Shh ! ça commence !"
+    i "Shh! It's starting!"
     
     jump taverne_Concours_Part2_0_Transition
 
@@ -550,8 +550,8 @@ label taverne_Concours_Part2_0_Transition:
     scene black with Dissolve(0.5)
     play sound "sfx/SFX_TVShow_01.ogg"
     $ renpy.pause(1.5, hard = True)
-    outline "Il était une fois en Germanie…"
-    outline "...Beaudrik et Gaufrid, germains presque charmants."
+    outline "Once upon a time, in Germania…"
+    outline "...Beaudrik and Wafflid, two eligible Germani bachelors."
     $ renpy.pause(2.0, hard = True)
     jump taverne_Concours_Part2_1_Intro
     
@@ -564,8 +564,8 @@ label taverne_Concours_Part2_1_Intro:
     scene bg_taverneN with Dissolve (0.5):
         zoom 0.70
     pause 1.0
-    outline "Bienvenues à l’édition 1er Siècle de \n « Bachelor Bructère », à l’antenne tous les vendredis à la taverne du village !"
-    #nar "{i}{color=#f2de5c}Bienvenues à l’édition 1er Siècle de « Ces Chers Germains Charmants », à l’antenne tous les vendredis !{/color}{/i}"
+    outline "Welcome to the first century edition of: \n « Bructeri Bachelor », on air every friday in the village tavern!"
+    #nar "{i}{color=#f2de5c}Welcome to the first century edition of: \n « Bructeri Bachelor », on air every friday in the village tavern!{/color}{/i}"
     show char_ingrid normal at notSpeakingAnim(0.5, 1.16, 1.14, 0.25):
         zoom 1.0 xpos 0.0 ypos 1.115
         linear 0.4 xpos 0.18

@@ -14,11 +14,11 @@ label ending_ChevreTrahie:
     $renpy.pause(2.0, hard = True)
     
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BADASS_Chevre_01.ogg"
-    outline "Elle était chèvre et elle faisait du bon travail mais, accusée d’un crime qu’elle n’a pas commis, elle est exilée. "
+    outline "She was a goat and good at her job but, accused of a crime he didn't commit , elle he was exiled. "
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BADASS_Chevre_02.ogg"
-    outline "Elle rôde maintenant du côté du Dakota."
+    outline "Now she prowls the badlands."
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BADASS_Chevre_03.ogg"
-    outline "Hors la loi qui chasse les hors la loi, elle est une fugitive, une renégate."
+    outline "An outlaw hunting outlaws, a bounty hunter, a renegade."
     
     $ renpy.music.play("music/MUSIC_FIN_BADASS_Chevre.ogg", loop = False, channel = "endings", fadein = 1.5)
 
@@ -70,11 +70,11 @@ label ending_ErnustTrahi:
     $renpy.pause(2.0, hard = True)
     
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_Melancolique_01.ogg"
-    outline "Gaufrid a atteint son objectif et se marie avec la belle Ingrid."
+    outline "Wafflid reached his goal and married the beautiful Ingrid."
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_Melancolique_02.ogg"
-    outline "Mais sur le chemin, il a abandonné sa plus belle amitié…"
+    outline "But on the way, he betrayed his most meaningful friendship…"
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_Melancolique_03.ogg"
-    outline "Que va devenir le pauvre Ernust ?"
+    outline "What will happen to the poor Ernust?"
     
     $ _window_during_transitions = False
     
@@ -126,12 +126,12 @@ label ending_ExilAvecErnust:
     
     pause 0.7
     
-    outline "Traités en paria, Ernust et Gaufrid s’exilent ensemble."
+    outline "Treated like pariahs, Wafflid and Ernust are exiled together."
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BROTRIP_Ernust_02.ogg"
     
     pause 0.7 
     
-    outline "Ils s'attendaient à découvrir le monde mais ils ne s'attendaient pas à se découvrir... eux-mêmes."
+    outline "They expected to discover the world but they ended up discovering... themselves."
 
     $ renpy.music.play("music/MUSIC_FIN_BROTRIP.ogg", loop = False, channel = "endings", fadein = 1.5)
     scene endBro01 with Dissolve (3.5)
@@ -161,12 +161,12 @@ label ending_ExilAvecChevre:
     
     pause 0.7
     
-    outline "Unis par une force irrésistible, Gaufrid et Josiane la chèvre s’exilent ensemble et partent en voyage."
+    outline "United by an irresistible force, Wafflid and Josiane the goat are exiled together."
     
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BROTRIP_Chevre_02.ogg"
     
     pause 0.7 
-    outline "Chaque jour qui passe ne fait que les rapprocher un peu plus…"
+    outline "Every day that goes by brings them closer together…"
     $ renpy.music.play("music/MUSIC_FIN_BROTRIP.ogg", loop = False, channel = "endings", fadein = 1.5)
     scene endGoat01 with Dissolve (2.6)
     $renpy.pause(3.90, hard=True) #pause le temps du scroll

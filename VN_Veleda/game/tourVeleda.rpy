@@ -907,7 +907,7 @@ label ending_AskErnust:
 label ending_ChevrePart1 :
     
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "Don"t listen to him Ingrid !"
+    y "Don't listen to him Ingrid!"
     y "The only criminal here is Josiane, the goat. I'm sure of it!"
     show char_goat normal zorder 2:
         xalign 0.5 yalign 0.8

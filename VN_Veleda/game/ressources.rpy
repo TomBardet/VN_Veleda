@@ -33,7 +33,7 @@ init:
         who_size=22,
         who_ypos=0.8)
     
-    define bg = Character("Hotdrik: ",
+    define bg = Character("Beaudrik: ",
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     
