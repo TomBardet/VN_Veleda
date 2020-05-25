@@ -6,9 +6,10 @@ init:
         what_suffix=" ",
         ctc=anim.Blink("gui/ctc.png"))
     $  _testCrossfitTalk = 0
-    $ _etableDone = 0
+    $  _etableDone = 0
     $  _testEtable = 0
     $  _testRomainsTalk = 0
+    $  _testBuffaloTalk = 0
 label etable_fromPlace:
             
     $ renpy.music.play("music/MUSIC_Etable_Normale.ogg", channel = "music1", loop = True, fadein = 1)
@@ -37,9 +38,20 @@ label etables_PeurDesBufflesPart1:
         if _return == "trompette":
             jump etables_PeurDesBufflesPart2
         elif _return == "buffles":
-            buf "Meuuuuuuuh !"
-            y "À vos souhaits !"
-            jump etables_PeurDesBufflesPart1
+            play sound "sfx/SFX_Buffle_Dialogue.ogg"
+            if _testBuffaloTalk <= 6:
+                 buf "Moooooo!"
+                 y "That's right!"
+                 $ _testBuffaloTalk += 1
+                 jump etables_PeurDesBufflesPart1
+            else:
+                 buf "Moomoomoo!"
+                 buf "Moooooooooooo!"
+                 y "Let's just agree to disagree."
+                 play sound "sfx/SFX_Buffle_Dialogue.ogg"
+                 buf "Moo!"
+                 $ _testBuffaloTalk = 0
+                 jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
             scene bg_etables:
                 zoom 0.7
@@ -54,16 +66,26 @@ label etables_PeurDesBufflesPart1:
             else:
                 jump etables_PeurDesBufflesPart1boucle
         elif _return == "sortir":
-            y "Retournons au village..."
+            y "Let's go back to the village..."
             jump PlaceDuVillageDefault
 
     else:
         $ _return = renpy.call_screen("action_choice_Etable")
         if _return == "buffles":
             play sound "sfx/SFX_Buffle_Dialogue.ogg"
-            buf "Meuuuuuuuh !"
-            y "A vos souhaits"
-            jump etables_PeurDesBufflesPart1
+            if _testBuffaloTalk <= 6:
+                 buf "Moooooo!"
+                 y "That's right!"
+                 $ _testBuffaloTalk += 1
+                 jump etables_PeurDesBufflesPart1
+            else:
+                 buf "Moomoomoo!"
+                 buf "Moooooooooooo!"
+                 y "Let's just agree to disagree."
+                 play sound "sfx/SFX_Buffle_Dialogue.ogg"
+                 buf "Moo!"
+                 $ _testBuffaloTalk = 0
+                 jump etables_PeurDesBufflesPart1
         elif _return == "crossfit":
             scene bg_etables:
                 zoom 0.7
@@ -78,7 +100,7 @@ label etables_PeurDesBufflesPart1:
             else:
                 jump etables_PeurDesBufflesPart1boucle
         elif _return == "sortir":
-            y "Retournons au village..."
+            y "Let's go back to the village..."
             jump PlaceDuVillageDefault
 
 # -----------------------------------------#
@@ -87,7 +109,7 @@ label etables_PeurDesBufflesPart1bis:
     
     show screen datingSim(cross_char, 0.45, .27)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Bonjour ! Alors, ces buffles ?"
+    y "Hello there! So, how are the buffalos doing?"
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     cross "..."
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
@@ -99,66 +121,66 @@ label etables_PeurDesBufflesPart1bis:
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     menu:
         cross "{cps=0}...{/cps}"
-        "Ca a pas l'air d'aller fort, dites moi !":
+        "You're not looking too good, you know?":
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-            y "Ça a pas l'air d'aller fort, dites moi !"
+            y "You're not looking too good, you know?"
             $ loveGauge(cross_char, -4, 0.44, 0.27)
             show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-            cross "Ils...ils sont toujours là !"
-        "Satisfait de vos buffles ?" if Acte1_Tour_CoupableJugement=="Brutalmund":
+            cross "They... they are still here!"
+        "Happy with your buffalos?" if Acte1_Tour_CoupableJugement=="Brutalmund":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "Alors, satisfait de vos buffles ?"
+            y "Happy with your buffalos?"
             $ loveGauge(cross_char, -4, 0.44, 0.27)
             show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-            cross "Ils...Ils sont toujours là !"
-        "Vous avez livrés vos buffles à Brutalmund ?" if Acte1_Tour_CoupableJugement=="Crossfit":
+            cross "They... they are still here!"
+        "Did you deliver the buffalos to Brutalmund?" if Acte1_Tour_CoupableJugement=="Crossfit":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "... Du coup, vous avez livré vos buffles à Brutalmund ?"
+            y "... so, did you deliver the buffalos to Brutalmund?"
             $ loveGauge(cross_char, -4, 0.44, 0.27)
             show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-            cross "Ils...Ils sont toujours là !"
-        "Vous étiez plus bavard avec la prophétesse...":
+            cross "They... they are still here!"
+        "You were a lot more talkative back in the tower":
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
-            y "Ben dis donc, vous êtiez plus bavard avec la prophétesse..."
+            y "You know, you had a lot more to say to the prophetess..."
             $ loveGauge(cross_char, -4, 0.44, 0.27)
             show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
             play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-            cross "Ca n'a rien à voir ! C'est juste que..."
-            cross "Ils...Ils sont toujours là !"
+            cross "It's... it's just that..."
+            cross "They are still here!"
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Je vous demande pardon ?"
+    y "I beg your pardon?"
     $ loveGauge(cross_char, -6, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_03.ogg"
-    cross "Les buffles, crétin ! Ils sont toujours là !"
+    cross "The buffalos, you dimwit! They are still here!"
     $ loveGauge(cross_char, -4, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
-    cross "Ça fait 12 heures que la porte est ouverte, et ces imbéciles de bovins ne bougent pas d'un poil !"
+    cross "I opened the door 12 hours ago, and these stupid beasts have not left yet!"
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Attendez... quoi ?"
+    y "Wait... what do you mean?"
     show char_crossfit pleurs right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_inquiet_02.ogg"
-    cross "Chuuuuuuuuuut ! Ils vont vous entendre !"
+    cross "Shhhhhhhh! They are going to hear you!"
     show char_crossfit pleurs right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-    y "Mais... vous avez peur des buffles ?"
+    y "Wait, are you afraid of buffalos?"
     $ loveGauge(cross_char, -20, 0.44, 0.27)
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_03.ogg"
-    cross "Répète ça et je t'écrase !"
+    cross "What? I dare you to say that again!"
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/SFX_Buffle_Dialogue.ogg"
-    buf "Meuuuuuuuuuuuuuuuh !"
+    buf "Moooooooooo!"
     hide screen datingSim
     show char_crossfit pleurs:
         zoom 0.28 ypos 0.84
         linear 0.4 xpos 0.79 rotate 15 ypos 0.95
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Pleurs_01.ogg"
-    cross "Aaaaaaah !"
+    cross "Aaaaaaaaaah!"
     show char_crossfit pleurs:
         zoom 0.28 ypos 0.95 xpos 0.79
         linear 0.8 rotate 0 ypos 0.84
@@ -166,7 +188,7 @@ label etables_PeurDesBufflesPart1bis:
     show char_crossfit inquiet right at speakingAnim(0.79, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Colere_02.ogg"
     cross "..."
-    cross "Bon, d'accord, je trouve les buffles absolument terrifiants. Heureux ?!"
+    cross "Alright, alright! I find buffalos terrifying... Happy now?!"
     show char_crossfit inquiet right at notSpeakingAnim(0.79, 0.84, 0.82, 0.28)
     show char_crossfit inquiet right:
         xalign 0.5 yalign 0.8
@@ -176,8 +198,8 @@ label etables_PeurDesBufflesPart1bis:
         parallel:
             linear 0.5 rotate -16 
     pause 1.6
-    nar "{i}Il y a forcèment quelquechose à faire pour aider ce pauvre homme...{/i}"
-    nar "{i}Et qui sait... ça pourrait peut-être t'aider dans ta quête...{/i}"
+    nar "{i}There must be something you can do to help this poor soul...{/i}"
+    nar "{i}And it might even help you in your quest...{/i}"
     scene bg_etables:
         zoom 0.75 xpos -0.1
         linear 0.5 zoom 0.7 xpos 0.0
@@ -196,12 +218,12 @@ label etables_PeurDesBufflesPart1bis:
 label etables_PeurDesBufflesPart1boucle:
     show screen datingSim(cross_char, 0.45, .27)
     play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-    y "Alors, tout baigne ?"
+    y "How's it hanging?"
     show char_crossfit inquiet right at speakingAnim(0.65, 0.84, 0.82, 0.28)
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Inquiet_01.ogg"
-    cross "Les... les buffles. Ils me regardent..."
+    cross "The... the buffalos. They're looking at me..."
     show char_crossfit inquiet right at notSpeakingAnim(0.65, 0.84, 0.82, 0.28)
-    y "Je vais vous laisser, hein ?"
+    y "I'll just leave you to it, alright?"
     hide screen datingSim
     scene bg_etables:
         zoom 0.75 xpos -0.1
@@ -237,28 +259,30 @@ label etables_PeurDesBufflesPart2:
 
     show char_ernust inquiet left at speakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_04.ogg"
-    e "Euh... Gaufrid, t'es sur que c'est une bonne idée ?"
+    e "Erm... Wafflid, are you sure this is a good idea?"
     show char_ernust inquiet left at notSpeakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Player/Char_Player_Normal_04.ogg"
-    y "Il faut bien utiliser cette trompette quelque part, non ?"
-    nar "Je ne ferai pas ça, à ta place..."
+    y "I have to use this trumpet somewhere, right?"
+    y "I wouldn't just have one for no reason."
+    nar "I would be careful if I were you..."
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-    y "Trop tard."
+    y "Too late."
     scene black with Dissolve (1.0)
     show screen inventory_screen(obj = "trompette")
-    pause 3.0
+    pause 4.0
     
     $ renpy.music.play("ambiances/AMB_Lieu_Etable_Panic_01.ogg", channel = "ambiance", loop = True, fadein = 0.5)
     
-    $ renpy.music.set_volume(0.4, delay=0.5, channel='music1')
-    $ renpy.music.set_volume(0.4, delay=0.5, channel='music2')
-    $ renpy.music.set_volume(0.4, delay=0.5, channel='ambiance')
+    $ renpy.music.set_volume(0.5, delay=0.5, channel='music1')
+    $ renpy.music.set_volume(0.5, delay=0.5, channel='music2')
+    $ renpy.music.set_volume(0.5, delay=0.5, channel='ambiance')
     
     play sound "sfx/SFX_Trumpet_01.ogg"
     
-    pause 1.0
+    pause 1.5
     
     play sound "sfx/SFX_Buffle_Peur.ogg"
+    pause 1.0
     hide screen inventory_screen
     window hide
     scene bg_buffles with hpunch:
@@ -271,9 +295,9 @@ label etables_PeurDesBufflesPart2:
         linear 1.8 xpos -0.5 rotate -15
     
     play sound "sfx/Voices/Crossfit/Char_Crossfit_Pleurs_01.ogg"
-    cross "Au secooouuuurs ! Les buffles m'attaquent !" 
+    cross "Heeeeeelp! The buffalos are attacking meeeee!" 
     #scene black with Dissolve(1.0)
-    outline "Et c'est ainsi que le brave Crossfitrichernvald prit la fuite devant les buffles fonçant sur lui..."
+    outline "And so the brave sir Crossfitricheridoo ran away, his tail between his legs"
     scene bg_etables2 with Dissolve(1.0):
         zoom 0.7
     show char_ernust normal right:
@@ -283,7 +307,7 @@ label etables_PeurDesBufflesPart2:
     pause 0.3
     show char_ernust normal right at speakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Ernust/Char_Ernust_Joyeux_03.ogg"
-    e "Ah ben tiens, il a fait tomber ses lunettes en courant."
+    e "Hey, he dropped his glasses, would you look at that."
     
     show char_ernust normal right at notSpeakingAnim(0.65, 1.02, 1.0, 0.65)
     
@@ -314,7 +338,7 @@ label etables_PeurDesBufflesPart2:
     pause 0.5
     show char_ernust normal right at speakingAnim(0.65, 1.02, 1.0, 0.65)
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_07.ogg"
-    e "On devrais ptêtre les lui rendre ?"
+    e "Should we give them back?"
     show char_ernust normal right at notSpeakingAnim(0.65, 1.02, 1.0, 0.65)
     $ _etableDone = 1
     $ renpy.music.play("ambiances/AMB_Lieu_Etable_Panic_01.ogg", channel = "ambiance", loop = True, fadein = 0.5)

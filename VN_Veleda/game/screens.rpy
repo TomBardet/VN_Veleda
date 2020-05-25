@@ -1485,7 +1485,7 @@ transform sineV(y):
 screen action_choice_placeVillage(lunette=0, glaive=0, bouclier=0):
     zorder 10
     if _testLunettes == 0:
-        textbutton _("Etables"):
+        textbutton _("Stables"):
             xpos 0.82
             xanchor 0.5
             ypos 0.33
@@ -1509,7 +1509,7 @@ screen action_choice_placeVillage(lunette=0, glaive=0, bouclier=0):
             at sineV(0.56)
             action Return("forge")
     if _testGlaive == 0:
-        textbutton _("Tente romaine"):
+        textbutton _("Roman camp"):
             xpos 0.16
             xanchor 0.5
             ypos 0.58
@@ -1523,7 +1523,7 @@ screen action_choice_placeVillage(lunette=0, glaive=0, bouclier=0):
 
 screen action_choice_placeVillageFinal:
     zorder 10
-    textbutton _("Taverne"):
+    textbutton _("Tavern"):
         xpos 0.5
         xanchor 0.5
         ypos 0.5
@@ -1537,7 +1537,7 @@ screen action_choice_placeVillageFinal:
 
 screen action_choice_EtableTrumpet:
     zorder 10
-    textbutton _("Jouer de la trompette"):
+    textbutton _("Play trumpet"):
         xpos 0.53
         xanchor 0.5
         ypos 0.35
@@ -1548,7 +1548,7 @@ screen action_choice_EtableTrumpet:
         text_size 30
         at sineV(0.28)
         action Return("trompette")
-    textbutton _("Parler aux buffles"):
+    textbutton _("Talk to buffalos"):
         xpos 0.22
         xanchor 0.5
         ypos 0.68
@@ -1558,7 +1558,7 @@ screen action_choice_EtableTrumpet:
         text_outlines [(2,"#000000")]
         at sineV(0.68)
         action Return("buffles")
-    textbutton _("Sortir de l'étable"):
+    textbutton _("Leave stables"):
         xpos 0.88
         xanchor 0.5
         ypos 0.95
@@ -1571,7 +1571,7 @@ screen action_choice_EtableTrumpet:
 
 screen action_choice_Etable:
     zorder 10
-    textbutton _("Parler aux buffles"):
+    textbutton _("Talk to buffalos"):
         xpos 0.22
         xanchor 0.5
         ypos 0.4
@@ -1581,7 +1581,7 @@ screen action_choice_Etable:
         text_outlines [(2,"#000000")]
         at sineV(0.68)
         action Return("buffles")
-    textbutton _("Parler à Crossfitrichernvald"):
+    textbutton _("Talk to Crossfitrichernvald"):
         xanchor 0.5
         xpos 0.53        
         yanchor 0.5
@@ -1592,7 +1592,7 @@ screen action_choice_Etable:
         text_size 30
         at sineV(0.28)
         action Return("crossfit")
-    textbutton _("Sortir de l'étable"):
+    textbutton _("Leave stables"):
         xanchor 0.5
         xpos 0.88
         yanchor 0.5
@@ -1605,7 +1605,7 @@ screen action_choice_Etable:
         
 screen action_choice_Tente:
     zorder 10
-    textbutton _("S'approcher de la tente"):
+    textbutton _("Approach tent"):
         xpos 0.6
         xanchor 0.5
         ypos 0.68
@@ -1616,7 +1616,7 @@ screen action_choice_Tente:
         text_size 30
         at sineV(0.55)
         action Return("tente")
-    textbutton _("Retourner au village"):
+    textbutton _("Back to village"):
         xpos 0.35
         xanchor 0.5
         ypos 0.6
@@ -1629,7 +1629,7 @@ screen action_choice_Tente:
 
 screen action_choice_Tente1:
     zorder 10
-    textbutton _("Parler aux Romains"):
+    textbutton _("Talk to Romans"):
         xpos 0.85
         xanchor 0.5
         ypos 0.68
@@ -1639,7 +1639,7 @@ screen action_choice_Tente1:
         text_outlines [(2,"#000000")]
         at sineV(0.68)
         action Return("tente")
-    textbutton _("Retourner au village"):
+    textbutton _("Back to village"):
         xpos 0.25
         xanchor 0.5
         ypos 0.6
