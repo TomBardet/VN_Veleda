@@ -54,7 +54,7 @@ label romains_Part1:
                 linear 0.4 zoom 1.15 xpos -0.15
             pause 0.6
             window show
-            y "On dirait qu'il y a personne..."
+            y "It looks lije there is nobody here..."
             jump romains_Part2
         elif _return == "sortir":
             hide screen datingSim
@@ -85,13 +85,13 @@ label romains_Part2:
    
     
     play sound "sfx/Voices/Num/Char_Num_Normal_03.ogg"
-    num "{i}Ave{/i}, sauvage !"
+    num "{i}Ave{/i}, barbarian!"
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     play sound "sfx/Voices/Player/Char_Player_Hesitation_03.ogg"
-    y "Euh...{i}Ave{/i} à vous... j'imagine ?"
+    y "Erm...{i}Ave{/i} to you... I guess?"
     show screen datingSim(num_char, 0.28, 0.3)
     $ loveGauge(num_char, +10, 0.36, 0.28)
-    y "On se connait ?"
+    y "Do I know you?"
     jump romains_Part3
 
         
@@ -103,16 +103,16 @@ label romains_Part3:
     show char_digitimus normal right at speakingAnim(0.5, 0.8, 0.815, 1)
     
     play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Heureux_04.ogg"
-    num "Haha ! T’as l’air d’un marrant, Germain. Moi c’est Numerimus et lui, là, c’est Digitimus ! C’est mon cousin, germain."
+    num "Haha! Looks like you're a comedian, Germani. I'm Numerimus and that guy there is Digitimus!"
     dig "{i}Ave{/i}..."
     show char_digitimus normal at notSpeakingAnim(0.5, 0.8, 0.815, 1)
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
      
     play sound "sfx/Voices/Num/Char_Num_Normal_03.ogg"
     show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
-    num "On est en permission, alors on visite un peu les alentours."
-    num "Et on s'est dit : \"Tiens, pourquoi pas s'amuser de vos coutumes locales !\""
-    num "Du coup, on est là."
+    num "We are on shore leave, so we're going for a tour around the region."
+    num "And we thought: \"Hey, why not go and mock the local customs?\""
+    num "So, here we are."
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     jump romains_Part4
 
@@ -125,21 +125,21 @@ label romains_Part4:
     
     show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
     show char_digitimus normal right at speakingAnim(0.5, 0.8, 0.815, 1)
-    dig "On s'ennuie un peu..."
+    dig "We're a bit bored to be honest..."
     show char_digitimus normal right at notSpeakingAnim(0.5, 0.8, 0.815, 1)
-    num "Ouais. On s'ennuie..."
+    num "Yeah, we're really bored..."
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     menu :
-        num "{cps=0}Ouais. On s'ennuie...{/cps}"
-        "Je vous fais visiter ?" if _testGlaive == 0:
+        num "{cps=0}Yeah, we're really bored...{/cps}"
+        "Should I give you a tour?" if _testGlaive == 0:
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Il y a de belles choses à voir dans le coin."
-            y "Venez avec moi, j'vais vous faire visiter."
+            y "There's some beautiful sights around here."
+            y "Let me give you a tour of our beautiful country."
             jump romains_VisitePart1
             
-        "J'ai une bonne blague pour vous !" if _testTrompette == 0:
+        "I have an excellent joke for you!" if _testTrompette == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-            y "Tenez vous bien, on m'a donné une excellente blague !"
+            y "Hold on to your helmets, I have an amazing joke here!"
             show char_numerimus dubitatif at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             show char_digitimus normal right at notSpeakingAnim(0.5, 0.8, 0.815, 1)
             jump romains_Blague
@@ -165,24 +165,24 @@ label romains_Part5:
     show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
     
     play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
-    num "On s'ennuie..."
+    num "We're really bored"
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     menu :
-        num "{cps=0}On s'ennuie...{/cps}"
-        "Voilà, j'ai trouvé des lunettes !" if _testLunettes == 1:
+        num "{cps=0}We're really bored{/cps}"
+        "Look at that, I found some glasses!" if _testLunettes == 1:
             play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-            y "C'est une longue histoire, mais j'ai trouvé des lunettes !"
+            y "Long story short, I found some glasses!"
             jump romains_VisitePart2
             
-        "Je vous fais visiter ?" if _testGlaive == 0:
+        "Should I give you a tour?" if _testGlaive == 0:
             play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-            y "Il y a des belles choses à voir dans le coin."
-            y "Venez avec moi, j'vais vous faire visiter."
+            y "There's some beautiful sights around here."
+            y "Let me give you a tour of our beautiful country."
             jump romains_VisitePart1
             
-        "J'ai une bonne blague pour vous !" if _testTrompette == 0:
+        "I have an excellent joke for you!" if _testTrompette == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-            y "Ca tombe bien, on m'a donné une excellente blague hier soir !"
+            y "Someone gave me an amazing joke just yesterday!"
             show char_numerimus dubitatif at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             show char_digitimus normal right at notSpeakingAnim(0.5, 0.8, 0.815, 1)
             jump romains_Blague
@@ -195,42 +195,42 @@ label romains_VisitePart1:
 
     show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
     play sound "sfx/Voices/Num/Char_Num_Doute_03.ogg"
-    num "Je vois pas à 2 mètres. Pour le folklore local, on repassera...  "
-    num "Le génie qui me sert de porte-enseigne a oublié mes {b}lunettes{/b} à Rome."
+    num "Forget about sight-seeing. This genius of an assistant here forgot my {b}glasses{/b} in Rome."
+    num "I have no sight to see the sights with, see? The world's a blur."
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     
     if _testLunettes == 1:
         play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
-        y "Vous avez de la chance j’en ai justement une paire sur moi."
-        y "Si ça c'est pas un coup de bol !"
+        y "You're lucky, I just so happen to have a pair right here."
+        y "What a happy coincidence!"
         show screen inventory_screen(obj = "lunettes")
         jump romains_VisitePart2
         
     else:
         menu :
-            num "{cps=0}Le génie qui me sert de porte-enseigne a oublié mes {b}lunettes{/b} à Rome.{/cps}"
-            "Ah mince...vous avez pas une paire de rechange ?":
+            num "{cps=0}This genius of an assistant here forgot my {b}glasses{/b} in Rome.{/cps}"
+            "Oh jiminy... don't you have a spare?":
                 play sound "sfx/Voices/Player/Char_Player_Normal_01.ogg"
-                y "Vous avez pas une paire de rechange ?"
+                y "Don't you have a spare?"
                 
                 show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
                 
                 play sound "sfx/Voices/Num/Char_Num_Doute_02.ogg"
-                num "Non. On l'a oubliée aussi."
-                num "Ca nous aiderait pas mal, si vous en trouviez une, Germain."
+                num "No. We forgot that too"
+                num "It would help a lot if you could find one, German."
                 
-            "Retournez les chercher à Rome.":
+            "Go back to Rome and get them.":
                 play sound "sfx/Voices/Player/Char_Player_Sarcastic_02.ogg"
-                y "Vous n'avez qu'à retourner les chercher à Rome."
-                y "Ca tombe bien, toutes les routes y mènent."
+                y "Why don't you go pick them up in Rome."
+                y "Pretty convenient that all roads lead there."
                 play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
                 show char_numerimus normal at speakingAnim(0.2, 0.82, 0.8, 1)
-                num "T'es un marrant toi..."
+                num "A real comedian aren't you..."
                 $ loveGauge(num_char, -10, 0.36, 0.28)
         
         show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
         show char_digitimus normal right at speakingAnim(0.5, 0.8, 0.815, 1)
-        dig "Dis nous si tu trouves des {b}lunettes{/b} !"
+        dig "Tell us if you find any {b}glasses{/b} !"
         show char_digitimus normal at notSpeakingAnim(0.5, 0.8, 0.815, 1)
         hide screen datingSim
      #   scene bg_romains:
@@ -253,14 +253,14 @@ label romains_VisitePart2:
     
     play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
     show char_numerimus heureux at speakingAnim(0.2, 0.82, 0.8, 1)
-    num "Mais c'est extra ! Donne moi ça !"
+    num "Would you look at that!"
     $ loveGauge(num_char, +35, 0.36, 0.28)
     hide screen inventory_screen
     show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     hide char_numerimus normal
     
     show char_numerimus heureux lunette at speakingAnim(0.2, 0.82, 0.8, 1)
-    num "Regarde moi ça, Germain ! La grande classe !"
+    num "Look at me German! I'm really rocking the hell out of them!"
     show char_numerimus heureux lunette at notSpeakingAnim(0.2, 0.82, 0.8, 1)
     
     jump romains_VisitePart3
@@ -270,54 +270,54 @@ label romains_VisitePart3:
         
     play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
     show char_numerimus normal lunette at speakingAnim(0.2, 0.82, 0.8, 1)
-    num "Qu’est ce qu’il y a à voir dans le coin ?"
+    num "What's there to see around here?"
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             
     menu :
-        num "{cps=0}Qu’est ce qu’il y a à voir dans le coin ?{/cps}"
-        "L’air vivifiant du paysage Bructère !" if _testA == 0:
+        num "{cps=0}What's there to see around here?{/cps}"
+        "The fresh vivifying air of the Bructeri land" if _testA == 0:
             $ _testA = 1
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
-            y "La Lippe, l'herbe fraiche, l'air vivifiant du paysage Bructère !"
+            y "The Lippe, the fresh grass, the fresh air of our beautiful countryside!"
             
             play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Doute_04.ogg"
             show char_digitimus normal right at speakingAnim(0.5, 0.8, 0.815, 1)
             show char_numerimus normal lunette lunette at speakingAnim(0.2, 0.82, 0.8, 1)
-            dig "Ouais..."
+            dig "Yeah..."
             show char_digitimus normal right at notSpeakingAnim(0.5, 0.8, 0.815, 1)
-            num "Mais encore ?"
+            num "What else?"
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             jump romains_VisitePart3
             
-        "Deux gros abrutis."if _testB == 0:
+        "Two big idiots."if _testB == 0:
             play sound "sfx/Voices/Player/Char_Player_Sarcastic_01.ogg"
-            y "Deux bons gros abrutis."
+            y "Two big idiots."
             $ _testB = 1
             play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
             show char_numerimus normal lunette at speakingAnim(0.2, 0.82, 0.8, 1)
-            num "Oh, vous savez ! Pour nous, vous vous ressemblez tous..."
+            num "Oh, we wouldn't be able to tell all of you look the same to us..."
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             jump romains_VisitePart3
             
-        "Véléda ?":
+        "Veleda?":
             play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-            y "Il y a bien la prophétesse Véléda, mais..."
+            y "There is the prophetess Veleda, but..."
             
             play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Heureux_03.ogg"
             show char_numerimus heureux lunette at speakingAnim(0.2, 0.82, 0.8, 1)
             show char_digitimus rire at speakingAnim(0.5, 0.8, 0.815, 1)
-            dig "Mais c'est bien sur ! On a toujours voulu la rencontrer !"
+            dig "Of course! We've always wanted to see her!"
             show char_digitimus rire at notSpeakingAnim(0.5, 0.8, 0.815, 1)
-            num "Ouais ! Super idée, le Germain !"
+            num "Yeah! Great idea, german!"
             show char_numerimus heureux lunette at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             
             
             play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
-            y "non mais là elle est pas..."
+            y "Well, no right now she's not..."
             
             play sound "sfx/Voices/Num/Char_Num_Heureux_01.ogg"
             show char_numerimus heureux lunette at speakingAnim(0.2, 0.82, 0.8, 1)
-            num "Vendu ! On y va tout de suite !"
+            num "Sold! Let's go right now!"
             show char_numerimus heureux lunette at notSpeakingAnim(0.2, 0.82, 0.8, 1)
             
             stop music1 fadeout 1.5
@@ -326,7 +326,7 @@ label romains_VisitePart3:
             hide screen datingSim
             scene black with Dissolve (2.0)
             
-            y "Dans quoi je me suis encore fourré...?"
+            y "What did I just do...?"
             
 
             jump romains_VisitePart4
@@ -361,43 +361,43 @@ label romains_VisitePart5:
     
   
     play sound "sfx/Voices/Player/Char_Player_Non_04.ogg"
-    y "Ernust ! On a un problème !"
-    y "Y'a deux Romains qui veulent voir Véléda !"
+    y "Ernust! We have a problem!"
+    y "There's two Romans there that want to see Veleda!"
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Inquiet_03.ogg"
     show char_ernust normal right at speakingAnim(0.3, 0.99, 0.97, 0.6) 
-    e "Oh ! Dommage qu'elle soit morte !"
+    e "Oh! It's too bad she's dead!"
     show char_ernust normal right at notSpeakingAnim(0.3, 0.99, 0.97, 0.6) 
     
     play sound "sfx/SFX_Knock_01.ogg"
-    num "Dites donc, on peut rentrer, là ? Il fait froid dehors !"
+    num "Hey, can we come in? It's could out there!"
     
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-    y "Ahhhhh ! Les voilà !"
+    y "Ahhhhh! There they are!"
     
     play sound "sfx/Voices/Ernust/Char_Ernust_Normal_07.ogg"
     show char_ernust normal right at speakingAnim(0.3, 0.99, 0.97, 0.6) 
-    e "T'en fais pas, Gaufrid, j'ai une idée géniale ! Fais moi confiance !"
+    e "Don't worry, Wafflid, I have a great idea! Trust me!"
     show char_ernust normal right at notSpeakingAnim(0.3, 0.99, 0.97, 0.6) 
     menu :
-        e "{cps=0}T'en fais pas Gaufrid j'ai une idée géniale, fais moi confiance !{/cps}"
-        "J'ai pas confiance.":
+        e "{cps=0}Don't worry, Wafflid, I have a great idea! Trust me!{/cps}"
+        "I don't trust you.":
             play sound "sfx/Voices/Player/Char_Player_Non_01.ogg"
-            y "Je te fais absolument pas confiance."
-            y "Tu serais capable de la re-tuer !"
-            y "Mais j'ai pas vraiment le choix, là..."
+            y "There's no way I can trust you."
+            y "You'd be able to re-kill her."
+            y "But I don't really have a choice..."
             jump romains_VisitePart7           
-        "J'ai pas du tout confiance !":
+        "I really don't trust you!":
             play sound "sfx/Voices/Player/Char_Player_Non_01.ogg"
-            y "Je te fais absolument pas confiance !"
-            y "Tu serais capable de la re-tuer !"
-            y "Mais j'ai pas vraiment le choix, là..."
+            y "There's no way I can trust you."
+            y "You'd be able to re-kill her."
+            y "But I don't really have a choice..."
             jump romains_VisitePart7
-        "J'ai vraiment pas du tout confiance !":
+        "No words can describe how little I trust you.":
             play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
-            y "Je te fais absolument pas confiance !"
-            y "Tu serais capable de la re-tuer !"
-            y "Mais j'ai pas vraiment le choix, là..."
+            y "There's no way I can trust you."
+            y "You'd be able to re-kill her."
+            y "But I don't really have a choice..."
             jump romains_VisitePart7
             
 # -----------------------------------------#
@@ -405,14 +405,14 @@ label romains_VisitePart7:
    
     show char_ernust normal right at speakingAnim(0.3, 0.99, 0.97, 0.6) 
     play sound "sfx/Voices/Ernust/Char_Ernust_Love_03.ogg"
-    e"Je te décevrais pas, Gaufrid !"
+    e"I won't disappoint you Wafflid!"
     show char_ernust normal right at notSpeakingAnim(0.3, 0.99, 0.97, 0.6) 
     show char_ernust normal right:
         linear 1.5 xpos -0.5 rotate 10
     pause 0.5
  
     play sound "sfx/Voices/Player/Char_Player_Heureux_01.ogg"
-    y "Entrez !"
+    y "Come in!"
     play sound "sfx/SFX_Entrance_01.ogg"
     show char_numerimus dubitatif lunette:
         xalign 0.5 yalign 0.8 zoom 1
@@ -421,16 +421,16 @@ label romains_VisitePart7:
     pause 1.0
     show char_numerimus dubitatif lunette at speakingAnim(0.475, 0.92, 0.9, 1)
     play sound "sfx/Voices/Num/Char_Num_Doute_03.ogg"
-    num "C'est pas trop tôt !"
+    num "Finally!"
     show screen datingSim(num_char, 0.55, 0.35)
     show char_numerimus dubitatif lunette at notSpeakingAnim(0.475, 0.92, 0.9, 1)
     play sound "sfx/Voices/Player/Char_Player_Normal_03.ogg"
-    y "Mais... il est où, votre porte-enseigne ?"
+    y "Where's your bannerman?"
     show char_numerimus normal lunette at speakingAnim(0.475, 0.92, 0.9, 1)
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
-    num "Il est puni de visite."
-    num "Il a fait une remarque déplacée sur mes sandales."
-    num "Bon, elle est où Véléda ?"
+    num "He's grounded."
+    num "He made fun of my sandals."
+    num "So, where's that Veleda, eh?"
     show char_numerimus normal lunette at notSpeakingAnim(0.475, 0.92, 0.9, 1)
     
     jump romains_VisitePart8
@@ -442,10 +442,10 @@ label romains_VisitePart8:
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     
-    y "À l'étage. Elle se prépare..."
+    y "Upstairs, she's getting ready..."
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
-    y "Ca devrait être bon... j'imagine ?"
-    y "Suivez-moi."
+    y "It should be ok now, I think?"
+    y "Follow me."
     jump romains_VisitePart9
 
 # -----------------------------------------#
@@ -475,19 +475,19 @@ label romains_VisitePart10:
     show screen datingSim(num_char, 0.25, 0.35)
     
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
-    num "Wow. Voici donc la vénérable Véléda..."    
+    num "Wow. So this is the famous Veleda..."    
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_02.ogg"
     show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
         
-    ve "Bonnnnnnnjouuuuur, étranger !"
-    ve "Je vaiiiis vous faire... une prophétie !!!"
+    ve "Heeeeellooooooo, stranger!"
+    ve "I will tell youuuu... a prophecy!!!"
     scene vel mario2 zorder 1:
         xpos 0 ypos 0
 
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
         
     show char_veledaernust 02 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
-    ve "Souuus le soleil de la pierre couleur cailloux !!!!!!"
+    ve "Under the sun, the pebble-colored stone!!!!!!"
     scene vel mario zorder 1 :
         xpos 0 ypos 0
     show char_veledaernust 01 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
@@ -496,17 +496,17 @@ label romains_VisitePart10:
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
     show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_02.ogg"
-    num "Fascinant... Qu'est-ce qu'elle veut dire ?"
+    num "Fascinating... What does it mean?"
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
-    y "Euuh là elle dit... qu’à votre retour les... gens à Rome... seront… très contents de vous voir."
+    y "Errr that means uh... when you return... the people of Rome will... be very happy to see you."
     
  #   play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"    show char_numerimus normal at speakingAnim(0.2, 0.92, 0.9, 1.25)
     play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
     $ loveGauge(num_char, +15, 0.34, 0.28)
-    num "Ahah ! C'est bien vrai !"
+    num "Ahah! That's true!"
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     
     jump romains_VisiteProphetie
@@ -519,40 +519,40 @@ label romains_VisiteProphetie:
         xpos 0 ypos 0
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
-    ve  " Les oiseauuuuuuux chantent ! On dirait des corbeaux  !" 
+    ve  "The biiiiiiiirds siiiing! They sound like crows!" 
     show char_veledaernust 02 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     
     show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
-    num "... Une traduction, s'il vous plaît ?"
+    num "... translation please?"
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     
     play sound "sfx/Voices/Player/Char_Player_Hesitation_01.ogg"
-    y "Là, elle dit que..."
+    y "Well, this obviously means..."
     
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
-        y "{cps=0}Là, elle dit que...{/cps}"
-        "La mort est proche !" :
-            y "Un présage de mort plane sur vous !"
+        y "{cps=0}Well, this obviously means...{/cps}"
+        "Death is near!" :
+            y "A dark omen is upon you!"
             show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
             $ loveGauge(num_char, -15, 0.34, 0.28)
-            num "Euuh... Merci... J'imagine? "
+            num "Erm... Thanks I guess? "
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
-        "Il y a... des corbeaux ?" :
-            y "Les oiseaux sont surement des corbeaux."
+        "There are... crows?" :
+            y "The birds must be crows."
             show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
             $ loveGauge(num_char, +1, 0.34, 0.28)
             num "Humm..."
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
-        "Les oiseaux profiterons bientôt du printemps." : 
-            y "Les oiseaux profiterons bientôt du printemps qui arrive."
+        "The birds will soon enjoy spring." : 
+            y "The birds will enjoy the coming of spring."
             show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
             $ loveGauge(num_char, +15, 0.34, 0.28)
-            num "Super ! Qui n'aime pas le printemps ?"
+            num "Of course! Everyone loves springtime."
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
             
     
@@ -565,34 +565,34 @@ label romains_VisiteProphetie:
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:    
     show char_veledaernust 01 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
    
-    ve  " Eau chauuuuuude….. et eau froide ne font pas bon ménage !" 
+    ve  "Hot waaaateerrrr... should not mix with.... coooooold waaateeeer!" 
 
     show char_veledaernust 02 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     play sound "sfx/Voices/Player/Char_Player_Hesitation_02.ogg"
-    y "Et là elle dit que..."
+    y "And this one means..."
  #   play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
-        y "{cps=0}Et là elle dit que...{/cps}"
-        "Il y a un traître dans vos rangs !" :
-            y "Il y a un traître dans vos rangs !"
+        y "{cps=0}And this one means...{/cps}"
+        "There is a traitor in your midst!" :
+            y "There is a traitor in your midst!"
             show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Doute_02.ogg"
             $ loveGauge(num_char, -15, 0.34, 0.28)
-            num "J'espère que ce n'est pas Digitimus !"
+            num "I hope it's not Digitimus!"
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
-        "Vous allez sortir du lot." :
-            y "Vous vous démarquerez en tant que grand centurion."
+        "You will find glory." :
+            y "You will be recognized as a powerful Centurion."
             show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Heureux_03.ogg"
             $ loveGauge(num_char, +15, 0.34, 0.28)
-            num "J'en étais sur !"
+            num "I knew it!"
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
-        "L'eau tiède, c'est désagréable" :
-            y "Mélanger l'eau chaude et l'eau froide, c'est mal. " 
+        "Lukewarm water is not cool." :
+            y "Mixing cold and hot water is wrong. " 
             show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
             play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
             $ loveGauge(num_char, +1, 0.34, 0.28)
-            num "Humm... oui."
+            num "Humm... yes."
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
             
     play sound "sfx/Voices/Ernust/Char_Ernust_Marionnette_04.ogg"
@@ -600,41 +600,41 @@ label romains_VisiteProphetie:
         xpos 0 ypos 0
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     show char_veledaernust 02 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
-    ve  " Ah.... je commence à avoir mal au bras..."
+    ve  " Ah.... my arm is getting sore..."
     show char_veledaernust 01 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     
  #   play sound "sfx/SFX_Char_Numerimus_Normal_01.ogg"
     show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_04.ogg"
-    num "Hein ?"
+    num "Huh?"
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     play sound "sfx/Voices/Player/Char_Player_Hesitation_04.ogg"
-    y "Heuuu là... elle dit que..."
+    y "Errrr... what she means is... that..."
 #    play sound "sfx/SFX_Char_Player_Ok_01.ogg"
     menu :
-        y "{cps=0}Heuuu là... elle dit que...{/cps}"
-        "Vous vous faites vieux." :
-            y "La vieillesse vous guette… et de près"
+        y "{cps=0}Errrr... what she means is... that...{/cps}"
+        "You are getting old." :
+            y "Old age is getting near"
             show char_numerimus dubitatif lunette at speakingAnim(0.2, 0.92, 0.9, 1)
             play sound "sfx/Voices/Num/Char_Num_Normal_03.ogg"
             $ loveGauge(num_char, -15, 0.34, 0.28)
-            num "Ça va, je le sais ça !"
+            num "Hey, I already know that!"
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1)
             jump romains_FinDeLaVisite80
-        "Votre bras est très musclé." :
-            y "Votre bras droit est plus musclé que le gauche. "
+        "Your arm looks strong." :
+            y "Your right arm looks much stronger than your left arm. "
             show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1)
             play sound "sfx/Voices/Num/Char_Num_Heureux_03.ogg"
             $ loveGauge(num_char, +15, 0.34, 0.28)
-            num "C'est extraordinaire !"
+            num "Extraordinary! She's right!"
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1)
             jump romains_FinDeLaVisite80
-        "Le poids de votre réussite sera remarquable !" :
-            y "Le poids de votre réussite se fera sentir sur tout l’empire."
+        "You will be very successful!" :
+            y "Your praise will be sung across the entire empire."
             show char_numerimus heureux lunette at speakingAnim(0.2, 0.92, 0.9, 1)
             play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
             $ loveGauge(num_char, +20, 0.34, 0.28)
-            num "Pas étonnant, mon petit père... pas étonnant !"
+            num "Haha, no surprise there!"
             show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1)
             jump romains_FinDeLaVisite80
 
@@ -648,14 +648,14 @@ label romains_FinDeLaVisite80:
         xpos 0 ypos 0
     show char_veledaernust 02 at speakingAnim(0.8, 0.80, 0.82, 0.3) zorder 3:
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
-    ve  "... C'est fini."
+    ve  "... It's over."
     show char_veledaernust 01 at notSpeakingAnim(0.8, 0.72, 0.70, 0.3) zorder 3:
     show char_numerimus normal lunette at speakingAnim(0.2, 0.92, 0.9, 1) zorder 3:
     play sound "sfx/Voices/Num/Char_Num_Normal_01.ogg"
-    num "De quoi ?"
+    num "What?"
     show char_numerimus normal lunette at notSpeakingAnim(0.2, 0.84, 0.82, 1) zorder 3:
     play sound "sfx/Voices/Player/Char_Player_Normal_02.ogg"
-    y "Le spectacle est terminé ! Hop hop hop, on retourne à l'entrée !"
+    y "Show's over! Hippity hoppity, off you go!"
     hide screen datingSim
     scene bg_tour :
         xpos 0 ypos 0
@@ -669,9 +669,9 @@ label romains_FinDeLaVisite80:
  
     
     play sound "sfx/Voices/Num/Char_Num_Heureux_02.ogg"
-    num "Les propos de cette prophétesse m'ont vraiment inspirés !"
-    num "Je vais quitter l'armée et rejoindre la Rome insoumise. On ne peut rester indifférent à de telles paroles !"
-    num "Je n'aurais plus besoin de ça, tenez !"
+    num "These prophecies really touched my heart!"
+    num "I will leave the army and join the Red Cross! I can't stay indiferent to such a revelation."
+    num "I won't need this anymore, take it!"
     show char_numerimus heureux lunette at notSpeakingAnim(0.5, 0.92, 0.9, 1)
     $ inventory.add(glaive)
     $ _testGlaive = 1
@@ -702,7 +702,7 @@ label romains_FinDeLaVisite80:
     hide char_numerimus normal lunette with Dissolve(1.5)
     hide screen datingSim
     pause 3.0
-    y "Eh, mais c'est un {b}glaive{/b} ! Merci !"
+    y "Hey! That's a {b}glaive{/b}! Thanks!"
     
     if _testGlaive == 1 & _testBouclier == 1:
         stop music1 fadeout 1.0
@@ -721,7 +721,7 @@ label romains_FinDeLaVisite80:
 label romains_Blague:
     
     if _testBlague == 1:
-        y "Tenez lisez ça..."
+        y "There you go, read this..."
         show screen inventory_screen(obj = "blague")
         
         play sound "sfx/SFX_UI_Inventory_Glaive_01.ogg"
@@ -732,14 +732,14 @@ label romains_Blague:
         play sound "sfx/Voices/Num et Dig/Char_Num_Dig_Rire_01.ogg"
         show char_numerimus heureux at speakingAnim(0.2, 0.82, 0.8, 1)
         show char_digitimus rire right at speakingAnim(0.5, 0.8, 0.815, 1)
-        num "Hahahaha !"
+        num "Hahahaha!"
         $ loveGauge(num_char, +10, 0.36, 0.28)
         show char_numerimus normal at notSpeakingAnim(0.2, 0.82, 0.8, 1)
         dig "Haahahahaha... haahaha!"
         $ loveGauge(num_char, +25, 0.36, 0.28)
-        dig "C'est la meilleure blague que j'ai entendu de ma vie !"
+        dig "It's the best joke I heard in my life! I almost died!"
         show char_digitimus normal right at notSpeakingAnim(0.5, 0.8, 0.815, 1)
-        dig "Bon bah, merci ! Pour te remercier je... bah, tiens ! C'est... ma {b}trompette{b}."
+        dig "Well, thanks! What can I do to thank you? Take this... my {b}trumpet{b}."
         
         $ inventory.add(trompette)
         $ _testTrompette = 1
@@ -767,7 +767,7 @@ label romains_Blague:
         pause 2.5
         play sound "sfx/SFX_UI_Inventory_Bag_01.ogg"
         pause 0.5
-        y "... Qu'est ce que je vais bien faire d'une {b}trompette{/b}, moi ?"
+        y "... What in the world am I going to do with a {b}trumpet{/b}?"
         show char_ernust normal left:
             xalign 0.5 yalign 0.8
             xpos 0.999 ypos 1.9 zoom 0.8 rotate -30
@@ -775,8 +775,8 @@ label romains_Blague:
         #pause 1.5
         
         play sound "sfx/Voices/Ernust/Char_Ernust_Normal_03.ogg"
-        e "On peut s'en servir pour faire peur aux animaux !"
-        y "... Mais, de quoi tu parles ?"
+        e "We can use it to scare animals!"
+        y "... What are you talking about?"
         show char_ernust normal left:
             xalign 0.5 yalign 0.8
             xpos 0.9 ypos 1.3 zoom 0.8 rotate -30
