@@ -121,7 +121,7 @@ label intro:
     
     $ renpy.pause (0.2, hard = True)
     
-    outlineBot "{cps=1} {/cps}{cps=20}At least,{cps=2} {/cps}not the village of the Bructeri,{cps=2} {/cps}{cps=20}home of the legendary prohetess: Veleda!{/cps}"
+    outlineBot "{cps=1} {/cps}{cps=20}At least,{cps=2} {/cps}not the village of the Bructeri,{cps=2} {/cps}{cps=20}home of the legendary prophetess: Veleda!{/cps}"
     
     play sound "sfx/Voices/Narrateur/Narrateur_Intro_04.ogg"
     show bg_place with Dissolve (0.5):

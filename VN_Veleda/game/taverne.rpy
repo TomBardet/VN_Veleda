@@ -365,7 +365,7 @@ label taverne_AbusAlcoolPart1:
             y "I'm serious. When you look at me like this, I feel..."
             y "I feel like you are staring straight into my soul."
             $ loveGauge(goat_char, 19, 0.25, 0.41)
-            y "Tu crois aux âmes soeurs toi ?"
+            y "Do you believe in soulmates?"
         "Woooow! Your wool is so soft!":
             play sound "sfx/Voices/Player/Char_Player_Heureux_03.ogg"
             y "Woooow! Your wool is so soft!"
@@ -1050,7 +1050,7 @@ label taverne_Concours_Part4_Final:
     play sound "sfx/Voices/Beaudrik/Char_Beaudrik_Insult_03.ogg"
     i "It's disgusting!"
     show char_ingrid degout at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    i "Beaudrik, I am very disapointed."
+    i "Beaudrik, I am very disappointed."
     i "It's not about the nipple, it's a matter of principle."
     show char_ingrid choc at speakingAnim(0.2, 1.15, 1.17, 0.25)
     play sound "sfx/Voices/Ingrid/Char_Ingrid_Degout_02.ogg"
@@ -1097,7 +1097,7 @@ label taverne_Concours_Part4_Final_Choice:
             nar "{i}{color=#f2de5c}Too bad he's already taken. Your friend already has a fiancée{/i}{/color}"
             show char_ingrid choc at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
             show char_beaudrik choque at notSpeakingAnim(0.8, 0.8, 0.82, 0.8)
-            nar "{i}{color=#f2de5c}Here name is Josiane.{/i}{/color}"
+            nar "{i}{color=#f2de5c}Her name is Josiane.{/i}{/color}"
             jump taverne_Concours_Part5_Ending
             
 # -----------------------------------------#
@@ -1237,9 +1237,9 @@ label taverne_Concours_Part5_Ending_BadEnding:
 label taverne_Concours_Part5_Ending_GoodEnding:
 
     show char_ingrid love at speakingAnim(0.2, 1.15, 1.17, 0.25)
-    i "Gaufrid ! On va pouvoir se marier !"
+    i "Wafflid! We can get married!"
     show char_ingrid love at notSpeakingAnim(0.2, 1.15, 1.17, 0.25)
-    y "Du coup, je dois te faire la demande ?" 
+    y "Really? Should I propose then?" 
     
     jump taverne_Concours_Part6_Conclusion
     

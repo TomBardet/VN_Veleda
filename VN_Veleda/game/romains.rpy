@@ -54,7 +54,7 @@ label romains_Part1:
                 linear 0.4 zoom 1.15 xpos -0.15
             pause 0.6
             window show
-            y "It looks lije there is nobody here..."
+            y "It looks like there is nobody here..."
             jump romains_Part2
         elif _return == "sortir":
             hide screen datingSim
@@ -370,7 +370,7 @@ label romains_VisitePart5:
     show char_ernust normal right at notSpeakingAnim(0.3, 0.99, 0.97, 0.6) 
     
     play sound "sfx/SFX_Knock_01.ogg"
-    num "Hey, can we come in? It's could out there!"
+    num "Hey, can we come in? It's cold out there!"
     
     play sound "sfx/Voices/Player/Char_Player_Non_02.ogg"
     y "Ahhhhh! There they are!"

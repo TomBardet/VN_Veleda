@@ -14,7 +14,7 @@ label ending_ChevreTrahie:
     $renpy.pause(2.0, hard = True)
     
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BADASS_Chevre_01.ogg"
-    outline "She was a goat and good at her job but, accused of a crime he didn't commit , elle he was exiled. "
+    outline "She was a goat and good at her job but, accused of a crime she didn't commit , she was exiled. "
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BADASS_Chevre_02.ogg"
     outline "Now she prowls the badlands."
     play sound "sfx/Voices/Narrateur/Narrateur_FIN_BADASS_Chevre_03.ogg"

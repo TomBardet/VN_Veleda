@@ -195,7 +195,8 @@ init:
     image char_ernust marionnette2 = "images/char/Char_ernust_marionnette2.png"
     image char_ernust trahi = "images/char/Char_ernust_trahi.png"
     image char_ernust inquiet = "images/char/Char_ernust_inquiet.png"
-    
+    image char_ernust inquiet right = im.Flip("images/char/Char_ernust_inquiet.png", horizontal = True)
+
     #Ingrid
     image char_ingrid normal = "images/char/Char_ingrid_normal.png"
     image char_ingrid degout = "images/char/Char_ingrid_degout.png"

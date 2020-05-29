@@ -1033,7 +1033,7 @@ label ending_ExilPart1 :
             jump ending_ExilAvecErnust
             
         "Come on Josiane, we're leaving!":
-            y "Let's )go Josiane, we will discover the world together!"
+            y "Let's go Josiane, we will discover the world together!"
             show char_goat choc zorder 2:
                 xalign 0.5 yalign 0.8
                 zoom 0.45 xpos 0.75 ypos 1.5

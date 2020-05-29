@@ -302,7 +302,7 @@ label forge_Brutalmund_03:
     brut "That third nipple of his, not a good sign."
     show char_brutal normal at notSpeakingAnim(0.52, 0.93, 0.91, 0.35)
     menu:
-        brut "{cps=0}Le troisième téton, c’était pas bon signe.{/cps}"
+        brut "{cps=0}That third nipple of his, not a good sign.{/cps}"
         "Having three nipples is not a big deal" :
             play sound "sfx/Voices/Player/Char_Player_Non_05.ogg"
             y "It's not his fault if he was born that way."
@@ -403,7 +403,7 @@ label forge_Brutalmund_04_01_Branche_EssaiRoutier:
         brut "{cps=0}I can promise you these shields are the best.{/cps}"
         "{color=#FFFFFF}Looks like a scam...{/color}":
             play sound "sfx/Voices/Player/Char_Player_Non_03.ogg"
-            y "TAre you trying to scam me?"
+            y "Are you trying to scam me?"
             show char_brutal surpris at speakingAnim(0.52, 0.93, 0.91, 0.35)
             if Forge_reply_arnaque == 0:
                 $ loveGauge(brut_char, -5, 0.57, 0.15)

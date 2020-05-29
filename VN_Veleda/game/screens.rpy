@@ -296,7 +296,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Nouveau"):
+            textbutton _("New Game"):
                 text_font "gui/ardagh.ttf"
                 text_size 45
                 text_idle_color "#0F0B0A"
@@ -307,14 +307,14 @@ screen navigation():
 
            # textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Sauver"):
+            textbutton _("Save"):
                 text_font "gui/ardagh.ttf"
                 text_size 45
                 text_idle_color "#0F0B0A"
                 text_hover_color "#B1991E"
                 action ShowMenu("save")
 
-        textbutton _("Charger"):
+        textbutton _("Load"):
             text_font "gui/ardagh.ttf"
             text_size 45
             text_idle_color "#0F0B0A"
@@ -652,14 +652,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Sauvegarder"))
+    use file_slots(_("Save Game"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Charger"))
+    use file_slots(_("Load Game"))
 
 
 screen file_slots(title):

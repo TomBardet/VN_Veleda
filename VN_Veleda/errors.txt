@@ -2,8 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/class.rpy", line 65: invalid syntax
-    def clickSound()
-    
+File "game/ressources.rpy", line 198: Tab characters are not allowed in Ren'Py scripts.
 
-Ren'Py Version: Ren'Py 6.99.12.4.2187
+Ren'Py Version: Ren'Py 7.3.5.606
+Fri May 29 15:30:17 2020
